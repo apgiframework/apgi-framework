@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 1 — Cardiac-EEG",
   "title": "EEG Study of Interoceptive Precision Gating",
   "paper": "APGI Paper 1",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "This protocol examines whether interoceptive precision (Πⁱ), indexed by the heartbeat-evoked potential (HEP, 250–400 ms window), modulates conscious detection thresholds (θₜ). Stimuli are time-locked to cardiac phase to test four sub-predictions: (Pred 1.a) that state-level Πⁱ_eff produces greater P3b amplitude for near-threshold stimuli under interoceptive focus than exteroceptive focus or dual-task control — with the effect absent or reversed for suprathreshold stimuli; (Pred 1.a-trait) that trait-level Πⁱ_baseline, indexed by interoceptive accuracy (IA), predicts greater perceptual sensitivity (d′) in the interoceptive condition but not the exteroceptive condition; (Pred 1.b) that cardiac-phase-locked detection advantage exists at diastole versus systole; and (Pred 1.c) that top-tertile IA participants show the strongest state-level P3b condition effects and cardiac-phase detection advantages. Near-threshold contrast titration is mandatory; suprathreshold control blocks are required to confirm specificity.",
@@ -259,7 +259,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18"
   },
   "apgi_parameters": {

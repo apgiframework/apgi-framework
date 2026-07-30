@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 3 — Anticipation-fMRI",
   "title": "fMRI Anticipation vs. Experience Study: Dissociating Somatic Marker Retrieval from Prediction Error",
   "paper": "APGI Paper 1",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "This fMRI study uses a risky-choice task with variable foreperiod to test whether somatic marker retrieval M̂(c,a) modulates effective interoceptive precision Πⁱ_eff during anticipation, rather than directly encoding the raw prediction error εⁱ during outcome. APGI predicts that vmPFC–anterior insula (aINS) connectivity emerges during the anticipation window (before stimulus onset) while vmPFC–posterior insula (pIC) connectivity remains flat, and that these effects are sensitive to option valence rather than sensory contrast. Four sub-predictions are tested: (Pred 3.a) vmPFC BOLD is parametrically modulated by EV during anticipation but does NOT correlate with outcome-locked SCR, while posterior insula outcome-locked BOLD correlates with SCR as an active εⁱ control; (Pred 3.b) vmPFC→aINS coupling increases during anticipation (precision-gain pathway) while vmPFC→pIC coupling remains statistically flat (BF₀₁ ≥ 6, ROPE d = [−0.15, +0.15]); (Pred 3.c) vmPFC anticipation-period activation is context-specific — modulated by option valence (EV) and high-somatic-cost > low-somatic-cost at matched monetary value — not by sensory contrast; (Pred 3.d) removing the anticipation foreperiod (0 ms ISI) abolishes vmPFC→aINS coupling AND vmPFC EV parametric modulation while leaving posterior insula outcome-locked activity intact. Identifiability of β and Πⁱ is fully resolved via block-diagonal Fisher Information Matrix.",
@@ -224,7 +224,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18"
   },
   "apgi_parameters": {

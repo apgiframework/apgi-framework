@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 0 — Empirical Prerequisite",
   "title": "HEP Proxy Validation: Establishing the Heartbeat-Evoked Potential as a Πⁱ Index",
   "paper": "APGI Paper 1",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "1.0.0",
   "last_updated": "2026-06-04",
   "description": "This empirical prerequisite protocol establishes the heartbeat-evoked potential (HEP, 250–400 ms window) as a valid trial-by-trial proxy for interoceptive precision Πⁱ before any downstream EP-1 through EP-6 analyses are interpreted. Three sub-predictions are tested: that HEP amplitude correlates with an orthogonal Πⁱ index (heartbeat discrimination d′) independent of any EEG measure (Pred 0.A); that pharmacological elevation of acetylcholine via physostigmine increases HEP amplitude in a dose-dependent manner confirmed by pupillometric engagement (Pred 0.B); and that anterior insula (aINS) BOLD signal tracks HEP amplitude trial-by-trial within participants after controlling for arousal (Pred 0.C). All three predictions must pass before HEP is used as a Πⁱ proxy in downstream protocols. Failure of any Pred 0 criterion is a submission-blocking issue for all protocols referencing HEP.",
@@ -176,7 +176,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-06-04"
   },
   "apgi_parameters": {

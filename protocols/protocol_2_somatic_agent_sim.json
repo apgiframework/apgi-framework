@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 2 — Somatic-AgentSim",
   "title": "Active Inference Agent Simulations: Adaptive Advantages of Somatic Markers",
   "paper": "APGI Paper 1",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "Computational agent simulations test whether somatic marker integration M̂(c,a) = γ_V·V(c,a) + γ_A·A(c,a) confers measurable adaptive advantages over APGI agents lacking somatic marker function. Agents are evaluated on embodied decision tasks under volatility conditions where rapid threshold adaptation is required. Five sub-predictions are tested: (Pred 2.a) full APGI agents converge within 50–80 trials matching human IGT performance and outperform both GNWT-only and Standard PP agents in cumulative reward — all three pairwise comparisons significant; (Pred 2.b) post-ignition action selection entropy increases versus pre-ignition baseline, with 70–85% of ignition events satisfying Πⁱ·|zⁱ| > Πᵉ·|zᵉ|; (Pred 2.c) somatic marker retrieval M̂ temporally precedes threshold crossing θₜ; (Pred 2.d) β_SM lesion specifically degrades performance more than other single-parameter lesions, with the deficit largest in high-volatility blocks (σ_env = 0.6); and (Pred 2.e) the full APGI generative model achieves lower BIC than Standard PP and GNWT-only when fit to human IGT trial-by-trial choice sequences. Fully validated via APGI_Somatic_Marker_Identifiability.py.",
@@ -204,7 +204,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18"
   },
   "apgi_parameters": {

@@ -7,8 +7,16 @@ title: "APGI Framework: Adaptive Predictive Global Integration for Consciousness
 version: 0.2.0
 date-released: "2026-06-06"
 license: MIT
-repository-code: "https://github.com/lesoto/apgi-framework"
-doi: "10.5281/zenodo.XXXXXXX"   # replace after Zenodo deposition
+repository-code: "https://github.com/apgiframework/apgi-framework"
+url: "https://osf.io/t5hcq"
+doi: "10.5281/zenodo.21632264"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21632264"
+    description: "Zenodo archive of the APGI Framework software and seed datasets"
+  - type: url
+    value: "https://osf.io/t5hcq"
+    description: "OSF project — pre-registered protocols for the APGI paper series"
 
 authors:
   - family-names: Pesochin
@@ -42,5 +50,5 @@ references:
   - type: software
     title: "APGI Framework"
     version: 1.0.0
-    doi: "10.5281/zenodo.XXXXXXX"   # replace after Zenodo deposition
-    url: "https://github.com/lesoto/apgi-framework"
+    doi: "10.5281/zenodo.21632264"
+    url: "https://github.com/apgiframework/apgi-framework"

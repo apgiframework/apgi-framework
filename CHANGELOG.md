@@ -10,6 +10,24 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+- Project identifiers finalised across all documentation and metadata: Zenodo archive DOI
+  `10.5281/zenodo.21632264`, OSF project `https://osf.io/t5hcq`, code repository
+  `https://github.com/apgiframework/apgi-framework`, author ORCID `0009-0005-0328-2896`.
+  Replaces the `XXXXXXX` placeholders in `README.md`, `CITATION.cff`, `zenodo.json`,
+  `pyproject.toml`, `CONTRIBUTING.md`, `DATA_DICTIONARY.md`, `data/generate_seeds.py`,
+  `src/apgi/scripts/fetch_data.py`, all eight `protocols/protocol_*.json` (`osf_url` and
+  `preregistration.url`), and the `$id` in `protocols/schemas/protocol.schema.json`.
+  The arXiv ID and the per-site IRB protocol numbers remain placeholders pending assignment.
+- `CITATION.cff` — adds top-level `url` (OSF project) and an `identifiers` block listing the
+  Zenodo DOI and OSF project; removes the obsolete "replace after Zenodo deposition" comments.
+- `README.md` — adds a Project links table, OSF and ORCID badges, ORCID in the manuscript
+  byline, and an ORCID/OSF `note` field in the BibTeX entry.
+
+- `src/apgi/scripts/fetch_data.py` — corrects the stale SHA-256 for `sim5_doc_biomarker` in
+  the DATASETS registry (`bd8bfca7…` → `1788cc8b…`) so it agrees with `data/checksums.sha256`
+  and with the digest `data/generate_seeds.py` reproduces; `apgi-fetch --verify` previously
+  reported a false mismatch for that one dataset.
+
 - `src/apgi/datasets.py` — `make_sample_session()` and `make_sample_doc_groups()` inline toy
   datasets; no Zenodo download required; exposed as `apgi.datasets` in `__all__`.
 - `data/DATA_DICTIONARY.md` — full variable codebook for all six `.npz` archives (shape,

@@ -14,9 +14,9 @@ import pathlib
 import sys
 import urllib.request
 
-# Zenodo DOI: update this to the real DOI after creating the Zenodo release.
-ZENODO_DOI = "10.5281/zenodo.XXXXXXX"
-ZENODO_BASE = "https://zenodo.org/record/XXXXXXX/files"
+# Zenodo archive for the APGI seed datasets (concept DOI resolves to the latest version).
+ZENODO_DOI = "10.5281/zenodo.21632264"
+ZENODO_BASE = "https://zenodo.org/records/21632264/files"
 
 DATA_DIR = pathlib.Path(__file__).parent / "cache"
 
@@ -54,7 +54,7 @@ DATASETS: dict[str, tuple[str, str, str, str]] = {
     ),
     "sim5_doc_biomarker": (
         "sim5_doc_biomarker.npz",
-        "bd8bfca71010781ff08dd96e278187b53fc76400f42598cc8c84d3c8f365a56d",
+        "1788cc8b1c76de2c86671eed616014a9283acd762d50853776a88e6a8a6bcdbc",
         "DoC biomarker simulation (VS/UWS, MCS, EMCS, Controls) — Figure 7, Protocol 7",
         "~0.2 MB",
     ),

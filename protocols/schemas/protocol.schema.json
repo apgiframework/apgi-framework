@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/lesoto/apgi-framework/protocols/schemas/protocol.schema.json",
+  "$id": "https://github.com/apgiframework/apgi-framework/protocols/schemas/protocol.schema.json",
   "title": "APGI Experimental Protocol",
   "description": "Schema for APGI experimental protocol specification files.",
   "type": "object",

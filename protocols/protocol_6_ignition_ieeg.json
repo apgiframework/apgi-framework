@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 6 — Ignition-iEEG",
   "title": "Intracranial EEG During Near-Threshold Detection: All-or-None Ignition Dynamics",
   "paper": "APGI Paper 2",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "Intracranial EEG (iEEG) recordings in epilepsy patients performing a near-threshold visual detection task test whether conscious access produces all-or-none (bistable) firing rate distributions in the frontoparietal network, as predicted by APGI's ignition criterion Bₜ. Four sub-predictions are tested: (Pred 6.A) frontoparietal cortex shows bimodal high-gamma power distributions with Hartigan's dip p < 0.05 AND 2-component Gaussian BIC substantially lower than 1-component (ΔBIC > 10); (Pred 6.B) bimodality is specific to the frontoparietal ignition network with occipital units showing graded responses, and intermediate-state bouts show a mean duration < 100 ms (sharp transitions) with prevalence < 15% of trial duration; (Pred 6.C, bifurcation falsification criterion) AC1 of pre-ignition high-gamma power increases monotonically in the 500 ms preceding detected stimuli — the distinguishing APGI prediction over standard GWT; (Pred 6.D) near-threshold stimuli produce stable intermediate high-gamma states lasting > 100 ms in > 15% of near-threshold trials. Fully validated via APGI_LNN_Bifurcation_Analysis.py.",
@@ -267,7 +267,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18"
   },
   "apgi_parameters": {

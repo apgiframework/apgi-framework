@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 7 — DoC-Biomarker",
   "title": "Disorders of Consciousness Biomarker: Joint Roles of Ignition Capacity and Interoceptive Precision",
   "paper": "APGI Paper 3",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "This clinical biomarker study examines whether interoceptive precision (indexed by HEP amplitude, 250–400 ms at Cz) and ignition capacity (indexed by the Perturbational Complexity Index, PCI) jointly predict clinical recovery outcomes across the full disorders of consciousness (DoC) spectrum better than either biomarker alone. Four patient and control groups are studied: VS/UWS (N=30), MCS (N=30), EMCS (N=20), and healthy age/sex-matched controls (N=30); total N=110. Five sub-predictions are tested: (Pred 7.A) joint HEP + PCI model explains more variance in 3-month GCS-S outcome than either biomarker alone (ΔR² ≥ 0.05, AUC > 0.80); (Pred 7.B) HEP amplitude discriminates MCS from VS/UWS; four-group gradient confirmed; DMN↔PCI r > 0.50; DMN↔HEP r < 0.20 (double dissociation); (Pred 7.C) interoceptive perturbation via CCRC (5% CO₂/95% O₂, 90-second) increases PCI ≥ 10% in MCS but not VS/UWS, exceeding arousal-matched white-noise control; (Pred 7.D) HEP amplitude correlates with GCS-S at 3-month and 6-month follow-up (Spearman r > 0.4), with JMbayes2 joint modelling for longitudinal analysis and LOCF explicitly excluded; (Pred 7.E, exploratory) somatic bias modulates reportable embodiment weighting toward 'bodily/visceral' dimensions under high-β attentional focus. Directly supported by Paper 3 Appendix DoC Table.",
@@ -298,7 +298,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18",
     "locf_exclusion": "LOCF is explicitly excluded from all longitudinal analyses (Pred 7.D). JMbayes2 joint model is primary; MICE (m=50) is pre-specified sensitivity analysis.",
     "amendment_note": "6-month follow-up is now PRIMARY CONFIRMATORY (not exploratory) per DOCX registry update 2026-06-19; no OSF amendment required for 6-month analysis."

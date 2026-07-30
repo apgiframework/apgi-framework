@@ -6,7 +6,7 @@ steps to get a working environment, run the tests, and open a pull request.
 ## Environment setup
 
 ```bash
-git clone https://github.com/lesoto/apgi-framework.git
+git clone https://github.com/apgiframework/apgi-framework.git
 cd apgi-framework
 
 # Option A — pip (any Python 3.11+)
@@ -106,6 +106,6 @@ bash reproduce_all.sh --local   # use locally generated seeds instead of Zenodo
 
 ## Reporting issues
 
-Open a GitHub issue at <https://github.com/lesoto/apgi-framework/issues>.
+Open a GitHub issue at <https://github.com/apgiframework/apgi-framework/issues>.
 For falsification-criterion failures (a simulation produces results outside
 the pre-registered bounds in a protocol JSON), label the issue `falsification`.

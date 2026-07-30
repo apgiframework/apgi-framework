@@ -2,20 +2,31 @@
 
 **Allostatic Predictive Gating Ignition** — a computational framework for consciousness research.
 
-[![CI](https://github.com/lesoto/apgi-framework/actions/workflows/test.yml/badge.svg)](https://github.com/lesoto/apgi-framework/actions/workflows/test.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![CI](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml/badge.svg)](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632264.svg)](https://doi.org/10.5281/zenodo.21632264)
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lesoto/apgi-framework/HEAD?labpath=notebooks%2Fquick_start.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lesoto/apgi-framework/blob/main/notebooks/quick_start.ipynb)
+[![OSF](https://img.shields.io/badge/OSF-t5hcq-1284c5.svg)](https://osf.io/t5hcq)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0005--0328--2896-a6ce39.svg)](https://orcid.org/0009-0005-0328-2896)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/apgiframework/apgi-framework/HEAD?labpath=notebooks%2Fquick_start.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/apgiframework/apgi-framework/blob/main/notebooks/quick_start.ipynb)
 
 ## Manuscript
 
-> **Pesochin, D. (2026).** Allostatic Predictive Gating Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
+> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Predictive Gating Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
 > Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) — **replace with real arXiv ID before submission**
 
 This repository is the companion code release for the paper series above.
 All figures in Papers 1–3 are reproduced by scripts in `figures/` and `scripts/`.
-Pre-registered protocols are in `protocols/` and archived on OSF at [osf.io/XXXXXX](https://osf.io/XXXXXX).
+Pre-registered protocols are in `protocols/` and archived on OSF at [osf.io/t5hcq](https://osf.io/t5hcq).
+
+### Project links
+
+| Resource | Location |
+| :--- | :--- |
+| Code repository | <https://github.com/apgiframework/apgi-framework> |
+| Zenodo archive (code + seed datasets) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
+| OSF project (pre-registrations) | <https://osf.io/t5hcq> |
+| Author ORCID | <https://orcid.org/0009-0005-0328-2896> |
 
 To reproduce all figures from archived data in one command:
 
@@ -67,7 +78,7 @@ apgi-framework/
 ## Installation
 
 ```bash
-git clone https://github.com/lesoto/apgi-framework.git
+git clone https://github.com/apgiframework/apgi-framework.git
 cd apgi-framework
 pip install -e ".[dev]"
 ```
@@ -167,7 +178,7 @@ clinical interpreter, parameter recovery, LNN, bifurcation analysis, and five-le
 
 ## Data
 
-Simulation outputs are hosted on Zenodo (DOI: [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX)).
+Simulation outputs are hosted on Zenodo (DOI: [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264)).
 Download pre-computed results with the installed CLI:
 
 ```bash
@@ -197,7 +208,7 @@ close(fid)
 
 ## Experimental protocols
 
-Pre-registered protocols are in `protocols/` and on OSF: [osf.io/XXXXXX](https://osf.io/XXXXXX).
+Pre-registered protocols are in `protocols/` and on OSF: [osf.io/t5hcq](https://osf.io/t5hcq).
 All protocol files are validated against `protocols/schemas/protocol.schema.json` in CI.
 
 | File | Paradigm | Status |
@@ -217,8 +228,9 @@ All protocol files are validated against `protocols/schemas/protocol.schema.json
   author  = {Pesochin, Dimitry},
   title   = {APGI Framework},
   year    = {2026},
-  doi     = {10.5281/zenodo.XXXXXXX},
-  url     = {https://github.com/lesoto/apgi-framework}
+  doi     = {10.5281/zenodo.21632264},
+  url     = {https://github.com/apgiframework/apgi-framework},
+  note    = {ORCID: 0009-0005-0328-2896. Pre-registrations: https://osf.io/t5hcq}
 }
 ```
 

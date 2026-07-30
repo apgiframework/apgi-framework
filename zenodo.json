@@ -31,7 +31,7 @@
 
   "related_identifiers": [
     {
-      "identifier": "https://github.com/lesoto/apgi-framework",
+      "identifier": "https://github.com/apgiframework/apgi-framework",
       "relation": "isSupplementTo",
       "resource_type": "software"
     },
@@ -41,7 +41,7 @@
       "resource_type": "publication-preprint"
     },
     {
-      "identifier": "https://osf.io/XXXXXX",
+      "identifier": "https://osf.io/t5hcq",
       "relation": "isSupplementTo",
       "resource_type": "other"
     }
@@ -52,5 +52,5 @@
     { "identifier": "computational-science" }
   ],
 
-  "notes": "To reproduce all figures: bash reproduce_all.sh. To regenerate seed datasets: python data/generate_seeds.py (uses MASTER_SEED=2025 for all archived sim0-sim8 datasets). Individual figure-generation scripts (figures/generate_figure*.py) each use their own fixed, documented seed and do not share MASTER_SEED. ORCID confirmed. Replace arXiv ID and OSF URL placeholders before final deposit."
+  "notes": "To reproduce all figures: bash reproduce_all.sh. To regenerate seed datasets: python data/generate_seeds.py (uses MASTER_SEED=2025 for all archived sim0-sim8 datasets). Individual figure-generation scripts (figures/generate_figure*.py) each use their own fixed, documented seed and do not share MASTER_SEED. ORCID (0009-0005-0328-2896), OSF project (https://osf.io/t5hcq) and code repository (https://github.com/apgiframework/apgi-framework) confirmed. Replace the arXiv ID placeholder once the preprint is posted."
 }

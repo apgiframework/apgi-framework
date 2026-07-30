@@ -36,10 +36,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/lesoto/apgi-framework"
-Repository = "https://github.com/lesoto/apgi-framework.git"
-Documentation = "https://github.com/lesoto/apgi-framework#readme"
-"Bug Tracker" = "https://github.com/lesoto/apgi-framework/issues"
+Homepage = "https://github.com/apgiframework/apgi-framework"
+Repository = "https://github.com/apgiframework/apgi-framework.git"
+Documentation = "https://github.com/apgiframework/apgi-framework#readme"
+"Bug Tracker" = "https://github.com/apgiframework/apgi-framework/issues"
 
 [project.optional-dependencies]
 lnn = ["torch>=2.0"]

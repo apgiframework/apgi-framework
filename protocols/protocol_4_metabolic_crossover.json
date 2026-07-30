@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 4 — Metabolic-State Crossover",
   "title": "Metabolic-State Crossover: Allostatic Threshold Modulation Under Energy Deficit",
   "paper": "APGI Paper 1",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "1.0.0",
   "last_updated": "2026-06-19",
   "description": "This protocol provides the direct human empirical validation for the claim that the ignition threshold θₜ is dynamically regulated by metabolic state as an allostatic triage mechanism. APGI posits that interoceptive precision weighting (Πⁱ_eff) and somatic-marker retrieval rely on metabolically expensive neuromodulatory gain. Under conditions of energy deficit, the framework predicts that the brain selectively elevates θₜ to suppress high-cost interoceptive channels, preserving essential exteroceptive processing. Three sub-predictions are tested: (Pred 4.A) metabolic depletion selectively elevates θₜ for high-interoceptive-load stimuli, reducing d′ disproportionately vs. neutral exteroceptive stimuli (Metabolic State × Interoceptive Load interaction, LMM p < 0.05, ηₚ² ≥ 0.06); (Pred 4.B) the neural ignition proxy (P3b amplitude) reflects selective θₜ elevation, disproportionately suppressed for interoceptive targets under metabolic depletion; (Pred 4.C) the allostatic triage effect is mediated by metabolic cost, not generalized cognitive fatigue — the interaction survives strict covariation for trial-level pupil diameter and RMSSD.",
@@ -235,7 +235,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-06-19"
   },
   "apgi_parameters": {

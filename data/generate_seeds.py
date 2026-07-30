@@ -1545,8 +1545,14 @@ def main() -> None:
 
     _write_checksums(generated)
     print("\nDone. Next steps:")
-    print("  1. Upload data/seeds/*.npz to Zenodo (create a new version or deposit).")
-    print("  2. Paste the real Zenodo record ID into src/apgi/scripts/fetch_data.py.")
+    print(
+        "  1. Upload data/seeds/*.npz as a new version of "
+        "https://doi.org/10.5281/zenodo.21632264"
+    )
+    print(
+        "  2. Update ZENODO_BASE in src/apgi/scripts/fetch_data.py "
+        "to the new record ID (the concept DOI stays 10.5281/zenodo.21632264)."
+    )
     print(
         "  3. Copy SHA-256 values from data/checksums.sha256 into the DATASETS registry."
     )

@@ -4,7 +4,7 @@
   "registry_protocol_label": "Protocol 5 — Insula-TMS",
   "title": "Causal Neuromodulation Study: Insular and Frontoparietal Gating of Ignition Threshold via Dissociable Mechanisms",
   "paper": "APGI Paper 2",
-  "osf_url": "https://osf.io/XXXXXX",
+  "osf_url": "https://osf.io/t5hcq",
   "version": "2.0.0",
   "last_updated": "2026-06-04",
   "description": "Single-pulse TMS and transcranial focused ultrasound (tFUS/LIFU) are applied under fMRI-guided neuronavigation to four cortical targets to test whether anterior insula (aINS, interoceptive precision integrator) and the frontoparietal workspace (dlPFC, PPC) causally regulate the APGI ignition threshold θₜ through dissociable mechanisms. APGI predicts that aINS stimulation selectively disrupts interoceptive gating — reducing Πⁱ_eff and abolishing HEP–PCI coupling while sparing exteroceptive P3b — whereas dlPFC and PPC stimulation reduces global ignition probability (Bₜ) across both interoceptive and exteroceptive streams without selectively affecting HEP. The primary modality for the aINS arm is tFUS (required for depth penetration to aINS ≈ 3–4 cm below scalp). Vertex serves as active sham control. Four sub-predictions are tested: (Pred 5.A) aINS and frontoparietal TMS both reduce PCI via dissociable mechanisms; (Pred 5.B) aINS TMS selectively disrupts interoceptive gating (HEP–P3b coupling) while sparing exteroceptive P3b; (Pred 5.C) high baseline IA participants show strongest aINS TMS effects on PCI; (Pred 5.D) high-Πⁱ individuals show larger PCI decreases following aINS TMS than low-Πⁱ, absent for dlPFC.",
@@ -208,7 +208,7 @@
   },
   "pre_registration": {
     "platform": "OSF",
-    "url": "https://osf.io/XXXXXX",
+    "url": "https://osf.io/t5hcq",
     "date": "2026-05-18"
   },
   "apgi_parameters": {
