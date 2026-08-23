@@ -12,8 +12,8 @@
 
 ## Manuscript
 
-> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Predictive Gating Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
-> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) — **replace with real arXiv ID before submission**
+> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Precission-Gated Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
+> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) 
 
 This repository is the companion code release for the paper series above.
 All figures in Papers 1–3 are reproduced by scripts in `figures/` and `scripts/`.
