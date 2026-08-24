@@ -116,7 +116,10 @@
         "study_level_termination": "Two session-level terminations in the same participant require medical review before continuation"
       },
       "dsmb_reporting": "All AEs reported to DSMB per Global Safety Protocol"
-    }
+    },
+    "n_target_per_site_approx": 30,
+    "n_minimum_per_site_approx": 24,
+    "RESOLUTION_NOTE": "RESOLVED (author decision, 2026-08-24): N=60 is the TOTAL sample across both laboratories (~30 target / ~24 minimum per site), NOT 60 per site. This matches the OSF Preregistration table's literal wording and this file's own pre-existing n_sites=2 field. Paper 1 previously stated 'N >= 60 per site (total N >= 120)' in four locations -- this is the incorrect reading and has been corrected in Paper 1 to match this file. See CORRECTIONS-AND-SUBMISSION-GUIDE.md for exact Paper 1 edits."
   },
   "apparatus": {
     "EEG": "64-channel BrainAmp DC (Brain Products GmbH) at 1000 Hz; electrode impedance checks every 60 min during vigilance session; recordings with impedance > 20 kΩ at primary scalp sites flagged for offline interpolation",
@@ -231,7 +234,7 @@
     "n_target_with_attrition": 60,
     "software": "G*Power 3.1",
     "interaction_type": "within-subject 2×2 (Metabolic State × Interoceptive Load)",
-    "based_on": "Prereg Sample-size-rationale table: d=0.45, alpha=0.05, power=0.80 (Metabolic State x Interoceptive Load interaction). N=60 target / N=48 minimum across two independent laboratories; accounts for 15% attrition and multi-site variance via (1|Site) random effect."
+    "based_on": "Prereg Sample-size-rationale table: d=0.45, alpha=0.05, power=0.80 (Metabolic State x Interoceptive Load interaction). N=60 target / N=48 minimum across two independent laboratories; accounts for 15% attrition and multi-site variance via (1|Site) random effect. RESOLVED: N=60 confirmed as TOTAL across 2 sites (not per-site). Paper 1's four 'per site / total >=120' statements have been corrected to match."
   },
   "pre_registration": {
     "platform": "OSF",

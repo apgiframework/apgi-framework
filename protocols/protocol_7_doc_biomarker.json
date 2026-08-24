@@ -181,7 +181,8 @@
       "No history of neurological or psychiatric disorder",
       "Age- and sex-matched to patient groups",
       "Normal ECG and cardiac rhythm"
-    ]
+    ],
+    "n_minimum_SUPERSEDED_NOTE": "n_minimum=96 and its power_basis text below both derive from the SAME simplified two-predictor 80%-power calculation that OSF Preregistration §Protocol 7 explicitly flags as superseded: 'that estimate does not carry through once the full four-group ordinal model and expected missing-biomarker attrition are incorporated.' The prereg treats N=110 as a FIXED recruitment target (30+30+20+30 by clinical subgroup) yielding ~70% power, not a solve-for-minimum-N design. n_minimum=96 was NOT independently recomputed under the correct four-group ordinal model (Whitehead 1993) -- doing so requires simulation, not a closed-form formula. Recommend either removing n_minimum as a concept for this protocol (since it's fixed-N) or explicitly re-deriving it before submission."
   },
   "apparatus": {
     "EEG": "64-channel BrainAmp DC (Brain Products GmbH) at 1000 Hz, bedside-compatible cap",
@@ -269,8 +270,8 @@
     "design": "four-group mixed-effects ordinal logistic regression (VS/UWS < MCS < EMCS < controls)",
     "effect_size_or": 2.5,
     "alpha": 0.05,
-    "power": 0.8,
-    "n_required": 96,
+    "power": 0.7,
+    "n_required": 110,
     "n_per_group": 24,
     "n_target": 110,
     "software": "Whitehead (1993) proportional-odds formula",
@@ -294,7 +295,8 @@
         "software": "G*Power 3.1",
         "based_on": "Rosanova et al. (2018) PCI in DoC (d=0.6 for VS/UWS vs controls); Canales-Johnson et al. (2020) HEP group differences. Reported as secondary, descriptive comparison only."
       }
-    }
+    },
+    "design_note": "CORRECTED: OSF Preregistration §Protocol 7 states the four-group ordinal logistic model (Whitehead 1993) with full attrition adjustment achieves ~70% power (not 80%) at the FIXED planned N=110 (30 VS/UWS + 30 MCS + 20 EMCS + 30 controls). This is a fixed-N design, not a solve-for-N calculation -- N=110 is set by clinical recruitment feasibility, and 0.70 is the resulting power. Prereg explicitly states: 'this figure, not 80%, is the binding power estimate for Pred 7.A.'"
   },
   "pre_registration": {
     "platform": "OSF",

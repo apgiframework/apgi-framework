@@ -40,7 +40,10 @@
         },
         "dlpfc_tms": {
           "hep_equivalence_bf01_minimum": 6,
-          "hep_equivalence_rope_d": [-0.15, 0.15],
+          "hep_equivalence_rope_d": [
+            -0.15,
+            0.15
+          ],
           "p3b_reduction": "across both interoceptive and exteroceptive streams"
         }
       },
@@ -56,7 +59,7 @@
       "falsifying_evidence": "No interaction between baseline accuracy and TMS site.",
       "confirming_thresholds": {
         "interaction_p_threshold": 0.05,
-        "eta_squared_minimum": 0.10,
+        "eta_squared_minimum": 0.1,
         "site_specificity": "interaction present for aINS site only, absent for dlPFC site",
         "accuracy_grouping": "IA tertile (top vs. bottom)"
       },
@@ -79,12 +82,14 @@
       }
     }
   ],
-  "depends_on": ["EP-0"],
+  "depends_on": [
+    "EP-0"
+  ],
   "validation_status": "specified_with_caveat",
   "validation_notes": "Prediction structurally sound. The registry (EP-5, Protocol 5) specifies aINS (via tFUS) and dlPFC/PPC as the causal targets. Primary modality for aINS arm is tFUS (required for depth penetration ≈ 3–4 cm); H-coil dTMS retained as secondary modality at sites lacking tFUS infrastructure, with mandatory target-engagement verification (concurrent fMRI-BOLD suppression or EEG spectral change). Claustrum and mediodorsal thalamic involvement remain viable alternative substrates and must be acknowledged in the paper.",
   "participants": {
-    "n_target": 36,
-    "n_minimum": 28,
+    "n_target": 44,
+    "n_minimum": 36,
     "inclusion_criteria": [
       "Age 18–45 years",
       "Right-handedness (Edinburgh Handedness Inventory ≥ +40)",
@@ -111,7 +116,11 @@
     "target_regions": [
       {
         "name": "Anterior insula (aINS)",
-        "MNI_coordinate": [34, 14, 0],
+        "MNI_coordinate": [
+          34,
+          14,
+          0
+        ],
         "bilateral": true,
         "modality": "Primary: tFUS (transcranial focused ultrasound / LIFU); Secondary: H-coil dTMS with mandatory target-engagement verification",
         "rationale": "aINS encodes precision-weighted prediction errors and computes Πⁱ; lies ≈ 3–4 cm below scalp — standard figure-of-eight TMS is contraindicated. Stimulating aINS (not pIC) tests the APGI precision-weighting mechanism. Registry EP-5 primary interoceptive site.",
@@ -119,15 +128,27 @@
       },
       {
         "name": "Dorsolateral prefrontal / posterior parietal cortex (dlPFC/PPC)",
-        "MNI_coordinate_dlpfc": [44, 36, 20],
-        "MNI_coordinate_ppc": [36, -56, 44],
+        "MNI_coordinate_dlpfc": [
+          44,
+          36,
+          20
+        ],
+        "MNI_coordinate_ppc": [
+          36,
+          -56,
+          44
+        ],
         "modality": "Standard figure-of-eight TMS coil",
         "rationale": "Frontoparietal ignition network; global broadcast and threshold regulation. Registry EP-5 second active site. One target per participant selected based on individual fMRI functional localiser.",
         "site_selection": "Individual fMRI functional localiser (N-back task); site selected pre-scan, blinded to condition assignment"
       },
       {
         "name": "Vertex (sham control)",
-        "MNI_coordinate": [0, -30, 70],
+        "MNI_coordinate": [
+          0,
+          -30,
+          70
+        ],
         "modality": "Standard figure-of-eight TMS coil",
         "rationale": "Active control for nonspecific TMS effects"
       }
@@ -142,18 +163,30 @@
     "RMT_muscle": "First dorsal interosseus (FDI)",
     "coil_orientation_degrees": 45,
     "SOA_ms": 100,
-    "conditions": ["pIC_active", "dlPFC_PPC_active", "vertex_sham"],
+    "conditions": [
+      "pIC_active",
+      "dlPFC_PPC_active",
+      "vertex_sham"
+    ],
     "max_pulses_per_hour": 600,
     "inter_pulse_interval_s": 4
   },
   "trial_structure": {
-    "isi_ms": [2000, 2500],
+    "isi_ms": [
+      2000,
+      2500
+    ],
     "fixation_duration_ms": 500,
     "tms_to_stimulus_soa_ms": 100,
     "target": {
       "type": "Gabor patch",
       "spatial_frequency_cpd": 3,
-      "contrast_levels": [0.04, 0.08, 0.16, 0.32],
+      "contrast_levels": [
+        0.04,
+        0.08,
+        0.16,
+        0.32
+      ],
       "duration_ms": 33
     },
     "mask": {
@@ -202,9 +235,9 @@
     "effect_size_d": 0.5,
     "alpha": 0.05,
     "power": 0.9,
-    "n_required": 28,
+    "n_required": 44,
     "software": "G*Power 3.1",
-    "based_on": "Rosanova et al. (2012) TMS–EEG PCI effects; typical insula TMS interoception disruption Cohen's d ≈ 0.5"
+    "based_on": "Rosanova et al. (2012) TMS–EEG PCI effects; typical insula TMS interoception disruption Cohen's d ≈ 0.5 CORRECTED to match OSF Preregistration §Protocol 5: within-subject paired design, d=0.5, alpha=0.05, power=0.90 -> n=44 (independently reverified: statsmodels TTestPower confirms n=44 exactly). Minimum N=36 per prereg table."
   },
   "pre_registration": {
     "platform": "OSF",

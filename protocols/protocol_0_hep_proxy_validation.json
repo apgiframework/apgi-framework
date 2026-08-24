@@ -62,8 +62,8 @@
   "validation_notes": "Empirical prerequisite for all downstream protocols referencing HEP as a Πⁱ proxy. Failure of any sub-prediction (0.A, 0.B, or 0.C) constitutes a submission-blocking issue requiring protocol amendment before EP-1 through EP-6 results are submitted.",
   "submission_blocking_status": "PREREQUISITE — all three predictions must pass before HEP is used as Πⁱ proxy in EP-1 through EP-6",
   "participants": {
-    "n_target": 50,
-    "n_minimum": 40,
+    "n_target": 115,
+    "n_minimum": 115,
     "n_validation_subsample": 30,
     "inclusion_criteria": [
       "Age 18–45 years",
@@ -87,7 +87,8 @@
       "design": "Double-blind, placebo-controlled, crossover (physostigmine 1.0 mg i.v. vs. saline placebo)",
       "washout_days": 7,
       "monitoring": "Continuous ECG, blood pressure, pulse oximetry during infusion; physician present"
-    }
+    },
+    "gate_note": "N=115 is the binding gate sample per OSF Preregistration §Protocol 0. An interim descriptive readout at N=50 may be reported for operational monitoring only; it carries no gate authority and does not authorise key reconstruction for the Protocol 1 data-lock."
   },
   "apparatus": {
     "EEG": "64-channel BrainAmp DC (Brain Products GmbH) at 1000 Hz, referenced to FCz, re-referenced offline to average mastoids",
@@ -169,10 +170,10 @@
     "effect_size_r": 0.35,
     "alpha": 0.01,
     "power": 0.9,
-    "n_required": 40,
-    "n_target": 50,
+    "n_required": 115,
+    "n_target": 115,
     "software": "G*Power 3.1",
-    "based_on": "Prereg Sample-size-rationale table: 90% power to detect r=0.35, alpha=0.01, two-tailed (HEP-d' correlation); Canales-Johnson et al. (2020) HEP-interoception correlation r ~ 0.38. N=50 target includes independent validation subsample N>=30 (Pred 0.A replication criterion)."
+    "based_on": "Prereg Sample-size-rationale table: 90% power to detect r=0.35, alpha=0.01, two-tailed (HEP-d' correlation); Canales-Johnson et al. (2020) HEP-interoception correlation r ~ 0.38. N=50 target includes independent validation subsample N>=30 (Pred 0.A replication criterion). CORRECTED to match OSF Preregistration §Protocol 0 binding gate sample (N=115); prior file value (N=50) was the non-binding interim readout, not the required N."
   },
   "pre_registration": {
     "platform": "OSF",

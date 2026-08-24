@@ -116,8 +116,8 @@
   "validation_status": "specified",
   "validation_notes": "Formally specified. Parameter identifiability confirmed via simulation (Appendix A.4). Identifiability of Πⁱ from HEP confirmed via block-diagonal Fisher Information Matrix. Pred 1.A-trait, Pred 1.C, and Pred 1.D added to match registry EP-1 requirements; suprathreshold control blocks added as mandatory. P3b canonical window standardised to 250–500 ms per global ERP Window Lookup Table.",
   "participants": {
-    "n_target": 40,
-    "n_minimum": 32,
+    "n_target": 62,
+    "n_minimum": 48,
     "n_per_tertile_group": 13,
     "inclusion_criteria": [
       "Age 18–45 years",
@@ -250,12 +250,12 @@
   "primary_analysis": "Repeated-measures ANOVA: P3b_amplitude ~ condition (interoceptive/exteroceptive/dual-task) × contrast (near/supra-threshold) × cardiac_phase, with HRV and pupil diameter as covariates. FWE-correction across electrode clusters. HEP–P3b partial correlation via mixed-effects with RMSSD and pupil as fixed covariates. IA tertile × condition interaction for Pred 1.c.",
   "power_analysis": {
     "effect_size_d": 0.45,
-    "alpha": 0.05,
+    "alpha": 0.0125,
     "power": 0.8,
-    "n_required": 32,
-    "n_target": 40,
+    "n_required": 59,
+    "n_target": 62,
     "software": "G*Power 3.1",
-    "based_on": "Prereg Sample-size-rationale table: d=0.45, alpha=0.05, power=0.80 (Garfinkel et al. 2014 cardiac-phase detection effect; Canales-Johnson et al. 2020 HEP-P3b coupling). N=40 target / N=32 minimum (30 high-IA, 30 low-IA via Garfinkel SD-split)."
+    "based_on": "Prereg Sample-size-rationale table: d=0.45, alpha=0.05, power=0.80 (Garfinkel et al. 2014 cardiac-phase detection effect; Canales-Johnson et al. 2020 HEP-P3b coupling). N=40 target / N=32 minimum (30 high-IA, 30 low-IA via Garfinkel SD-split). CORRECTED to match OSF Preregistration §Protocol 1 and Paper 1 §5.3: alpha Bonferroni-corrected across 4 primary predictions (0.0125, not 0.05); d=0.45, power=0.80 -> n_required=59; enrollment target N=62 to absorb ~5% unusable datasets; minimum N=48 (power=0.70 at minimum)."
   },
   "pre_registration": {
     "platform": "OSF",

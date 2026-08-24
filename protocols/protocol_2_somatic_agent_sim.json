@@ -17,9 +17,16 @@
       "confirming_evidence": "APGI convergence within 50–80 trials; reward ratio APGI/β_SM-lesion > 1.15; APGI > GNWT-only > Pure PP in cumulative reward (all pairwise permutation p < 0.05). Advantage must emerge within 80 trials not just cumulatively.",
       "falsifying_evidence": "No significant pairwise performance advantage across all volatility conditions; or APGI fails convergence within 80 trials even when cumulative reward advantage present.",
       "confirming_thresholds": {
-        "convergence_trials_window": [50, 80],
+        "convergence_trials_window": [
+          50,
+          80
+        ],
         "reward_ratio_apgi_lesion_minimum": 1.15,
-        "pairwise_comparisons": ["APGI > GNWT-only", "APGI > Standard_PP", "GNWT-only > Standard_PP"],
+        "pairwise_comparisons": [
+          "APGI > GNWT-only",
+          "APGI > Standard_PP",
+          "GNWT-only > Standard_PP"
+        ],
         "permutation_p_threshold": 0.05,
         "advantage_emergence_trial_cap": 80
       },
@@ -35,11 +42,14 @@
       "falsifying_evidence": "Ignition uncorrelated with post-ignition behavioral adaptation; or < 60% of ignition events satisfy Πⁱ·|zⁱ| > Πᵉ·|zᵉ| (interoceptive dominance criterion independently falsified).",
       "confirming_thresholds": {
         "entropy_test": "Wilcoxon signed-rank p < 0.05",
-        "interoceptive_dominance_proportion_range": [0.70, 0.85],
+        "interoceptive_dominance_proportion_range": [
+          0.7,
+          0.85
+        ],
         "criterion": "Πⁱ·|zⁱ| > Πᵉ·|zᵉ|"
       },
       "falsifying_thresholds": {
-        "interoceptive_dominance_proportion_threshold": 0.60,
+        "interoceptive_dominance_proportion_threshold": 0.6,
         "condition": "< 60% of ignition events satisfy criterion — independently falsified"
       }
     },
@@ -49,7 +59,10 @@
       "confirming_evidence": "Cross-correlation analysis (lag −5 to +5 trials): M̂ leads θₜ crossing by ≥ 1 trial in ≥ 75% of ignition events; Kendall τ > 0.3 at negative lag.",
       "falsifying_evidence": "M̂ activation simultaneous with or lagging threshold crossing; cross-correlation peak at lag 0 or positive.",
       "confirming_thresholds": {
-        "cross_correlation_lag_range": [-5, 5],
+        "cross_correlation_lag_range": [
+          -5,
+          5
+        ],
         "m_hat_lead_trials_minimum": 1,
         "proportion_ignition_events_minimum": 0.75,
         "kendall_tau_threshold": 0.3,
@@ -67,7 +80,10 @@
       "confirming_thresholds": {
         "permutation_p_threshold": 0.05,
         "high_volatility_sigma": 0.6,
-        "comparison_lesions": ["Πⁱ-lesion (Πⁱ_eff = constant)", "α-lesion (α = 0)"],
+        "comparison_lesions": [
+          "Πⁱ-lesion (Πⁱ_eff = constant)",
+          "α-lesion (α = 0)"
+        ],
         "specificity_required": "β_SM vs. Πⁱ-lesion contrast significant at σ_env = 0.6"
       },
       "falsifying_thresholds": {
@@ -149,8 +165,14 @@
     "formula": "M̂(c,a) = γ_V·V(c,a) + γ_A·A(c,a)",
     "V_ca": "Anticipated value of action a in context c (learned via temporal difference)",
     "A_ca": "Anticipated arousal signal associated with action a in context c (proxy for SCR/heart rate)",
-    "gamma_V_range": [0.3, 0.8],
-    "gamma_A_range": [0.1, 0.5],
+    "gamma_V_range": [
+      0.3,
+      0.8
+    ],
+    "gamma_A_range": [
+      0.1,
+      0.5
+    ],
     "modulation_formula": "Πⁱ_eff = Πⁱ_baseline · exp(β · M̂(c,a))",
     "identifiability_requirement": "Block-diagonal Fisher Information Matrix; M̂ must be orthogonal to raw Πⁱ in fitting procedure — requires APGI_Somatic_Marker_Identifiability.py"
   },
@@ -158,17 +180,34 @@
     "models": [
       {
         "name": "Full APGI",
-        "free_parameters": ["θₜ", "Πⁱ", "Πᵉ", "β_SM", "α", "κ"],
+        "free_parameters": [
+          "θₜ",
+          "Πⁱ",
+          "Πᵉ",
+          "β_SM",
+          "α",
+          "κ"
+        ],
         "description": "Full model with somatic marker modulation and ignition threshold"
       },
       {
         "name": "GNWT-only",
-        "free_parameters": ["θₜ", "Πᵉ", "α", "κ"],
+        "free_parameters": [
+          "θₜ",
+          "Πᵉ",
+          "α",
+          "κ"
+        ],
         "description": "Global workspace ignition without interoceptive precision weighting (β_SM = 0, Πⁱ = 0)"
       },
       {
         "name": "Standard PP",
-        "free_parameters": ["Πⁱ", "Πᵉ", "α", "κ"],
+        "free_parameters": [
+          "Πⁱ",
+          "Πᵉ",
+          "α",
+          "κ"
+        ],
         "description": "Continuous prediction error model without ignition threshold (θₜ → 0)"
       }
     ],
@@ -227,5 +266,23 @@
     "Agent performance advantages depend on volatility magnitude; effect may not replicate in stationary environments.",
     "Pred 2.a requires a GNWT-only agent implementation that exactly parallels Full APGI except for removal of Πⁱ and β_SM; the architecture difference must be documented precisely to avoid confounding by parameter count.",
     "Pred 2.e (BIC comparison on human IGT data) requires the specific dataset to be pre-registered before analysis; post-hoc dataset selection would not satisfy the registry criterion."
-  ]
+  ],
+  "human_calibration_sample": {
+    "description": "In-vivo human IGT (Iowa Gambling Task) calibration/fitting sample, per OSF Preregistration §Protocol 2. Distinct from and NOT pooled with the in-silico simulation seeds in the top-level 'participants' block.",
+    "n_target": 80,
+    "design": "Hierarchical Bayesian model fitting",
+    "convergence_criterion": "R-hat <= 1.01",
+    "inclusion_criteria": [
+      "Age 18-55 years",
+      "Willing and able to complete IGT variants"
+    ],
+    "exclusion_criteria": [
+      "Failing catch trials (>25% error)",
+      "Task completion < 80%"
+    ],
+    "pre_registration": {
+      "platform": "OSF",
+      "url": "https://osf.io/t5hcq"
+    }
+  }
 }

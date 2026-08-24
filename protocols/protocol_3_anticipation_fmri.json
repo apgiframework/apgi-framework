@@ -95,8 +95,8 @@
   "validation_status": "specified",
   "validation_notes": "Identifiability fully resolved. β and Πⁱ orthogonality confirmed via block-diagonal Fisher Information Matrix from orthogonal fMRI + SCR channels in pre-session protocol. Pred 3.a active εⁱ control (pIC-SCR criterion) added, aINS vs. pIC dissociation specified in Pred 3.b, Bayesian null criteria added to Pred 3.b and 2.d, high-somatic-cost comparison added to Pred 3.c, dual abolition criterion added to Pred 3.d — all matching registry EP-3 requirements.",
   "participants": {
-    "n_target": 36,
-    "n_minimum": 26,
+    "n_target": 40,
+    "n_minimum": 36,
     "inclusion_criteria": [
       "Age 18–45 years",
       "Right-handedness (Edinburgh Handedness Inventory ≥ +40)",
@@ -214,13 +214,20 @@
   "primary_hypothesis": "vmPFC→aINS functional connectivity peaks during the anticipation foreperiod (Δr ≥ 0.30, p < 0.05 FWE) while vmPFC→pIC coupling is statistically flat (BF₀₁ ≥ 6, ROPE d = [−0.15, +0.15]). vmPFC BOLD is parametrically modulated by option EV during anticipation but not by outcome-locked SCR (r < 0.20), dissociating somatic marker retrieval M̂ from interoceptive prediction error εⁱ. Removing the anticipation foreperiod abolishes both vmPFC→aINS coupling and EV modulation while preserving pIC outcome-locked activity.",
   "primary_analysis": "ROI-based PPI analysis: vmPFC→aINS and vmPFC→pIC PPI coefficients compared (anticipation > outcome regressor). Bayesian equivalence for pIC null result: BF₀₁ (JZS prior r = 0.707), ROPE d = [−0.15, +0.15]. Foreperiod manipulation: mixed-effects with foreperiod length as within-participant factor; Bayesian equivalence for 0 ms condition. Somatic-cost specificity: paired t-test on vmPFC beta weights (high vs. low somatic-cost options at matched EV).",
   "power_analysis": {
-    "effect_size_r": 0.4,
+    "effect_size_d": 0.5,
     "alpha": 0.05,
-    "power": 0.9,
-    "n_required": 28,
-    "n_target_with_buffer": 36,
+    "power": 0.8,
+    "n_required": 34,
+    "n_target_enrolled": 40,
+    "n_minimum_analyzable": 36,
+    "design": "paired t-test (within-subject vmPFC->aINS PPI contrast) -- PRIMARY analysis",
+    "secondary_analysis": {
+      "design": "correlational, SECONDARY only (not primary confirmatory test)",
+      "effect_size_r": 0.4,
+      "approx_power_at_n36": 0.68
+    },
     "software": "G*Power 3.1",
-    "based_on": "Critchley et al. (2004, Brain) vmPFC-insula connectivity r ~ 0.42; Garfinkel & Critchley (2016) r = 0.40; prereg Sample-size-rationale table: N=36 target / N=28 minimum, power=0.90, providing buffer against BOLD signal loss in ventral prefrontal ROIs and 15% attrition."
+    "based_on": "CORRECTED to match OSF Preregistration §Protocol 3: primary design is paired t on PPI contrast, d=0.50 (not r=0.40 -- that is the secondary correlational analysis only), alpha=0.05, power=0.80 -> n_required=34 analyzable; N=36 adopted; N=40 enrolled to absorb ~10% motion exclusion. Literature d~0.87 (Critchley et al. 2004) treated as publication-bias-inflated, not used for the design N. NOTE: Paper 1 §5.3 states d≈0.48 for this same contrast -- a minor (0.48 vs 0.50) inconsistency with the OSF Preregistration's d=0.50 that should be corrected in Paper 1 for full consistency, though it does not change n_required at this precision."
   },
   "pre_registration": {
     "platform": "OSF",
