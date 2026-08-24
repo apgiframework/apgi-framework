@@ -27,6 +27,7 @@ Pre-registered protocols are in `protocols/` and archived on OSF at [osf.io/t5hc
 | Zenodo archive (code + seed datasets) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
 | OSF project (pre-registrations) | <https://osf.io/t5hcq> |
 | Author ORCID | <https://orcid.org/0009-0005-0328-2896> |
+| OSF Registry DOI | [10.17605/OSF.IO/YK29G](https://doi.org/10.17605/OSF.IO/YK29G) |
 
 To reproduce all figures from archived data in one command:
 

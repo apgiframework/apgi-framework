@@ -3,9 +3,9 @@ message: >
   If you use the APGI framework in published work, please cite both the
   software release and the companion paper (update the paper entry once
   the manuscript DOI is available).
-title: "APGI Framework: Adaptive Predictive Global Integration for Consciousness Research"
-version: 0.2.0
-date-released: "2026-06-06"
+title: "Allostatic Precision-Gated Ignition (APGI): Simulation and Analysis Codebase"
+version: 1.0.1
+date-released: "2026-08-24"
 license: MIT
 repository-code: "https://github.com/apgiframework/apgi-framework"
 url: "https://osf.io/t5hcq"
@@ -21,7 +21,7 @@ identifiers:
 authors:
   - family-names: Pesochin
     given-names: Dimitry
-    email: uxod.com@gmail.com
+    email: dimitry@apgiframework.com
     orcid: "https://orcid.org/0009-0005-0328-2896"
 
 keywords:
