@@ -6,7 +6,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [Unreleased]
+## [1.1.0] - 2026-10-16
 
 - `notebooks/` — all eight protocol notebooks rebuilt for protocol specification v1.1.0. Design counts and
   decision thresholds are now loaded from `protocols/*.json` (each notebook asserts `version == "1.1.0"`).
@@ -22,6 +22,33 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `notebooks/quick_start.ipynb` — adds a v1.1 parameter-registry cell that checks the library defaults
   (θ₀, γ_sig, β_SM) against the registered ranges.
 - `README.md` — notebook table updated to the actual file names and v1.1 prediction ranges.
+- `data/seeds/seed_manifest.json` (new, tracked) — release 1.1.0 record of the nine seed datasets:
+  SHA-256 and size of each `.npz`/`.csv`, the derived sub-seed, the protocol it illustrates, the
+  figure scripts that read it, and its alignment with the v1.1.0 participants block. Five datasets
+  keep their v1.0 simulated designs (`sim0`, `sim2`, `sim6`, `sim7`, `sim8`); `sim5` matches v1.1;
+  `sim1`, `sim3` and `sim4` simulate no cohort. The manifest also records the generating
+  environment. Written by `data/generate_seeds.py` on a full run, or rebuilt with `--manifest`.
+- `data/generate_seeds.py` — `_save()` no longer passes `allow_pickle=True` to
+  `np.savez_compressed`: NumPy < 2.1 stored it as a stray `allow_pickle` array in every archive,
+  so the file bytes depended on the NumPy version. `--verify` now compares against
+  `data/checksums.sha256` and exits 1 on mismatch (it previously only printed digests).
+  `--dataset` accepts comma-separated prefixes and also limits `--verify`.
+- `data/checksums.sha256`, `src/apgi/scripts/fetch_data.py` — digests regenerated in the pinned
+  reference stack (Python 3.11, NumPy 1.26.4, SciPy 1.13.0, linux-x86_64). The previous digests
+  could not be reproduced on Linux with either NumPy 1.26.4 or 2.4.6. Array contents are unchanged
+  apart from the dropped stray key and floating-point differences at the last bit (≤ 4e-15) in
+  `sim5` and `sim6`. The Zenodo v1.0 record holds no seed files, so `apgi-fetch` downloads cannot
+  succeed until the datasets are deposited.
+- `binder/postBuild` (new) — regenerates `data/seeds/` at image build time (all datasets except
+  `sim2`, whose ~2 h MLE sweep exceeds a Binder build and has no consumer) and checks it against
+  `data/checksums.sha256`. `binder/environment.yml` adds `h5py`.
+- `.gitignore` — ignores `data/seeds/*` but tracks `data/seeds/seed_manifest.json`.
+- `pyproject.toml`, `zenodo.json`, `CITATION.cff` — version 1.1.0. The project name is unified as
+  *Allostatic Precision-Gated Ignition* (previously also "Adaptive Predictive Global Integration" and
+  "Allostatic Predictive Gating Ignition"). `zenodo.json` now lists all nine seed datasets (sim0–sim8),
+  and `CITATION.cff` describes the Zenodo v1.0 record as manuscripts plus protocol battery.
+- `README.md` — fixes the "Precission" typo; the Data section now explains local seed regeneration and
+  the manifest, since the seed files are not yet on Zenodo; BibTeX gains `version = {1.1.0}`.
 
 ---
 

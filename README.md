@@ -1,6 +1,6 @@
 # APGI Framework
 
-**Allostatic Predictive Gating Ignition** — a computational framework for consciousness research.
+**Allostatic Precision-Gated Ignition** — a computational framework for consciousness research.
 
 [![CI](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml/badge.svg)](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632264.svg)](https://doi.org/10.5281/zenodo.21632264)
@@ -12,8 +12,8 @@
 
 ## Manuscript
 
-> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Precission-Gated Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
-> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX) 
+> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Precision-Gated Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
+> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
 
 This repository is the companion code release for the paper series above.
 All figures in Papers 1–3 are reproduced by scripts in `figures/` and `scripts/`.
@@ -24,7 +24,7 @@ Version 1.1 protocol specifications are in `protocols/`. The OSF project is [osf
 | Resource | Location |
 | :--- | :--- |
 | Code repository | <https://github.com/apgiframework/apgi-framework> |
-| Zenodo archive (code + seed datasets) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
+| Zenodo archive (manuscripts + protocol battery, v1.0) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
 | OSF project (pre-registrations) | <https://osf.io/t5hcq> |
 | Author ORCID | <https://orcid.org/0009-0005-0328-2896> |
 | OSF Registry DOI | [10.17605/OSF.IO/YK29G](https://doi.org/10.17605/OSF.IO/YK29G) |
@@ -70,7 +70,9 @@ apgi-framework/
 ├── figures/               # figure scripts + output PDFs
 ├── scripts/               # standalone CLI helpers
 ├── data/                  # local data cache + seed datasets
-│   ├── seeds/             # .npz + .csv + .h5 (sim3) seed files
+│   ├── seeds/             # .npz + .csv + .h5 (sim3) seed files (generated, not committed)
+│   │   └── seed_manifest.json  # tracked v1.1.0 release record of the seed files
+│   ├── generate_seeds.py  # deterministic seed generator (MASTER_SEED = 2025)
 │   └── checksums.sha256
 ├── DATA_DICTIONARY.md     # full variable codebook for all seed datasets
 └── POWER_ANALYSIS.md      # sample-size and power justifications
@@ -193,20 +195,27 @@ clinical interpreter, parameter recovery, LNN, bifurcation analysis, and five-le
 
 ## Data
 
-Simulation outputs are hosted on Zenodo (DOI: [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264)).
-Download pre-computed results with the installed CLI:
+The nine synthetic seed datasets (`sim0`–`sim8`) are not yet deposited on Zenodo; the v1.0 record
+([10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264)) holds the manuscripts and protocol battery.
+Regenerate them locally and check them against the release checksums:
 
 ```bash
-apgi-fetch            # download all datasets
-apgi-fetch --list     # list available datasets
-apgi-fetch --dataset sim1_ignition_dynamics
+python data/generate_seeds.py                    # all nine datasets → data/seeds/ (sim2 takes ~2 h)
+python data/generate_seeds.py --dataset sim0,sim5
+python data/generate_seeds.py --verify           # compare with data/checksums.sha256
+bash reproduce_all.sh --local                    # figures from the local seeds
 ```
 
-Checksums are recorded in [`data/checksums.sha256`](data/checksums.sha256).
+Once the datasets are deposited, `apgi-fetch` (`--list`, `--dataset NAME`, `--verify`) downloads them instead.
+Binder builds `data/seeds/` automatically (`binder/postBuild`, all datasets except `sim2`).
+
+Checksums are recorded in [`data/checksums.sha256`](data/checksums.sha256); the release record
+[`data/seeds/seed_manifest.json`](data/seeds/seed_manifest.json) adds each dataset's seed, consumers,
+generating environment and alignment with protocol specification v1.1.0.
 Full variable codebook: [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md).
 Sample-size justifications: [`POWER_ANALYSIS.md`](POWER_ANALYSIS.md).
 
-The LNN trajectory dataset (`sim3_liquid_network`) is also deposited as
+The LNN trajectory dataset (`sim3_liquid_network`) is also written as
 `sim3_liquid_network.h5` (HDF5, gzip-compressed) for direct use in
 MNE-Python, NWB tools, MATLAB (`h5read`), and Julia (`HDF5.jl`):
 
@@ -223,7 +232,7 @@ close(fid)
 
 ## Experimental protocols
 
-The eight protocol specifications use version `1.1.0` (protocol release version, independent of the Python package version). They contain 40 prediction records. Source conflicts and pending analysis locks are documented in `protocols/CHANGELOG.md`; JSON validation does not establish empirical validation or study readiness.
+The eight protocol specifications use version `1.1.0` (protocol release version). They contain 40 prediction records. Source conflicts and pending analysis locks are documented in `protocols/CHANGELOG.md`; JSON validation does not establish empirical validation or study readiness.
 
 | File | Paradigm | Predictions |
 | :--- | :--- | :--- |
@@ -252,6 +261,7 @@ An external release folder can be supplied as the first argument. Add `--source-
   author  = {Pesochin, Dimitry},
   title   = {APGI Framework},
   year    = {2026},
+  version = {1.1.0},
   doi     = {10.5281/zenodo.21632264},
   url     = {https://github.com/apgiframework/apgi-framework},
   note    = {ORCID: 0009-0005-0328-2896. Pre-registrations: https://osf.io/t5hcq}

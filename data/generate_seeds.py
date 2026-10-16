@@ -131,7 +131,7 @@ def _save_hdf5(
 
     dest_h5 = dest_npz.with_suffix(".h5")
     with h5py.File(dest_h5, "w") as f:
-        f.attrs["apgi_version"] = "0.2.0"
+        f.attrs["apgi_version"] = RELEASE
         f.attrs["master_seed"] = int(metadata.get("master_seed", 0)) if metadata else 0
         f.attrs["source_npz"] = dest_npz.name
 

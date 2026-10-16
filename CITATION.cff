@@ -4,8 +4,8 @@ message: >
   software release and the companion paper (update the paper entry once
   the manuscript DOI is available).
 title: "Allostatic Precision-Gated Ignition (APGI): Simulation and Analysis Codebase"
-version: 1.0.1
-date-released: "2026-08-24"
+version: 1.1.0
+date-released: "2026-10-16"
 license: MIT
 repository-code: "https://github.com/apgiframework/apgi-framework"
 url: "https://osf.io/t5hcq"
@@ -13,7 +13,7 @@ doi: "10.5281/zenodo.21632264"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21632264"
-    description: "Zenodo archive of the APGI Framework software and seed datasets"
+    description: "Zenodo archive of the APGI manuscripts and protocol battery (v1.0)"
   - type: url
     value: "https://osf.io/t5hcq"
     description: "OSF project — pre-registered protocols for the APGI paper series"
@@ -37,7 +37,7 @@ keywords:
 references:
   - type: article
     title: >
-      Adaptive Predictive Global Integration: A Computational Framework for
+      Allostatic Precision-Gated Ignition: A Computational Framework for
       Consciousness (Paper 1)
     authors:
       - family-names: Pesochin
@@ -49,6 +49,9 @@ references:
 
   - type: software
     title: "APGI Framework"
-    version: 1.0.0
+    authors:
+      - family-names: Pesochin
+        given-names: Dimitry
+    version: 1.1.0
     doi: "10.5281/zenodo.21632264"
     url: "https://github.com/apgiframework/apgi-framework"
