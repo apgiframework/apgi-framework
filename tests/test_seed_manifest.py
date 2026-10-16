@@ -69,3 +69,71 @@ def test_manifest_sub_seeds_follow_master_seed(manifest):
     master = manifest["generator"]["master_seed"]
     expected = np.random.default_rng(master).integers(0, 2**31, len(manifest["datasets"]))
     assert [d["sub_seed"] for d in manifest["datasets"]] == [int(s) for s in expected]
+
+
+def test_manifest_records_content_fingerprints(manifest):
+    for d in manifest["datasets"]:
+        assert d["content"], d["name"]
+        for key, entry in d["content"].items():
+            assert entry["kind"] in {"f", "i", "u", "b", "U", "S", "O"}, (d["name"], key)
+            assert ("sum" in entry) == (entry["kind"] == "f"), (d["name"], key)
+
+
+@pytest.fixture(scope="module")
+def generate_seeds():
+    import importlib
+    import sys
+
+    sys.path.insert(0, str(ROOT))
+    return importlib.import_module("data.generate_seeds")
+
+
+def _write(path, **arrays):
+    np = pytest.importorskip("numpy")
+    np.savez_compressed(path, **arrays)
+    return path
+
+
+def test_content_fingerprint_ignores_compression_and_last_bit_noise(tmp_path, generate_seeds):
+    import zipfile
+
+    np = pytest.importorskip("numpy")
+    rng = np.random.default_rng(0)
+    x = rng.normal(size=5_000)
+    labels = np.array(["a", "b"] * 10)
+    ref = _write(tmp_path / "ref.npz", x=x, flag=x > 0, labels=labels, n=np.array(7))
+    noisy = _write(
+        tmp_path / "noisy.npz",
+        x=np.nextafter(x, np.inf),  # every value moved by one ULP
+        flag=x > 0,
+        labels=labels,
+        n=np.array(7),
+        allow_pickle=np.array(True),  # stray key from old generator versions
+    )
+    # Same arrays, different compression level: different file bytes.
+    recompressed = tmp_path / "recompressed.npz"
+    with zipfile.ZipFile(ref) as src, zipfile.ZipFile(
+        recompressed, "w", zipfile.ZIP_DEFLATED, compresslevel=1
+    ) as dst:
+        for info in src.infolist():
+            dst.writestr(info.filename, src.read(info.filename))
+
+    fp = generate_seeds._content_fingerprint
+    diff = generate_seeds._content_differences
+    assert ref.read_bytes() != recompressed.read_bytes()
+    assert diff(fp(ref), fp(recompressed)) == []
+    assert diff(fp(ref), fp(noisy)) == []
+
+
+def test_content_fingerprint_detects_real_changes(tmp_path, generate_seeds):
+    np = pytest.importorskip("numpy")
+    x = np.random.default_rng(0).normal(size=1_000)
+    ref = _write(tmp_path / "ref.npz", x=x, n=np.array(7))
+    fp = generate_seeds._content_fingerprint
+    diff = generate_seeds._content_differences
+    shifted = x.copy()
+    shifted[0] += 1e-6
+    assert diff(fp(ref), fp(_write(tmp_path / "a.npz", x=shifted, n=np.array(7)))) == ["x"]
+    assert diff(fp(ref), fp(_write(tmp_path / "b.npz", x=x, n=np.array(8)))) == ["n"]
+    assert diff(fp(ref), fp(_write(tmp_path / "c.npz", x=x[:-1], n=np.array(7)))) == ["x"]
+    assert diff(fp(ref), fp(_write(tmp_path / "d.npz", x=x))) == ["n"]

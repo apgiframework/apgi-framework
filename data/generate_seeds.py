@@ -1479,52 +1479,134 @@ def _read_checksums() -> dict[str, str]:
     return expected
 
 
-# Digests published before release 1.1.0. Files with these digests were made
-# by the old generator (stray allow_pickle array) and must be regenerated.
-PRE_1_1_DIGESTS = {
-    "160d19715985eea2b488e145a10be5de44a62a1ff2fcecb1877285571d430ead",
-    "975c608534c72424bab023f64a2bf0205379fa3a76a401e853766b632dad7946",
-    "bca75d35b6445bfc2058fda562cf6313e8ce9b2a1ff0d5dbdb02479a9dfb53bb",
-    "b61cc629f35ad83edf2f1c4aff165fef8b30814461bdb64e5be67d5e6d35a1b1",
-    "fc9ec5decb337dcf190fa164ced6a8aaaf4523b1c7f2f6d2d2409ac1cb0c23aa",
-    "1788cc8b1c76de2c86671eed616014a9283acd762d50853776a88e6a8a6bcdbc",
-    "9aa0badbfd58ef8f760105115f76c8ce613afb17313a54f70df8efbe78c0e293",
-    "654b7bd8a6cc5b48af14f82d6c5d7511aaf6c2805797d40ed502b6bca9df6759",
-    "b235616778670083cc4c78e18cf969132ce6d221a63921ac823b40af7cbe8012",
-}
+FLOAT_RTOL = 1e-9  # far above last-bit platform noise, far below any real change
+
+
+def _exact_bytes(arr: np.ndarray) -> bytes:
+    """Platform-independent bytes for non-float arrays (int64 LE, uint8, UTF-8 text)."""
+    kind = arr.dtype.kind
+    if kind in "iu":
+        return np.asarray(arr, dtype="<i8").tobytes()
+    if kind == "b":
+        return np.asarray(arr, dtype="u1").tobytes()
+    if kind in "US":
+        return "\0".join(str(x) for x in np.asarray(arr).ravel()).encode("utf-8")
+    return "\0".join(repr(x) for x in np.asarray(arr, dtype=object).ravel()).encode("utf-8")
+
+
+def _content_fingerprint(path: pathlib.Path) -> dict[str, dict]:
+    """Per-array fingerprint of an .npz archive, independent of zip/zlib bytes.
+
+    The compressed file bytes differ between platforms (macOS and Linux link
+    different zlib builds), and float math can differ in the last bit between
+    x86-64 and arm64, so the file digest alone cannot verify a regenerated
+    dataset. Non-float arrays get an exact SHA-256; float arrays get summary
+    statistics compared at FLOAT_RTOL. The stray ``allow_pickle`` array written
+    by older generator versions is ignored.
+    """
+    out: dict[str, dict] = {}
+    with np.load(path, allow_pickle=True) as d:
+        for key in sorted(k for k in d.files if k != "allow_pickle"):
+            arr = d[key]
+            entry: dict = {"kind": arr.dtype.kind, "shape": list(arr.shape)}
+            if arr.dtype.kind == "f":
+                a = np.asarray(arr, dtype=np.float64).ravel()
+                finite = a[np.isfinite(a)]
+                entry.update(
+                    n_nonfinite=int(a.size - finite.size),
+                    sum=float(finite.sum()),
+                    abssum=float(np.abs(finite).sum()),
+                    sumsq=float(np.square(finite).sum()),
+                    min=float(finite.min()) if finite.size else 0.0,
+                    max=float(finite.max()) if finite.size else 0.0,
+                )
+            else:
+                entry["sha256"] = hashlib.sha256(_exact_bytes(arr)).hexdigest()
+            out[key] = entry
+    return out
+
+
+def _content_differences(ref: dict[str, dict], got: dict[str, dict]) -> list[str]:
+    """Names of arrays whose fingerprints disagree (empty list = same content)."""
+    diffs = [k for k in sorted(set(ref) ^ set(got))]
+    for key in sorted(set(ref) & set(got)):
+        r, g = ref[key], got[key]
+        if r["kind"] != g["kind"] or r["shape"] != g["shape"]:
+            diffs.append(key)
+        elif r["kind"] != "f":
+            if r["sha256"] != g["sha256"]:
+                diffs.append(key)
+        else:
+            scale = max(r["abssum"], 1e-300)
+            extreme = max(abs(r["min"]), abs(r["max"]), 1e-300)
+            close = (
+                r["n_nonfinite"] == g["n_nonfinite"]
+                and abs(r["sum"] - g["sum"]) <= FLOAT_RTOL * scale
+                and abs(r["abssum"] - g["abssum"]) <= FLOAT_RTOL * scale
+                and abs(r["sumsq"] - g["sumsq"]) <= FLOAT_RTOL * max(r["sumsq"], 1e-300)
+                and abs(r["min"] - g["min"]) <= FLOAT_RTOL * extreme
+                and abs(r["max"] - g["max"]) <= FLOAT_RTOL * extreme
+            )
+            if not close:
+                diffs.append(key)
+    return diffs
+
+
+def _read_content_fingerprints() -> dict[str, dict]:
+    """Return {filename: content fingerprint} from the seed manifest, if present."""
+    import json
+
+    if not MANIFEST_FILE.exists():
+        return {}
+    manifest = json.loads(MANIFEST_FILE.read_text())
+    return {d["file"]: d["content"] for d in manifest["datasets"] if "content" in d}
 
 
 def _verify(paths: list[pathlib.Path]) -> bool:
-    """Compare each seed file against data/checksums.sha256."""
+    """Check each seed file against the release record.
+
+    OK when the file digest matches data/checksums.sha256, or when the file's
+    arrays match the manifest's content fingerprint (the file was regenerated on a
+    platform whose zlib compresses differently).
+    """
     expected = _read_checksums()
+    expected_content = _read_content_fingerprints()
     ok = True
-    stale = False
+    content_only = False
     for p in paths:
         if not p.exists():
             print(f"  MISSING  {p.name}")
             ok = False
             continue
         digest = _sha256(p)
-        if p.name not in expected:
+        if expected.get(p.name) == digest:
+            print(f"  OK       {p.name}  {digest[:16]}…")
+            continue
+        diffs = (
+            _content_differences(expected_content[p.name], _content_fingerprint(p))
+            if p.name in expected_content
+            else None
+        )
+        if diffs == []:
+            print(f"  OK       {p.name}  same content  (file bytes differ)")
+            content_only = True
+        elif p.name not in expected:
             print(f"  UNKNOWN  {p.name}  {digest[:16]}…  (no entry in {CHECKSUM_FILE.name})")
             ok = False
-        elif digest != expected[p.name]:
-            note = "  (pre-1.1.0 file)" if digest in PRE_1_1_DIGESTS else ""
-            stale = stale or bool(note)
-            print(f"  MISMATCH {p.name}  {digest[:16]}… != {expected[p.name][:16]}…{note}")
-            ok = False
         else:
-            print(f"  OK       {p.name}  {digest[:16]}…")
-    if stale:
+            detail = f"arrays differ: {', '.join(diffs[:4])}" if diffs else "no content record"
+            print(f"  MISMATCH {p.name}  {digest[:16]}…  ({detail})")
+            ok = False
+    if content_only:
         print(
-            "\n  Files marked pre-1.1.0 were made by the old generator; regenerate them with\n"
-            "  `python data/generate_seeds.py --dataset NAME[,NAME...]` (or no flag for all)."
+            "\n  'file bytes differ': the arrays match the release, but this platform's zlib\n"
+            "  compressed them differently, so the file digest cannot match."
         )
-    elif not ok:
+    if not ok:
         print(
-            "\n  Regenerate with `python data/generate_seeds.py`. If digests still differ, compare\n"
-            "  your Python/NumPy/SciPy/platform with the 'environment' block of\n"
-            "  data/seeds/seed_manifest.json; last-bit float differences change the digest."
+            "\n  Regenerate with `python data/generate_seeds.py --dataset NAME[,NAME...]`.\n"
+            "  If contents still differ, compare your environment with the 'environment'\n"
+            "  block of data/seeds/seed_manifest.json."
         )
     return ok
 
@@ -1653,6 +1735,24 @@ def _environment() -> dict:
     }
 
 
+FETCH_REGISTRY = ROOT / "src" / "apgi" / "scripts" / "fetch_data.py"
+
+
+def _sync_fetch_registry() -> None:
+    """Copy digests from data/checksums.sha256 into the apgi-fetch DATASETS registry."""
+    import re
+
+    text = FETCH_REGISTRY.read_text()
+    for filename, digest in _read_checksums().items():
+        stem = filename.removesuffix(".npz")
+        pattern = re.compile(r'(\n        "%s",\n        ")[0-9a-f]{64}(")' % re.escape(filename))
+        text, n = pattern.subn(lambda m: m.group(1) + digest + m.group(2), text)
+        if n != 1:
+            raise RuntimeError(f"{stem}: registry entry not found in {FETCH_REGISTRY}")
+    FETCH_REGISTRY.write_text(text)
+    print(f"  Updated {FETCH_REGISTRY.relative_to(ROOT)}")
+
+
 def _write_manifest(master_seed: int) -> pathlib.Path:
     """Write data/seeds/seed_manifest.json from the files currently in SEED_DIR.
 
@@ -1686,6 +1786,7 @@ def _write_manifest(master_seed: int) -> pathlib.Path:
                 "bytes": csv_path.stat().st_size,
             }
         entry.update(CATALOGUE[stem])
+        entry["content"] = _content_fingerprint(npz)
         datasets.append(entry)
 
     manifest = {
@@ -1758,7 +1859,10 @@ def main() -> None:
     parser.add_argument(
         "--manifest",
         action="store_true",
-        help="Rewrite data/seeds/seed_manifest.json from existing seed files.",
+        help=(
+            "Rewrite data/checksums.sha256, the apgi-fetch registry and "
+            "data/seeds/seed_manifest.json from the existing seed files."
+        ),
     )
     args = parser.parse_args()
 
@@ -1777,6 +1881,9 @@ def main() -> None:
         return
 
     if args.manifest:
+        paths = [SEED_DIR / name for name, _ in GENERATORS]
+        _write_checksums(paths)
+        _sync_fetch_registry()
         _write_manifest(args.seed)
         return
 
@@ -1797,6 +1904,7 @@ def main() -> None:
         generated.append(path)
 
     _write_checksums(generated)
+    _sync_fetch_registry()
     _write_manifest(args.seed)
     print("\nDone. Next steps:")
     print(

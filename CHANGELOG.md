@@ -32,14 +32,21 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `np.savez_compressed`: NumPy < 2.1 stored it as a stray `allow_pickle` array in every archive,
   so the file bytes depended on the NumPy version. `--verify` now compares against
   `data/checksums.sha256` and exits 1 on mismatch (it previously only printed digests).
-  `--dataset` accepts comma-separated prefixes and also limits `--verify`. `--verify` marks files
-  that still carry a pre-1.1.0 digest and says how to regenerate them.
-- `data/checksums.sha256`, `src/apgi/scripts/fetch_data.py` — digests regenerated in the pinned
-  reference stack (Python 3.11, NumPy 1.26.4, SciPy 1.13.0, linux-x86_64). The previous digests
-  could not be reproduced on Linux with either NumPy 1.26.4 or 2.4.6. Array contents are unchanged
-  apart from the dropped stray key and floating-point differences at the last bit (≤ 4e-15) in
-  `sim5` and `sim6`. The Zenodo v1.0 record holds no seed files, so `apgi-fetch` downloads cannot
-  succeed until the datasets are deposited.
+  `--dataset` accepts comma-separated prefixes and also limits `--verify`. `--verify` falls back to
+  a per-array content fingerprint stored in the manifest (exact hashes for integer, boolean and text
+  arrays; sum, sum of squares, min, max and non-finite count for floats, compared at a relative
+  tolerance of 1e-9), so a dataset regenerated on another platform verifies even though its
+  compressed bytes differ. `--manifest` also rewrites `data/checksums.sha256` and the `apgi-fetch`
+  registry from the local files.
+- `data/checksums.sha256`, `src/apgi/scripts/fetch_data.py` — file digests now come from the
+  Binder reference stack (Python 3.11, NumPy 1.26.4, SciPy 1.13.0, linux-x86_64). The previous
+  digests were produced on macOS arm64 and still reproduce there: `.npz` archives are
+  zlib-compressed, and macOS and Linux link different zlib builds, so identical arrays give
+  different file bytes. Array contents are the same on both platforms apart from last-bit
+  floating-point differences (≤ 4e-15). Before depositing to Zenodo, run
+  `python data/generate_seeds.py --manifest` on the machine whose files are uploaded so the
+  checksums and `apgi-fetch` registry match those exact files. The Zenodo v1.0 record holds no seed
+  files, so `apgi-fetch` downloads cannot succeed until the datasets are deposited.
 - `binder/postBuild` (new) — regenerates `data/seeds/` at image build time (all datasets except
   `sim2`, whose ~2 h MLE sweep exceeds a Binder build and has no consumer) and checks it against
   `data/checksums.sha256`. `binder/environment.yml` adds `h5py`.

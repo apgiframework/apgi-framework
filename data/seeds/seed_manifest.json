@@ -4,7 +4,7 @@
   "generated": "2026-10-16",
   "generator": {
     "script": "data/generate_seeds.py",
-    "sha256": "43e2b0db87f69e43ff6e442b20b5f08617249ac991baa50e4426dd5c301ecb93",
+    "sha256": "493631d20a5915474df0d82b07f7ac40fb03138b5daef22595dc679a6b76463f",
     "master_seed": 2025,
     "sub_seed_rule": "np.random.default_rng(master_seed).integers(0, 2**31, 9), in file order"
   },
@@ -38,7 +38,280 @@
       ],
       "seed_design": "N=60 (main 30 + replication 30); physostigmine arm n=30",
       "v1_1_alignment": "differs",
-      "v1_1_note": "v1.1 registers N=115 primary plus an independent N>=30 validation sample and replaces heartbeat counting with discrimination; the seed keeps the v1.0 60-subject design and v1.0 Pred 0.A-0.C thresholds."
+      "v1_1_note": "v1.1 registers N=115 primary plus an independent N>=30 validation sample and replaces heartbeat counting with discrimination; the seed keeps the v1.0 60-subject design and v1.0 Pred 0.A-0.C thresholds.",
+      "content": {
+        "_meta_criterion_met_pred_0a_main": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_0a_repl": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_0b": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_0c": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "18c7ea9a117d59cfbabbd8915a479555720b02384bd1d735e6ba5572ec2fe988"
+        },
+        "_meta_hep_pi_i_mapping": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "bc2848c3dd3fc14c839934ccf1b3bc6d78528397df7313e80cc80141e756e2d4"
+        },
+        "_meta_hep_window_ms_hi": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "1e7be6b7b822671624a11e5bad13b99f401945b10fce09c9b3a6e746970c1ad3"
+        },
+        "_meta_hep_window_ms_lo": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "4e8e14f0ac28d4a6840065d73ba438653d810ecc41ec9b7509615e009a5f3da4"
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "18d25cdd94a916239bf0650a3473b18286a1c7e420267580f80fd8be4a00af05"
+        },
+        "_meta_mean_ains_coupling": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.39107562466285617,
+          "abssum": 0.39107562466285617,
+          "sumsq": 0.15294014420544316,
+          "min": 0.39107562466285617,
+          "max": 0.39107562466285617
+        },
+        "_meta_mean_physo_hep_increase_pct": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 19.716970914617587,
+          "abssum": 19.716970914617587,
+          "sumsq": 388.7589420478759,
+          "min": 19.716970914617587,
+          "max": 19.716970914617587
+        },
+        "_meta_n_main": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_physostigmine": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_replication": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_total": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "3fe8adee83a670dd3131f667e963775b2256f3f59d5a996984eb47f8375efd7c"
+        },
+        "_meta_physo_cohens_d": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 7.891786497232903,
+          "abssum": 7.891786497232903,
+          "sumsq": 62.280294117907566,
+          "min": 7.891786497232903,
+          "max": 7.891786497232903
+        },
+        "_meta_pi_i_resting_estimate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.0,
+          "abssum": 1.0,
+          "sumsq": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "_meta_r_hep_dprime_main": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.5453645878062822,
+          "abssum": 0.5453645878062822,
+          "sumsq": 0.29742253363311605,
+          "min": 0.5453645878062822,
+          "max": 0.5453645878062822
+        },
+        "_meta_r_hep_dprime_replication": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3282113684890967,
+          "abssum": 0.3282113684890967,
+          "sumsq": 0.10772270240548562,
+          "min": 0.3282113684890967,
+          "max": 0.3282113684890967
+        },
+        "ains_coupling": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 23.46453747977137,
+          "abssum": 23.46453747977137,
+          "sumsq": 9.940275987990434,
+          "min": 0.14985216179359362,
+          "max": 0.6538915641723901
+        },
+        "d_prime": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 120.43917485644698,
+          "abssum": 120.43917485644698,
+          "sumsq": 261.7861673888606,
+          "min": 0.7842348040750233,
+          "max": 3.0439908765325825
+        },
+        "hep_amplitude": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 205.96484870215423,
+          "abssum": 205.96484870215423,
+          "sumsq": 722.4017981827725,
+          "min": 2.2680747116614093,
+          "max": 4.769917185472623
+        },
+        "hep_physostigmine": {
+          "kind": "f",
+          "shape": [
+            30
+          ],
+          "n_nonfinite": 0,
+          "sum": 124.03077893619422,
+          "abssum": 124.03077893619422,
+          "sumsq": 528.2165180154839,
+          "min": 2.778888464743583,
+          "max": 5.6161209233345515
+        },
+        "hep_placebo": {
+          "kind": "f",
+          "shape": [
+            30
+          ],
+          "n_nonfinite": 0,
+          "sum": 103.60135270024631,
+          "abssum": 103.60135270024631,
+          "sumsq": 368.40915574007073,
+          "min": 2.2680747116614093,
+          "max": 4.769917185472623
+        },
+        "physo_delta_pct": {
+          "kind": "f",
+          "shape": [
+            30
+          ],
+          "n_nonfinite": 0,
+          "sum": 591.5091274385276,
+          "abssum": 591.5091274385276,
+          "sumsq": 11850.030836647567,
+          "min": 12.607887281984906,
+          "max": 24.06667637410522
+        },
+        "physo_flag": {
+          "kind": "b",
+          "shape": [
+            60
+          ],
+          "sha256": "09543bdc4a9b0fcacd85c426d45ef1eefe235a8936f7024185eb209acb5988b2"
+        },
+        "pi_i_true": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 59.32532612987395,
+          "abssum": 59.32532612987395,
+          "sumsq": 61.10514648716308,
+          "min": 0.5717501594544141,
+          "max": 1.362756323438129
+        },
+        "pupil_diameter": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 268.8879577598685,
+          "abssum": 268.8879577598685,
+          "sumsq": 1224.933828544266,
+          "min": 3.1470436482003894,
+          "max": 5.982287204337021
+        },
+        "pupil_physo": {
+          "kind": "f",
+          "shape": [
+            30
+          ],
+          "n_nonfinite": 0,
+          "sum": 114.6820678355768,
+          "abssum": 114.6820678355768,
+          "sumsq": 442.9191562458603,
+          "min": 2.978074543844236,
+          "max": 4.660734105518664
+        },
+        "pupil_placebo": {
+          "kind": "f",
+          "shape": [
+            30
+          ],
+          "n_nonfinite": 0,
+          "sum": 133.45750323215248,
+          "abssum": 133.45750323215248,
+          "sumsq": 598.0432046899755,
+          "min": 3.8718945193264247,
+          "max": 5.380474132765275
+        },
+        "rmssd": {
+          "kind": "f",
+          "shape": [
+            60
+          ],
+          "n_nonfinite": 0,
+          "sum": 2518.5997059539604,
+          "abssum": 2518.5997059539604,
+          "sumsq": 112710.30764511702,
+          "min": 11.276258002838517,
+          "max": 64.09811169525109
+        },
+        "sample_label": {
+          "kind": "U",
+          "shape": [
+            60
+          ],
+          "sha256": "83bb5df2ffe275034f68130fa07426cb4eb5471d4c71226a13f3471cd440fdb5"
+        }
+      }
     },
     {
       "name": "sim1_ignition_dynamics",
@@ -56,7 +329,240 @@
       "consumers": [],
       "seed_design": "10 000 simulated trials, one synthetic session",
       "v1_1_alignment": "not_applicable",
-      "v1_1_note": "Trial-level model simulation; no participant count. v1.1 cohort (62 enrolled / 59 analyzable / 48 floor) is not simulated."
+      "v1_1_note": "Trial-level model simulation; no participant count. v1.1 cohort (62 enrolled / 59 analyzable / 48 floor) is not simulated.",
+      "content": {
+        "C_metabolic": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 12487.393529802253,
+          "abssum": 12487.393529802253,
+          "sumsq": 17497.712491734786,
+          "min": 0.5001634647827035,
+          "max": 1.9999361336180113
+        },
+        "S_t": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 11364.557297734602,
+          "abssum": 11364.557297734602,
+          "sumsq": 14378.828113964877,
+          "min": 0.2554730068484988,
+          "max": 2.4330645058294738
+        },
+        "S_t_cardiac": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 11813.683177305556,
+          "abssum": 11813.683177305556,
+          "sumsq": 15988.22522905123,
+          "min": 0.2392791341031344,
+          "max": 2.957977942255598
+        },
+        "V_information": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 5517.211884185433,
+          "abssum": 5517.211884185433,
+          "sumsq": 3716.954927419234,
+          "min": 0.10044314352197942,
+          "max": 0.9999714152271113
+        },
+        "_meta_alpha": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3,
+          "abssum": 0.3,
+          "sumsq": 0.09,
+          "min": 0.3,
+          "max": 0.3
+        },
+        "_meta_beta_initial_estimate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.7,
+          "abssum": 0.7,
+          "sumsq": 0.48999999999999994,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "_meta_beta_sm": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.6,
+          "abssum": 0.6,
+          "sumsq": 0.36,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "00b9b46f9a0b855f61a5f8a338637ec6ee419815f8ed1b57de6da049f1906ad7"
+        },
+        "_meta_ignition_rate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.4633,
+          "abssum": 0.4633,
+          "sumsq": 0.21464688999999998,
+          "min": 0.4633,
+          "max": 0.4633
+        },
+        "_meta_ignition_rate_diastole": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.638,
+          "abssum": 0.638,
+          "sumsq": 0.407044,
+          "min": 0.638,
+          "max": 0.638
+        },
+        "_meta_ignition_rate_systole": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3274,
+          "abssum": 0.3274,
+          "sumsq": 0.10719076000000001,
+          "min": 0.3274,
+          "max": 0.3274
+        },
+        "_meta_kappa": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+        },
+        "_meta_m_hat_baseline": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.0,
+          "abssum": 0.0,
+          "sumsq": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "cde5b8848ca6f5cf4bc1ddf920f7607e4b0c8f56433a731644a4fa2e989d30df"
+        },
+        "_meta_n_trials": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "8e965763e6a4bbc1088a94bf6c9cb3cbbdb4955f88355c807362a0fd43de4e3a"
+        },
+        "cardiac_phase": {
+          "kind": "i",
+          "shape": [
+            10000
+          ],
+          "sha256": "dafe6df0ebeddde16fabaa7b02a54ce8a5f5fc366f40162c360f49549d442c8e"
+        },
+        "ignition": {
+          "kind": "b",
+          "shape": [
+            10000
+          ],
+          "sha256": "44998660af60c0003fed9afaeeadd3a7a58b36e7b53b506a7abf3eba757a3b7c"
+        },
+        "ignition_cardiac": {
+          "kind": "b",
+          "shape": [
+            10000
+          ],
+          "sha256": "3a265c60e5c96569986560786ea50be333a19c401dd6288fb38d32b9da75af96"
+        },
+        "pi_e": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 11497.01420054317,
+          "abssum": 11497.01420054317,
+          "sumsq": 13627.539577975187,
+          "min": 0.8000079855878085,
+          "max": 1.499928227653085
+        },
+        "pi_i": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 9975.740505905587,
+          "abssum": 9975.740505905587,
+          "sumsq": 10785.068489911018,
+          "min": 0.5000157699346262,
+          "max": 1.4998300023446876
+        },
+        "pi_i_eff": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 9975.740505905587,
+          "abssum": 9975.740505905587,
+          "sumsq": 10785.068489911018,
+          "min": 0.5000157699346262,
+          "max": 1.4998300023446876
+        },
+        "theta_t": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 11566.079501627053,
+          "abssum": 11566.079501627053,
+          "sumsq": 13560.82383266642,
+          "min": 0.7184864504395555,
+          "max": 1.585275143081294
+        },
+        "z_e": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 5974.438783128959,
+          "abssum": 5974.438783128959,
+          "sumsq": 4094.235889570188,
+          "min": 0.2000070369956328,
+          "max": 0.9999947127276043
+        },
+        "z_i": {
+          "kind": "f",
+          "shape": [
+            10000
+          ],
+          "n_nonfinite": 0,
+          "sum": 4508.55829390313,
+          "abssum": 4508.55829390313,
+          "sumsq": 2438.8507290993766,
+          "min": 0.10005683558212643,
+          "max": 0.799975065080128
+        }
+      }
     },
     {
       "name": "sim2_parameter_recovery",
@@ -74,7 +580,268 @@
       "consumers": [],
       "seed_design": "1 000 five-parameter MLE recovery runs x 200 trials",
       "v1_1_alignment": "differs",
-      "v1_1_note": "v1.1 requires 1 000 deterministic seeds per condition across seven agent architectures; the seed is a single-model recovery sweep."
+      "v1_1_note": "v1.1 requires 1 000 deterministic seeds per condition across seven agent architectures; the seed is a single-model recovery sweep.",
+      "content": {
+        "_meta_beta_sm_range": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "e7d51ad569717626381014246ddad1b7ff37e65bda72e1e6c07bf81e9d382e06"
+        },
+        "_meta_convergence_rate_optimizer": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.0,
+          "abssum": 1.0,
+          "sumsq": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "_meta_convergence_rate_residual": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.0,
+          "abssum": 1.0,
+          "sumsq": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "_meta_convergence_source": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "a03091bfac4218894c8ce8a8fcb06e24d5135c6d82b47fa4ee0fc2c3cffcef78"
+        },
+        "_meta_criterion_met_beta_sm": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        },
+        "_meta_criterion_met_pi_i": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "3fd9b9e7eb6f90c8926fea8849bcf48083c290d8be3d06f46eea00f22c12a96b"
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "5c65f96d81a193b77bab86a10618fddfbfa4a7f6441136b7da00bc80ca41649f"
+        },
+        "_meta_n_runs": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "921ac7f259f864606624eb7fc29124712ff65b425e9500a35dd32b71ddb9332c"
+        },
+        "_meta_n_trials_per_run": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "ca8923d6c4447d6fa6d0540cafff01f647f2bbfe8f19939686ce6fa7b0daee28"
+        },
+        "_meta_parameters_recovered": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "2b2368366155c6851e042cb4d716fa5ae95a4b1e2dda738605313e07b733ad03"
+        },
+        "_meta_pearson_r_beta_sm": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.4185509944514805,
+          "abssum": 0.4185509944514805,
+          "sumsq": 0.17518493495632323,
+          "min": 0.4185509944514805,
+          "max": 0.4185509944514805
+        },
+        "_meta_pearson_r_gamma_sig": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.6746487642399931,
+          "abssum": 0.6746487642399931,
+          "sumsq": 0.45515095509054976,
+          "min": 0.6746487642399931,
+          "max": 0.6746487642399931
+        },
+        "_meta_pearson_r_pi_i": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.7182976984118403,
+          "abssum": 0.7182976984118403,
+          "sumsq": 0.5159515835437471,
+          "min": 0.7182976984118403,
+          "max": 0.7182976984118403
+        },
+        "_meta_pearson_r_tau_S": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.8419484912973654,
+          "abssum": 0.8419484912973654,
+          "sumsq": 0.7088772619979098,
+          "min": 0.8419484912973654,
+          "max": 0.8419484912973654
+        },
+        "_meta_pearson_r_theta_0": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.717971575410935,
+          "abssum": 0.717971575410935,
+          "sumsq": 0.51548318309806,
+          "min": 0.717971575410935,
+          "max": 0.717971575410935
+        },
+        "_meta_pi_i_range": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "8bef6a60f75accc25e6998806e51badc0faf858929fb20ba4572bf21cb842843"
+        },
+        "_meta_theta_0_range": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "d659b227eb9299150cc22781485544f74fb27ff7f86fee081b93ae2bfe8c2a3d"
+        },
+        "beta_sm_hat": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 691.6882911098942,
+          "abssum": 795.9286633020696,
+          "sumsq": 915.1989077263827,
+          "min": -2.9999999999952958,
+          "max": 2.9999999999986815
+        },
+        "beta_sm_true": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 712.5187884601464,
+          "abssum": 712.5187884601464,
+          "sumsq": 591.408071446366,
+          "min": 0.20070507918300867,
+          "max": 1.1993441545208987
+        },
+        "converged": {
+          "kind": "b",
+          "shape": [
+            1000
+          ],
+          "sha256": "353c38352a855c80f4ecb0793a76493228541b5fab5ef7af26effac91e77ec46"
+        },
+        "converged_residual": {
+          "kind": "b",
+          "shape": [
+            1000
+          ],
+          "sha256": "353c38352a855c80f4ecb0793a76493228541b5fab5ef7af26effac91e77ec46"
+        },
+        "gamma_sig_hat": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 5612.235617582262,
+          "abssum": 5612.235617582262,
+          "sumsq": 38738.97377626239,
+          "min": 0.6151814921663997,
+          "max": 19.999999999999908
+        },
+        "gamma_sig_true": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 5021.695373567465,
+          "abssum": 5021.695373567465,
+          "sumsq": 27327.504765951526,
+          "min": 2.5024989517940033,
+          "max": 7.48460970773441
+        },
+        "pi_i_hat": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 1712.3076704781697,
+          "abssum": 1712.3076704781697,
+          "sumsq": 3422.06368981506,
+          "min": 0.2225518483448986,
+          "max": 4.312027850185025
+        },
+        "pi_i_true": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 1636.0927160339452,
+          "abssum": 1636.0927160339452,
+          "sumsq": 2924.0219086171005,
+          "min": 0.8008420736717051,
+          "max": 2.4989335469352705
+        },
+        "tau_S_hat": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 6938.588619383551,
+          "abssum": 6938.588619383551,
+          "sumsq": 58386.098981,
+          "min": 1.261455900881298,
+          "max": 20.623746315335094
+        },
+        "tau_S_true": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 6958.751845451865,
+          "abssum": 6958.751845451865,
+          "sumsq": 56769.70857875791,
+          "min": 2.010426755912426,
+          "max": 11.994271458400007
+        },
+        "theta_0_hat": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 528.6042685393097,
+          "abssum": 529.8667918471574,
+          "sumsq": 297.6238472654575,
+          "min": -0.35254243240405847,
+          "max": 1.1527684250937105
+        },
+        "theta_0_true": {
+          "kind": "f",
+          "shape": [
+            1000
+          ],
+          "n_nonfinite": 0,
+          "sum": 527.154177743523,
+          "abssum": 527.154177743523,
+          "sumsq": 287.910237884044,
+          "min": 0.3502377972629154,
+          "max": 0.699997354668092
+        }
+      }
     },
     {
       "name": "sim3_liquid_network",
@@ -92,7 +859,129 @@
       "consumers": [],
       "seed_design": "20 reservoir seeds x 500 steps x 100 units",
       "v1_1_alignment": "not_applicable",
-      "v1_1_note": "Paper 2 supplementary reservoir trajectories; no protocol cohort."
+      "v1_1_note": "Paper 2 supplementary reservoir trajectories; no protocol cohort.",
+      "content": {
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "f8d45018efdc404ec48c6171be064deda44b2aa92cbfb41859f1a1ad30951a3f"
+        },
+        "_meta_dt_ms": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.0,
+          "abssum": 1.0,
+          "sumsq": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "aaed21be4eada8c0216b58ffce526063687e5cef4264ee907ff5bc8efa3aeb73"
+        },
+        "_meta_n_hidden": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+        },
+        "_meta_n_inputs": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "f0a0278e4372459cca6159cd5e71cfee638302a7b9ca9b05c34181ac0a65ac5d"
+        },
+        "_meta_n_outputs": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "d86e8112f3c4c4442126f8e9f44f16867da487f29052bf91b810457db34209a4"
+        },
+        "_meta_n_seeds": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "0c27700c82d333aa295692f1814040a962d7bc530253af661d97635dd5ed7af9"
+        },
+        "_meta_n_timesteps": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "cf5cb2f4d37db6ef4456abfbcdc112844e93c25fec167470d3f2e51a57c5d166"
+        },
+        "inputs": {
+          "kind": "f",
+          "shape": [
+            20,
+            500,
+            4
+          ],
+          "n_nonfinite": 0,
+          "sum": 55.56020194973517,
+          "abssum": 19967.56220134469,
+          "sumsq": 13288.064086175496,
+          "min": -0.9999341013856742,
+          "max": 0.9999678904534264
+        },
+        "lnn_ignition": {
+          "kind": "b",
+          "shape": [
+            20,
+            500
+          ],
+          "sha256": "fadcd57f87d907f7834d19102b7b5f473db72cc92a715af90384257a2aff4c32"
+        },
+        "output_norm": {
+          "kind": "f",
+          "shape": [
+            20,
+            500
+          ],
+          "n_nonfinite": 0,
+          "sum": 1578.7385556554807,
+          "abssum": 1578.7385556554807,
+          "sumsq": 337.6872673055612,
+          "min": 0.0007680084860531566,
+          "max": 0.7507420643639016
+        },
+        "outputs": {
+          "kind": "f",
+          "shape": [
+            20,
+            500,
+            2
+          ],
+          "n_nonfinite": 0,
+          "sum": 34.14979213938225,
+          "abssum": 1998.5854319706175,
+          "sumsq": 337.68726730556125,
+          "min": -0.7507419508555698,
+          "max": 0.6677911513786641
+        },
+        "spectral_radii": {
+          "kind": "f",
+          "shape": [
+            20
+          ],
+          "n_nonfinite": 0,
+          "sum": 17.0,
+          "abssum": 17.0,
+          "sumsq": 15.352631578947365,
+          "min": 0.5,
+          "max": 1.2
+        },
+        "states": {
+          "kind": "f",
+          "shape": [
+            20,
+            500,
+            100
+          ],
+          "n_nonfinite": 0,
+          "sum": 535.0772969860299,
+          "abssum": 102500.11144198879,
+          "sumsq": 17027.779306175154,
+          "min": -0.761434484650719,
+          "max": 0.733221649887846
+        }
+      }
     },
     {
       "name": "sim4_hierarchical",
@@ -110,7 +999,137 @@
       "consumers": [],
       "seed_design": "100 seeds x 50 trials x 5 hierarchy levels",
       "v1_1_alignment": "not_applicable",
-      "v1_1_note": "Model prediction-error series; v1.1 cohort (N=40 / 36 analyzable, 200 trials) is not simulated."
+      "v1_1_note": "Model prediction-error series; v1.1 cohort (N=40 / 36 analyzable, 200 trials) is not simulated.",
+      "content": {
+        "C_metabolic": {
+          "kind": "f",
+          "shape": [
+            100,
+            50
+          ],
+          "n_nonfinite": 0,
+          "sum": 6271.961505003732,
+          "abssum": 6271.961505003732,
+          "sumsq": 8806.210680085516,
+          "min": 0.5000502715730155,
+          "max": 1.9999066835882136
+        },
+        "S_t_total": {
+          "kind": "f",
+          "shape": [
+            100,
+            50
+          ],
+          "n_nonfinite": 0,
+          "sum": 5206.394841359644,
+          "abssum": 5206.394841359644,
+          "sumsq": 5574.695937096159,
+          "min": 0.26954509873813315,
+          "max": 1.2538861228659532
+        },
+        "V_information": {
+          "kind": "f",
+          "shape": [
+            100,
+            50
+          ],
+          "n_nonfinite": 0,
+          "sum": 2752.2719875160406,
+          "abssum": 2752.2719875160406,
+          "sumsq": 1850.0508573853467,
+          "min": 0.10022218431546885,
+          "max": 0.9998704864289887
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "d681917353d3bc64d57574a66d3eac3c5a587b874a19176d0ba459d510852a4e"
+        },
+        "_meta_ignition_threshold_sd": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.5,
+          "abssum": 1.5,
+          "sumsq": 2.25,
+          "min": 1.5,
+          "max": 1.5
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "8d56d6a5ef6cc9705a4cda76747d7599001298ecf263972d8353a1040b179990"
+        },
+        "_meta_n_levels": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "f13ee6ed54ea2aae9fc49a9faeb5da6e8ddef0e12ed5d30d35a624ae813e0485"
+        },
+        "_meta_n_seeds": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+        },
+        "_meta_n_sensory": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "a06f129fc52abf6085679d7cd71dc41ec7580c7f5f73efef6d02dde22bb00994"
+        },
+        "_meta_n_trials": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "0cbbab9d99fb661a1686f17ccaaf8a9d069aa8cb755925045a1d049c060b9e67"
+        },
+        "hier_ignition": {
+          "kind": "b",
+          "shape": [
+            100,
+            50
+          ],
+          "sha256": "7ca5bd879f393d9dd05b14f38add9c0fc6b67928f7f2d261b2e47a32ee8219e3"
+        },
+        "level_S_t": {
+          "kind": "f",
+          "shape": [
+            100,
+            50,
+            5
+          ],
+          "n_nonfinite": 0,
+          "sum": 5206.394841359643,
+          "abssum": 5206.394841359643,
+          "sumsq": 1906.3356566553716,
+          "min": 0.0,
+          "max": 0.5973259831400243
+        },
+        "level_pe_norm": {
+          "kind": "f",
+          "shape": [
+            100,
+            50,
+            5
+          ],
+          "n_nonfinite": 0,
+          "sum": 29140.005540108123,
+          "abssum": 29140.005540108123,
+          "sumsq": 79588.98903504756,
+          "min": 0.0,
+          "max": 5.2555337949180885
+        },
+        "theta_t": {
+          "kind": "f",
+          "shape": [
+            100,
+            50
+          ],
+          "n_nonfinite": 0,
+          "sum": 5805.1716762444685,
+          "abssum": 5805.1716762444685,
+          "sumsq": 7240.590739005472,
+          "min": 0.44902341531715406,
+          "max": 1.8687617094818982
+        }
+      }
     },
     {
       "name": "sim5_doc_biomarker",
@@ -130,7 +1149,199 @@
       ],
       "seed_design": "N=110: VS/UWS 30, MCS 30, EMCS 20, Controls 30",
       "v1_1_alignment": "matches",
-      "v1_1_note": "Group sizes equal the v1.1 fixed-enrollment design (80 patients + 30 controls). Site structure (whole-site bootstrap) is not simulated."
+      "v1_1_note": "Group sizes equal the v1.1 fixed-enrollment design (80 patients + 30 controls). Site structure (whole-site bootstrap) is not simulated.",
+      "content": {
+        "S_t": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 12140.092964717289,
+          "abssum": 12140.092964717289,
+          "sumsq": 14169.032561796736,
+          "min": 0.09978099952335964,
+          "max": 2.477995704045348
+        },
+        "_meta_beta_sm": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.6,
+          "abssum": 0.6,
+          "sumsq": 0.36,
+          "min": 0.6,
+          "max": 0.6
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "bfc7c6654be603f3eaffe444f460f5683863916d250b6186af82180912f214c0"
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "0dd8beafbae44551c788aebeaf928979f859d1fc934b225da56ed5c1a550c9d8"
+        },
+        "_meta_n_subjects_controls": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_subjects_emcs": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "0c27700c82d333aa295692f1814040a962d7bc530253af661d97635dd5ed7af9"
+        },
+        "_meta_n_subjects_mcs": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_subjects_total": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "16aa221f16a8633a013a1ff442e91f002e0582084be7bb4dbfc562cae70af7f6"
+        },
+        "_meta_n_subjects_vs_uws": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "74b4dda3624aed85d808e91d84b08aad88563b02fe290e0d327865c33d2bafbd"
+        },
+        "_meta_n_trials_per_subject": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "71565cd53b740546f7d236f21aba165cf52b249891958cdb7edb072614d0c3a4"
+        },
+        "_meta_pi_i_controls": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.2,
+          "abssum": 1.2,
+          "sumsq": 1.44,
+          "min": 1.2,
+          "max": 1.2
+        },
+        "_meta_pi_i_emcs": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.1,
+          "abssum": 1.1,
+          "sumsq": 1.2100000000000002,
+          "min": 1.1,
+          "max": 1.1
+        },
+        "_meta_pi_i_mcs": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.8,
+          "abssum": 0.8,
+          "sumsq": 0.6400000000000001,
+          "min": 0.8,
+          "max": 0.8
+        },
+        "_meta_pi_i_vs_uws": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3,
+          "abssum": 0.3,
+          "sumsq": 0.09,
+          "min": 0.3,
+          "max": 0.3
+        },
+        "group_codes": {
+          "kind": "i",
+          "shape": [
+            13200
+          ],
+          "sha256": "b028a26153703713ebf6a50ee25cd619e7d538d346a17c36232bac55cce9c863"
+        },
+        "group_labels": {
+          "kind": "U",
+          "shape": [
+            13200
+          ],
+          "sha256": "344c1e1018a3d591f71d027030a0e25135197f2e9057d9efccee36331628be6d"
+        },
+        "hep_amplitude_uv": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 73500.0,
+          "abssum": 73500.0,
+          "sumsq": 576753.0,
+          "min": 0.868586166000132,
+          "max": 11.898070141882933
+        },
+        "hep_proxy": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 11594.928632206927,
+          "abssum": 11594.928632206927,
+          "sumsq": 12380.777800010834,
+          "min": 0.21332839390695968,
+          "max": 1.6358329264625548
+        },
+        "ignition": {
+          "kind": "b",
+          "shape": [
+            13200
+          ],
+          "sha256": "c75b2b0b4e9d84d414f41936ea138e8fd56dcb94c4b64c4955936e32c46c3db8"
+        },
+        "pci": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 5070.0,
+          "abssum": 5070.0,
+          "sumsq": 2514.09,
+          "min": 0.125,
+          "max": 0.7328573095128549
+        },
+        "pci_proxy": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 5953.797372902863,
+          "abssum": 5953.797372902863,
+          "sumsq": 4236.272434980897,
+          "min": 0.0,
+          "max": 0.9972607341380326
+        },
+        "subject_id": {
+          "kind": "i",
+          "shape": [
+            13200
+          ],
+          "sha256": "dd78dc6abf9452e6f3fa83de30ece3e495b51250c45157ec343b1ca250a455c8"
+        },
+        "theta_t": {
+          "kind": "f",
+          "shape": [
+            13200
+          ],
+          "n_nonfinite": 0,
+          "sum": 13390.625206008566,
+          "abssum": 13390.625206008566,
+          "sumsq": 13694.39689857021,
+          "min": 0.625690962453615,
+          "max": 1.4533046055611574
+        }
+      }
     },
     {
       "name": "sim6_bifurcation",
@@ -148,7 +1359,159 @@
       "consumers": [],
       "seed_design": "N=25 simulated subjects",
       "v1_1_alignment": "differs",
-      "v1_1_note": "v1.1 registers N=20 target / 12 minimum clinical participants."
+      "v1_1_note": "v1.1 registers N=20 target / 12 minimum clinical participants.",
+      "content": {
+        "_meta_ac1_increases_count": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "bf5b0e89f1caed18c8d6ff15d17ecc5c6e0c89510b4bc6d7b4b51d4ed30999cb"
+        },
+        "_meta_csd_variable": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "244d9ecc743006129432f1870972a88402c7e8f5ec998490f943aea7ad19ee5f"
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "acb119c9561c94c8eee4cafbd52160601d2e5fe920b9d9cf18f690ca0cf20987"
+        },
+        "_meta_falsification_criterion_ac1_n": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "0c27700c82d333aa295692f1814040a962d7bc530253af661d97635dd5ed7af9"
+        },
+        "_meta_falsification_criterion_csd": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.2,
+          "abssum": 1.2,
+          "sumsq": 1.44,
+          "min": 1.2,
+          "max": 1.2
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "cd5ab7b8a6b20da67f906c42eea18abe87632b8b58f3b4c4bbde6d3e8ffbae34"
+        },
+        "_meta_mean_csd_ratio": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.799596909139474,
+          "abssum": 1.799596909139474,
+          "sumsq": 3.238549035384348,
+          "min": 1.799596909139474,
+          "max": 1.799596909139474
+        },
+        "_meta_model": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "b11896a715248abad4e2afaf944b4afd9654aa2924ef880cbe57ce1a6bc9973a"
+        },
+        "_meta_n_subjects": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "bf5b0e89f1caed18c8d6ff15d17ecc5c6e0c89510b4bc6d7b4b51d4ed30999cb"
+        },
+        "_meta_r_mean_baseline": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3,
+          "abssum": 0.3,
+          "sumsq": 0.09,
+          "min": 0.3,
+          "max": 0.3
+        },
+        "_meta_r_mean_pre_ignition": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.88,
+          "abssum": 0.88,
+          "sumsq": 0.7744,
+          "min": 0.88,
+          "max": 0.88
+        },
+        "_meta_t_baseline": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "5545412ee9a21a04712910d53fc1447c73ff94a29ddd1268131b4ed30d1dbe07"
+        },
+        "_meta_t_pre_ignition_len": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "71565cd53b740546f7d236f21aba165cf52b249891958cdb7edb072614d0c3a4"
+        },
+        "_meta_window_design": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "46db44e8b4a415ce81103dd01e68b23db753101177059bbed99eca285b7501fb"
+        },
+        "ac1_baseline": {
+          "kind": "f",
+          "shape": [
+            25
+          ],
+          "n_nonfinite": 0,
+          "sum": 6.493683099121185,
+          "abssum": 6.493683099121185,
+          "sumsq": 1.8796007566382849,
+          "min": 0.08800794700273827,
+          "max": 0.4951467193579011
+        },
+        "ac1_pre_ignition": {
+          "kind": "f",
+          "shape": [
+            25
+          ],
+          "n_nonfinite": 0,
+          "sum": 18.54474488890357,
+          "abssum": 18.54474488890357,
+          "sumsq": 13.852952439567645,
+          "min": 0.6098028248730032,
+          "max": 0.8867398573496876
+        },
+        "csd_ratio": {
+          "kind": "f",
+          "shape": [
+            25
+          ],
+          "n_nonfinite": 0,
+          "sum": 44.989922728486846,
+          "abssum": 44.989922728486846,
+          "sumsq": 81.86435988980483,
+          "min": 1.4596678290743539,
+          "max": 2.315931087072867
+        },
+        "eigenvalue_real_max_baseline": {
+          "kind": "f",
+          "shape": [
+            25
+          ],
+          "n_nonfinite": 0,
+          "sum": 6.735327127050301,
+          "abssum": 6.735327127050301,
+          "sumsq": 1.886409740464114,
+          "min": 0.15068219940658806,
+          "max": 0.34971645894329817
+        },
+        "eigenvalue_real_max_pre": {
+          "kind": "f",
+          "shape": [
+            25
+          ],
+          "n_nonfinite": 0,
+          "sum": 19.290417141712425,
+          "abssum": 19.290417141712425,
+          "sumsq": 14.931245246688395,
+          "min": 0.6804562245564838,
+          "max": 0.849510767102483
+        }
+      }
     },
     {
       "name": "sim7_metabolic_crossover",
@@ -168,7 +1531,207 @@
       ],
       "seed_design": "N=60 across 2 sites, 2x2 within-subject, 480 trials/session",
       "v1_1_alignment": "differs",
-      "v1_1_note": "v1.1 registers N=64 / 55 analyzable / 48 floor across two labs with four sessions and a three-level contrast grid; the seed keeps the v1.0 2x2 design."
+      "v1_1_note": "v1.1 registers N=64 / 55 analyzable / 48 floor across two labs with four sessions and a three-level contrast grid; the seed keeps the v1.0 2x2 design.",
+      "content": {
+        "_meta_alpha": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3,
+          "abssum": 0.3,
+          "sumsq": 0.09,
+          "min": 0.3,
+          "max": 0.3
+        },
+        "_meta_beta_initial_estimate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.7,
+          "abssum": 0.7,
+          "sumsq": 0.48999999999999994,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "_meta_criterion_met_pred_4a_eta": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_4a_suppression": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_4b": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "d39686500d0ec0fef04b0eaad059360ca33cc917905a6eb011730ab07609aa1c"
+        },
+        "_meta_design": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "b74eb3bebcb69684cb3544837fae7add39237504e65bfa91badcf25313b0fe5d"
+        },
+        "_meta_eta_p2_estimate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.668944254496999,
+          "abssum": 0.668944254496999,
+          "sumsq": 0.4474864156245458,
+          "min": 0.668944254496999,
+          "max": 0.668944254496999
+        },
+        "_meta_interoceptive_loads": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "c8d815045b4538fc52bada6aace5b2a5fad7e196a86c12f3f876c5a481541efb"
+        },
+        "_meta_kappa": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "cae1cf8d0607ec940794930f12901e02f79164279e3d5f976d677cff4b3c292d"
+        },
+        "_meta_metabolic_states": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "88b223964dad737e467a1315bf8758d06781f6ad5001b76aa5bcb763f20e2490"
+        },
+        "_meta_n_sites": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "d86e8112f3c4c4442126f8e9f44f16867da487f29052bf91b810457db34209a4"
+        },
+        "_meta_n_subjects": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "3fe8adee83a670dd3131f667e963775b2256f3f59d5a996984eb47f8375efd7c"
+        },
+        "_meta_n_trials_per_session": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "48ce4fe27e489f38893936ec5f3d254adab137dc097868dca7bec3f44858c9f3"
+        },
+        "_meta_p3b_interaction_uv": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 1.5382960354209079,
+          "abssum": 1.5382960354209079,
+          "sumsq": 2.366354692591683,
+          "min": 1.5382960354209079,
+          "max": 1.5382960354209079
+        },
+        "_meta_selective_suppression_pct": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 15.980711891507122,
+          "abssum": 15.980711891507122,
+          "sumsq": 255.38315255935714,
+          "min": 15.980711891507122,
+          "max": 15.980711891507122
+        },
+        "d_prime": {
+          "kind": "f",
+          "shape": [
+            240
+          ],
+          "n_nonfinite": 0,
+          "sum": 454.42826385962553,
+          "abssum": 454.42826385962553,
+          "sumsq": 906.9154533634598,
+          "min": 0.6717509005638498,
+          "max": 3.1545578505128518
+        },
+        "glucose_mmol": {
+          "kind": "f",
+          "shape": [
+            240
+          ],
+          "n_nonfinite": 0,
+          "sum": 1206.3499797956338,
+          "abssum": 1206.3499797956338,
+          "sumsq": 6269.836645620837,
+          "min": 3.42010550848301,
+          "max": 6.708831212518325
+        },
+        "interoceptive_load": {
+          "kind": "U",
+          "shape": [
+            240
+          ],
+          "sha256": "788adf85a48f86dd6229951db705465ec4399e0586b8f939e2b26525ae28ac82"
+        },
+        "metabolic_state": {
+          "kind": "U",
+          "shape": [
+            240
+          ],
+          "sha256": "9d295facaf51e564fc5832594b4c6c0f200a8a5ec5f7705eaf826bee787272bb"
+        },
+        "p3b_amplitude": {
+          "kind": "f",
+          "shape": [
+            240
+          ],
+          "n_nonfinite": 0,
+          "sum": 1555.536370603228,
+          "abssum": 1555.536370603228,
+          "sumsq": 10568.798687629698,
+          "min": 2.231308333665792,
+          "max": 9.49744889052335
+        },
+        "pupil_diameter": {
+          "kind": "f",
+          "shape": [
+            240
+          ],
+          "n_nonfinite": 0,
+          "sum": 965.2720173774194,
+          "abssum": 965.2720173774194,
+          "sumsq": 3908.7878137187554,
+          "min": 2.956340440539006,
+          "max": 4.856861019440035
+        },
+        "rmssd": {
+          "kind": "f",
+          "shape": [
+            240
+          ],
+          "n_nonfinite": 0,
+          "sum": 7956.272662062843,
+          "abssum": 7956.272662062843,
+          "sumsq": 276901.6421298647,
+          "min": 13.483510946139742,
+          "max": 52.404874913805536
+        },
+        "site": {
+          "kind": "i",
+          "shape": [
+            240
+          ],
+          "sha256": "b8cf336cee9416b4235019c8518c994eff7cd7c0c2fa7b42b3b98b618da6d833"
+        },
+        "subject_id": {
+          "kind": "i",
+          "shape": [
+            240
+          ],
+          "sha256": "8f04503989eb936b3cb1038dad442652758d4b5e29abae59bea8be8093155cce"
+        }
+      }
     },
     {
       "name": "sim8_tms_pci",
@@ -188,7 +1751,242 @@
       ],
       "seed_design": "N=36, three sites (aINS, dlPFC, vertex), pi_i tertiles",
       "v1_1_alignment": "differs",
-      "v1_1_note": "N=36 equals the v1.1 analyzable floor; v1.1 targets 52 enrolled / 44 analyzable and adds the Pred 5.E ROPE equivalence test."
+      "v1_1_note": "N=36 equals the v1.1 analyzable floor; v1.1 targets 52 enrolled / 44 analyzable and adds the Pred 5.E ROPE equivalence test.",
+      "content": {
+        "_meta_alpha": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3,
+          "abssum": 0.3,
+          "sumsq": 0.09,
+          "min": 0.3,
+          "max": 0.3
+        },
+        "_meta_beta_initial_estimate": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.7,
+          "abssum": 0.7,
+          "sumsq": 0.48999999999999994,
+          "min": 0.7,
+          "max": 0.7
+        },
+        "_meta_criterion_met_pred_5a": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_5b_ains_hep": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_5b_coupling": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_criterion_met_pred_5b_dlpfc_null": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8"
+        },
+        "_meta_description": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "57be4b6353b39eed19d56402615d7d92e6c8a10e4074a677c00b52dd2c0db45a"
+        },
+        "_meta_hep_suppression_ains_uv": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.6868413643569691,
+          "abssum": 0.6868413643569691,
+          "sumsq": 0.47175105979174276,
+          "min": 0.6868413643569691,
+          "max": 0.6868413643569691
+        },
+        "_meta_hep_suppression_dlpfc_uv": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.10313102555727503,
+          "abssum": 0.10313102555727503,
+          "sumsq": 0.010636008432495316,
+          "min": 0.10313102555727503,
+          "max": 0.10313102555727503
+        },
+        "_meta_kappa": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "26ab39150b6330152576e4c7fa7e0caa804b5e9db0476a3e48e6b53f1cda8279"
+        },
+        "_meta_master_seed": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "1cc44e310b76ee1e287e2ae1ac4bda1e2a36ccfb98657c2dc0995c17f7e45f2e"
+        },
+        "_meta_mean_hep_pci_coupling_ains": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.050961600102590016,
+          "abssum": 0.050961600102590016,
+          "sumsq": 0.0025970846850163027,
+          "min": 0.050961600102590016,
+          "max": 0.050961600102590016
+        },
+        "_meta_mean_hep_pci_coupling_vertex": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.3733588205263175,
+          "abssum": 0.3733588205263175,
+          "sumsq": 0.139396808864803,
+          "min": 0.3733588205263175,
+          "max": 0.3733588205263175
+        },
+        "_meta_n_sites": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "35be322d094f9d154a8aba4733b8497f180353bd7ae7b0a15f90b586b549f28b"
+        },
+        "_meta_n_subjects": {
+          "kind": "i",
+          "shape": [],
+          "sha256": "dd3168a635e962767dc4501dcef1d88bdfd9825d9c5a55d01dff715e7da9b5ec"
+        },
+        "_meta_pci_reduction_ains_vs_vertex": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.18492088782796012,
+          "abssum": 0.18492088782796012,
+          "sumsq": 0.03419573475508101,
+          "min": 0.18492088782796012,
+          "max": 0.18492088782796012
+        },
+        "_meta_pci_reduction_dlpfc_vs_vertex": {
+          "kind": "f",
+          "shape": [],
+          "n_nonfinite": 0,
+          "sum": 0.07823565261516073,
+          "abssum": 0.07823565261516073,
+          "sumsq": 0.006120817340120106,
+          "min": 0.07823565261516073,
+          "max": 0.07823565261516073
+        },
+        "_meta_pi_i_tertile_boundaries": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "d01ae5f94c6a4c138a76bc08ad5cee34c93fa9bd57a59997b80f99c2e11932d8"
+        },
+        "_meta_primary_target": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "58a6ee0b19fb245e5724db5fda6dd856d029045dad06b3a3f60225a9cde01c1d"
+        },
+        "_meta_sites": {
+          "kind": "U",
+          "shape": [],
+          "sha256": "1009ad30239851dd2c8e499207adaa215e8a0839356a0d7241d8937c9360d960"
+        },
+        "hep_amplitude": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 352.1664928229537,
+          "abssum": 352.1664928229537,
+          "sumsq": 1191.0758073572426,
+          "min": 1.9581880696310996,
+          "max": 4.679722361886254
+        },
+        "hep_pci_coupling": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 27.600064376574135,
+          "abssum": 29.593062873214887,
+          "sumsq": 10.554545162618766,
+          "min": -0.17129893595662643,
+          "max": 0.5603857857358424
+        },
+        "p3b_exteroceptive": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 718.0754086829102,
+          "abssum": 718.0754086829102,
+          "sumsq": 4819.416306304503,
+          "min": 5.102763186960636,
+          "max": 8.325081174267904
+        },
+        "p3b_interoceptive": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 684.8465185367534,
+          "abssum": 684.8465185367534,
+          "sumsq": 4396.079964057004,
+          "min": 4.65863652113382,
+          "max": 8.088404718375804
+        },
+        "pci": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 40.90239116009594,
+          "abssum": 40.90239116009594,
+          "sumsq": 16.573737905526755,
+          "min": 0.1938371996389135,
+          "max": 0.6276983889056251
+        },
+        "pi_i": {
+          "kind": "f",
+          "shape": [
+            108
+          ],
+          "n_nonfinite": 0,
+          "sum": 102.30773928056942,
+          "abssum": 102.30773928056942,
+          "sumsq": 106.50187030263174,
+          "min": 0.5080507076433791,
+          "max": 1.4843278532503335
+        },
+        "pi_i_tertile": {
+          "kind": "i",
+          "shape": [
+            108
+          ],
+          "sha256": "1a1ac04fbaf1fbe3d1b4c15b038d8deaa67de2c0dc7b37e2d03e1119a2d5fa24"
+        },
+        "site": {
+          "kind": "U",
+          "shape": [
+            108
+          ],
+          "sha256": "3dabc22e7fdb3459982667f6d483beb0465972a8b1d713ad2fe6565ff6eaee2a"
+        },
+        "subject_id": {
+          "kind": "i",
+          "shape": [
+            108
+          ],
+          "sha256": "9a5e897bed2797a2876fc0434327d7627ceeeabfcfaa3248e7bd1dd9feac66d8"
+        }
+      }
     }
   ]
 }

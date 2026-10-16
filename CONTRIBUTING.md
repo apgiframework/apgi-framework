@@ -52,12 +52,15 @@ generating environment). To regenerate locally:
 ```bash
 python data/generate_seeds.py           # all nine datasets + CSV summaries + manifest → data/seeds/
 python data/generate_seeds.py --dataset sim1_ignition_dynamics   # one dataset
-python data/generate_seeds.py --verify  # compare local files to data/checksums.sha256 (exit 1 on mismatch)
-python data/generate_seeds.py --manifest  # rewrite seed_manifest.json from existing files
+python data/generate_seeds.py --verify  # check local files against the release (exit 1 on mismatch)
+python data/generate_seeds.py --manifest  # rewrite checksums, apgi-fetch registry and manifest from local files
 ```
 
-Digests are bit-identical only in the environment recorded in the manifest
-(`binder/environment.yml` pins the same stack). Binder runs `binder/postBuild`, which
+File digests are bit-identical only on the platform recorded in the manifest: `.npz` files are
+zlib-compressed, and macOS and Linux compress identical arrays to different bytes. `--verify`
+therefore also accepts a file whose arrays match the manifest's content fingerprint. Before
+uploading to Zenodo, run `--manifest` on the machine whose files you upload, so `apgi-fetch` can
+check those exact files. Binder runs `binder/postBuild`, which
 regenerates `data/seeds/` at image build time.
 
 To verify files already downloaded from Zenodo:
