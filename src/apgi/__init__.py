@@ -5,7 +5,7 @@ from importlib.metadata import PackageNotFoundError, version
 from apgi import datasets
 
 try:
-    __version__ = version("apgi")
+    __version__ = version("apgi-framework")
 except PackageNotFoundError:
     __version__ = "0.0.0+dev"
 
