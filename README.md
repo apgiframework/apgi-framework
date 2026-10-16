@@ -16,7 +16,7 @@
 > Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
 
 This repository is the companion code release for the paper series above.
-All figures in Papers 1–3 are reproduced by scripts in `figures/` and `scripts/`.
+Figure scripts are in `figures/` (current 1.1 series in `figures/v1_1/`, frozen 1.0 figures in `figures/v1_0/`) and `scripts/`.
 Version 1.1 protocol specifications are in `protocols/`. The OSF project is [osf.io/t5hcq](https://osf.io/t5hcq); the stated 2026-10-16 amendment has not been independently verified.
 
 ### Project links
@@ -67,7 +67,10 @@ apgi-framework/
 │   └── *.json
 ├── tests/                 # pytest suite
 ├── notebooks/             # worked examples
-├── figures/               # figure scripts + output PDFs
+├── figures/               # see figures/README.md
+│   ├── common/            # shared helpers (utils.py)
+│   ├── v1_0/              # frozen 1.0 figures: protocols/, paper1–4/, output/
+│   └── v1_1/              # current 1.1 review series (generate.py, validate.py, output/)
 ├── scripts/               # standalone CLI helpers
 ├── data/                  # local data cache + seed datasets
 │   ├── seeds/             # .npz + .csv + .h5 (sim3) seed files (generated, not committed)
@@ -165,24 +168,22 @@ python3 figures/v1_1/generate.py
 python3 figures/v1_1/validate.py
 ```
 
-Two quantitative panels (parameter recovery and sensitivity/robustness) are explicitly pending verified 1.1 analysis outputs; their current replacements describe the required analyses. The following commands reproduce the preserved **legacy 1.0** figures, not the 1.1 review series.
-
+Two quantitative panels (parameter recovery and sensitivity/robustness) are explicitly pending verified 1.1 analysis outputs; their current replacements describe the required analyses. The following commands reproduce the frozen **1.0** protocol figures in `figures/v1_0/`, not the 1.1 review series. Run `validate.py` first: it checks the committed 1.0 images that these scripts overwrite.
 
 ```bash
-python figures/generate_figure1.py   # Protocol 0 — HEP Proxy Validation (Pred 0.A–Pred 0.C)
-python figures/generate_figure2.py   # Protocol 1 — Cardiac-EEG: trial-timeline schematic
-python figures/generate_figure3.py   # Protocol 2 — Somatic-AgentSim: somatic marker agent advantage
-python figures/generate_figure4.py   # Protocol 3 — Anticipation-fMRI: vmPFC–insula anticipatory coupling
-python figures/generate_figure5.py   # Protocol 4 — Metabolic-State Crossover: allostatic threshold modulation
-python figures/generate_figure6.py   # Protocol 5 — Insula-TMS: causal PCI/HEP dissociation + stimulation montage
-python figures/generate_figure7.py   # Protocol 6 — Ignition-iEEG: iEEG bimodality + AC1 slowing
-python figures/generate_figure8.py   # Protocol 7 — DoC-Biomarker: joint PCI–HEP model (four-group, N=110)
+python figures/v1_0/protocols/p0_hep_proxy.py            # Figure 1 — Protocol 0: HEP proxy validation (Pred 0.A–0.C)
+python figures/v1_0/protocols/p1_cardiac_eeg.py          # Figure 2 — Protocol 1: Cardiac-EEG trial timeline
+python figures/v1_0/protocols/p2_somatic_agent_sim.py    # Figure 3 — Protocol 2: somatic-marker agent advantage
+python figures/v1_0/protocols/p3_anticipation_fmri.py    # Figure 4 — Protocol 3: vmPFC–insula anticipatory coupling
+python figures/v1_0/protocols/p4_metabolic_crossover.py  # Figure 5 — Protocol 4: allostatic threshold modulation
+python figures/v1_0/protocols/p5_causal_tms.py           # Figure 6 — Protocol 5: causal PCI/HEP dissociation
+python figures/v1_0/protocols/p6_ignition_ieeg.py        # Figure 7 — Protocol 6: iEEG bimodality + AC1 slowing
+python figures/v1_0/protocols/p7_doc_biomarker.py        # Figure 8 — Protocol 7: joint PCI–HEP model (N=110)
 ```
 
-Figure numbering follows Figure N ↔ Protocol (N-1), matching the captions in
-`OUP-Protocols.txt` / the OSF preregistration exactly.
-
-Output PDFs land in `figures/output/`.
+Scripts are named by protocol (`pK_…`); their outputs keep the published numbering, Figure N ↔ Protocol (N−1),
+matching the captions in `OUP-Protocols.txt` / the OSF preregistration, and land in `figures/v1_0/output/figureN.{pdf,png}`.
+The per-paper 1.0 figures are in `figures/v1_0/paper1/`–`paper4/`. See [`figures/README.md`](figures/README.md) for the layout and the 1.0 → 1.1 mapping.
 
 ## Running tests
 

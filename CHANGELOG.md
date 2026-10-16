@@ -8,6 +8,16 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.1.0] - 2026-10-16
 
+- `figures/` reorganized into symmetric version folders (all moves via `git mv`, history kept):
+  `common/utils.py` (shared 1.0 helpers); `v1_0/` (frozen 1.0 series) with `protocols/` — the eight
+  protocol scripts renamed by protocol, `generate_figureN.py` → `pK_<protocol>.py` (K = N − 1),
+  outputs still `v1_0/output/figureN.*` — plus `paper1/`–`paper4/`; `v1_1/source/` → `v1_1/archive/`.
+  New `figures/README.md` gives the layout, build order and the full 1.0 → 1.1 mapping.
+  `v1_1/MANIFEST.json`, `index.html`, `generate.py` and `validate.py` point at the new 1.0 paths
+  (31 baseline checksums unchanged; `validate.py` passes). CI and `reproduce_all.sh` run
+  `figures/v1_1/validate.py` before the 1.0 smoke tests; `pypdf` joins the `[dev]` extras. README,
+  CONTRIBUTING, coverage omits, `tests/test_figures_utils.py` and the seed-manifest consumers
+  follow the new paths.
 - `notebooks/` — all eight protocol notebooks rebuilt for protocol specification v1.1.0. Design counts and
   decision thresholds are now loaded from `protocols/*.json` (each notebook asserts `version == "1.1.0"`).
   Every prediction is classified CONFIRMED / FALSIFIED / INDETERMINATE under the v1.1 rule that a failure to

@@ -46,7 +46,7 @@ def validate():
  prov=json.loads((ROOT/'PROVENANCE.json').read_text())
  for path,sha in prov['files'].items():
   p=Path(path)
-  if '/bundle/code/' in path and digest(ROOT/'source'/p.name)!=sha:errors.append(f'Archived supplied source modified: {p.name}')
+  if '/bundle/code/' in path and digest(ROOT/'archive'/p.name)!=sha:errors.append(f'Archived supplied source modified: {p.name}')
  report={'release':'1.1','passed':not errors,'figure_sets':len(checked),'exports':sum(len(r['outputs']) for r in m['figures']),'legacy_figures_mapped':len(mapped),'checks':['Expected IDs and complete legacy mapping','Protocol input hashes','Unchanged baseline PNG hashes','All output checksums','PNG decode and 300-dpi metadata','One-page readable PDFs with release labels','Parsed SVGs without embedded rasters','Preserved supplied code hashes'],'quantitative_panels_pending':['P1S1','P1S2'],'scientific_validation_performed':False,'errors':errors,'python':platform.python_version()}
  (ROOT/'VALIDATION.json').write_text(json.dumps(report,indent=2)+'\n')
  print(json.dumps(report,indent=2))

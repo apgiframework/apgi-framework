@@ -50,6 +50,7 @@ dev = [
     "ruff>=0.4.0",
     "mypy>=1.10.0",
     "h5py>=3.10.0",
+    "pypdf>=4.0",  # figures/v1_1/validate.py
 ]
 
 [tool.setuptools.packages.find]
@@ -64,10 +65,10 @@ pythonpath = ["src"]
 addopts = "--cov=src/apgi --cov=scripts --cov=figures --cov-report=term-missing"
 
 [tool.coverage.run]
-omit = ["tests/*", "figures/generate_figure*.py", "notebooks/*", "setup.py"]
+omit = ["tests/*", "figures/v1_0/*", "figures/v1_1/*", "notebooks/*", "setup.py"]
 
 [tool.coverage.report]
-omit = ["tests/*", "figures/generate_figure*.py", "notebooks/*", "setup.py"]
+omit = ["tests/*", "figures/v1_0/*", "figures/v1_1/*", "notebooks/*", "setup.py"]
 exclude_lines = [
     "pragma: no cover",
     "if __name__ == .__main__.:",
@@ -78,6 +79,8 @@ exclude_lines = [
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+# Supplied October 4 code, preserved byte-for-byte for audit (figures/v1_1/validate.py).
+extend-exclude = ["figures/v1_1/archive"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]

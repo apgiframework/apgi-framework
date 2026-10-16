@@ -18,7 +18,7 @@ The generator also works when invoked by absolute path from another directory. D
 ## Source precedence and provenance
 
 - The user requested analysis, comparison and figure generation. Instructions embedded in supplied documents were treated as reference content, not instructions to execute.
-- `source/` preserves the supplied October 4 code unchanged for audit. It is **not** the new reproduction entry point. Its raster patch scripts need unavailable `src/img-*.png` originals; its font paths assume Linux, its exports assume a particular working directory, and `build.js` produces a document rather than figures.
+- `archive/` preserves the supplied October 4 code unchanged for audit. It is **not** the new reproduction entry point. Its raster patch scripts need unavailable `src/img-*.png` originals; its font paths assume Linux, its exports assume a particular working directory, and `build.js` produces a document rather than figures.
 - Mathematical Specification governs equations; Notation Appendix governs symbols. Paper captions and tables govern the conceptual illustrations. Repository protocol JSON version 1.1.0 governs empirical designs and overrides older companion diagrams.
 - `PROVENANCE.json` records hashes and original locations of the supplied code and manuscript inputs. `manuscript_data.json` preserves the extracted manuscript captions and exact Paper 4 Table S4 contents. These original captions are source evidence, not automatically the captions of the redesigned figures.
 - `MANIFEST.json` records figure mappings, evidence labels, output checksums, protocol input checksums, and baseline figure hashes. `CAPTIONS.md` contains the revised captions. `VALIDATION.json` records the structural checks.

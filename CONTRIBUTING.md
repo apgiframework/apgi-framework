@@ -99,12 +99,19 @@ bash reproduce_all.sh --local   # use locally generated seeds instead of Zenodo
 
 ## Adding a figure
 
-1. Create `figures/generate_figureN.py` following the pattern of existing
-   figure scripts — import from `figures.utils`, end with `save_figure(...)`.
-2. Add `--no-show` argument support (used by CI).
-3. Add the script to the Figure smoke tests block in `.github/workflows/test.yml`.
-4. Commit the generated PDF in `figures/output/` so reviewers can inspect
-   figures without running the full pipeline.
+New figures belong to the current series in `figures/v1_1/`; `figures/v1_0/` is frozen (see
+`figures/README.md`).
+
+1. Add the figure to `figures/v1_1/generate.py` (or a helper module it runs), give it a caption in
+   `captions.json`, and, if it replaces a 1.0 figure, map the old path in its `MAPPING`.
+2. Run `python3 figures/v1_1/generate.py`, then `python3 figures/v1_1/validate.py` (CI runs the
+   validator).
+3. Commit the PNG/PDF/SVG exports in `figures/v1_1/output/` together with the refreshed
+   `MANIFEST.json`, `VALIDATION.json` and `index.html`, so reviewers can inspect figures without
+   running the pipeline.
+
+Only fix bugs in `figures/v1_0/`. Its scripts import shared helpers from `figures.common.utils`,
+accept `--no-show` (used by CI), and the protocol scripts run in CI's figure smoke tests.
 
 ## Code style
 

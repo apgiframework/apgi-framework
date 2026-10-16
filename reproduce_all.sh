@@ -102,10 +102,13 @@ PYEOF
 # Step 4 — Figures
 # ------------------------------------------------------------------
 echo ""
-echo "--- Step 4: figure generation ---"
-for i in 1 2 3 4 5 6 7 8; do
-  echo "  Figure $i…"
-  python3 figures/generate_figure${i}.py --no-show
+echo "--- Step 4: figures ---"
+# Validate the committed v1.1 series first: it checks the v1.0 baseline PNGs
+# that the frozen v1.0 protocol scripts below regenerate.
+python3 figures/v1_1/validate.py > /dev/null && echo "  v1.1 figure series: valid"
+for script in figures/v1_0/protocols/p[0-7]_*.py; do
+  echo "  $(basename "$script")…"
+  python3 "$script" --no-show
 done
 
 # ------------------------------------------------------------------
@@ -123,7 +126,7 @@ python3 scripts/APGI_Somatic_Marker_Identifiability.py --no-show 2>/dev/null \
 # ------------------------------------------------------------------
 echo ""
 echo "--- Step 6: output manifest ---"
-find figures/output scripts/output -name "*.pdf" -o -name "*.png" 2>/dev/null \
+find figures/v1_0/output scripts/output -name "*.pdf" -o -name "*.png" 2>/dev/null \
   | sort | while read f; do
     echo "  $f  $(du -sh "$f" | cut -f1)"
   done

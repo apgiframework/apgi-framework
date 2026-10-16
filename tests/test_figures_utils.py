@@ -1,4 +1,4 @@
-"""Tests for figures/utils.py.
+"""Tests for figures/common/utils.py.
 
 Covers PALETTE constants, despine, label_axes, annotate_pearson_r,
 add_identity_line, vlines_ignition, make_figure, and save_figure.
@@ -16,7 +16,7 @@ import numpy as np
 import pytest
 
 # figures/ is not an installed package — add it to the path
-sys.path.insert(0, str(Path(__file__).parent.parent / "figures"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "figures" / "common"))
 import utils as fig_utils
 
 # ===========================================================================

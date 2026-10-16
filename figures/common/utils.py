@@ -1,0 +1,139 @@
+"""Shared plotting utilities for APGI figures."""
+
+from __future__ import annotations
+
+import pathlib
+import sys
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
+
+sys.modules["utils"] = sys.modules[__name__]
+
+mpl.rcParams.update(
+    {
+        "mathtext.fontset": "dejavusans",
+        "font.family": "DejaVu Sans",
+    }
+)
+
+PALETTE = {
+    "S_t": "#2166ac",
+    "theta": "#d6604d",
+    "ignition": "#f4a582",
+    "beta": "#2166ac",
+    "pi_i": "#d6604d",
+    "identity": "#333333",
+}
+
+FULL_WIDTH = 10.0
+HALF_WIDTH = 4.8
+PANEL_HEIGHT = 4.0
+
+
+def despine(ax: Axes) -> None:
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+
+def label_axes(
+    axes: list[Axes], labels: list[str] | None = None, fontsize: int = 12
+) -> None:
+    if labels is None:
+        labels = [chr(ord("A") + i) for i in range(len(axes))]
+    for ax, lbl in zip(axes, labels):
+        ax.text(
+            -0.12,
+            1.05,
+            lbl,
+            transform=ax.transAxes,
+            fontsize=fontsize,
+            fontweight="bold",
+            va="top",
+            ha="right",
+        )
+
+
+def annotate_pearson_r(
+    ax: Axes, r: float, xy: tuple[float, float] = (0.05, 0.92)
+) -> None:
+    ax.annotate(f"r = {r:.3f}", xy=xy, xycoords="axes fraction", fontsize=10)
+
+
+def add_identity_line(ax: Axes, lo: float, hi: float) -> None:
+    # Prominent y = x reference so systematic recovery bias is visually
+    # assessable against the scatter (drawn on top of the points).
+    ax.plot(
+        [lo, hi], [lo, hi],
+        "--", color="black", lw=1.2, alpha=0.9, zorder=6, label="y = x (identity)",
+    )
+
+
+def vlines_ignition(ax: Axes, t: np.ndarray, ignition: np.ndarray) -> None:
+    ignition_t = t[ignition]
+    ymax = ax.get_ylim()[1] if ax.get_ylim()[1] > 0 else 3
+    ax.vlines(
+        ignition_t,
+        ymin=0,
+        ymax=ymax,
+        colors=PALETTE["ignition"],
+        alpha=0.4,
+        linewidth=0.8,
+    )
+
+
+def make_figure(
+    ncols: int = 1,
+    nrows: int = 1,
+    width: float = FULL_WIDTH,
+    height: float = PANEL_HEIGHT,
+) -> tuple[Figure, list[Axes]]:
+    fig, axes = plt.subplots(nrows, ncols, figsize=(width, height))
+    flat: list[Axes] = np.asarray(axes).ravel().tolist()
+    for ax in flat:
+        despine(ax)
+    return fig, flat
+
+
+def ensure_seed_dataset(
+    npz_path: pathlib.Path,
+    generator_name: str,
+    seed: int = 2025,
+) -> pathlib.Path:
+    """Return npz_path, generating it on the fly if the archive is absent.
+
+    data/seeds/ is gitignored (the datasets are meant to be fetched from
+    Zenodo or produced by `python data/generate_seeds.py`), so a fresh
+    checkout — e.g. CI — won't have it. Rather than falling back to a
+    separate, potentially-drifting synthetic stub, this calls the same
+    generator function data/generate_seeds.py uses, so the fallback data
+    is produced by the exact same logic as the real archived dataset.
+    """
+    if npz_path.exists():
+        return npz_path
+
+    print(f"[info] {npz_path.name} not found locally; generating via data/generate_seeds.py…")
+    repo_root = pathlib.Path(__file__).resolve().parents[2]  # figures/common/utils.py
+    sys.path.insert(0, str(repo_root))
+    import importlib
+
+    generate_seeds = importlib.import_module("data.generate_seeds")
+    generator = getattr(generate_seeds, generator_name)
+    generated_path = generator(seed)
+    return pathlib.Path(generated_path)
+
+
+def save_figure(fig: Figure, path: pathlib.Path | str, dpi: int = 300) -> None:
+    path = pathlib.Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, dpi=dpi, bbox_inches="tight")
+    print(f"Saved: {path}")
+    # Always emit a PNG raster alongside any non-PNG (e.g. PDF) output, so every
+    # figure is available in both vector (PDF) and raster (PNG) formats.
+    if path.suffix.lower() != ".png":
+        png_path = path.with_suffix(".png")
+        fig.savefig(png_path, dpi=dpi, bbox_inches="tight")
+        print(f"Saved: {png_path}")

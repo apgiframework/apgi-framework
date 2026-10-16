@@ -16,7 +16,7 @@
     },
     {
       "id": "P1F1",
-      "previous": "paper1/output/fig1_architecture_pipeline",
+      "previous": "v1_0/paper1/output/fig1_architecture_pipeline",
       "kind": "Model schematic",
       "note": "Mathematical Specification §§2–4, 13; normalization follows clamping. Default untransformed error channels shown.",
       "caption": "The canonical processing sequence separates causal reference standardization, effective-gain clamping and normalization, excess-surprise drive, leaky accumulation, and ignition. The somatic marker amplifies the interoceptive gain; it does not multiply the exteroceptive channel. The displayed excess-magnitude formula is the default untransformed case; the optional Ψ transform requires its own baseline centering.",
@@ -29,7 +29,7 @@
     },
     {
       "id": "P1F2",
-      "previous": "paper1/output/fig2_somatic_marker_circuit",
+      "previous": "v1_0/paper1/output/fig2_somatic_marker_circuit",
       "kind": "Proposed mechanism",
       "note": "Paper 1 Fig 2 / Paper 2 Fig 2; arrows specify proposed functional interactions.",
       "caption": "Proposed vmPFC–VIP⁺–SST⁺ disinhibition pathway. Marker retrieval excites VIP⁺ interneurons, suppressing SST⁺ inhibition and thereby disinhibiting pyramidal dendrites. This proposed physiological implementation requires causal circuit dissociation; it is not established by the schematic.",
@@ -42,7 +42,7 @@
     },
     {
       "id": "P1F3",
-      "previous": "paper1/output/fig3_thermodynamic_bridge",
+      "previous": "v1_0/paper1/output/fig3_thermodynamic_bridge",
       "kind": "Derivation schematic",
       "note": "Paper 1 §4.6; Paper 4 Fig 1. Standard-state ATP conversion; κ and whole-event erasure ratio are distinct.",
       "caption": "Independent event-energy accounting gives approximately 2.4×10¹⁸ ATP, or 0.12 J under the standard-state ATP conversion. The uncalibrated κ bridge measures ATP per bit of ignition-event information. Full-reset and partial-reset erased-state counts belong to a separate Landauer consistency calculation and must not replace the κ denominator.",
@@ -55,7 +55,7 @@
     },
     {
       "id": "P1F4",
-      "previous": "paper1/output/fig4_onset_ignition_timeline",
+      "previous": "v1_0/paper1/output/fig4_onset_ignition_timeline",
       "kind": "Hypothesized timing schematic",
       "note": "Phase boundaries and substrate assignments are hypotheses; latencies depend on stimulus and state.",
       "caption": "Hypothesized onset sequence from sensory error generation to global broadcast. Phase boundaries, cortical assignments and EEG/MEG timings are approximate and stimulus-dependent. Temporal phases are not the five functional pipeline stages one-to-one.",
@@ -68,7 +68,7 @@
     },
     {
       "id": "P1F5",
-      "previous": "paper1/output/fig5_epistemic_tier_falsification_mapping",
+      "previous": "v1_0/paper1/output/fig5_epistemic_tier_falsification_mapping",
       "kind": "Specification schematic",
       "note": "Protocol 0 gates HEP-dependent claims. Full interval rules and unresolved locks remain in protocols/*.json.",
       "caption": "Epistemic tiers mapped to operational tests and decision context. EEG and behavioral outcomes are operational proxies, not direct measurements of an information-theoretic currency. Protocol 0 gates HEP-dependent inferences; detailed prediction-specific evidence, equivalence and admissibility rules govern over abbreviated null statements.",
@@ -81,7 +81,7 @@
     },
     {
       "id": "P1S1",
-      "previous": "paper1/output/figS1_parameter_recovery",
+      "previous": "v1_0/paper1/output/figS1_parameter_recovery",
       "kind": "Analysis-design replacement",
       "note": "Quantitative panels pending verified recovery/sweep outputs from the canonical 1.1 implementation.",
       "caption": "Parameter-recovery verification workflow replacing an unreproduced numerical panel. Independent calibration, synthetic refitting and scaled identifiability diagnostics must be completed against the frozen 1.1 observation model. No recovery correlations, confidence coverage or patient-model fit results are asserted by this replacement.",
@@ -94,7 +94,7 @@
     },
     {
       "id": "P1S2",
-      "previous": "paper1/output/figS2_sensitivity_tornado",
+      "previous": "v1_0/paper1/output/figS2_sensitivity_tornado",
       "kind": "Analysis-design replacement",
       "note": "Quantitative panels pending verified recovery/sweep outputs from the canonical 1.1 implementation.",
       "caption": "Sensitivity and robustness verification workflow replacing hard-coded effect sizes and pass percentages. A canonical 1.1 sweep requires frozen ranges, independent seeds and archived per-run outputs. No new Monte Carlo robustness rates are claimed.",
@@ -107,7 +107,7 @@
     },
     {
       "id": "P1S3",
-      "previous": "paper1/output/figS3_protocol1_trial_timeline",
+      "previous": "v1_0/paper1/output/figS3_protocol1_trial_timeline",
       "kind": "Prospective protocol schematic",
       "note": "Shared Protocol 1 artwork (PRF2); replaces legacy Paper 1 Figure S3.",
       "caption": "Cardiac-phase EEG timing and behavioral shape illustration, shared with Protocol Figure PRF2. Individual T-wave end determines the trigger windows; the ECG and example trial positions are schematic. Six fixed contrast levels and illustrative Weibull curves are shown; a curve alone does not satisfy Pred 1.E.",
@@ -120,7 +120,7 @@
     },
     {
       "id": "P1S4",
-      "previous": "paper1/output/figS4_protocol3_fmri_trial",
+      "previous": "v1_0/paper1/output/figS4_protocol3_fmri_trial",
       "kind": "Prospective protocol schematic",
       "note": "Shared Protocol 3 artwork (PRF4); replaces legacy Paper 1 Figure S4.",
       "caption": "Anticipation-fMRI design, shared with Protocol Figure PRF4. Choice, variable anticipation, outcome and ITI are separated; the drawing uses one illustrative 3-s foreperiod and 8-s ITI. The vmPFC–aINS versus pIC comparison is Pred 3.B in the governing protocol record.",
@@ -133,7 +133,7 @@
     },
     {
       "id": "P2F1",
-      "previous": "paper2/output/fig1_biological_constraints_lsm",
+      "previous": "v1_0/paper2/output/fig1_biological_constraints_lsm",
       "kind": "Analytical architecture comparison",
       "note": "Paper 2 §2.5 / Fig 1. Scores describe defining properties without additional machinery; not experimental benchmark results.",
       "caption": "Four biological constraints map to APGI computational requirements. Architecture scores count properties supported by defining equations without added machinery: LSM/LNN satisfies four, the attractor three, Transformer two and feedforward network two. This is the manuscript’s analytical audit, not an experimental performance benchmark.",
@@ -146,7 +146,7 @@
     },
     {
       "id": "P2F2",
-      "previous": "paper2/output/fig2_cortical_microcircuit",
+      "previous": "v1_0/paper2/output/fig2_cortical_microcircuit",
       "kind": "Proposed mechanism",
       "note": "Paper 1 Fig 2 / Paper 2 Fig 2; arrows specify proposed functional interactions.",
       "caption": "Proposed cortical implementation of precision gain. The vmPFC–VIP⁺–SST⁺ pathway is situated alongside laminar input/output routes. Apical–basal plateau and burst physiology does not by itself demonstrate the hypothesized prediction-error computation.",
@@ -159,7 +159,7 @@
     },
     {
       "id": "P2F3",
-      "previous": "paper2/output/fig3_bifurcation_analysis",
+      "previous": "v1_0/paper2/output/fig3_bifurcation_analysis",
       "kind": "Reduced-model illustration",
       "note": "Π ≤ 10; γsig is not behavioral Weibull shape k. This hysteresis is not a result from the full reservoir model.",
       "caption": "Reduced sigmoid fixed-point model and precision-dependent ignition. The first plotted fold is set to 0.95 by coordinate rescaling; the second lies near 1.02. Curves on the right hold intrinsic γsig=4 and vary Π within its canonical ceiling of 10; their error-referred slopes are not behavioral Weibull αpsy. The reduced-model hysteresis is not a full-reservoir validation result.",
@@ -172,7 +172,7 @@
     },
     {
       "id": "P2F4",
-      "previous": "paper2/output/fig4_visual_masking_trajectories",
+      "previous": "v1_0/paper2/output/fig4_visual_masking_trajectories",
       "kind": "Reduced-model simulation",
       "note": "Illustrative masking model with fixed reference gain; critical ISIs require empirical calibration.",
       "caption": "Masking trajectories and parameter sensitivity recomputed from the supplied homogeneous reduced model. The fixed reference gain places the critical ISI near 89.75 ms; increasing target precision shortens it, whereas threshold and spectral-radius changes can lengthen it. No crossing within the search range remains missing. Quantitative ISIs require empirical calibration.",
@@ -185,7 +185,7 @@
     },
     {
       "id": "P2S1",
-      "previous": "paper2/output/figS1_ep2_ep6_protocol_schematics",
+      "previous": "v1_0/paper2/output/figS1_ep2_ep6_protocol_schematics",
       "kind": "Prospective design schematic",
       "note": "Protocol JSON overrides the older manuscript/bundle 60 ms target and 250 ms response schematic.",
       "caption": "Distinct non-invasive stimulation and intracranial recording designs. Protocol 5 uses modality-matched controls, target engagement and separate resting PCI probes. Protocol 6 uses clinically indicated electrodes and the governing 33-ms target / 1-s delay schedule; the older companion timing diagram is superseded.",
@@ -198,7 +198,7 @@
     },
     {
       "id": "P3F1",
-      "previous": "paper3/output/fig1_russian_doll_hierarchy",
+      "previous": "v1_0/paper3/output/fig1_russian_doll_hierarchy",
       "kind": "Hierarchical model schematic",
       "note": "Paper 3 §2.1: nesting is computational, not literal anatomy; operational windows are not the OU spectral poles.",
       "caption": "Five nested functional levels, with L0 as a reflexive sub-APGI substrate and L1–L4 as progressively slower functional strata. Operational windows are separate from the conditional geometric OU poles. Slow endocrine priors set cortical thresholds rather than acting as spiking ignition reservoirs.",
@@ -211,7 +211,7 @@
     },
     {
       "id": "P3F2",
-      "previous": "paper3/output/fig2_1f_power_spectrum",
+      "previous": "v1_0/paper3/output/fig2_1f_power_spectrum",
       "kind": "Analytical OU spectrum",
       "note": "Equal stationary variance; geometric poles are conditional model assumptions, not measured neural timescales.",
       "caption": "Analytical spectrum from five equal-stationary-variance OU components with τ₀=50 ms and ratio 133. The five-level sum and the L0–L2 partial sum are shown; fitted slopes are approximately −1.01 and −1.00 on their labeled bands, with roughly 5.1 dB ripple for the full sum. Shading denotes the 0.005–100-Hz DC-coupled acquisition band. Poles are conditional model assumptions, not observed timescales.",
@@ -224,7 +224,7 @@
     },
     {
       "id": "P3F3",
-      "previous": "paper3/output/fig3_neuromodulatory_coupling",
+      "previous": "v1_0/paper3/output/fig3_neuromodulatory_coupling",
       "kind": "Proposed mechanism",
       "note": "Paper 3 §3 / Fig 3. Subscripted coupling κ differs from the ATP/bit bridge κ.",
       "caption": "Proposed fast ACC–LC and slow PVN–HPA influences on lower-level processing. LC is a relay rather than a hierarchical stratum; rapid membrane-MR and sustained GR effects are distinguished. Effective α31 and α41 influences are products of nearest-neighbor κ couplings and are unrelated to the ATP/bit κ bridge.",
@@ -237,7 +237,7 @@
     },
     {
       "id": "P3F4",
-      "previous": "paper3/output/fig4_psychiatric_disorder_profiles",
+      "previous": "v1_0/paper3/output/fig4_psychiatric_disorder_profiles",
       "kind": "Specification schematic",
       "note": "Paper 3: AUC ≥0.75, within-site label permutations, ΔAUC ≥0.05 beyond generic EEG features with BCa CI excluding zero.",
       "caption": "Hypothesized psychiatric and clinical profiles with explicit specificity requirements. Major-depression interoceptive precision changes are located at L1; schizophrenia L2 precision is genotype-dependent. Clinical profiling requires the registered permutation and generic-EEG controls; the DoC prognostic study is not evidence for a validated diagnostic classifier.",
@@ -250,7 +250,7 @@
     },
     {
       "id": "P3F5",
-      "previous": "paper3/output/figS1_protocol7_clinical_design",
+      "previous": "v1_0/paper3/output/figS1_protocol7_clinical_design",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 7, specification 1.1.0. No observed outcomes. ≥300 clean heartbeats; absolute mean Cz HEP, 250–400 ms. No synthetic clinical separation is shown.",
       "caption": "Protocol 7 baseline cohort and longitudinal patient outcomes. Eighty patients and 30 baseline-only controls enter the cohort; PCI eligibility defines a separate measurement subset. Patients have CRS-R follow-up at 3 and 6 months and secondary GOS-E at 6 months. Primary Pred 7.G is the baseline-HEP prediction of 3-month CRS-R; the joint HEP+PCI model is estimation-first.",
@@ -263,7 +263,7 @@
     },
     {
       "id": "P3F6",
-      "previous": "paper3/output/fig5_developmental_maturation_spectral",
+      "previous": "v1_0/paper3/output/fig5_developmental_maturation_spectral",
       "kind": "Illustrative developmental prediction",
       "note": "Step heights and ages are illustrative; the testable ordering is L2 → L3 → L4. Not the EEG aperiodic exponent.",
       "caption": "Illustrative developmental trajectory of detection-series DFA α, not the EEG aperiodic exponent or an amplitude-envelope measurement. The solid segment begins at age four; the dashed infant segment requires a suitable proxy. Step heights and exact ages are illustrative; the falsifiable maturation claim is the order L2→L3→L4.",
@@ -276,7 +276,7 @@
     },
     {
       "id": "P4F1",
-      "previous": "paper4/output/fig1_three_tier_epistemic_architecture",
+      "previous": "v1_0/paper4/output/fig1_three_tier_epistemic_architecture",
       "kind": "Specification schematic",
       "note": "Paper 4 Fig 1: ignition information and erased information have different denominators; upward bridges remain unspecified.",
       "caption": "Three epistemic currencies and the downward double-bridge chain. A computational access account requires an unvalidated mapping to ignition-event information and the uncalibrated κ mapping to event energy. Landauer erasure consistency has a different denominator; upward bridges remain unspecified.",
@@ -289,7 +289,7 @@
     },
     {
       "id": "P4F2",
-      "previous": "paper4/output/fig2_comparative_audit_bar_chart",
+      "previous": "v1_0/paper4/output/fig2_comparative_audit_bar_chart",
       "kind": "Single-author provisional audit",
       "note": "No independent scoring performed. Dashed 1.1 line is the 55/100 canonical threshold; coarse acceptance ≥8/14 (≥7/12 for IIT).",
       "caption": "Current Paper 4 Table 8 coarse audit scores. APGI C3 and C4 are means of tier scores 2,1,1 and their bars mark the tier range, not a confidence interval. IIT C6 is not applicable and is excluded from its denominator. Aggregate scores and the canonical 55/100 reference are displayed, but foundational gates also govern the author’s rubric. All scores are single-author provisional judgments, not independently validated rankings.",
@@ -302,7 +302,7 @@
     },
     {
       "id": "P4F3",
-      "previous": "paper4/output/figS1_twelve_prediction_matrix",
+      "previous": "v1_0/paper4/output/figS1_twelve_prediction_matrix",
       "kind": "Prospective prediction matrix",
       "note": "Paper 4 exposition IDs differ from Protocol Pred IDs. Pending registration and calibration are retained.",
       "caption": "The twelve Paper 4 Table S4 prediction records, with target magnitudes, evidence against, feasibility horizons and current validation status. Text is drawn from the manuscript table rather than the older supplied plotting constants. P-number exposition labels differ from protocol Pred IDs; many extensions await registration or calibration.",
@@ -315,7 +315,7 @@
     },
     {
       "id": "PRF1",
-      "previous": "output/figure1",
+      "previous": "v1_0/output/figure1",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 0, specification 1.1.0. No observed outcomes. Colored regions are decision boundaries, not measurements.",
       "caption": "Protocol 0 HEP proxy validation. Colored regions show registered behavioral, pharmacological and anatomical thresholds, not data. Independent replication, central EEG engagement and a responsive anatomical localizer are required; equivalence uses the ±√0.02 bounds and the registered 90% interval rule.",
@@ -328,7 +328,7 @@
     },
     {
       "id": "PRF2",
-      "previous": "output/figure2",
+      "previous": "v1_0/output/figure2",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 1, specification 1.1.0. No observed outcomes. Curves illustrate shape only; Pred 1.E also requires interval and comparator evidence. QUEST count unresolved.",
       "caption": "Protocol 1 personalized cardiac timing and psychometric design. The schematic assumes a 1,000-ms RR interval and T-wave end at 400 ms solely to illustrate the individualized windows. Six contrast levels are fixed; Weibull curves use illustrative baseline/lapse values and are not fitted participant results. Pred 1.E requires both interval and comparator evidence. The unresolved QUEST top-up count is not selected here.",
@@ -341,7 +341,7 @@
     },
     {
       "id": "PRF3",
-      "previous": "output/figure3",
+      "previous": "v1_0/output/figure3",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 2, specification 1.1.0. No observed outcomes. Exploratory 2.F / 2.G carry no independent empirical confirmation.",
       "caption": "Protocol 2 independent calibration, simulation and human model-comparison stages. Seven architectures are evaluated across 1,000 seeds per condition with 500 trials per environment; the volatility schedule is the specified five-block schedule. Lead–lag uncertainty is aggregated at seed level, and human IGT comparison uses a disjoint N=80 cohort.",
@@ -354,7 +354,7 @@
     },
     {
       "id": "PRF4",
-      "previous": "output/figure4",
+      "previous": "v1_0/output/figure4",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 3, specification 1.1.0. No observed outcomes. Timeline illustrates a 3 s foreperiod and 8 s ITI; post-shock ITI ≥8 s.",
       "caption": "Protocol 3 anticipation-versus-outcome design. The depicted foreperiod and ITI are examples within registered ranges, not fixed acquisition settings. Pred 3.B tests the vmPFC–aINS pathway against the sensory-control pathway; sample size, expected-value control and contrast control are preserved.",
@@ -367,7 +367,7 @@
     },
     {
       "id": "PRF5",
-      "previous": "output/figure5",
+      "previous": "v1_0/output/figure5",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 4, specification 1.1.0. No observed outcomes. Enroll 64 / target 55 / minimum 48; two labs. Positive baseline d′ required for proportional margin.",
       "caption": "Protocol 4 within-participant state-by-load comparison. Cells identify planned measurements, not outcome values. The signed proportional d′ margin requires a positive rested interoceptive baseline; P3b and arousal-adjusted analyses have their own registered conditions. Covariate adjustment does not establish metabolic-cost mediation.",
@@ -380,7 +380,7 @@
     },
     {
       "id": "PRF6",
-      "previous": "output/figure6",
+      "previous": "v1_0/output/figure6",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 5, specification 1.1.0. No observed outcomes. Enroll 52 / analyzable target 44; 5.C / 5.D moderation requires multiplicity lock.",
       "caption": "Protocol 5 target-specific interventions and HEP equivalence criterion. Modality-matched references and independent engagement gates govern aINS inference; resting PCI probes are separate from task trials. Pred 5.E requires the entire 95% HDI inside d=[−0.15,+0.15] and BF01≥6; no posterior is fabricated.",
@@ -393,7 +393,7 @@
     },
     {
       "id": "PRF7",
-      "previous": "output/figure7",
+      "previous": "v1_0/output/figure7",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 6, specification 1.1.0. No observed outcomes. Target N=20 / minimum 12; confirmatory–exploratory. 500 ms fixation → 33 ms target → 1 s delay.",
       "caption": "Protocol 6 planned allocation of 600 trials over the absolute Michelson contrast grid. Mixture tests are conducted at fixed contrast with direct regional comparisons and positive control-model evidence. AC1 remains deferred pending estimator recovery/power validation; timescale claims are coverage-specific and require surrogate controls and replication.",
@@ -406,7 +406,7 @@
     },
     {
       "id": "PRF8",
-      "previous": "output/figure8",
+      "previous": "v1_0/output/figure8",
       "kind": "Prospective protocol schematic",
       "note": "Protocol 7, specification 1.1.0. No observed outcomes. ≥300 clean heartbeats; absolute mean Cz HEP, 250–400 ms. No synthetic clinical separation is shown.",
       "caption": "Protocol 7 cohort and follow-up diagram, shared with Paper 3 Figure 5. Controls are baseline-only; recovery endpoints belong to the patient sample. Primary 7.G, estimation-first 7.A and secondary 7.D remain distinct, with HEP quality and PCI eligibility requirements preserved.",

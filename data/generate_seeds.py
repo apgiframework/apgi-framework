@@ -1627,7 +1627,7 @@ CATALOGUE: dict[str, dict] = {
     "sim0_hep_proxy": {
         "registry_ep": "EP-0",
         "protocol": "protocols/protocol_0_hep_proxy_validation.json",
-        "consumers": ["figures/generate_figure1.py"],
+        "consumers": ["figures/v1_0/protocols/p0_hep_proxy.py"],
         "seed_design": "N=60 (main 30 + replication 30); physostigmine arm n=30",
         "v1_1_alignment": "differs",
         "v1_1_note": (
@@ -1680,7 +1680,7 @@ CATALOGUE: dict[str, dict] = {
     "sim5_doc_biomarker": {
         "registry_ep": "EP-7",
         "protocol": "protocols/protocol_7_doc_biomarker.json",
-        "consumers": ["figures/generate_figure8.py"],
+        "consumers": ["figures/v1_0/protocols/p7_doc_biomarker.py"],
         "seed_design": "N=110: VS/UWS 30, MCS 30, EMCS 20, Controls 30",
         "v1_1_alignment": "matches",
         "v1_1_note": (
@@ -1699,7 +1699,7 @@ CATALOGUE: dict[str, dict] = {
     "sim7_metabolic_crossover": {
         "registry_ep": "EP-4",
         "protocol": "protocols/protocol_4_metabolic_crossover.json",
-        "consumers": ["figures/generate_figure5.py"],
+        "consumers": ["figures/v1_0/protocols/p4_metabolic_crossover.py"],
         "seed_design": "N=60 across 2 sites, 2x2 within-subject, 480 trials/session",
         "v1_1_alignment": "differs",
         "v1_1_note": (
@@ -1711,7 +1711,7 @@ CATALOGUE: dict[str, dict] = {
     "sim8_tms_pci": {
         "registry_ep": "EP-5",
         "protocol": "protocols/protocol_5_causal_tms.json",
-        "consumers": ["figures/generate_figure6.py"],
+        "consumers": ["figures/v1_0/protocols/p5_causal_tms.py"],
         "seed_design": "N=36, three sites (aINS, dlPFC, vertex), pi_i tertiles",
         "v1_1_alignment": "differs",
         "v1_1_note": (
