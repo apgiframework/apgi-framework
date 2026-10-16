@@ -8,6 +8,21 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- `notebooks/` — all eight protocol notebooks rebuilt for protocol specification v1.1.0. Design counts and
+  decision thresholds are now loaded from `protocols/*.json` (each notebook asserts `version == "1.1.0"`).
+  Every prediction is classified CONFIRMED / FALSIFIED / INDETERMINATE under the v1.1 rule that a failure to
+  confirm is not falsification. Each notebook carries a v1.0 → v1.1 change table. Legacy `KAPPA = 100`,
+  `ALPHA = 0.3` and `BETA = 0.7` defaults are removed (κ is `null`, uncalibrated).
+  Cohort sizes now follow v1.1: P0 N = 115 + independent N ≥ 30; P1 62/59/48; P3 40/36; P4 64/55/48 across
+  two sites; P5 52/44/36; P6 20/12; P7 80 patients + 30 controls.
+  New analyses: P0 proxy-gate reclassification; P1 Weibull Pred 1.E and sequential BF monitoring;
+  P2 seven-architecture IGT agents with deterministic seeds; P5 Pred 5.E ROPE equivalence; P6 AC1
+  five-sample estimator recovery; P7 primary Pred 7.G random-intercept LRT with whole-site bootstrap and a
+  noncentral-F cross-check of the registered power table.
+- `notebooks/quick_start.ipynb` — adds a v1.1 parameter-registry cell that checks the library defaults
+  (θ₀, γ_sig, β_SM) against the registered ranges.
+- `README.md` — notebook table updated to the actual file names and v1.1 prediction ranges.
+
 ---
 
 - Project identifiers finalised across all documentation and metadata: Zenodo archive DOI
