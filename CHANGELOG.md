@@ -43,6 +43,9 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `sim2`, whose ~2 h MLE sweep exceeds a Binder build and has no consumer) and checks it against
   `data/checksums.sha256`. `binder/environment.yml` adds `h5py`.
 - `.gitignore` — ignores `data/seeds/*` but tracks `data/seeds/seed_manifest.json`.
+- `tests/test_seed_manifest.py` (new) — checks that the manifest, `data/checksums.sha256` and the
+  `apgi-fetch` registry agree, that sub-seeds follow `MASTER_SEED`, and that the recorded generator
+  hash matches `data/generate_seeds.py`.
 - `pyproject.toml`, `zenodo.json`, `CITATION.cff` — version 1.1.0. The project name is unified as
   *Allostatic Precision-Gated Ignition* (previously also "Adaptive Predictive Global Integration" and
   "Allostatic Predictive Gating Ignition"). `zenodo.json` now lists all nine seed datasets (sim0–sim8),

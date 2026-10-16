@@ -1,0 +1,194 @@
+{
+  "release": "1.1.0",
+  "protocol_specification": "1.1.0",
+  "generated": "2026-10-16",
+  "generator": {
+    "script": "data/generate_seeds.py",
+    "sha256": "40c83cab1a7fc9f1b41fdbdf3a5ed62f185e8c1b513d04bc99d40d83fec76fbd",
+    "master_seed": 2025,
+    "sub_seed_rule": "np.random.default_rng(master_seed).integers(0, 2**31, 9), in file order"
+  },
+  "environment": {
+    "python": "3.11.17",
+    "numpy": "1.26.4",
+    "scipy": "1.13.0",
+    "platform": "linux-x86_64"
+  },
+  "checksums_file": "data/checksums.sha256",
+  "deposit": {
+    "status": "not_deposited",
+    "note": "Zenodo record 10.5281/zenodo.21632264 (v1.0) holds the manuscripts and protocol battery, not these files; regenerate locally with `python data/generate_seeds.py` and check with `--verify`."
+  },
+  "datasets": [
+    {
+      "name": "sim0_hep_proxy",
+      "file": "sim0_hep_proxy.npz",
+      "sha256": "02b06254fe235ceb9c55aa608dcff610d4b87a00ff84ab21d1088aba05d2b33e",
+      "bytes": 11477,
+      "sub_seed": 960941037,
+      "csv": {
+        "file": "sim0_hep_proxy.csv",
+        "sha256": "193b69557886f4c7fbeebfebafed79f3cf3236e5a41d96a62ad959c9adc67cf0",
+        "bytes": 9724
+      },
+      "registry_ep": "EP-0",
+      "protocol": "protocols/protocol_0_hep_proxy_validation.json",
+      "consumers": [
+        "figures/generate_figure1.py"
+      ],
+      "seed_design": "N=60 (main 30 + replication 30); physostigmine arm n=30",
+      "v1_1_alignment": "differs",
+      "v1_1_note": "v1.1 registers N=115 primary plus an independent N>=30 validation sample and replaces heartbeat counting with discrimination; the seed keeps the v1.0 60-subject design and v1.0 Pred 0.A-0.C thresholds."
+    },
+    {
+      "name": "sim1_ignition_dynamics",
+      "file": "sim1_ignition_dynamics.npz",
+      "sha256": "a8e6e023346f3523711d6b1b5331194cff6c82ec459f54ec5801a7ba480a5a48",
+      "bytes": 759647,
+      "sub_seed": 2135581875,
+      "csv": {
+        "file": "sim1_ignition_dynamics.csv",
+        "sha256": "325c8247c09261cf28841b428952ed29c6766940b28a852c0630f96677ac289f",
+        "bytes": 1418367
+      },
+      "registry_ep": "EP-1",
+      "protocol": "protocols/protocol_1_cardiac_eeg.json",
+      "consumers": [],
+      "seed_design": "10 000 simulated trials, one synthetic session",
+      "v1_1_alignment": "not_applicable",
+      "v1_1_note": "Trial-level model simulation; no participant count. v1.1 cohort (62 enrolled / 59 analyzable / 48 floor) is not simulated."
+    },
+    {
+      "name": "sim2_parameter_recovery",
+      "file": "sim2_parameter_recovery.npz",
+      "sha256": "f74065b633687d78bc883ec531edbf85b6f87217739e1278b31d72b4b7be5cb3",
+      "bytes": 82517,
+      "sub_seed": 2131554307,
+      "csv": {
+        "file": "sim2_parameter_recovery.csv",
+        "sha256": "6d9a18e3e4856e91a964c74ad45262a6666e878e8753476fd77c037d7e5bae9c",
+        "bytes": 195574
+      },
+      "registry_ep": "EP-2",
+      "protocol": "protocols/protocol_2_somatic_agent_sim.json",
+      "consumers": [],
+      "seed_design": "1 000 five-parameter MLE recovery runs x 200 trials",
+      "v1_1_alignment": "differs",
+      "v1_1_note": "v1.1 requires 1 000 deterministic seeds per condition across seven agent architectures; the seed is a single-model recovery sweep."
+    },
+    {
+      "name": "sim3_liquid_network",
+      "file": "sim3_liquid_network.npz",
+      "sha256": "2048213e32ac2e16c326249baf03116498ea6a5a843872872deb62cc13f8eb1c",
+      "bytes": 8193015,
+      "sub_seed": 820359671,
+      "csv": {
+        "file": "sim3_liquid_network.csv",
+        "sha256": "9883ef33f11614c8cceab968c0adda267e8a8dd4d1e3871982fd9425bfe446b9",
+        "bytes": 1386
+      },
+      "registry_ep": "EP-2",
+      "protocol": "protocols/protocol_2_somatic_agent_sim.json",
+      "consumers": [],
+      "seed_design": "20 reservoir seeds x 500 steps x 100 units",
+      "v1_1_alignment": "not_applicable",
+      "v1_1_note": "Paper 2 supplementary reservoir trajectories; no protocol cohort."
+    },
+    {
+      "name": "sim4_hierarchical",
+      "file": "sim4_hierarchical.npz",
+      "sha256": "4bc22f3146d28ecfddb8eda915fd2676114fb9928fa856061b9582e1720d0f14",
+      "bytes": 520176,
+      "sub_seed": 2047814546,
+      "csv": {
+        "file": "sim4_hierarchical.csv",
+        "sha256": "e32620f164a1ebb44def99809514c12f6b3c2581d63f8bca859fba6f56c5f9ae",
+        "bytes": 26530
+      },
+      "registry_ep": "EP-3",
+      "protocol": "protocols/protocol_3_anticipation_fmri.json",
+      "consumers": [],
+      "seed_design": "100 seeds x 50 trials x 5 hierarchy levels",
+      "v1_1_alignment": "not_applicable",
+      "v1_1_note": "Model prediction-error series; v1.1 cohort (N=40 / 36 analyzable, 200 trials) is not simulated."
+    },
+    {
+      "name": "sim5_doc_biomarker",
+      "file": "sim5_doc_biomarker.npz",
+      "sha256": "93638545dbbfd80044ca7e44f3a27d70db0a5fccbf1eaf32143c506525fdc2ab",
+      "bytes": 209877,
+      "sub_seed": 1776286831,
+      "csv": {
+        "file": "sim5_doc_biomarker.csv",
+        "sha256": "df482917fd2272e773cdf1b81289ff2f0dab8c142cbd54a9da7efb16f5944d39",
+        "bytes": 8577
+      },
+      "registry_ep": "EP-7",
+      "protocol": "protocols/protocol_7_doc_biomarker.json",
+      "consumers": [
+        "figures/generate_figure8.py"
+      ],
+      "seed_design": "N=110: VS/UWS 30, MCS 30, EMCS 20, Controls 30",
+      "v1_1_alignment": "matches",
+      "v1_1_note": "Group sizes equal the v1.1 fixed-enrollment design (80 patients + 30 controls). Site structure (whole-site bootstrap) is not simulated."
+    },
+    {
+      "name": "sim6_bifurcation",
+      "file": "sim6_bifurcation.npz",
+      "sha256": "c9f7cdbcd60e1f333408b3d63ff0684e6949ff2f3559a9f0b66f6cf3d1c129ec",
+      "bytes": 5689,
+      "sub_seed": 1373214918,
+      "csv": {
+        "file": "sim6_bifurcation.csv",
+        "sha256": "4a391c6b98ee09ffe66a719eb8121d916dccbb6a73d623db5dd15afbb527bfe5",
+        "bytes": 2635
+      },
+      "registry_ep": "EP-6",
+      "protocol": "protocols/protocol_6_ignition_ieeg.json",
+      "consumers": [],
+      "seed_design": "N=25 simulated subjects",
+      "v1_1_alignment": "differs",
+      "v1_1_note": "v1.1 registers N=20 target / 12 minimum clinical participants."
+    },
+    {
+      "name": "sim7_metabolic_crossover",
+      "file": "sim7_metabolic_crossover.npz",
+      "sha256": "544eef59e323cdbb167bff52e3e9b26da1d678e72c6a00bd807ec3c97c0ea100",
+      "bytes": 15665,
+      "sub_seed": 1797992014,
+      "csv": {
+        "file": "sim7_metabolic_crossover.csv",
+        "sha256": "d77fe6f367af24947f3fd00db516c567102f967ca1b673caba3e02e5d25b88e4",
+        "bytes": 26098
+      },
+      "registry_ep": "EP-4",
+      "protocol": "protocols/protocol_4_metabolic_crossover.json",
+      "consumers": [
+        "figures/generate_figure5.py"
+      ],
+      "seed_design": "N=60 across 2 sites, 2x2 within-subject, 480 trials/session",
+      "v1_1_alignment": "differs",
+      "v1_1_note": "v1.1 registers N=64 / 55 analyzable / 48 floor across two labs with four sessions and a three-level contrast grid; the seed keeps the v1.0 2x2 design."
+    },
+    {
+      "name": "sim8_tms_pci",
+      "file": "sim8_tms_pci.npz",
+      "sha256": "5e93ba5b0c8ea983d00543c648bcb0ada5641b9ecc2b0f7c35c7acc76a4bea53",
+      "bytes": 11755,
+      "sub_seed": 1645535740,
+      "csv": {
+        "file": "sim8_tms_pci.csv",
+        "sha256": "a4606e7270ac4a17d4d36c326b5e55265796d96e13f60dc337c4ae7850a6ec93",
+        "bytes": 13496
+      },
+      "registry_ep": "EP-5",
+      "protocol": "protocols/protocol_5_causal_tms.json",
+      "consumers": [
+        "figures/generate_figure6.py"
+      ],
+      "seed_design": "N=36, three sites (aINS, dlPFC, vertex), pi_i tertiles",
+      "v1_1_alignment": "differs",
+      "v1_1_note": "N=36 equals the v1.1 analyzable floor; v1.1 targets 52 enrolled / 44 analyzable and adds the Pred 5.E ROPE equivalence test."
+    }
+  ]
+}

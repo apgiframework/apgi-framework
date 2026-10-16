@@ -1674,8 +1674,9 @@ def _write_manifest(master_seed: int) -> pathlib.Path:
         "deposit": {
             "status": "not_deposited",
             "note": (
-                "Zenodo record 10.5281/zenodo.21632264 (v1.0) holds manuscripts "
-                "only; regenerate locally with `python data/generate_seeds.py`."
+                "Zenodo record 10.5281/zenodo.21632264 (v1.0) holds the manuscripts "
+                "and protocol battery, not these files; regenerate locally with "
+                "`python data/generate_seeds.py` and check with `--verify`."
             ),
         },
         "datasets": datasets,

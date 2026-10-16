@@ -190,8 +190,9 @@ Output PDFs land in `figures/output/`.
 pytest tests/ -v
 ```
 
-The full suite (213 tests, 100% coverage) covers core equations, normaliser, integration,
-clinical interpreter, parameter recovery, LNN, bifurcation analysis, and five-level hierarchy.
+The full suite (376 tests, 99% line coverage of `src/apgi`, `scripts/` and `figures/`) covers core
+equations, normaliser, integration, clinical interpreter, parameter recovery, LNN, bifurcation analysis,
+five-level hierarchy, protocol validation, and the seed-manifest release record.
 
 ## Data
 
