@@ -1479,10 +1479,26 @@ def _read_checksums() -> dict[str, str]:
     return expected
 
 
+# Digests published before release 1.1.0. Files with these digests were made
+# by the old generator (stray allow_pickle array) and must be regenerated.
+PRE_1_1_DIGESTS = {
+    "160d19715985eea2b488e145a10be5de44a62a1ff2fcecb1877285571d430ead",
+    "975c608534c72424bab023f64a2bf0205379fa3a76a401e853766b632dad7946",
+    "bca75d35b6445bfc2058fda562cf6313e8ce9b2a1ff0d5dbdb02479a9dfb53bb",
+    "b61cc629f35ad83edf2f1c4aff165fef8b30814461bdb64e5be67d5e6d35a1b1",
+    "fc9ec5decb337dcf190fa164ced6a8aaaf4523b1c7f2f6d2d2409ac1cb0c23aa",
+    "1788cc8b1c76de2c86671eed616014a9283acd762d50853776a88e6a8a6bcdbc",
+    "9aa0badbfd58ef8f760105115f76c8ce613afb17313a54f70df8efbe78c0e293",
+    "654b7bd8a6cc5b48af14f82d6c5d7511aaf6c2805797d40ed502b6bca9df6759",
+    "b235616778670083cc4c78e18cf969132ce6d221a63921ac823b40af7cbe8012",
+}
+
+
 def _verify(paths: list[pathlib.Path]) -> bool:
     """Compare each seed file against data/checksums.sha256."""
     expected = _read_checksums()
     ok = True
+    stale = False
     for p in paths:
         if not p.exists():
             print(f"  MISSING  {p.name}")
@@ -1493,10 +1509,23 @@ def _verify(paths: list[pathlib.Path]) -> bool:
             print(f"  UNKNOWN  {p.name}  {digest[:16]}…  (no entry in {CHECKSUM_FILE.name})")
             ok = False
         elif digest != expected[p.name]:
-            print(f"  MISMATCH {p.name}  {digest[:16]}… != {expected[p.name][:16]}…")
+            note = "  (pre-1.1.0 file)" if digest in PRE_1_1_DIGESTS else ""
+            stale = stale or bool(note)
+            print(f"  MISMATCH {p.name}  {digest[:16]}… != {expected[p.name][:16]}…{note}")
             ok = False
         else:
             print(f"  OK       {p.name}  {digest[:16]}…")
+    if stale:
+        print(
+            "\n  Files marked pre-1.1.0 were made by the old generator; regenerate them with\n"
+            "  `python data/generate_seeds.py --dataset NAME[,NAME...]` (or no flag for all)."
+        )
+    elif not ok:
+        print(
+            "\n  Regenerate with `python data/generate_seeds.py`. If digests still differ, compare\n"
+            "  your Python/NumPy/SciPy/platform with the 'environment' block of\n"
+            "  data/seeds/seed_manifest.json; last-bit float differences change the digest."
+        )
     return ok
 
 

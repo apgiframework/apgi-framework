@@ -32,7 +32,8 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `np.savez_compressed`: NumPy < 2.1 stored it as a stray `allow_pickle` array in every archive,
   so the file bytes depended on the NumPy version. `--verify` now compares against
   `data/checksums.sha256` and exits 1 on mismatch (it previously only printed digests).
-  `--dataset` accepts comma-separated prefixes and also limits `--verify`.
+  `--dataset` accepts comma-separated prefixes and also limits `--verify`. `--verify` marks files
+  that still carry a pre-1.1.0 digest and says how to regenerate them.
 - `data/checksums.sha256`, `src/apgi/scripts/fetch_data.py` — digests regenerated in the pinned
   reference stack (Python 3.11, NumPy 1.26.4, SciPy 1.13.0, linux-x86_64). The previous digests
   could not be reproduced on Linux with either NumPy 1.26.4 or 2.4.6. Array contents are unchanged
