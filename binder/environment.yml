@@ -1,3 +1,7 @@
+# Binder environment for APGI release 1.1.0.
+# Versions match the reference stack recorded in data/seeds/seed_manifest.json;
+# binder/postBuild regenerates data/seeds/ and checks it against
+# data/checksums.sha256.
 name: apgi-binder
 channels:
   - conda-forge
@@ -7,6 +11,7 @@ dependencies:
   - numpy=1.26.4
   - scipy=1.13.0
   - matplotlib=3.8.4
+  - h5py
   - jsonschema=4.23.0
   - nbformat=5.10.4
   - ipykernel=6.29.4

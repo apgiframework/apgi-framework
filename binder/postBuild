@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Binder post-build: populate data/seeds/ so figure scripts run offline.
+#
+# The seed datasets are not on Zenodo (record 10.5281/zenodo.21632264 holds
+# manuscripts only), so they are regenerated here from data/generate_seeds.py
+# with the master seed recorded in data/seeds/seed_manifest.json.
+#
+# sim2_parameter_recovery is skipped: its 1 000 MLE fits take ~2 h on one
+# core, longer than a Binder build allows, and no figure or notebook reads it.
+# Generate it in a terminal with `python data/generate_seeds.py --dataset sim2`.
+#
+# Digests are bit-identical only when the image reproduces the manifest's
+# "environment" block; a mismatch is reported but does not fail the build.
+
+set -euo pipefail
+
+DATASETS="sim0,sim1,sim3,sim4,sim5,sim6,sim7,sim8"
+
+python data/generate_seeds.py --dataset "$DATASETS"
+
+if python data/generate_seeds.py --verify --dataset "$DATASETS"; then
+  echo "postBuild: seed datasets match release 1.1.0 checksums."
+else
+  echo "postBuild: WARNING — regenerated seeds differ from data/checksums.sha256;"
+  echo "           compare this image with the 'environment' block of data/seeds/seed_manifest.json."
+fi

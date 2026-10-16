@@ -45,13 +45,20 @@ at 100% for modules under `src/apgi/`.
 
 ## Regenerating seed data
 
-Seed `.npz` files are not committed. To regenerate locally:
+Seed `.npz` files are not committed; `data/seeds/seed_manifest.json` is the tracked
+release record of them (digests, sub-seeds, consumers, protocol v1.1.0 alignment, and the
+generating environment). To regenerate locally:
 
 ```bash
-python data/generate_seeds.py           # all six datasets + CSV summaries → data/seeds/
+python data/generate_seeds.py           # all nine datasets + CSV summaries + manifest → data/seeds/
 python data/generate_seeds.py --dataset sim1_ignition_dynamics   # one dataset
-python data/generate_seeds.py --verify  # check digests of locally generated files
+python data/generate_seeds.py --verify  # compare local files to data/checksums.sha256 (exit 1 on mismatch)
+python data/generate_seeds.py --manifest  # rewrite seed_manifest.json from existing files
 ```
+
+Digests are bit-identical only in the environment recorded in the manifest
+(`binder/environment.yml` pins the same stack). Binder runs `binder/postBuild`, which
+regenerates `data/seeds/` at image build time.
 
 To verify files already downloaded from Zenodo:
 

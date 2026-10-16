@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate canonical synthetic seed datasets for APGI figures and notebooks.
 
-Produces four .npz archives whose SHA-256 digests are the values that go
+Produces nine .npz archives whose SHA-256 digests are the values that go
 into data/checksums.sha256 and src/apgi/scripts/fetch_data.py after the
 files are deposited to Zenodo.
 
@@ -167,7 +167,8 @@ def _save(
         # Store scalar metadata as zero-dimensional arrays so npz round-trips cleanly
         for k, v in metadata.items():
             save_kwargs[f"_meta_{k}"] = np.array(v)
-    np.savez_compressed(dest, allow_pickle=True, **save_kwargs)
+    # No allow_pickle kwarg: NumPy < 2.1 would store it as a stray array.
+    np.savez_compressed(dest, **save_kwargs)
     digest = _sha256(dest)
     print(
         f"  wrote {dest.name}  ({dest.stat().st_size // 1024} KB)  sha256={digest[:16]}…"
@@ -1465,7 +1466,22 @@ def _write_checksums(paths: list[pathlib.Path]) -> None:
 # ---------------------------------------------------------------------------
 
 
+def _read_checksums() -> dict[str, str]:
+    """Parse data/checksums.sha256 into {filename: digest}."""
+    if not CHECKSUM_FILE.exists():
+        return {}
+    expected = {}
+    for line in CHECKSUM_FILE.read_text().splitlines():
+        if line.startswith("#") or not line.strip():
+            continue
+        digest, name = line.split(maxsplit=1)
+        expected[name.strip()] = digest
+    return expected
+
+
 def _verify(paths: list[pathlib.Path]) -> bool:
+    """Compare each seed file against data/checksums.sha256."""
+    expected = _read_checksums()
     ok = True
     for p in paths:
         if not p.exists():
@@ -1473,8 +1489,200 @@ def _verify(paths: list[pathlib.Path]) -> bool:
             ok = False
             continue
         digest = _sha256(p)
-        print(f"  OK       {p.name}  {digest[:16]}…")
+        if p.name not in expected:
+            print(f"  UNKNOWN  {p.name}  {digest[:16]}…  (no entry in {CHECKSUM_FILE.name})")
+            ok = False
+        elif digest != expected[p.name]:
+            print(f"  MISMATCH {p.name}  {digest[:16]}… != {expected[p.name][:16]}…")
+            ok = False
+        else:
+            print(f"  OK       {p.name}  {digest[:16]}…")
     return ok
+
+
+# ---------------------------------------------------------------------------
+# Seed manifest (data/seeds/seed_manifest.json)
+# ---------------------------------------------------------------------------
+
+RELEASE = "1.1.0"
+MANIFEST_FILE = SEED_DIR / "seed_manifest.json"
+
+# Static catalogue: which protocol each dataset illustrates, who reads it, and
+# how its simulated design compares with the protocol v1.1.0 participants
+# block. Seed datasets are illustrative simulations, not preregistered
+# cohorts; a "differs" entry means figures drawn from that dataset show the
+# v1.0 simulated design and must not be read as v1.1 power or decision data.
+CATALOGUE: dict[str, dict] = {
+    "sim0_hep_proxy": {
+        "registry_ep": "EP-0",
+        "protocol": "protocols/protocol_0_hep_proxy_validation.json",
+        "consumers": ["figures/generate_figure1.py"],
+        "seed_design": "N=60 (main 30 + replication 30); physostigmine arm n=30",
+        "v1_1_alignment": "differs",
+        "v1_1_note": (
+            "v1.1 registers N=115 primary plus an independent N>=30 validation "
+            "sample and replaces heartbeat counting with discrimination; the "
+            "seed keeps the v1.0 60-subject design and v1.0 Pred 0.A-0.C thresholds."
+        ),
+    },
+    "sim1_ignition_dynamics": {
+        "registry_ep": "EP-1",
+        "protocol": "protocols/protocol_1_cardiac_eeg.json",
+        "consumers": [],
+        "seed_design": "10 000 simulated trials, one synthetic session",
+        "v1_1_alignment": "not_applicable",
+        "v1_1_note": (
+            "Trial-level model simulation; no participant count. v1.1 cohort "
+            "(62 enrolled / 59 analyzable / 48 floor) is not simulated."
+        ),
+    },
+    "sim2_parameter_recovery": {
+        "registry_ep": "EP-2",
+        "protocol": "protocols/protocol_2_somatic_agent_sim.json",
+        "consumers": [],
+        "seed_design": "1 000 five-parameter MLE recovery runs x 200 trials",
+        "v1_1_alignment": "differs",
+        "v1_1_note": (
+            "v1.1 requires 1 000 deterministic seeds per condition across seven "
+            "agent architectures; the seed is a single-model recovery sweep."
+        ),
+    },
+    "sim3_liquid_network": {
+        "registry_ep": "EP-2",
+        "protocol": "protocols/protocol_2_somatic_agent_sim.json",
+        "consumers": [],
+        "seed_design": "20 reservoir seeds x 500 steps x 100 units",
+        "v1_1_alignment": "not_applicable",
+        "v1_1_note": "Paper 2 supplementary reservoir trajectories; no protocol cohort.",
+    },
+    "sim4_hierarchical": {
+        "registry_ep": "EP-3",
+        "protocol": "protocols/protocol_3_anticipation_fmri.json",
+        "consumers": [],
+        "seed_design": "100 seeds x 50 trials x 5 hierarchy levels",
+        "v1_1_alignment": "not_applicable",
+        "v1_1_note": (
+            "Model prediction-error series; v1.1 cohort (N=40 / 36 analyzable, "
+            "200 trials) is not simulated."
+        ),
+    },
+    "sim5_doc_biomarker": {
+        "registry_ep": "EP-7",
+        "protocol": "protocols/protocol_7_doc_biomarker.json",
+        "consumers": ["figures/generate_figure8.py"],
+        "seed_design": "N=110: VS/UWS 30, MCS 30, EMCS 20, Controls 30",
+        "v1_1_alignment": "matches",
+        "v1_1_note": (
+            "Group sizes equal the v1.1 fixed-enrollment design (80 patients + "
+            "30 controls). Site structure (whole-site bootstrap) is not simulated."
+        ),
+    },
+    "sim6_bifurcation": {
+        "registry_ep": "EP-6",
+        "protocol": "protocols/protocol_6_ignition_ieeg.json",
+        "consumers": [],
+        "seed_design": "N=25 simulated subjects",
+        "v1_1_alignment": "differs",
+        "v1_1_note": "v1.1 registers N=20 target / 12 minimum clinical participants.",
+    },
+    "sim7_metabolic_crossover": {
+        "registry_ep": "EP-4",
+        "protocol": "protocols/protocol_4_metabolic_crossover.json",
+        "consumers": ["figures/generate_figure5.py"],
+        "seed_design": "N=60 across 2 sites, 2x2 within-subject, 480 trials/session",
+        "v1_1_alignment": "differs",
+        "v1_1_note": (
+            "v1.1 registers N=64 / 55 analyzable / 48 floor across two labs "
+            "with four sessions and a three-level contrast grid; the seed keeps "
+            "the v1.0 2x2 design."
+        ),
+    },
+    "sim8_tms_pci": {
+        "registry_ep": "EP-5",
+        "protocol": "protocols/protocol_5_causal_tms.json",
+        "consumers": ["figures/generate_figure6.py"],
+        "seed_design": "N=36, three sites (aINS, dlPFC, vertex), pi_i tertiles",
+        "v1_1_alignment": "differs",
+        "v1_1_note": (
+            "N=36 equals the v1.1 analyzable floor; v1.1 targets 52 enrolled / "
+            "44 analyzable and adds the Pred 5.E ROPE equivalence test."
+        ),
+    },
+}
+
+
+def _environment() -> dict:
+    import platform
+
+    import scipy
+
+    return {
+        "python": platform.python_version(),
+        "numpy": np.__version__,
+        "scipy": scipy.__version__,
+        "platform": f"{platform.system().lower()}-{platform.machine()}",
+    }
+
+
+def _write_manifest(master_seed: int) -> pathlib.Path:
+    """Write data/seeds/seed_manifest.json from the files currently in SEED_DIR.
+
+    Records each dataset's digest, size, derived RNG seed, consumers and its
+    alignment with the protocol v1.1.0 design, plus the generating
+    environment. Bit-identical digests are only expected when the recorded
+    environment is reproduced (binder/environment.yml pins the same stack).
+    """
+    import datetime
+    import json
+
+    sub_seeds = np.random.default_rng(master_seed).integers(0, 2**31, len(GENERATORS))
+    datasets = []
+    for (filename, _), sub_seed in zip(GENERATORS, sub_seeds):
+        stem = filename.removesuffix(".npz")
+        npz = SEED_DIR / filename
+        if not npz.exists():
+            raise FileNotFoundError(f"{npz} missing; generate seeds before writing the manifest")
+        entry: dict = {
+            "name": stem,
+            "file": filename,
+            "sha256": _sha256(npz),
+            "bytes": npz.stat().st_size,
+            "sub_seed": int(sub_seed),
+        }
+        csv_path = npz.with_suffix(".csv")
+        if csv_path.exists():
+            entry["csv"] = {
+                "file": csv_path.name,
+                "sha256": _sha256(csv_path),
+                "bytes": csv_path.stat().st_size,
+            }
+        entry.update(CATALOGUE[stem])
+        datasets.append(entry)
+
+    manifest = {
+        "release": RELEASE,
+        "protocol_specification": RELEASE,
+        "generated": datetime.date.today().isoformat(),
+        "generator": {
+            "script": "data/generate_seeds.py",
+            "sha256": _sha256(pathlib.Path(__file__)),
+            "master_seed": master_seed,
+            "sub_seed_rule": "np.random.default_rng(master_seed).integers(0, 2**31, 9), in file order",
+        },
+        "environment": _environment(),
+        "checksums_file": "data/checksums.sha256",
+        "deposit": {
+            "status": "not_deposited",
+            "note": (
+                "Zenodo record 10.5281/zenodo.21632264 (v1.0) holds manuscripts "
+                "only; regenerate locally with `python data/generate_seeds.py`."
+            ),
+        },
+        "datasets": datasets,
+    }
+    MANIFEST_FILE.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+    print(f"  Updated {MANIFEST_FILE}")
+    return MANIFEST_FILE
 
 
 # ---------------------------------------------------------------------------
@@ -1506,7 +1714,10 @@ def main() -> None:
     parser.add_argument(
         "--dataset",
         metavar="NAME",
-        help="Generate only one dataset (e.g. sim1_ignition_dynamics).",
+        help=(
+            "Generate (or with --verify, check) only these datasets: comma-separated "
+            "name prefixes, e.g. sim1_ignition_dynamics or sim0,sim5."
+        ),
     )
     parser.add_argument(
         "--seed",
@@ -1514,25 +1725,37 @@ def main() -> None:
         default=MASTER_SEED,
         help=f"Master RNG seed (default: {MASTER_SEED}).",
     )
+    parser.add_argument(
+        "--manifest",
+        action="store_true",
+        help="Rewrite data/seeds/seed_manifest.json from existing seed files.",
+    )
     args = parser.parse_args()
 
+    selected = [name for name, _ in GENERATORS]
+    if args.dataset:
+        prefixes = [d.strip() for d in args.dataset.split(",") if d.strip()]
+        unknown = [p for p in prefixes if not any(n.startswith(p) for n in selected)]
+        if unknown:
+            print(f"Unknown dataset(s): {unknown}. Available: {selected}")
+            sys.exit(1)
+        selected = [n for n in selected if any(n.startswith(p) for p in prefixes)]
+
     if args.verify:
-        paths = [SEED_DIR / name for name, _ in GENERATORS]
-        _verify(paths)
+        if not _verify([SEED_DIR / name for name in selected]):
+            sys.exit(1)
+        return
+
+    if args.manifest:
+        _write_manifest(args.seed)
         return
 
     rng = np.random.default_rng(args.seed)
     sub_seeds = rng.integers(0, 2**31, len(GENERATORS))
 
     if args.dataset:
-        matches = [(n, g) for n, g in GENERATORS if n.startswith(args.dataset)]
-        if not matches:
-            print(
-                f"Unknown dataset: {args.dataset!r}. Available: {[n for n, _ in GENERATORS]}"
-            )
-            sys.exit(1)
         for i, (name, gen) in enumerate(GENERATORS):
-            if name == matches[0][0]:
+            if name in selected:
                 print(f"\nGenerating {name}…")
                 gen(int(sub_seeds[i]))
         return
@@ -1544,6 +1767,7 @@ def main() -> None:
         generated.append(path)
 
     _write_checksums(generated)
+    _write_manifest(args.seed)
     print("\nDone. Next steps:")
     print(
         "  1. Upload data/seeds/*.npz as a new version of "
