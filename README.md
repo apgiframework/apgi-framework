@@ -134,17 +134,21 @@ from apgi.extensions.hierarchical  import APGIHierarchy
 
 ## Notebooks
 
-Interactive walkthroughs are in `notebooks/`:
+Interactive walkthroughs are in `notebooks/`. The protocol notebooks follow protocol specification **v1.1.0**: they read
+design counts and decision thresholds directly from `protocols/*.json`, and they classify each prediction as CONFIRMED,
+FALSIFIED or INDETERMINATE (failing to confirm is not falsification). All data are synthetic.
 
 | Notebook | Content |
 | :--- | :--- |
-| `01_quick_start.ipynb` | Core equations, `APGICoreIntegration`, signal normalisation |
-| `02_protocol1_cardiac_eeg.ipynb` | Protocol 1 — Cardiac-EEG: interoceptive precision gating (Pred 1.a–Pred 1.c) |
-| `03_protocol2_somatic_agent_sim.ipynb` | Protocol 2 — Somatic-AgentSim: active inference agent simulations (Pred 2.a–Pred 2.e) |
-| `04_protocol4_insula_tms.ipynb` | Protocol 4 — Insula-TMS: causal disruption of Πⁱ_eff (Pred 4.a–Pred 4.c) |
-| `05_protocol3_anticipation_fmri.ipynb` | Protocol 3 — Anticipation-fMRI: somatic marker vs. prediction error (Pred 3.a–Pred 3.d) |
-| `06_protocol6_doc_biomarker.ipynb` | Protocol 6 — DoC-Biomarker: joint HEP+PCI model (Pred 6.a–Pred 6.d, 6.S) |
-| `07_protocol5_ignition_ieeg.ipynb` | Protocol 5 — Ignition-iEEG: all-or-none dynamics + pharmacology (Pred 5.a–Pred 5.g) |
+| `quick_start.ipynb` | Core equations, v1.1 parameter registry check, `APGICoreIntegration`, signal normalisation |
+| `protocol0_hep_proxy_validation.ipynb` | Protocol 0 — HEP proxy validation and downstream proxy gate (Pred 0.A–0.C) |
+| `protocol1_cardiac_eeg.ipynb` | Protocol 1 — Cardiac-EEG: attention × cardiac phase, IA moderation, Weibull steepness (Pred 1.A–1.F) |
+| `protocol2_somatic_agent_sim.ipynb` | Protocol 2 — Somatic-AgentSim: seven IGT architectures under the volatility schedule (Pred 2.A–2.E) |
+| `protocol3_anticipation_fmri.ipynb` | Protocol 3 — Anticipation-fMRI: vmPFC→aINS vs vmPFC→pIC dissociation (Pred 3.A–3.D) |
+| `protocol4_metabolic_crossover.ipynb` | Protocol 4 — Metabolic-state crossover: four sessions, signed 15 % d′ margin (Pred 4.A–4.C) |
+| `protocol5_insula_tms.ipynb` | Protocol 5 — Causal neuromodulation: aINS tFUS/dTMS vs matched sham, ROPE equivalence (Pred 5.A–5.E) |
+| `protocol6_ignition_ieeg.ipynb` | Protocol 6 — Ignition-iEEG: fixed-contrast bimodality, dwell, AC1 estimator check (Pred 6.A–6.E) |
+| `protocol7_doc_biomarker.ipynb` | Protocol 7 — DoC biomarkers: primary Pred 7.G HEP→CRS-R LRT, joint HEP+PCI (Pred 7.A–7.G) |
 
 ```bash
 jupyter lab notebooks/
