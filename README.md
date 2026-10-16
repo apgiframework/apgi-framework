@@ -17,7 +17,7 @@
 
 This repository is the companion code release for the paper series above.
 All figures in Papers 1–3 are reproduced by scripts in `figures/` and `scripts/`.
-Pre-registered protocols are in `protocols/` and archived on OSF at [osf.io/t5hcq](https://osf.io/t5hcq).
+Version 1.1 protocol specifications are in `protocols/`. The OSF project is [osf.io/t5hcq](https://osf.io/t5hcq); the stated 2026-10-16 amendment has not been independently verified.
 
 ### Project links
 
@@ -209,18 +209,27 @@ close(fid)
 
 ## Experimental protocols
 
-Pre-registered protocols are in `protocols/` and on OSF: [osf.io/t5hcq](https://osf.io/t5hcq).
-All protocol files are validated against `protocols/schemas/protocol.schema.json` in CI.
+The eight protocol specifications use version `1.1.0` (protocol release version, independent of the Python package version). They contain 40 prediction records. Source conflicts and pending analysis locks are documented in `protocols/CHANGELOG.md`; JSON validation does not establish empirical validation or study readiness.
 
-| File | Paradigm | Status |
+| File | Paradigm | Predictions |
 | :--- | :--- | :--- |
-| `protocol_0_hep_proxy_validation.json` | Protocol 0 — HEP Proxy Validation: empirical prerequisite (Pred 0.A–Pred 0.C) | specified |
-| `protocol_1_cardiac_eeg.json` | Protocol 1 — Cardiac-EEG: interoceptive precision gating (Pred 1.a–Pred 1.c) | specified |
-| `protocol_2_somatic_agent_sim.json` | Protocol 2 — Somatic-AgentSim: somatic marker advantage (Pred 2.a–Pred 2.e) | validated |
-| `protocol_3_anticipation_fmri.json` | Protocol 3 — Anticipation-fMRI: somatic marker vs. prediction error (Pred 3.a–Pred 3.d) | specified |
-| `protocol_4_insula_tms.json` | Protocol 4 — Insula-TMS: causal disruption of Πⁱ_eff (Pred 4.a–Pred 4.c) | specified\_with\_caveat |
-| `protocol_5_ignition_ieeg.json` | Protocol 5 — Ignition-iEEG: all-or-none dynamics + pharmacology (Pred 5.a–Pred 5.g) | validated |
-| `protocol_6_doc_biomarker.json` | Protocol 6 — DoC-Biomarker: joint HEP+PCI model (Pred 6.a–Pred 6.d, 6.S) | specified |
+| `protocol_0_hep_proxy_validation.json` | HEP proxy validation | 0.A–C |
+| `protocol_1_cardiac_eeg.json` | Cardiac EEG | 1.A–F |
+| `protocol_2_somatic_agent_sim.json` | Somatic agent simulation | 2.A–G |
+| `protocol_3_anticipation_fmri.json` | Anticipation fMRI | 3.A–D |
+| `protocol_4_metabolic_crossover.json` | Metabolic crossover | 4.A–C |
+| `protocol_5_causal_tms.json` | Causal stimulation | 5.A–E |
+| `protocol_6_ignition_ieeg.json` | Ignition iEEG | 6.A–E |
+| `protocol_7_doc_biomarker.json` | DoC biomarkers | 7.A–G |
+
+CI validates the schema, date/URI formats, release membership, cross-field consistency, report and SHA256 manifest:
+
+```bash
+python3 scripts/validate_protocols.py
+python3 -m pytest tests/test_validate_protocols.py
+```
+
+An external release folder can be supplied as the first argument. Add `--source-dir /path/to/FINAL` to verify the source-document hashes. After intentional edits, `--refresh-metadata` regenerates `VALIDATION.json` and `MANIFEST.json` only after the protocol checks pass. Normal validation never rewrites files.
 
 ## Citation
 

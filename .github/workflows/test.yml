@@ -44,16 +44,8 @@ jobs:
           python figures/generate_figure7.py --no-show
           python figures/generate_figure8.py --no-show
 
-      - name: Validate protocol JSON schemas
-        run: |
-          python -c "
-          import json, jsonschema, pathlib
-          schema = json.load(open('protocols/schemas/protocol.schema.json'))
-          for f in sorted(pathlib.Path('protocols').glob('*.json')):
-              jsonschema.validate(json.load(open(f)), schema)
-              print(f'  OK  {f.name}')
-          print('All protocols valid')
-          "
+      - name: Validate protocol 1.1 release
+        run: python scripts/validate_protocols.py
 
       - name: Validate all notebooks (nbval-lax)
         run: |

@@ -259,3 +259,17 @@ class TestSaveFigure:
         # Only the requested PNG should exist — no spurious second file.
         assert sorted(p.name for p in tmp_path.iterdir()) == ["fig.png"]
         plt.close("all")
+
+
+# ===========================================================================
+# ensure_seed_dataset
+# ===========================================================================
+
+
+class TestEnsureSeedDataset:
+    def test_returns_existing_path_when_file_exists(self, tmp_path):
+        """Test that ensure_seed_dataset returns path immediately if file exists."""
+        seed_file = tmp_path / "test_seed.npz"
+        seed_file.write_bytes(b"fake npz data")
+        result = fig_utils.ensure_seed_dataset(seed_file, "dummy_generator", seed=2025)
+        assert result == seed_file

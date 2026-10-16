@@ -49,6 +49,18 @@ class TestComputePiIEff:
         with pytest.raises(ValueError, match="pi_i_baseline"):
             compute_pi_i_eff(-1.0, beta_sm=0.5, M_hat=0.0)
 
+    def test_negative_g_NE_raises(self):
+        """Test apply_ne_threshold_gain with negative g_NE."""
+        with pytest.raises(ValueError, match="g_NE must be non-negative"):
+            from apgi.core import apply_ne_threshold_gain
+            apply_ne_threshold_gain(0.6, g_NE=-0.1, gamma_NE=0.3)
+
+    def test_negative_gamma_NE_raises(self):
+        """Test apply_ne_threshold_gain with negative gamma_NE."""
+        with pytest.raises(ValueError, match="gamma_NE must be non-negative"):
+            from apgi.core import apply_ne_threshold_gain
+            apply_ne_threshold_gain(0.6, g_NE=0.1, gamma_NE=-0.3)
+
     def test_hand_computed_value(self):
         result = compute_pi_i_eff(1.0, beta_sm=0.6, M_hat=0.5)
         assert result == pytest.approx(math.exp(0.3), rel=1e-6)
