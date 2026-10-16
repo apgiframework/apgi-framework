@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="789.84pt" height="454.074688pt" viewBox="0 0 789.84 454.074688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 454.074688 
+L 789.84 454.074688 
+L 789.84 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 26.3232 212.76 
+L 376.0704 212.76 
+Q 383.6736 212.76 383.6736 209.6712 
+L 383.6736 83.0304 
+Q 383.6736 79.9416 376.0704 79.9416 
+L 26.3232 79.9416 
+Q 18.72 79.9416 18.72 83.0304 
+L 18.72 209.6712 
+Q 18.72 212.76 26.3232 212.76 
+z
+" clip-path="url(#p54f40843ad)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 414.0864 212.76 
+L 763.8336 212.76 
+Q 771.4368 212.76 771.4368 209.6712 
+L 771.4368 83.0304 
+Q 771.4368 79.9416 763.8336 79.9416 
+L 414.0864 79.9416 
+Q 406.4832 79.9416 406.4832 83.0304 
+L 406.4832 209.6712 
+Q 406.4832 212.76 414.0864 212.76 
+z
+" clip-path="url(#p54f40843ad)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 26.3232 367.2 
+L 376.0704 367.2 
+Q 383.6736 367.2 383.6736 364.1112 
+L 383.6736 237.4704 
+Q 383.6736 234.3816 376.0704 234.3816 
+L 26.3232 234.3816 
+Q 18.72 234.3816 18.72 237.4704 
+L 18.72 364.1112 
+Q 18.72 367.2 26.3232 367.2 
+z
+" clip-path="url(#p54f40843ad)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 414.0864 367.2 
+L 763.8336 367.2 
+Q 771.4368 367.2 771.4368 364.1112 
+L 771.4368 237.4704 
+Q 771.4368 234.3816 763.8336 234.3816 
+L 414.0864 234.3816 
+Q 406.4832 234.3816 406.4832 237.4704 
+L 406.4832 364.1112 
+Q 406.4832 367.2 414.0864 367.2 
+z
+" clip-path="url(#p54f40843ad)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 18.72 79.9416 
+L 383.6736 79.9416 
+" clip-path="url(#p54f40843ad)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 406.4832 79.9416 
+L 771.4368 79.9416 
+" clip-path="url(#p54f40843ad)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 18.72 234.3816 
+L 383.6736 234.3816 
+" clip-path="url(#p54f40843ad)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 406.4832 234.3816 
+L 771.4368 234.3816 
+" clip-path="url(#p54f40843ad)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="99.895238" transform="rotate(-0 33.9264 99.895238)">Independent calibration</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(33.9264 127.694438)">Freeze parameters and the observation model; keep</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(33.9264 141.171781)">calibration and human test data disjoint.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="421.6896" y="99.895238" transform="rotate(-0 421.6896 99.895238)">Synthetic recovery</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(421.6896 127.694438)">Generate from the frozen model, refit, and evaluate</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(421.6896 141.171781)">bias, interval coverage and parameter trade-offs.</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="254.335238" transform="rotate(-0 33.9264 254.335238)">Identifiability gate</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(33.9264 282.134438)">Use scaled information-matrix diagnostics and</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(33.9264 295.611781)">registered tolerances before confirmatory tests.</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="421.6896" y="254.335238" transform="rotate(-0 421.6896 254.335238)">Missing source results</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(421.6896 282.134438)">The supplied image contains recovery statistics without</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(421.6896 295.611781)">the generating fits. They are not reasserted here.</text>
+   </g>
+  </g>
+  <g id="text_9">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #20262e" x="26.64" y="22.9575" transform="rotate(-0 26.64 22.9575)">Parameter recovery: verification requirements</text>
+  </g>
+  <g id="text_10">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="425.978906" transform="rotate(-0 10.8 425.978906)">APGI 1.1  /  P1S1  /  Analysis-design replacement</text>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="441.818906" transform="rotate(-0 10.8 441.818906)">Quantitative panels pending verified recovery/sweep outputs from the canonical 1.1 implementation.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p54f40843ad">
+   <rect x="18.72" y="58.32" width="760.32" height="308.88"/>
+  </clipPath>
+ </defs>
+</svg>

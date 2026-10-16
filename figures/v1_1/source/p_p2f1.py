@@ -1,0 +1,12 @@
+from patchlib import *
+im=load('src/img-008.png'); K=(20,20,20); W=(255,255,255)
+fill(im,(895,818,1410,858),W)
+draw_rich(im,(902,850),[('ε','i'),('e','i_sup'),('/','n'),('ε','i'),('i','i_sup'),(' = exteroceptive/interoceptive prediction errors','n')],21,K)
+fill(im,(640,230,850,268),W)
+draw_rich(im,(648,260),[('separation ','n'),('ε','i'),('e','i_sup'),('/','n'),('ε','i'),('i','i_sup')],24,K)
+fill(im,(150,117,250,150),W)
+fill(im,(570,117,835,150),W)
+draw_rich(im,(703,143),[('requirements','b')],24,K,anchor='c')
+fill(im,(920,206,1098,240),W)
+draw_rich(im,(1009,233),[('(spiking reservoir)','n')],22,K,anchor='c')
+im.save('out/P2F1.png')

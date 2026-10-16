@@ -152,6 +152,16 @@ jupyter lab notebooks/
 
 ## Reproducing figures
 
+The **APGI 1.1 figure review series** is in [`figures/v1_1/`](figures/v1_1/README.md), with a [side-by-side comparison](figures/v1_1/index.html), revised captions, provenance and a complete mapping of all 31 legacy figures. Generate its 32 PNG/PDF/SVG sets with:
+
+```bash
+python3 figures/v1_1/generate.py
+python3 figures/v1_1/validate.py
+```
+
+Two quantitative panels (parameter recovery and sensitivity/robustness) are explicitly pending verified 1.1 analysis outputs; their current replacements describe the required analyses. The following commands reproduce the preserved **legacy 1.0** figures, not the 1.1 review series.
+
+
 ```bash
 python figures/generate_figure1.py   # Protocol 0 — HEP Proxy Validation (Pred 0.A–Pred 0.C)
 python figures/generate_figure2.py   # Protocol 1 — Cardiac-EEG: trial-timeline schematic

@@ -1,0 +1,13 @@
+from patchlib import *
+im=load('src/img-003.png')
+bg=sample(im,170,600); print(bg)
+txt=sample(im,205,600,0)
+fill(im,(188,580,930,615),bg)
+draw_rich(im,(556,607),[('sensitivity calculations across bit-count conventions (not estimates of ','n'),('κ','i'),(')','n')],26,(85,85,95),anchor='c')
+inner=sample(im,1260,520,2); print(inner)
+fill(im,(1249,447,1530,526),inner)
+P=(120,40,210)
+draw_rich(im,(1389,470),[('Event energy 0.10–0.12 J','b')],22,P,anchor='c')
+draw_rich(im,(1389,496),[('BOLD-calibrated /','n')],20,P,anchor='c')
+draw_rich(im,(1389,519),[('spike-count estimates','n')],20,P,anchor='c')
+im.save('out/P1F3.png')

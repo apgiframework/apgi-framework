@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="859.68pt" height="337.974688pt" viewBox="0 0 859.68 337.974688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 337.974688 
+L 859.68 337.974688 
+L 859.68 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 19.44 90 
+L 185.328 90 
+L 185.328 39.6 
+L 19.44 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="102.384" y="67.283437" transform="rotate(-0 102.384 67.283437)">Tier</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 185.328 90 
+L 517.104 90 
+L 517.104 39.6 
+L 185.328 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="351.216" y="67.213125" transform="rotate(-0 351.216 67.213125)">Currency</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 517.104 90 
+L 848.88 90 
+L 848.88 39.6 
+L 517.104 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="682.992" y="67.248281" transform="rotate(-0 682.992 67.248281)">Bridge / interpretation</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 19.44 153.84 
+L 185.328 153.84 
+L 185.328 90 
+L 19.44 90 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="29.39328" y="124.403438" transform="rotate(-0 29.39328 124.403438)">3 · Computational</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 185.328 153.84 
+L 517.104 153.84 
+L 517.104 90 
+L 185.328 90 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 119.364422)">Relative precision × excess error;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 129.442453)">leaky accumulation and access gate</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 517.104 153.84 
+L 848.88 153.84 
+L 848.88 90 
+L 517.104 90 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 119.364422)">Approximate inference bridge:</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 129.442453)">not validated in vivo</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 19.44 217.68 
+L 185.328 217.68 
+L 185.328 153.84 
+L 19.44 153.84 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="29.39328" y="188.243437" transform="rotate(-0 29.39328 188.243437)">2 · Information-theoretic</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 185.328 217.68 
+L 517.104 217.68 
+L 517.104 153.84 
+L 185.328 153.84 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 183.204422)">Bits per ignition event;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 193.282453)">event definition must be fixed</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 517.104 217.68 
+L 848.88 217.68 
+L 848.88 153.84 
+L 517.104 153.84 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 183.204422)">κ in ATP / event-information bit:</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 193.282453)">uncalibrated</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 19.44 281.52 
+L 185.328 281.52 
+L 185.328 217.68 
+L 19.44 217.68 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="29.39328" y="252.048281" transform="rotate(-0 29.39328 252.048281)">1 · Thermodynamic</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 185.328 281.52 
+L 517.104 281.52 
+L 517.104 217.68 
+L 185.328 217.68 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 247.044422)">Matched event energy</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(205.23456 257.122453)">in ATP or joules</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 517.104 281.52 
+L 848.88 281.52 
+L 848.88 217.68 
+L 517.104 217.68 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 247.044422)">Compare with independent accounting;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 257.122453)">Landauer is an erasure floor only</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="28.08" y="22.197656" transform="rotate(-0 28.08 22.197656)">Epistemic tiers and the double-bridge chain</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="314.198906" transform="rotate(-0 10.8 314.198906)">APGI 1.1  /  P4F1  /  Specification schematic</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="325.718906" transform="rotate(-0 10.8 325.718906)">Paper 4 Fig 1: ignition information and erased information have different denominators; upward bridges remain unspecified.</text>
+  </g>
+ </g>
+</svg>

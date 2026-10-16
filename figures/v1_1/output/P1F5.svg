@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="859.68pt" height="337.974688pt" viewBox="0 0 859.68 337.974688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 337.974688 
+L 859.68 337.974688 
+L 859.68 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 19.44 83.853659 
+L 127.2672 83.853659 
+L 127.2672 39.6 
+L 19.44 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="73.3536" y="64.210267" transform="rotate(-0 73.3536 64.210267)">Tier</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 127.2672 83.853659 
+L 268.272 83.853659 
+L 268.272 39.6 
+L 127.2672 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="197.7696" y="64.175111" transform="rotate(-0 197.7696 64.175111)">Design</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 268.272 83.853659 
+L 517.104 83.853659 
+L 517.104 39.6 
+L 268.272 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="392.688" y="64.175111" transform="rotate(-0 392.688 64.175111)">Quantity</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 517.104 83.853659 
+L 848.88 83.853659 
+L 848.88 39.6 
+L 517.104 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="682.992" y="64.210267" transform="rotate(-0 682.992 64.210267)">Decision context</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 19.44 154.659512 
+L 127.2672 154.659512 
+L 127.2672 83.853659 
+L 19.44 83.853659 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 116.701007)">Tier 3</text>
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 126.779038)">Computational</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 127.2672 154.659512 
+L 268.272 154.659512 
+L 268.272 83.853659 
+L 127.2672 83.853659 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="135.727488" y="121.740023" transform="rotate(-0 135.727488 121.740023)">Protocols 2–3</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 268.272 154.659512 
+L 517.104 154.659512 
+L 517.104 83.853659 
+L 268.272 83.853659 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 111.661992)">Human model comparison;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 121.740023)">anticipation and precision-gain</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 131.818054)">pathway</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 517.104 154.659512 
+L 848.88 154.659512 
+L 848.88 83.853659 
+L 517.104 83.853659 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 111.661992)">Prediction-specific model evidence; a single</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 121.740023)">nonsignificant test is not framework</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 131.818054)">falsification.</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 19.44 225.465366 
+L 127.2672 225.465366 
+L 127.2672 154.659512 
+L 19.44 154.659512 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 182.467845)">Tier 2</text>
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 192.545877)">Information-</text>
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 202.623908)">theoretic</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 127.2672 225.465366 
+L 268.272 225.465366 
+L 268.272 154.659512 
+L 127.2672 154.659512 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="135.727488" y="192.545877" transform="rotate(-0 135.727488 192.545877)">Protocol 1</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 268.272 225.465366 
+L 517.104 225.465366 
+L 517.104 154.659512 
+L 268.272 154.659512 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 182.467845)">Cardiac gating and behavioral</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 192.545877)">Weibull shape k; distinct from</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 202.623908)">intrinsic sigmoid gain.</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 517.104 225.465366 
+L 848.88 225.465366 
+L 848.88 154.659512 
+L 517.104 154.659512 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 182.467845)">Pred 1.E: 95% interval lower ≥10 AND ΔAIC &gt;10;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 192.545877)">opposing or intermediate outcomes remain</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 202.623908)">indeterminate.</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 19.44 281.52 
+L 127.2672 281.52 
+L 127.2672 225.465366 
+L 19.44 225.465366 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 250.901949)">Tier 1</text>
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; fill: #ffffff" transform="translate(25.909632 260.97998)">Thermodynamic</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 127.2672 281.52 
+L 268.272 281.52 
+L 268.272 225.465366 
+L 127.2672 225.465366 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(135.727488 250.937105)">Protocol 4;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(135.727488 261.015136)">matched calibration</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 268.272 281.52 
+L 517.104 281.52 
+L 517.104 225.465366 
+L 268.272 225.465366 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 250.937105)">State × load interactions; κ</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(283.20192 261.015136)">remains uncalibrated.</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 517.104 281.52 
+L 848.88 281.52 
+L 848.88 225.465366 
+L 517.104 225.465366 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 250.937105)">Signed 15% d′ margin and registered evidence;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(537.01056 261.015136)">covariate adjustment is not metabolic mediation.</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_17">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="28.08" y="22.197656" transform="rotate(-0 28.08 22.197656)">Epistemic tiers and their tests</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="314.198906" transform="rotate(-0 10.8 314.198906)">APGI 1.1  /  P1F5  /  Specification schematic</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="325.718906" transform="rotate(-0 10.8 325.718906)">Protocol 0 gates HEP-dependent claims. Full interval rules and unresolved locks remain in protocols/*.json.</text>
+  </g>
+ </g>
+</svg>

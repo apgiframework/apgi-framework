@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="789.84pt" height="492.774688pt" viewBox="0 0 789.84 492.774688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 492.774688 
+L 789.84 492.774688 
+L 789.84 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 26.3232 247.968 
+L 178.3872 247.968 
+Q 185.9904 247.968 185.9904 244.5984 
+L 185.9904 89.5968 
+Q 185.9904 86.2272 178.3872 86.2272 
+L 26.3232 86.2272 
+Q 18.72 86.2272 18.72 89.5968 
+L 18.72 244.5984 
+Q 18.72 247.968 26.3232 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 224.0064 247.968 
+L 376.0704 247.968 
+Q 383.6736 247.968 383.6736 244.5984 
+L 383.6736 89.5968 
+Q 383.6736 86.2272 376.0704 86.2272 
+L 224.0064 86.2272 
+Q 216.4032 86.2272 216.4032 89.5968 
+L 216.4032 244.5984 
+Q 216.4032 247.968 224.0064 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 421.6896 247.968 
+L 573.7536 247.968 
+Q 581.3568 247.968 581.3568 244.5984 
+L 581.3568 89.5968 
+Q 581.3568 86.2272 573.7536 86.2272 
+L 421.6896 86.2272 
+Q 414.0864 86.2272 414.0864 89.5968 
+L 414.0864 244.5984 
+Q 414.0864 247.968 421.6896 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 619.3728 247.968 
+L 771.4368 247.968 
+Q 779.04 247.968 779.04 244.5984 
+L 779.04 89.5968 
+Q 779.04 86.2272 771.4368 86.2272 
+L 619.3728 86.2272 
+Q 611.7696 86.2272 611.7696 89.5968 
+L 611.7696 244.5984 
+Q 611.7696 247.968 619.3728 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 26.3232 399.6 
+L 376.0704 399.6 
+Q 383.6736 399.6 383.6736 396.2304 
+L 383.6736 298.512 
+Q 383.6736 295.1424 376.0704 295.1424 
+L 26.3232 295.1424 
+Q 18.72 295.1424 18.72 298.512 
+L 18.72 396.2304 
+Q 18.72 399.6 26.3232 399.6 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 421.6896 399.6 
+L 771.4368 399.6 
+Q 779.04 399.6 779.04 396.2304 
+L 779.04 298.512 
+Q 779.04 295.1424 771.4368 295.1424 
+L 421.6896 295.1424 
+Q 414.0864 295.1424 414.0864 298.512 
+L 414.0864 396.2304 
+Q 414.0864 399.6 421.6896 399.6 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 18.72 86.2272 
+L 185.9904 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #cc79a7; stroke-width: 3"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 216.4032 86.2272 
+L 383.6736 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #009e73; stroke-width: 3"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 414.0864 86.2272 
+L 581.3568 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #e69f00; stroke-width: 3"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 611.7696 86.2272 
+L 779.04 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #d55e00; stroke-width: 3"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 18.72 295.1424 
+L 383.6736 295.1424 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 414.0864 295.1424 
+L 779.04 295.1424 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #d55e00; stroke-width: 3"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #cc79a7" x="33.9264" y="107.304037" transform="rotate(-0 33.9264 107.304037)">vmPFC</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 136.870594)">Retrieval of the</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 149.000203)">somatic marker</text>
+    <!-- $\hat{M}(c,a)$ -->
+    <g transform="translate(33.9264 164.804344)">
+     <text>
+      <tspan x="7.597534" y="-2.796875" style="font-size: 9px; font-family: 'DejaVu Sans'">̂</tspan>
+      <tspan x="7.765137" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'">(</tspan>
+      <tspan x="16.224609" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'">,</tspan>
+      <tspan x="26.354004" y="-0.15625" style="font-size: 9px; font-family: 'DejaVu Sans'">)</tspan>
+      <tspan x="0" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'">M</tspan>
+      <tspan x="11.276367" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'">c</tspan>
+      <tspan x="20.838867" y="-0.15625" style="font-style: oblique; font-size: 9px; font-family: 'DejaVu Sans'">a</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #009e73" x="231.6096" y="107.304037" transform="rotate(-0 231.6096 107.304037)">VIP⁺ interneuron</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(231.6096 136.870594)">Excitation from vmPFC</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(231.6096 149.000203)"/>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(231.6096 161.129813)">Inhibits SST⁺</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e69f00" x="429.2928" y="107.304037" transform="rotate(-0 429.2928 107.304037)">SST⁺ interneuron</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 136.870594)">Reduced dendritic</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 149.000203)">inhibition during</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 161.129813)">marker retrieval</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d55e00" x="626.976" y="107.304037" transform="rotate(-0 626.976 107.304037)">Pyramidal cell</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(626.976 136.870594)">Disinhibited dendrite</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(626.976 149.000203)"/>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(626.976 161.129813)">Interoceptive</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(626.976 173.259422)">gain increases</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 187.991437 170.4672 
+Q 201.196734 170.4672 213.283996 170.4672 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #20262e; stroke-linecap: round"/>
+    <path d="M 210.083996 168.8672 
+L 213.283996 170.4672 
+L 210.083996 172.0672 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #20262e; stroke: #20262e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 385.674637 170.4672 
+Q 398.879934 170.4672 412.08523 170.4672 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #20262e; stroke-linecap: round"/>
+    <path d="M 413.68523 178.4672 
+L 412.08523 178.4672 
+L 412.08523 162.4672 
+L 413.68523 162.4672 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #20262e; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 583.357837 170.4672 
+Q 596.563134 170.4672 609.76843 170.4672 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #20262e; stroke-linecap: round"/>
+    <path d="M 611.36843 178.4672 
+L 609.76843 178.4672 
+L 609.76843 162.4672 
+L 611.36843 162.4672 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #20262e; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="316.219238" transform="rotate(-0 33.9264 316.219238)">Laminar routes</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 345.785794)">L1: apical input · L4: thalamic evidence</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 357.915403)">L2/3: PV⁺/VIP⁺/SST⁺ gain circuitry</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 370.045013)">L5: burst output · L6: thalamic feedback</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d55e00" x="429.2928" y="316.219238" transform="rotate(-0 429.2928 316.219238)">Apical–basal comparison</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 345.785794)">Prediction and evidence converge on L5 cells.</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 357.915403)">Plateau physiology does not establish the</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 370.045013)">proposed prediction-error computation.</text>
+   </g>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #20262e" x="26.64" y="22.9575" transform="rotate(-0 26.64 22.9575)">Proposed cortical implementation of somatic-marker gain</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="463.238906" transform="rotate(-0 10.8 463.238906)">APGI 1.1  /  P2F2  /  Proposed mechanism</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="480.518906" transform="rotate(-0 10.8 480.518906)">Paper 1 Fig 2 / Paper 2 Fig 2; arrows specify proposed functional interactions.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7bf1e5ee27">
+   <rect x="18.72" y="62.64" width="760.32" height="336.96"/>
+  </clipPath>
+ </defs>
+</svg>

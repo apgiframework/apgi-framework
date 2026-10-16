@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="789.84pt" height="492.774688pt" viewBox="0 0 789.84 492.774688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 492.774688 
+L 789.84 492.774688 
+L 789.84 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 26.3232 237.8592 
+L 771.4368 237.8592 
+Q 779.04 237.8592 779.04 234.4896 
+L 779.04 92.9664 
+Q 779.04 89.5968 771.4368 89.5968 
+L 26.3232 89.5968 
+Q 18.72 89.5968 18.72 92.9664 
+L 18.72 234.4896 
+Q 18.72 237.8592 26.3232 237.8592 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 26.3232 399.6 
+L 376.0704 399.6 
+Q 383.6736 399.6 383.6736 396.2304 
+L 383.6736 281.664 
+Q 383.6736 278.2944 376.0704 278.2944 
+L 26.3232 278.2944 
+Q 18.72 278.2944 18.72 281.664 
+L 18.72 396.2304 
+Q 18.72 399.6 26.3232 399.6 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 421.6896 399.6 
+L 771.4368 399.6 
+Q 779.04 399.6 779.04 396.2304 
+L 779.04 281.664 
+Q 779.04 278.2944 771.4368 278.2944 
+L 421.6896 278.2944 
+Q 414.0864 278.2944 414.0864 281.664 
+L 414.0864 396.2304 
+Q 414.0864 399.6 421.6896 399.6 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 18.72 89.5968 
+L 779.04 89.5968 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 18.72 278.2944 
+L 383.6736 278.2944 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #d55e00; stroke-width: 3"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 414.0864 278.2944 
+L 779.04 278.2944 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #009e73; stroke-width: 3"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="110.673637" transform="rotate(-0 33.9264 110.673637)">Event-energy accounting</text>
+   </g>
+   <g id="text_2">
+    <!-- $2.4\times10^{18}$ ATP/event  ×  $5.07\times10^{-20}$ J/ATP  ≈  0.12 J/event -->
+    <g transform="translate(33.9264 145.2316)">
+     <text>
+      <tspan x="0" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="8.270996" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">.</tspan>
+      <tspan x="12.40332" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">4</tspan>
+      <tspan x="23.207031" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">×</tspan>
+      <tspan x="36.632324" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="44.90332" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+      <tspan x="65.233594" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="69.365918" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">A</tspan>
+      <tspan x="78.258984" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">T</tspan>
+      <tspan x="86.199902" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">P</tspan>
+      <tspan x="94.039258" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">/</tspan>
+      <tspan x="98.419141" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">e</tspan>
+      <tspan x="106.417187" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">v</tspan>
+      <tspan x="114.110547" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">e</tspan>
+      <tspan x="122.108594" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">n</tspan>
+      <tspan x="130.347852" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">t</tspan>
+      <tspan x="135.44502" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="139.577344" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="143.709668" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">×</tspan>
+      <tspan x="154.602246" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="158.73457" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="162.866895" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">5</tspan>
+      <tspan x="171.137891" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">.</tspan>
+      <tspan x="175.270215" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+      <tspan x="183.541211" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">7</tspan>
+      <tspan x="194.344922" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">×</tspan>
+      <tspan x="207.770215" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="216.041211" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+      <tspan x="243.996289" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="248.128613" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">J</tspan>
+      <tspan x="251.962598" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">/</tspan>
+      <tspan x="256.34248" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">A</tspan>
+      <tspan x="265.235547" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">T</tspan>
+      <tspan x="273.176465" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">P</tspan>
+      <tspan x="281.01582" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="285.148145" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="289.280469" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">≈</tspan>
+      <tspan x="300.173047" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="304.305371" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="308.437695" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">0</tspan>
+      <tspan x="316.708691" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">.</tspan>
+      <tspan x="320.841016" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="329.112012" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="337.383008" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="341.515332" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">J</tspan>
+      <tspan x="345.349316" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">/</tspan>
+      <tspan x="349.729199" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">e</tspan>
+      <tspan x="357.727246" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">v</tspan>
+      <tspan x="365.420605" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">e</tspan>
+      <tspan x="373.418652" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">n</tspan>
+      <tspan x="381.65791" y="-0.264063" style="font-size: 13px; font-family: 'DejaVu Sans'">t</tspan>
+      <tspan x="53.29873" y="-5.240625" style="font-size: 9.1px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="59.088428" y="-5.240625" style="font-size: 9.1px; font-family: 'DejaVu Sans'">8</tspan>
+      <tspan x="224.436621" y="-5.240625" style="font-size: 9.1px; font-family: 'DejaVu Sans'">−</tspan>
+      <tspan x="232.061426" y="-5.240625" style="font-size: 9.1px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="237.851123" y="-5.240625" style="font-size: 9.1px; font-family: 'DejaVu Sans'">0</tspan>
+     </text>
+    </g>
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'" transform="translate(33.9264 162.778553)"/>
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'" transform="translate(33.9264 180.2991)">Independent accounting estimate; not empirical calorimetry.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d55e00" x="33.9264" y="299.371238" transform="rotate(-0 33.9264 299.371238)">κ: event-information bridge</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 328.937794)">ATP per bit of ignition-event information</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 341.067403)">Uncalibrated; no adopted numerical value</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(33.9264 353.197013)">Matched energy/information measurement required</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #009e73" x="429.2928" y="299.371238" transform="rotate(-0 429.2928 299.371238)">Landauer: erasure consistency floor</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 328.937794)">Full reset: ~13–27 bits erased</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 341.067403)">Canonical partial reset: ~1.0–3.3 bits erased</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(429.2928 353.197013)">Erasure bits differ from broadcast-information bits</text>
+   </g>
+  </g>
+  <g id="text_7">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #20262e" x="26.64" y="22.9575" transform="rotate(-0 26.64 22.9575)">Energy accounting and the uncalibrated information bridge</text>
+  </g>
+  <g id="text_8">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="463.238906" transform="rotate(-0 10.8 463.238906)">APGI 1.1  /  P1F3  /  Derivation schematic</text>
+  </g>
+  <g id="text_9">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="480.518906" transform="rotate(-0 10.8 480.518906)">Paper 1 §4.6; Paper 4 Fig 1. Standard-state ATP conversion; κ and whole-event erasure ratio are distinct.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7bf1e5ee27">
+   <rect x="18.72" y="62.64" width="760.32" height="336.96"/>
+  </clipPath>
+ </defs>
+</svg>

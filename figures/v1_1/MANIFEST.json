@@ -1,0 +1,431 @@
+{
+  "release": "1.1",
+  "status": "review series; quantitative recovery and sensitivity panels pending",
+  "figures": [
+    {
+      "id": "GA",
+      "previous": null,
+      "kind": "Model schematic",
+      "note": "Mathematical Specification §§2–4, 13; normalization follows clamping. Default untransformed error channels shown.",
+      "caption": "APGI access schematic. Independently referenced prediction errors are weighted by relative effective gains, centered as excess magnitudes, and integrated over time. The access gate compares the accumulated state with the effective allostatic threshold; cost and expected information value influence threshold dynamics. This is a model schematic, not empirical evidence.",
+      "outputs": {
+        "GA.png": "e0a3bbb8a2895ad978da03154b8cbadb375fc1a59b7a6f2003ec4de9b80dc8bb",
+        "GA.pdf": "482a920ead0b7e226daae2d09433e831010871fff08daf69aa3e90579b81c164",
+        "GA.svg": "a852fee39fd80c70c569d02a5855130026de64dcddd93ad50b9725db24e8f7ae"
+      }
+    },
+    {
+      "id": "P1F1",
+      "previous": "paper1/output/fig1_architecture_pipeline",
+      "kind": "Model schematic",
+      "note": "Mathematical Specification §§2–4, 13; normalization follows clamping. Default untransformed error channels shown.",
+      "caption": "The canonical processing sequence separates causal reference standardization, effective-gain clamping and normalization, excess-surprise drive, leaky accumulation, and ignition. The somatic marker amplifies the interoceptive gain; it does not multiply the exteroceptive channel. The displayed excess-magnitude formula is the default untransformed case; the optional Ψ transform requires its own baseline centering.",
+      "outputs": {
+        "P1F1.png": "38b03bea8bb527d9ad0db3271e67b530e25b252397e8d8274331f7d3eba6689d",
+        "P1F1.pdf": "b9a205c6cd786831a2a1b32bbea5a74ffb1d60f9745852e26523d45a4bf9506b",
+        "P1F1.svg": "5813147011ca09be4017b2dd9ccd821f38f9b0814d01d3dbd75833a9e417632c"
+      },
+      "previous_sha256": "a7d6f49d96d8a74cc2efc01f75d370e7db7c378508d00c80ef84b4ec3a6ead1c"
+    },
+    {
+      "id": "P1F2",
+      "previous": "paper1/output/fig2_somatic_marker_circuit",
+      "kind": "Proposed mechanism",
+      "note": "Paper 1 Fig 2 / Paper 2 Fig 2; arrows specify proposed functional interactions.",
+      "caption": "Proposed vmPFC–VIP⁺–SST⁺ disinhibition pathway. Marker retrieval excites VIP⁺ interneurons, suppressing SST⁺ inhibition and thereby disinhibiting pyramidal dendrites. This proposed physiological implementation requires causal circuit dissociation; it is not established by the schematic.",
+      "outputs": {
+        "P1F2.png": "b7de5aa2d34389301a6a266728d592e487fc225d80f2d1dc20382f36871f0f6f",
+        "P1F2.pdf": "c3b8817a85901964ddbe7c5fa5f214de66e48812a4c1decf47f134b22a1dc840",
+        "P1F2.svg": "5813b15d822edd093e86341e91ffa961e1a3acd790b28d4f73692cadf59ec6b9"
+      },
+      "previous_sha256": "4b6c02edf1e57f2a4c40481a7374884687a39d36845515397be7bcc415af9d78"
+    },
+    {
+      "id": "P1F3",
+      "previous": "paper1/output/fig3_thermodynamic_bridge",
+      "kind": "Derivation schematic",
+      "note": "Paper 1 §4.6; Paper 4 Fig 1. Standard-state ATP conversion; κ and whole-event erasure ratio are distinct.",
+      "caption": "Independent event-energy accounting gives approximately 2.4×10¹⁸ ATP, or 0.12 J under the standard-state ATP conversion. The uncalibrated κ bridge measures ATP per bit of ignition-event information. Full-reset and partial-reset erased-state counts belong to a separate Landauer consistency calculation and must not replace the κ denominator.",
+      "outputs": {
+        "P1F3.png": "25dd5d2f326f1ed5e0129bef58ca591379c7ccf0d7749bc7daaef22f59cc6b88",
+        "P1F3.pdf": "8e55c87b9e0d084651c01d5f3ae280481334b438e2dcfd13ab0dd734abb6f61c",
+        "P1F3.svg": "6778f8318cbc8587fc385f22b9feebbab358cfb7d2387fd707fcb66d88309e5c"
+      },
+      "previous_sha256": "16e5361846e3dac286d67dfbee438350c35528c547411daf35448c65594fdb23"
+    },
+    {
+      "id": "P1F4",
+      "previous": "paper1/output/fig4_onset_ignition_timeline",
+      "kind": "Hypothesized timing schematic",
+      "note": "Phase boundaries and substrate assignments are hypotheses; latencies depend on stimulus and state.",
+      "caption": "Hypothesized onset sequence from sensory error generation to global broadcast. Phase boundaries, cortical assignments and EEG/MEG timings are approximate and stimulus-dependent. Temporal phases are not the five functional pipeline stages one-to-one.",
+      "outputs": {
+        "P1F4.png": "654742708e7889812269dab15f9974c89af5eb030493393dec479c516d9d9041",
+        "P1F4.pdf": "ba4fdaaa617379003ba8e15229d6e52019f1d062209c49d2866f372644f23a99",
+        "P1F4.svg": "4aff644213da58d2c2d4d34892b8c94a126cb417bfa109131edd580a6eefa84f"
+      },
+      "previous_sha256": "492ef821f0c3e96f9ac596d612d1181056f432c7c0769634870f4d5bb0cdf399"
+    },
+    {
+      "id": "P1F5",
+      "previous": "paper1/output/fig5_epistemic_tier_falsification_mapping",
+      "kind": "Specification schematic",
+      "note": "Protocol 0 gates HEP-dependent claims. Full interval rules and unresolved locks remain in protocols/*.json.",
+      "caption": "Epistemic tiers mapped to operational tests and decision context. EEG and behavioral outcomes are operational proxies, not direct measurements of an information-theoretic currency. Protocol 0 gates HEP-dependent inferences; detailed prediction-specific evidence, equivalence and admissibility rules govern over abbreviated null statements.",
+      "outputs": {
+        "P1F5.png": "9ca4c08709b76c288443ce56a7fd58f37b99bd83b05ef79b07d081706f467d97",
+        "P1F5.pdf": "97f303aa219f60bab917fb5ced3e548682eadceb85f716a3688c176cd718b2da",
+        "P1F5.svg": "5db1a5c22e1c53a097aff47a2f1064307d79c74224931a631d2b5e664be964fd"
+      },
+      "previous_sha256": "f9758b1d23e6a985769b52b22a4ce0e4f5e65e6c8d83c8ec40d5c05363db3fcb"
+    },
+    {
+      "id": "P1S1",
+      "previous": "paper1/output/figS1_parameter_recovery",
+      "kind": "Analysis-design replacement",
+      "note": "Quantitative panels pending verified recovery/sweep outputs from the canonical 1.1 implementation.",
+      "caption": "Parameter-recovery verification workflow replacing an unreproduced numerical panel. Independent calibration, synthetic refitting and scaled identifiability diagnostics must be completed against the frozen 1.1 observation model. No recovery correlations, confidence coverage or patient-model fit results are asserted by this replacement.",
+      "outputs": {
+        "P1S1.png": "d33e4f30d12e706278791539b87bcaf5877c0742a6b424669259181503fc3db7",
+        "P1S1.pdf": "ad1b431c9dc0ffa5be9bd9e585ba6793cd35b343d086f9369117e57a7b90b337",
+        "P1S1.svg": "4368dbb58edfdbe8ada28d96be4bd07e4f8291751f0f0aca353e65f5694f0842"
+      },
+      "previous_sha256": "93c99ae4e7332032620e7f0d918e399d4e2799060ddb6450489e64dfb6b24945"
+    },
+    {
+      "id": "P1S2",
+      "previous": "paper1/output/figS2_sensitivity_tornado",
+      "kind": "Analysis-design replacement",
+      "note": "Quantitative panels pending verified recovery/sweep outputs from the canonical 1.1 implementation.",
+      "caption": "Sensitivity and robustness verification workflow replacing hard-coded effect sizes and pass percentages. A canonical 1.1 sweep requires frozen ranges, independent seeds and archived per-run outputs. No new Monte Carlo robustness rates are claimed.",
+      "outputs": {
+        "P1S2.png": "a3677161a87a08cb03e70c61605b0a88fb23448eb04f81642818d62129a625a5",
+        "P1S2.pdf": "c8ef5743d85da783bc44b34c1de3deb0ce1226eb8cdc834a8aeadbe17d6e9fb7",
+        "P1S2.svg": "b68fcd2d6b47bcd67d269db5da94e2e9f0d02be52837e5e5bef8a3f49830cfa2"
+      },
+      "previous_sha256": "22e961cab4175a3da8efc36561028c04fb7da35dce454556cea3d4e3f042ca4b"
+    },
+    {
+      "id": "P1S3",
+      "previous": "paper1/output/figS3_protocol1_trial_timeline",
+      "kind": "Prospective protocol schematic",
+      "note": "Shared Protocol 1 artwork (PRF2); replaces legacy Paper 1 Figure S3.",
+      "caption": "Cardiac-phase EEG timing and behavioral shape illustration, shared with Protocol Figure PRF2. Individual T-wave end determines the trigger windows; the ECG and example trial positions are schematic. Six fixed contrast levels and illustrative Weibull curves are shown; a curve alone does not satisfy Pred 1.E.",
+      "outputs": {
+        "P1S3.png": "b3d02bbbb92bd9436f3e3302eed78423d57d03d66fe45ff57f59279155b734d8",
+        "P1S3.pdf": "a41844a2492a7e4aa81fb453f4d45418103fd03653720138d6659ecf1a5e89be",
+        "P1S3.svg": "e4fa8fe462cdd054b4c37685d37e67758176ab5b1bad70c140e08b2bac27d8d3"
+      },
+      "previous_sha256": "0d859e03f92d3e8899d23097b9f40bbfb865324291a0f498d4012ead3d2aef5f"
+    },
+    {
+      "id": "P1S4",
+      "previous": "paper1/output/figS4_protocol3_fmri_trial",
+      "kind": "Prospective protocol schematic",
+      "note": "Shared Protocol 3 artwork (PRF4); replaces legacy Paper 1 Figure S4.",
+      "caption": "Anticipation-fMRI design, shared with Protocol Figure PRF4. Choice, variable anticipation, outcome and ITI are separated; the drawing uses one illustrative 3-s foreperiod and 8-s ITI. The vmPFC–aINS versus pIC comparison is Pred 3.B in the governing protocol record.",
+      "outputs": {
+        "P1S4.png": "249462f245f0f7a22eb60b6affa401d51ce5c5a84e013a2a9864faaea64a3b80",
+        "P1S4.pdf": "fce7c34627689cd6ab1ed07dd29a6ff3f8f0eb0d13f1973e3dba1f0085baf93d",
+        "P1S4.svg": "33a7d840fe99f0fa4049ee5c58c012d116d1c2870d4a6191dd2d0370a58e49fb"
+      },
+      "previous_sha256": "138da29890f271f1ade80af851311ad62946d44a4b2990e1398fee46cd365f32"
+    },
+    {
+      "id": "P2F1",
+      "previous": "paper2/output/fig1_biological_constraints_lsm",
+      "kind": "Analytical architecture comparison",
+      "note": "Paper 2 §2.5 / Fig 1. Scores describe defining properties without additional machinery; not experimental benchmark results.",
+      "caption": "Four biological constraints map to APGI computational requirements. Architecture scores count properties supported by defining equations without added machinery: LSM/LNN satisfies four, the attractor three, Transformer two and feedforward network two. This is the manuscript’s analytical audit, not an experimental performance benchmark.",
+      "outputs": {
+        "P2F1.png": "8779eadf8123513121fc01fca149921c634ff67664783578146f90a8b9751ab0",
+        "P2F1.pdf": "a04ebefdd79b2f187f35b947861cfab6438258bbd2d27d9970748f4447b1c85a",
+        "P2F1.svg": "5fa933f1f3aee187337b520b3ee46670a82e7d1e6b1396b870f2539d7467f6a3"
+      },
+      "previous_sha256": "b3f64aef6d032a1ca6b63bab8207c4a238a4ff9f3484e55a2e06b6826f66478b"
+    },
+    {
+      "id": "P2F2",
+      "previous": "paper2/output/fig2_cortical_microcircuit",
+      "kind": "Proposed mechanism",
+      "note": "Paper 1 Fig 2 / Paper 2 Fig 2; arrows specify proposed functional interactions.",
+      "caption": "Proposed cortical implementation of precision gain. The vmPFC–VIP⁺–SST⁺ pathway is situated alongside laminar input/output routes. Apical–basal plateau and burst physiology does not by itself demonstrate the hypothesized prediction-error computation.",
+      "outputs": {
+        "P2F2.png": "0b8a523b134654a63e8ce261b2f56ea2bc083085596be8bf30a33710a4a8d525",
+        "P2F2.pdf": "e80e0d17ec59318a6db8b357c4670298497981467fb3b683d9c745095ce3e2fe",
+        "P2F2.svg": "08045f80ad3970c5c4ed108a3b8059535af2bea14189a1476f30d2df315dc8da"
+      },
+      "previous_sha256": "e83386605e7d8c5082e30bb1420976d1ab2a33542395002d8260beea04a0cd1d"
+    },
+    {
+      "id": "P2F3",
+      "previous": "paper2/output/fig3_bifurcation_analysis",
+      "kind": "Reduced-model illustration",
+      "note": "Π ≤ 10; γsig is not behavioral Weibull shape k. This hysteresis is not a result from the full reservoir model.",
+      "caption": "Reduced sigmoid fixed-point model and precision-dependent ignition. The first plotted fold is set to 0.95 by coordinate rescaling; the second lies near 1.02. Curves on the right hold intrinsic γsig=4 and vary Π within its canonical ceiling of 10; their error-referred slopes are not behavioral Weibull αpsy. The reduced-model hysteresis is not a full-reservoir validation result.",
+      "outputs": {
+        "P2F3.png": "bbf647d6e5575450c715e8605123ddff9a325a7eba9a75e5eeece190beeb33ca",
+        "P2F3.pdf": "32a8be576d59eb72c7964cbb6a1744a007654a782f8266f486d92d733944a3a8",
+        "P2F3.svg": "14580382b7ea7dea71150e135f12a156c71affd802e8d028e9b7d436387f255f"
+      },
+      "previous_sha256": "be2fbc2b84bdb738060879d48ea799e3ef6020bcd02449afdaf6d25748125511"
+    },
+    {
+      "id": "P2F4",
+      "previous": "paper2/output/fig4_visual_masking_trajectories",
+      "kind": "Reduced-model simulation",
+      "note": "Illustrative masking model with fixed reference gain; critical ISIs require empirical calibration.",
+      "caption": "Masking trajectories and parameter sensitivity recomputed from the supplied homogeneous reduced model. The fixed reference gain places the critical ISI near 89.75 ms; increasing target precision shortens it, whereas threshold and spectral-radius changes can lengthen it. No crossing within the search range remains missing. Quantitative ISIs require empirical calibration.",
+      "outputs": {
+        "P2F4.png": "3fad9e4fec9d9ad2f3606b6747aa4dd835377b58612c4faa19dd389b31c3ad06",
+        "P2F4.pdf": "eeae08ef43eb267968ab36e7f5b0b87dae4adbaca1111dc8edcb24cc6b11a68b",
+        "P2F4.svg": "f429b79d8f07e62adafe55dbc37b59a4ea051f4899a879278b1857cfd635c034"
+      },
+      "previous_sha256": "59ca9238305077c0e97abd3e326a7a34f0c0f4e8ea02f490a878886ff245e7bc"
+    },
+    {
+      "id": "P2S1",
+      "previous": "paper2/output/figS1_ep2_ep6_protocol_schematics",
+      "kind": "Prospective design schematic",
+      "note": "Protocol JSON overrides the older manuscript/bundle 60 ms target and 250 ms response schematic.",
+      "caption": "Distinct non-invasive stimulation and intracranial recording designs. Protocol 5 uses modality-matched controls, target engagement and separate resting PCI probes. Protocol 6 uses clinically indicated electrodes and the governing 33-ms target / 1-s delay schedule; the older companion timing diagram is superseded.",
+      "outputs": {
+        "P2S1.png": "ce7bfc243b61a05d5394bd665181b998c5cce2774c4311ddfe69f8eef879d945",
+        "P2S1.pdf": "a84db34a4c32be760bddf58ad1714adc7b9bafada70a6fffde4115249a99f50c",
+        "P2S1.svg": "efa7bd990c502581f3317eac2ba1c50e2ad660d9a0aa7f523cf0e622da6d7cfa"
+      },
+      "previous_sha256": "c56c7e608cbc0f7c2fbd5e12a2b3dc731a12318c05db49c842b658a35c25b9d1"
+    },
+    {
+      "id": "P3F1",
+      "previous": "paper3/output/fig1_russian_doll_hierarchy",
+      "kind": "Hierarchical model schematic",
+      "note": "Paper 3 §2.1: nesting is computational, not literal anatomy; operational windows are not the OU spectral poles.",
+      "caption": "Five nested functional levels, with L0 as a reflexive sub-APGI substrate and L1–L4 as progressively slower functional strata. Operational windows are separate from the conditional geometric OU poles. Slow endocrine priors set cortical thresholds rather than acting as spiking ignition reservoirs.",
+      "outputs": {
+        "P3F1.png": "ccb25053decf29c65a3cb78195847886e752f9ae7944728340a15be1965dbf3b",
+        "P3F1.pdf": "f11c90471e869db5e98f4b6d9d8bf1ec5b2a921c47769453cdfc6e2af6879d30",
+        "P3F1.svg": "fd8bab41a9362725b14ac0a35e272be2172f8398d49efdf4507233d3f6e7f571"
+      },
+      "previous_sha256": "8b26a4d36ebbb0f471bddd17ad4a77b1459ce48fd9bca58a08f35d21ff3df5bb"
+    },
+    {
+      "id": "P3F2",
+      "previous": "paper3/output/fig2_1f_power_spectrum",
+      "kind": "Analytical OU spectrum",
+      "note": "Equal stationary variance; geometric poles are conditional model assumptions, not measured neural timescales.",
+      "caption": "Analytical spectrum from five equal-stationary-variance OU components with τ₀=50 ms and ratio 133. The five-level sum and the L0–L2 partial sum are shown; fitted slopes are approximately −1.01 and −1.00 on their labeled bands, with roughly 5.1 dB ripple for the full sum. Shading denotes the 0.005–100-Hz DC-coupled acquisition band. Poles are conditional model assumptions, not observed timescales.",
+      "outputs": {
+        "P3F2.png": "4805346b4bf5c814e63f054d6af9ec271074c7097c6ef972d025e104a37373dd",
+        "P3F2.pdf": "345ce67c3dd9d29c25539a3824c11ab91da058478b5ecdc9feff553e1a77f1d9",
+        "P3F2.svg": "fae6e4a92b9abf75eb7835c878b8df7457a33f0ed66fb0d27ca1a12a36ee7eee"
+      },
+      "previous_sha256": "705444e6c0fa053930848d59e471d9ef41dc3f201b22160ce8bd5c4f9e1f8115"
+    },
+    {
+      "id": "P3F3",
+      "previous": "paper3/output/fig3_neuromodulatory_coupling",
+      "kind": "Proposed mechanism",
+      "note": "Paper 3 §3 / Fig 3. Subscripted coupling κ differs from the ATP/bit bridge κ.",
+      "caption": "Proposed fast ACC–LC and slow PVN–HPA influences on lower-level processing. LC is a relay rather than a hierarchical stratum; rapid membrane-MR and sustained GR effects are distinguished. Effective α31 and α41 influences are products of nearest-neighbor κ couplings and are unrelated to the ATP/bit κ bridge.",
+      "outputs": {
+        "P3F3.png": "a002503a1de3de7c18078c04f0383bfff560dd7b4cf0ac0457ea734a1b7d1500",
+        "P3F3.pdf": "48131c76535b543400b40a22652d0c5ffeebbe3abba0ba955c7280634e626d60",
+        "P3F3.svg": "50265f3b4a8b9de1604303bb7ec1e17640573b4a09e1c5bdfcc419c5f568099d"
+      },
+      "previous_sha256": "22ed2bde1190b1fb8f56abaef1b5c77a6f37777dae9f901be6e50fb9ab2dc427"
+    },
+    {
+      "id": "P3F4",
+      "previous": "paper3/output/fig4_psychiatric_disorder_profiles",
+      "kind": "Specification schematic",
+      "note": "Paper 3: AUC ≥0.75, within-site label permutations, ΔAUC ≥0.05 beyond generic EEG features with BCa CI excluding zero.",
+      "caption": "Hypothesized psychiatric and clinical profiles with explicit specificity requirements. Major-depression interoceptive precision changes are located at L1; schizophrenia L2 precision is genotype-dependent. Clinical profiling requires the registered permutation and generic-EEG controls; the DoC prognostic study is not evidence for a validated diagnostic classifier.",
+      "outputs": {
+        "P3F4.png": "3b7644be93fab76c3a310f985a381be1f6ecd6ff32f3f48b7b54e56302222c19",
+        "P3F4.pdf": "805b11a4a07212179ee2980999fd679a3fca1132fac7dcfb908f24007928ad03",
+        "P3F4.svg": "6c618c82473c30ee74972a4a6ff45f6923d8f8e0a219fd6fa18940f4220adcba"
+      },
+      "previous_sha256": "5fe31564d6545bc3ad05ef15fe934c6f4bc97fd91f33affea320bbd6e8a3f974"
+    },
+    {
+      "id": "P3F5",
+      "previous": "paper3/output/figS1_protocol7_clinical_design",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 7, specification 1.1.0. No observed outcomes. ≥300 clean heartbeats; absolute mean Cz HEP, 250–400 ms. No synthetic clinical separation is shown.",
+      "caption": "Protocol 7 baseline cohort and longitudinal patient outcomes. Eighty patients and 30 baseline-only controls enter the cohort; PCI eligibility defines a separate measurement subset. Patients have CRS-R follow-up at 3 and 6 months and secondary GOS-E at 6 months. Primary Pred 7.G is the baseline-HEP prediction of 3-month CRS-R; the joint HEP+PCI model is estimation-first.",
+      "outputs": {
+        "P3F5.png": "00b4262921a0ab8d504770d21eab00e2a4b8d52094a022dc0e73f14af8daf320",
+        "P3F5.pdf": "449ec233fb31e7fddc83395e9dffe285499cd5b779524bf1b646dbc4b3d088eb",
+        "P3F5.svg": "3eae43e3f4f3514f2f5965f0ca236b6a413150b0bf43e6ea3319a718bc56df79"
+      },
+      "previous_sha256": "38ebb954920b96fdef2bcef1f6a5bf80301664ad720addeaf213ecace184b13b"
+    },
+    {
+      "id": "P3F6",
+      "previous": "paper3/output/fig5_developmental_maturation_spectral",
+      "kind": "Illustrative developmental prediction",
+      "note": "Step heights and ages are illustrative; the testable ordering is L2 → L3 → L4. Not the EEG aperiodic exponent.",
+      "caption": "Illustrative developmental trajectory of detection-series DFA α, not the EEG aperiodic exponent or an amplitude-envelope measurement. The solid segment begins at age four; the dashed infant segment requires a suitable proxy. Step heights and exact ages are illustrative; the falsifiable maturation claim is the order L2→L3→L4.",
+      "outputs": {
+        "P3F6.png": "2cdf0ec741325af7b9f3dc022efacdc21a4f63fe6b9914976384e04014c9b2ea",
+        "P3F6.pdf": "93d1fbacf759797b6804a4146064a9c2db15b18aafd350bd02133323fd914ec9",
+        "P3F6.svg": "ca7e23c0793bddc45de263c2d1d345a33512ff3791ee1a969bbf505141ee565f"
+      },
+      "previous_sha256": "b9fa2fb05965ef0b8c209300bbe1f0c48f8bb8f49a7666e40124a594a2cfe9d9"
+    },
+    {
+      "id": "P4F1",
+      "previous": "paper4/output/fig1_three_tier_epistemic_architecture",
+      "kind": "Specification schematic",
+      "note": "Paper 4 Fig 1: ignition information and erased information have different denominators; upward bridges remain unspecified.",
+      "caption": "Three epistemic currencies and the downward double-bridge chain. A computational access account requires an unvalidated mapping to ignition-event information and the uncalibrated κ mapping to event energy. Landauer erasure consistency has a different denominator; upward bridges remain unspecified.",
+      "outputs": {
+        "P4F1.png": "f98f275027913b9c8806e879434d001a67cf2a1266a77696053cbae2f04f9f58",
+        "P4F1.pdf": "a0dd167fe3d659c64271d8f924d045c1bf89cc8efc4e79debf61b49cba30e213",
+        "P4F1.svg": "96468969281474b39431a6b521610988854638f1571bba334e69ce3158a06b97"
+      },
+      "previous_sha256": "caa15f8a552e5324eff76ce16f4dc0c7713b5e0c5896a7e619a1d0addfd7977d"
+    },
+    {
+      "id": "P4F2",
+      "previous": "paper4/output/fig2_comparative_audit_bar_chart",
+      "kind": "Single-author provisional audit",
+      "note": "No independent scoring performed. Dashed 1.1 line is the 55/100 canonical threshold; coarse acceptance ≥8/14 (≥7/12 for IIT).",
+      "caption": "Current Paper 4 Table 8 coarse audit scores. APGI C3 and C4 are means of tier scores 2,1,1 and their bars mark the tier range, not a confidence interval. IIT C6 is not applicable and is excluded from its denominator. Aggregate scores and the canonical 55/100 reference are displayed, but foundational gates also govern the author’s rubric. All scores are single-author provisional judgments, not independently validated rankings.",
+      "outputs": {
+        "P4F2.png": "531016e48edfd8ef80c486d53903532734ef89208d7e981429cef60070661eed",
+        "P4F2.pdf": "4b0fdfe5371ba2386d5a0c0c38608b0f89ea4f2742d5c99bed98004324736e86",
+        "P4F2.svg": "e01f620d5cd390fe2f4827b01d6dc81fcf5853cdb6367b390c28cc57ad8b910f"
+      },
+      "previous_sha256": "2fc6039009ff37bc0b7d0bc533b605e6dc1727b465d00a018fef8d5c150a42a9"
+    },
+    {
+      "id": "P4F3",
+      "previous": "paper4/output/figS1_twelve_prediction_matrix",
+      "kind": "Prospective prediction matrix",
+      "note": "Paper 4 exposition IDs differ from Protocol Pred IDs. Pending registration and calibration are retained.",
+      "caption": "The twelve Paper 4 Table S4 prediction records, with target magnitudes, evidence against, feasibility horizons and current validation status. Text is drawn from the manuscript table rather than the older supplied plotting constants. P-number exposition labels differ from protocol Pred IDs; many extensions await registration or calibration.",
+      "outputs": {
+        "P4F3.png": "89b1c5aa5b1c964f1e3ad7ea2d7a88b166fa36d19bc97ded26329b87fbf10b89",
+        "P4F3.pdf": "2a1011527863461891345552351c291649b4b7a82e2561cde29f9f043152210a",
+        "P4F3.svg": "02542a35a6f2ef80e9cbae0357f577f01ff0f676af323b34ca079b44b224573b"
+      },
+      "previous_sha256": "43c3f0ac4091a41826a2357d810c65587647181e2f52e56a186e72294c814a86"
+    },
+    {
+      "id": "PRF1",
+      "previous": "output/figure1",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 0, specification 1.1.0. No observed outcomes. Colored regions are decision boundaries, not measurements.",
+      "caption": "Protocol 0 HEP proxy validation. Colored regions show registered behavioral, pharmacological and anatomical thresholds, not data. Independent replication, central EEG engagement and a responsive anatomical localizer are required; equivalence uses the ±√0.02 bounds and the registered 90% interval rule.",
+      "outputs": {
+        "PRF1.png": "175be64b2885107bc5f3a081c47863cd4597c4f0895cf168c3729744b039c28f",
+        "PRF1.pdf": "ebc088a5b97b65bb43434fd09bf48f7a42d539b4b0ccc0e5ce8b14ea7e9e9012",
+        "PRF1.svg": "57068aba629ce0803c9a14e491bcd8bb5933c67f69dcc5b16dba8aa3db255ae6"
+      },
+      "previous_sha256": "217b45b7a7feb5d0ebf835b753abb4195d8c5c9cb78c93465d2597b19ec2d40d"
+    },
+    {
+      "id": "PRF2",
+      "previous": "output/figure2",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 1, specification 1.1.0. No observed outcomes. Curves illustrate shape only; Pred 1.E also requires interval and comparator evidence. QUEST count unresolved.",
+      "caption": "Protocol 1 personalized cardiac timing and psychometric design. The schematic assumes a 1,000-ms RR interval and T-wave end at 400 ms solely to illustrate the individualized windows. Six contrast levels are fixed; Weibull curves use illustrative baseline/lapse values and are not fitted participant results. Pred 1.E requires both interval and comparator evidence. The unresolved QUEST top-up count is not selected here.",
+      "outputs": {
+        "PRF2.png": "b3d02bbbb92bd9436f3e3302eed78423d57d03d66fe45ff57f59279155b734d8",
+        "PRF2.pdf": "a41844a2492a7e4aa81fb453f4d45418103fd03653720138d6659ecf1a5e89be",
+        "PRF2.svg": "e4fa8fe462cdd054b4c37685d37e67758176ab5b1bad70c140e08b2bac27d8d3"
+      },
+      "previous_sha256": "c891d6dc0b45f05101c54af1731f9e3b2a50af98221de7ed476877ec2b15e020"
+    },
+    {
+      "id": "PRF3",
+      "previous": "output/figure3",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 2, specification 1.1.0. No observed outcomes. Exploratory 2.F / 2.G carry no independent empirical confirmation.",
+      "caption": "Protocol 2 independent calibration, simulation and human model-comparison stages. Seven architectures are evaluated across 1,000 seeds per condition with 500 trials per environment; the volatility schedule is the specified five-block schedule. Lead–lag uncertainty is aggregated at seed level, and human IGT comparison uses a disjoint N=80 cohort.",
+      "outputs": {
+        "PRF3.png": "308bccb68e915e9d387fcd480c4b9fe89d0a01396d65d93715c3fd199d1093c8",
+        "PRF3.pdf": "63164c99bc22a4a430ff74f5f47183ff835518d504b74abc18d5f43aca7b6d1a",
+        "PRF3.svg": "db76984ea23faeb27c5541f0d785b92267da4549787fe73e9e35e59a8ec4ab95"
+      },
+      "previous_sha256": "182e8c4d6ebf8825ab171f806c58467b93da64a58486528f9b63f1d621cf6ff3"
+    },
+    {
+      "id": "PRF4",
+      "previous": "output/figure4",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 3, specification 1.1.0. No observed outcomes. Timeline illustrates a 3 s foreperiod and 8 s ITI; post-shock ITI ≥8 s.",
+      "caption": "Protocol 3 anticipation-versus-outcome design. The depicted foreperiod and ITI are examples within registered ranges, not fixed acquisition settings. Pred 3.B tests the vmPFC–aINS pathway against the sensory-control pathway; sample size, expected-value control and contrast control are preserved.",
+      "outputs": {
+        "PRF4.png": "249462f245f0f7a22eb60b6affa401d51ce5c5a84e013a2a9864faaea64a3b80",
+        "PRF4.pdf": "fce7c34627689cd6ab1ed07dd29a6ff3f8f0eb0d13f1973e3dba1f0085baf93d",
+        "PRF4.svg": "33a7d840fe99f0fa4049ee5c58c012d116d1c2870d4a6191dd2d0370a58e49fb"
+      },
+      "previous_sha256": "10856ee079f31680c130f015c747235280cdf639a2961d06da757ec20c78c484"
+    },
+    {
+      "id": "PRF5",
+      "previous": "output/figure5",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 4, specification 1.1.0. No observed outcomes. Enroll 64 / target 55 / minimum 48; two labs. Positive baseline d′ required for proportional margin.",
+      "caption": "Protocol 4 within-participant state-by-load comparison. Cells identify planned measurements, not outcome values. The signed proportional d′ margin requires a positive rested interoceptive baseline; P3b and arousal-adjusted analyses have their own registered conditions. Covariate adjustment does not establish metabolic-cost mediation.",
+      "outputs": {
+        "PRF5.png": "d2f43c872e6584b823620acad9eed33ef88b1534c3f190f1d9a2f53b645bbad8",
+        "PRF5.pdf": "434d61e33bf7eb6e36e1cbc43521c6684efd6b50fa575649dcfb21e817d93ab6",
+        "PRF5.svg": "8531ef8ea0757280063aaf9e2904104a0935298df48296382bafd3d7412b668f"
+      },
+      "previous_sha256": "0ea17f8a35d47554ba6ab42c417a75b2a83bb579f98b796149c493795b59c6ec"
+    },
+    {
+      "id": "PRF6",
+      "previous": "output/figure6",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 5, specification 1.1.0. No observed outcomes. Enroll 52 / analyzable target 44; 5.C / 5.D moderation requires multiplicity lock.",
+      "caption": "Protocol 5 target-specific interventions and HEP equivalence criterion. Modality-matched references and independent engagement gates govern aINS inference; resting PCI probes are separate from task trials. Pred 5.E requires the entire 95% HDI inside d=[−0.15,+0.15] and BF01≥6; no posterior is fabricated.",
+      "outputs": {
+        "PRF6.png": "573644146e14a023f5fbf04086cf5a8fc182dd7f4db0e4ee5eb1c837857fcd75",
+        "PRF6.pdf": "40a2a923af4640059987b0b32876ffb8918ba2bf4801444019e060f157acc370",
+        "PRF6.svg": "5bd18c91f80c4023f68177607e2e731595ad28bfc0d7912af3027cd4d6bf1b73"
+      },
+      "previous_sha256": "c13af894e0f0b5601762b862a91720b562f187a8d5a04fdfdac67f9cf97a360e"
+    },
+    {
+      "id": "PRF7",
+      "previous": "output/figure7",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 6, specification 1.1.0. No observed outcomes. Target N=20 / minimum 12; confirmatory–exploratory. 500 ms fixation → 33 ms target → 1 s delay.",
+      "caption": "Protocol 6 planned allocation of 600 trials over the absolute Michelson contrast grid. Mixture tests are conducted at fixed contrast with direct regional comparisons and positive control-model evidence. AC1 remains deferred pending estimator recovery/power validation; timescale claims are coverage-specific and require surrogate controls and replication.",
+      "outputs": {
+        "PRF7.png": "0ef1f372b3a2d553da08b12183ce9bfb0d6cb5a93ff9c0c82957b165fa8b355e",
+        "PRF7.pdf": "3e29a31ceccc5e845721ccca6d5aade199df91074eee1d122591d3773962d9ad",
+        "PRF7.svg": "62eaf0b0ce08af6ea1ba8286fc176db0da6450fd3e07c3c0078c03ddc9794cc5"
+      },
+      "previous_sha256": "0b0451a036b8cfb63bdf470ce20ee429faa368d5ba3071c17c2baad6faaa3a01"
+    },
+    {
+      "id": "PRF8",
+      "previous": "output/figure8",
+      "kind": "Prospective protocol schematic",
+      "note": "Protocol 7, specification 1.1.0. No observed outcomes. ≥300 clean heartbeats; absolute mean Cz HEP, 250–400 ms. No synthetic clinical separation is shown.",
+      "caption": "Protocol 7 cohort and follow-up diagram, shared with Paper 3 Figure 5. Controls are baseline-only; recovery endpoints belong to the patient sample. Primary 7.G, estimation-first 7.A and secondary 7.D remain distinct, with HEP quality and PCI eligibility requirements preserved.",
+      "outputs": {
+        "PRF8.png": "5e8a969be055ab8de60f44aec0dfb1de956d193eb426c36dbc85c49053371730",
+        "PRF8.pdf": "d52540805a5c604b358545cfdb1b0e8bae0cb2e6d7a5c20cdf27e3d285bc092b",
+        "PRF8.svg": "e219a336e36eede796944fcf3c0b7fac5a5d39f3ed56391854cb0ebec94c0e31"
+      },
+      "previous_sha256": "b6a4ef2bc39b71a75086d11b576746ab01adbc4ee9572605ff064a333f27ad97"
+    }
+  ],
+  "protocol_inputs": {
+    "protocol_0_hep_proxy_validation.json": "a878f92d3958d63fc3c6ce5269f9a1f068a04d49749b7bf2e17b782ed39efb81",
+    "protocol_1_cardiac_eeg.json": "aacbfd439a0aaac6d9b91c51c5adbe92e720602c37adf09ab1de87ca2e65f8ea",
+    "protocol_2_somatic_agent_sim.json": "818925ec2dfb2456b1fdf40041892309b2b697312f2d4acb5589e4deb0e664c3",
+    "protocol_3_anticipation_fmri.json": "a83f13d55fb8160da22e0479ca4be734f09a5b08103de13db332402d49f7fac5",
+    "protocol_4_metabolic_crossover.json": "4c3598a7186817e85f48b82becc3b2953bd860af8758d5dd8b0836231fdc9c37",
+    "protocol_5_causal_tms.json": "84e51f711a2dcd17887a506d936bd8fc6272351c462de2e8ab9be166d73a038e",
+    "protocol_6_ignition_ieeg.json": "696044f7019e6c11de4435751deb46a73f7243affea317ebd080985b395ce3c8",
+    "protocol_7_doc_biomarker.json": "d546c02c6ce68c6051859b44cdbc46c0b0393d8a9b5be4de3886a501e23a8274"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "release": "1.1",
+  "passed": true,
+  "figure_sets": 32,
+  "exports": 96,
+  "legacy_figures_mapped": 31,
+  "checks": [
+    "Expected IDs and complete legacy mapping",
+    "Protocol input hashes",
+    "Unchanged baseline PNG hashes",
+    "All output checksums",
+    "PNG decode and 300-dpi metadata",
+    "One-page readable PDFs with release labels",
+    "Parsed SVGs without embedded rasters",
+    "Preserved supplied code hashes"
+  ],
+  "quantitative_panels_pending": [
+    "P1S1",
+    "P1S2"
+  ],
+  "scientific_validation_performed": false,
+  "errors": [],
+  "python": "3.14.4"
+}

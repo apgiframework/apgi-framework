@@ -1,0 +1,37 @@
+from patchlib import *
+im=load('src/img-009.png'); K=(25,25,25)
+R=(190,30,40); G=(40,120,50); B=(30,80,190); O=(215,110,30); P=(95,35,150)
+# Panel A
+rep(im,(110,88,252,129),[[('Interoceptive context','b')],[('(top-down to L1)','n')]],14,R,'c',sp=(105,84))
+rep(im,(414,147,552,203),[[('HCN, mGluR','n'),('1','n_sub')],[('(neuromodulated','n')],[('integration)','n')]],14,K,sp=(560,150))
+rep(im,(414,249,552,306),[[('M','n'),('1','n_sub'),(' (muscarinic)','n')],[('(perisomatic','n')],[('inhibition)','n')]],14,K,sp=(470,248))
+rep(im,(414,373,552,411),[[('mGluR','n'),('5','n_sub'),(', D','n'),('1','n_sub'),(' (vmPFC);','n')],[('VIP','n'),('+','n_sup'),(': nAChR α4β2, 5-HT','n'),('3','n_sub')]],12,K,sp=(470,372))
+# Panel B headers
+rep(im,(596,96,820,122),[[('Baseline (','b'),('M','b^'),('(c,a) ≈ 0)','b')]],18,G,sp=(594,95))
+rep(im,(596,361,840,389),[[('Marker retrieved (','b'),('M','b^'),('(c,a) high)','b')]],18,G,sp=(594,360))
+# formula legend
+rep(im,(640,711,747,750),[[('Baseline','n')],[('precision','n')]],13,B,'c',sp=(640,752))
+rep(im,(763,711,895,750),[[('Somatic-marker','n')],[('gain','n')]],13,O,'c',sp=(763,752))
+rep(im,(897,711,1002,750),[[('Somatic-marker','n')],[('value','n')]],13,G,'c',sp=(897,752))
+# Panel C
+rep(im,(1118,46,1495,71),[[('coincidence-triggered burst firing','b')]],19,P,'c',sp=(1118,45))
+rep(im,(1341,199,1508,262),[[('Apical input','b')],[('top-down prediction','n')],[('via NMDA, mGluR','n'),('5','n_sub')]],13,R,'c',sp=(1345,197))
+rep(im,(1074,331,1170,395),[[('Dendritic','n')],[('Ca','n'),('2+','n_sup'),(' plateau','n')],[('(apical–basal','n')],[('coincidence)','n')]],12,K,'c',sp=(1072,330))
+rep(im,(1347,309,1503,412),[[('Coincident apical and','n')],[('basal input triggers a','n')],[('dendritic Ca','n'),('2+','n_sup'),(' plateau','n')],[('→ burst at soma.','n')]],13,K,'c',sp=(1349,311))
+fill(im,(1150,431,1208,471),from_pt=(1146,450))
+fill(im,(1099,649,1130,670),from_pt=(1096,660))
+rep(im,(1372,646,1490,684),[[('(bottom-up) via AMPA,','n')],[('NMDA, mGluR','n'),('5','n_sub')]],12,B,'c',sp=(1372,644))
+# abbreviation key
+W=sample(im,1010,960,1)
+def keyrow(box,spec): rep(im,box,[spec],12,K,bg=W)
+keyrow((728,902,1012,920),[('calibrated somatic-marker value (context ','n'),('c','i'),(', action ','n'),('a','i'),(')','n')])
+keyrow((728,925,1012,943),[('interoceptive precision','n')])
+keyrow((728,950,1012,968),[('accumulated precision-weighted surprise','n')])
+fill(im,(655,971,1012,993),W)
+keyrow((1047,964,1205,996),[('somatic-marker gain','n')])
+WK=sample(im,1490,915,1)
+def rk(box,spec): rep(im,box,[spec],13,K,bg=WK)
+rk((1266,905,1515,924),[('HCN, mGluR','n'),('1','n_sub'),(' (L1 dendrites)','n')])
+rk((1266,926,1515,945),[('M','n'),('1','n_sub'),(' (PV','n'),('+','n_sup'),(')','n')])
+rk((1266,947,1515,966),[('nAChR α4β2, 5-HT','n'),('3','n_sub'),(', D','n'),('1','n_sub'),(' (VIP','n'),('+','n_sup'),(')','n')])
+im.save('out/P2F2.png')

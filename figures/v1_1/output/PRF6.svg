@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="790.56pt" height="415.374687pt" viewBox="0 0 790.56 415.374687" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 415.374687 
+L 790.56 415.374687 
+L 790.56 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 113.009362 133.824 
+L 392.246809 133.824 
+Q 395.09617 133.824 395.09617 131.376 
+L 395.09617 78.336 
+Q 395.09617 75.888 392.246809 75.888 
+L 113.009362 75.888 
+Q 110.16 75.888 110.16 78.336 
+L 110.16 131.376 
+Q 110.16 133.824 113.009362 133.824 
+z
+" clip-path="url(#pe4fce27bcd)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 113.009362 199.104 
+L 392.246809 199.104 
+Q 395.09617 199.104 395.09617 196.656 
+L 395.09617 143.616 
+Q 395.09617 141.168 392.246809 141.168 
+L 113.009362 141.168 
+Q 110.16 141.168 110.16 143.616 
+L 110.16 196.656 
+Q 110.16 199.104 113.009362 199.104 
+z
+" clip-path="url(#pe4fce27bcd)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 113.009362 264.384 
+L 392.246809 264.384 
+Q 395.09617 264.384 395.09617 261.936 
+L 395.09617 208.896 
+Q 395.09617 206.448 392.246809 206.448 
+L 113.009362 206.448 
+Q 110.16 206.448 110.16 208.896 
+L 110.16 261.936 
+Q 110.16 264.384 113.009362 264.384 
+z
+" clip-path="url(#pe4fce27bcd)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="118.708085" y="93.278437" transform="rotate(-0 118.708085 93.278437)">aINS intervention</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 116.998594)">tFUS / dTMS hierarchy</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 129.128203)">Independent engagement gate + matched sham</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="118.708085" y="158.558437" transform="rotate(-0 118.708085 158.558437)">Frontoparietal interventions</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 182.278594)">dlPFC / PPC TMS + registered reference</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 194.408203)">Use direct dissociation contrasts</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="118.708085" y="223.838437" transform="rotate(-0 118.708085 223.838437)">PCImax measurement</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 247.558594)">Separate resting pre/post probes</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(118.708085 259.688203)">≥150 clean pulses each; not task trials</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 494.82383 306 
+L 779.76 306 
+L 779.76 61.2 
+L 494.82383 61.2 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 594.551489 306 
+L 680.03234 306 
+L 680.03234 61.2 
+L 594.551489 61.2 
+z
+" clip-path="url(#p772a5985c2)" style="fill: #009e73; opacity: 0.2; stroke: #009e73; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m711b43390a" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m711b43390a" x="523.317447" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="523.317447" y="319.838594" transform="rotate(-0 523.317447 319.838594)">−0.4</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m711b43390a" x="580.304681" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="580.304681" y="319.838594" transform="rotate(-0 580.304681 319.838594)">−0.2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m711b43390a" x="637.291915" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="637.291915" y="319.838594" transform="rotate(-0 637.291915 319.838594)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m711b43390a" x="694.279149" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="694.279149" y="319.838594" transform="rotate(-0 694.279149 319.838594)">0.2</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m711b43390a" x="751.266383" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="751.266383" y="319.838594" transform="rotate(-0 751.266383 319.838594)">0.4</text>
+     </g>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="637.291915" y="332.548906" transform="rotate(-0 637.291915 332.548906)">Paired standardized HEP effect d</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="line2d_6">
+    <path d="M 594.551489 306 
+L 594.551489 61.2 
+" clip-path="url(#p772a5985c2)" style="fill: none; stroke: #009e73; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 680.03234 306 
+L 680.03234 61.2 
+" clip-path="url(#p772a5985c2)" style="fill: none; stroke: #009e73; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 494.82383 306 
+L 779.76 306 
+" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #009e73" x="637.291915" y="110.16" transform="rotate(-0 637.291915 110.16)">ROPE = [−.15, +.15]</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(548.607227 170.162625)">95% HDI entirely inside ROPE</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(596.217227 183.6)">AND BF01 ≥6</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(558.577774 259.201969)">No posterior distribution is plotted.</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(555.08254 269.28)">Nonsignificance alone is insufficient.</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="637.291915" y="55.2" transform="rotate(-0 637.291915 55.2)">Pred 5.E / dlPFC HEP equivalence</text>
+   </g>
+  </g>
+  <g id="text_17">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="36.72" y="22.197656" transform="rotate(-0 36.72 22.197656)">Protocol 5 / Matched interventions and equivalence</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="388.718906" transform="rotate(-0 10.8 388.718906)">APGI 1.1  /  PRF6  /  Prospective protocol schematic</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="403.118906" transform="rotate(-0 10.8 403.118906)">Protocol 5, specification 1.1.0. No observed outcomes. Enroll 52 / analyzable target 44; 5.C / 5.D moderation requires multiplicity lock.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe4fce27bcd">
+   <rect x="110.16" y="61.2" width="284.93617" height="244.8"/>
+  </clipPath>
+  <clipPath id="p772a5985c2">
+   <rect x="494.82383" y="61.2" width="284.93617" height="244.8"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="859.68pt" height="952.530687pt" viewBox="0 0 859.68 952.530687" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 952.530687 
+L 859.68 952.530687 
+L 859.68 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 19.44 127.024894 
+L 94.0896 127.024894 
+L 94.0896 96.768 
+L 19.44 96.768 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="56.7648" y="114.103947" transform="rotate(-0 56.7648 114.103947)">ID / tier</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 94.0896 127.024894 
+L 284.8608 127.024894 
+L 284.8608 96.768 
+L 94.0896 96.768 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="189.4752" y="114.103947" transform="rotate(-0 189.4752 114.103947)">Prediction</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 284.8608 127.024894 
+L 483.9264 127.024894 
+L 483.9264 96.768 
+L 284.8608 96.768 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="384.3936" y="114.041447" transform="rotate(-0 384.3936 114.041447)">Target</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 483.9264 127.024894 
+L 699.5808 127.024894 
+L 699.5808 96.768 
+L 483.9264 96.768 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="591.7536" y="114.072697" transform="rotate(-0 591.7536 114.072697)">Evidence against</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 699.5808 127.024894 
+L 848.88 127.024894 
+L 848.88 96.768 
+L 699.5808 96.768 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="774.2304" y="114.103947" transform="rotate(-0 774.2304 114.103947)">Horizon / current status</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 19.44 185.521555 
+L 94.0896 185.521555 
+L 94.0896 127.024894 
+L 19.44 127.024894 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="158.480725" transform="rotate(-0 23.918976 158.480725)">P1 / T3</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 94.0896 185.521555 
+L 284.8608 185.521555 
+L 284.8608 127.024894 
+L 94.0896 127.024894 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 154.0016)">Nicotinic agonist lowers effective</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 162.95985)">threshold</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 284.8608 185.521555 
+L 483.9264 185.521555 
+L 483.9264 127.024894 
+L 284.8608 127.024894 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 154.0016)">Threshold shift d ≥ 0.4; P3b onset</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 162.95985)">~20–30 ms earlier</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 483.9264 185.521555 
+L 699.5808 185.521555 
+L 699.5808 127.024894 
+L 483.9264 127.024894 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 154.0016)">Equivalence test (TOST) bounds threshold</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 162.95985)">shift within d = ±0.2</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 699.5808 185.521555 
+L 848.88 185.521555 
+L 848.88 127.024894 
+L 699.5808 127.024894 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 145.04335)">Near-term (1–2 yr); Indirect</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 154.0016)">support from nicotinic-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 162.95985)">attention literature; untested</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 171.9181)">in ignition paradigm</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 19.44 244.018217 
+L 94.0896 244.018217 
+L 94.0896 185.521555 
+L 19.44 185.521555 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="216.977386" transform="rotate(-0 23.918976 216.977386)">P2 / T3</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 94.0896 244.018217 
+L 284.8608 244.018217 
+L 284.8608 185.521555 
+L 94.0896 185.521555 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 212.498261)">Near-threshold bistability with</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 221.456511)">critical slowing</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 284.8608 244.018217 
+L 483.9264 244.018217 
+L 483.9264 185.521555 
+L 284.8608 185.521555 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 212.498261)">Critical-slowing signature; ΔAIC &gt; 10</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 221.456511)">(bistable vs graded)</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 483.9264 244.018217 
+L 699.5808 244.018217 
+L 699.5808 185.521555 
+L 483.9264 185.521555 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="496.865664" y="216.977386" transform="rotate(-0 496.865664 216.977386)">Continuous graded relationship</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 699.5808 244.018217 
+L 848.88 244.018217 
+L 848.88 185.521555 
+L 699.5808 185.521555 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 203.540011)">Near-term (1–2 yr); Partial</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 212.498261)">(bistable-perception</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 221.456511)">literature); slowing not</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 230.414761)">tested for ignition</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 19.44 292.429247 
+L 94.0896 292.429247 
+L 94.0896 244.018217 
+L 19.44 244.018217 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="270.431232" transform="rotate(-0 23.918976 270.431232)">P3 / T3</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 94.0896 292.429247 
+L 284.8608 292.429247 
+L 284.8608 244.018217 
+L 94.0896 244.018217 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 265.952107)">200–300 ms frontoparietal TMS</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 274.910357)">abolishes report, spares priming</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 284.8608 292.429247 
+L 483.9264 292.429247 
+L 483.9264 244.018217 
+L 284.8608 244.018217 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 265.952107)">Report-accuracy drop d ≥ 0.5 with</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 274.910357)">priming intact</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 483.9264 292.429247 
+L 699.5808 292.429247 
+L 699.5808 244.018217 
+L 483.9264 244.018217 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="496.865664" y="270.431232" transform="rotate(-0 496.865664 270.431232)">Both disrupted equally, or access persists</text>
+    </g>
+    <g id="patch_21">
+     <path d="M 699.5808 292.429247 
+L 848.88 292.429247 
+L 848.88 244.018217 
+L 699.5808 244.018217 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 261.472982)">Near-term (2–3 yr); Partial</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 270.431232)">(TMS-masking literature);</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 279.389482)">specific window untested</text>
+    </g>
+    <g id="patch_22">
+     <path d="M 19.44 361.01154 
+L 94.0896 361.01154 
+L 94.0896 292.429247 
+L 19.44 292.429247 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_21">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="328.927893" transform="rotate(-0 23.918976 328.927893)">P4 / T3</text>
+    </g>
+    <g id="patch_23">
+     <path d="M 94.0896 361.01154 
+L 284.8608 361.01154 
+L 284.8608 292.429247 
+L 94.0896 292.429247 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 324.368768)">Ignition margin Sₜ − θ_eff,ₜ</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 333.549518)">predicts access at d′ ≥ 0.5</text>
+    </g>
+    <g id="patch_24">
+     <path d="M 284.8608 361.01154 
+L 483.9264 361.01154 
+L 483.9264 292.429247 
+L 284.8608 292.429247 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 324.337518)">d′ ≥ 0.5; AUC ≥ 0.70; partial R² ≥ 0.05</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 333.295768)">(Πᵉ, Πⁱ_eff each)</text>
+    </g>
+    <g id="patch_25">
+     <path d="M 483.9264 361.01154 
+L 699.5808 361.01154 
+L 699.5808 292.429247 
+L 483.9264 292.429247 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 319.969643)">d′ &lt; 0.5 under the §7.4 design, or a</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 328.927893)">stimulus-intensity-only model matches</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 337.886143)">within Δd′ 0.05</text>
+    </g>
+    <g id="patch_26">
+     <path d="M 699.5808 361.01154 
+L 848.88 361.01154 
+L 848.88 292.429247 
+L 699.5808 292.429247 
+z
+" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_25">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 311.011393)">Near-term (1–2 yr); Specified;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 319.969643)">simulation-based parameter</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 328.927893)">recovery only (Pesochin,</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 337.886143)">2026a); prospective test</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 346.844393)">pending</text>
+    </g>
+    <g id="patch_27">
+     <path d="M 19.44 459.850726 
+L 94.0896 459.850726 
+L 94.0896 361.01154 
+L 19.44 361.01154 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_26">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="412.638633" transform="rotate(-0 23.918976 412.638633)">P5 / T2</text>
+    </g>
+    <g id="patch_28">
+     <path d="M 94.0896 459.850726 
+L 284.8608 459.850726 
+L 284.8608 361.01154 
+L 94.0896 361.01154 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 381.284758)">Attentional cueing raises</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 390.243008)">stimulus–response MI I(S; R) by ≥</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 399.201258)">0.3 bits (S = cue-congruent target</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 408.159508)">identity; R = report; Δ, H(S),</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 417.117758)">baseline I(S; R) and the bias-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 426.076008)">corrected estimator to be fixed</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 435.034258)">before registration), with Δ &lt; H(S)</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 443.992508)">− baseline I(S; R)</text>
+    </g>
+    <g id="patch_29">
+     <path d="M 284.8608 459.850726 
+L 483.9264 459.850726 
+L 483.9264 361.01154 
+L 284.8608 361.01154 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 408.159508)">ΔI(S; R) ≥ 0.3 bits, with 0.25 &lt; Δ &lt;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 417.117758)">H(S) − baseline I(S; R)</text>
+    </g>
+    <g id="patch_30">
+     <path d="M 483.9264 459.850726 
+L 699.5808 459.850726 
+L 699.5808 361.01154 
+L 483.9264 361.01154 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_29">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 408.159508)">Equivalence test bounds ΔMI within ±0.25</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 417.117758)">bits</text>
+    </g>
+    <g id="patch_31">
+     <path d="M 699.5808 459.850726 
+L 848.88 459.850726 
+L 848.88 361.01154 
+L 699.5808 361.01154 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_30">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 403.680383)">Mid (2–3 yr); Untested;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 412.638633)">consistent with attention-gain</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 421.596883)">literature</text>
+    </g>
+    <g id="patch_32">
+     <path d="M 19.44 518.347388 
+L 94.0896 518.347388 
+L 94.0896 459.850726 
+L 19.44 459.850726 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_31">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="491.306557" transform="rotate(-0 23.918976 491.306557)">P6 / T2</text>
+    </g>
+    <g id="patch_33">
+     <path d="M 94.0896 518.347388 
+L 284.8608 518.347388 
+L 284.8608 459.850726 
+L 94.0896 459.850726 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_32">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 486.827432)">Conscious bandwidth asymptotes</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 495.785682)">within 10–40 bits/s</text>
+    </g>
+    <g id="patch_34">
+     <path d="M 284.8608 518.347388 
+L 483.9264 518.347388 
+L 483.9264 459.850726 
+L 284.8608 459.850726 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_33">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 486.827432)">Asymptote within 10–40 bits/s,</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 495.785682)">modality-invariant</text>
+    </g>
+    <g id="patch_35">
+     <path d="M 483.9264 518.347388 
+L 699.5808 518.347388 
+L 699.5808 459.850726 
+L 483.9264 459.850726 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_34">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 482.348307)">Modality-invariant asymptote outside 10–100</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 491.306557)">bits/s, or modality variation exceeding the</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 500.264807)">10–40 bits/s range</text>
+    </g>
+    <g id="patch_36">
+     <path d="M 699.5808 518.347388 
+L 848.88 518.347388 
+L 848.88 459.850726 
+L 699.5808 459.850726 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_35">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 477.869182)">Mid (2–4 yr); Partial</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 486.827432)">(classical bandwidth</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 495.785682)">estimates); not tested as</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 504.743932)">ignition asymptote</text>
+    </g>
+    <g id="patch_37">
+     <path d="M 19.44 556.672787 
+L 94.0896 556.672787 
+L 94.0896 518.347388 
+L 19.44 518.347388 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_36">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="539.717587" transform="rotate(-0 23.918976 539.717587)">P7 / T2</text>
+    </g>
+    <g id="patch_38">
+     <path d="M 94.0896 556.672787 
+L 284.8608 556.672787 
+L 284.8608 518.347388 
+L 94.0896 518.347388 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_37">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 535.269712)">θₜ approximates Neyman–Pearson</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 544.227962)">optimum</text>
+    </g>
+    <g id="patch_39">
+     <path d="M 284.8608 556.672787 
+L 483.9264 556.672787 
+L 483.9264 518.347388 
+L 284.8608 518.347388 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_38">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="296.804736" y="539.717587" transform="rotate(-0 296.804736 539.717587)">Deviation ≤ 2 SD from optimum</text>
+    </g>
+    <g id="patch_40">
+     <path d="M 483.9264 556.672787 
+L 699.5808 556.672787 
+L 699.5808 518.347388 
+L 483.9264 518.347388 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_39">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="496.865664" y="539.717587" transform="rotate(-0 496.865664 539.717587)">Deviation &gt; 2 SD</text>
+    </g>
+    <g id="patch_41">
+     <path d="M 699.5808 556.672787 
+L 848.88 556.672787 
+L 848.88 518.347388 
+L 699.5808 518.347388 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_40">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="708.538752" y="539.717587" transform="rotate(-0 708.538752 539.717587)">Mid (2–3 yr); Untested</text>
+    </g>
+    <g id="patch_42">
+     <path d="M 19.44 605.083817 
+L 94.0896 605.083817 
+L 94.0896 556.672787 
+L 19.44 556.672787 
+z
+" style="fill: #009e73; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_41">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="583.085802" transform="rotate(-0 23.918976 583.085802)">P8 / T2</text>
+    </g>
+    <g id="patch_43">
+     <path d="M 94.0896 605.083817 
+L 284.8608 605.083817 
+L 284.8608 556.672787 
+L 94.0896 556.672787 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_42">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 574.127552)">Interoceptive TE to report ≥ 0.05</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 583.085802)">bits/trial, exteroceptive TE</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 592.044052)">partialed</text>
+    </g>
+    <g id="patch_44">
+     <path d="M 284.8608 605.083817 
+L 483.9264 605.083817 
+L 483.9264 556.672787 
+L 284.8608 556.672787 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_43">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 578.384177)">TE_intero ≥ 0.05 bits/trial (partial);</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 587.564927)">TE_intero &gt; TE_extero exploratory</text>
+    </g>
+    <g id="patch_45">
+     <path d="M 483.9264 605.083817 
+L 699.5808 605.083817 
+L 699.5808 556.672787 
+L 483.9264 556.672787 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_44">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 574.016302)">90% CI of surrogate-corrected TE_intero</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 583.197052)">wholly below 0.01 bits/trial (equivalence</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 592.155302)">test; §7.4)</text>
+    </g>
+    <g id="patch_46">
+     <path d="M 699.5808 605.083817 
+L 848.88 605.083817 
+L 848.88 556.672787 
+L 699.5808 556.672787 
+z
+" style="fill: #e5f4ee; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_45">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 574.127552)">Mid (3–4 yr); Untested;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 583.085802)">motivated by interoception</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 592.044052)">literature</text>
+    </g>
+    <g id="patch_47">
+     <path d="M 19.44 653.494847 
+L 94.0896 653.494847 
+L 94.0896 605.083817 
+L 19.44 605.083817 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_46">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="631.496832" transform="rotate(-0 23.918976 631.496832)">P9 / T1</text>
+    </g>
+    <g id="patch_48">
+     <path d="M 94.0896 653.494847 
+L 284.8608 653.494847 
+L 284.8608 605.083817 
+L 94.0896 605.083817 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_47">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 627.017707)">Ignition trials cost more</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 635.975957)">frontoparietal energy</text>
+    </g>
+    <g id="patch_49">
+     <path d="M 284.8608 653.494847 
+L 483.9264 653.494847 
+L 483.9264 605.083817 
+L 284.8608 605.083817 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_48">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 622.538582)">≥ 5% ³¹P-MRS metabolic difference; d ≥</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 631.496832)">0.4, N ≥ 52 within-subject. BOLD</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 640.455082)">contrast used for region selection only</text>
+    </g>
+    <g id="patch_50">
+     <path d="M 483.9264 653.494847 
+L 699.5808 653.494847 
+L 699.5808 605.083817 
+L 483.9264 605.083817 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_49">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 627.017707)">Equivalence test bounds differential within</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 635.975957)">±2% after controls</text>
+    </g>
+    <g id="patch_51">
+     <path d="M 699.5808 653.494847 
+L 848.88 653.494847 
+L 848.88 605.083817 
+L 699.5808 605.083817 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_50">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 627.017707)">Long (5–10 yr); Unmeasured —</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 635.975957)">primary Tier 1 gap</text>
+    </g>
+    <g id="patch_52">
+     <path d="M 19.44 711.991508 
+L 94.0896 711.991508 
+L 94.0896 653.494847 
+L 19.44 653.494847 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_51">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="684.950678" transform="rotate(-0 23.918976 684.950678)">P10 / T1</text>
+    </g>
+    <g id="patch_53">
+     <path d="M 94.0896 711.991508 
+L 284.8608 711.991508 
+L 284.8608 653.494847 
+L 94.0896 653.494847 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_52">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 680.471553)">Threshold-gated more energy-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 689.429803)">efficient than continuous</text>
+    </g>
+    <g id="patch_54">
+     <path d="M 284.8608 711.991508 
+L 483.9264 711.991508 
+L 483.9264 653.494847 
+L 284.8608 653.494847 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_53">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 671.513303)">Energy saving exceeding the between-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 680.471553)">architecture variance of the matched-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 689.429803)">budget comparison in §7.5.2; no point</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 698.388053)">target is registered</text>
+    </g>
+    <g id="patch_55">
+     <path d="M 483.9264 711.991508 
+L 699.5808 711.991508 
+L 699.5808 653.494847 
+L 483.9264 653.494847 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_54">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="496.865664" y="684.950678" transform="rotate(-0 496.865664 684.950678)">Continuous matches or beats it</text>
+    </g>
+    <g id="patch_56">
+     <path d="M 699.5808 711.991508 
+L 848.88 711.991508 
+L 848.88 653.494847 
+L 699.5808 653.494847 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_55">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 675.992428)">Mid–long (3–5 yr); Not</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 684.950678)">modeled; design specified</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 693.908928)">(§7.5.2)</text>
+    </g>
+    <g id="patch_57">
+     <path d="M 19.44 760.402539 
+L 94.0896 760.402539 
+L 94.0896 711.991508 
+L 19.44 711.991508 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_56">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="738.404523" transform="rotate(-0 23.918976 738.404523)">P11 / T1</text>
+    </g>
+    <g id="patch_58">
+     <path d="M 94.0896 760.402539 
+L 284.8608 760.402539 
+L 284.8608 711.991508 
+L 94.0896 711.991508 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_57">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="105.535872" y="738.435773" transform="rotate(-0 105.535872 738.435773)">Metabolic depletion elevates θₜ</text>
+    </g>
+    <g id="patch_59">
+     <path d="M 284.8608 760.402539 
+L 483.9264 760.402539 
+L 483.9264 711.991508 
+L 284.8608 711.991508 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_58">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="296.804736" y="738.404523" transform="rotate(-0 296.804736 738.404523)">Threshold elevation d ≥ 0.4</text>
+    </g>
+    <g id="patch_60">
+     <path d="M 483.9264 760.402539 
+L 699.5808 760.402539 
+L 699.5808 711.991508 
+L 483.9264 711.991508 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_59">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 733.925398)">Equivalence test bounds shift within d =</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 742.883648)">±0.2, or threshold lowered</text>
+    </g>
+    <g id="patch_61">
+     <path d="M 699.5808 760.402539 
+L 848.88 760.402539 
+L 848.88 711.991508 
+L 699.5808 711.991508 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_60">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 729.446273)">Mid (3–5 yr); Untested;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 738.404523)">indirect support from</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 747.362773)">vigilance/fatigue work</text>
+    </g>
+    <g id="patch_62">
+     <path d="M 19.44 818.8992 
+L 94.0896 818.8992 
+L 94.0896 760.402539 
+L 19.44 760.402539 
+z
+" style="fill: #d55e00; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_61">
+     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="23.918976" y="791.858369" transform="rotate(-0 23.918976 791.858369)">P12 / T1</text>
+    </g>
+    <g id="patch_63">
+     <path d="M 94.0896 818.8992 
+L 284.8608 818.8992 
+L 284.8608 760.402539 
+L 94.0896 760.402539 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_62">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 778.420994)">A matched event-energy/event-</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 787.379244)">information experiment yields an</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 796.337494)">empirical κ estimate under the</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(105.535872 805.295744)">registered calibration convention</text>
+    </g>
+    <g id="patch_64">
+     <path d="M 284.8608 818.8992 
+L 483.9264 818.8992 
+L 483.9264 760.402539 
+L 284.8608 760.402539 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_63">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 782.900119)">κ estimable with uncertainty; [10, 10³]</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 791.858369)">consistent, (10³, 10⁴] requires</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(296.804736 800.816619)">explanation</text>
+    </g>
+    <g id="patch_65">
+     <path d="M 483.9264 818.8992 
+L 699.5808 818.8992 
+L 699.5808 760.402539 
+L 483.9264 760.402539 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_64">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 778.420994)">Replicated calibrated κ estimates in ≥ 2</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 787.379244)">independent datasets/paradigms have</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 796.337494)">preregistered uncertainty intervals wholly</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(496.865664 805.295744)">outside [10, 10⁴] ATP/bit</text>
+    </g>
+    <g id="patch_66">
+     <path d="M 699.5808 818.8992 
+L 848.88 818.8992 
+L 848.88 760.402539 
+L 699.5808 760.402539 
+z
+" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_65">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 782.900119)">Long (5–10 yr); Unmeasured;</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 791.858369)">prerequisite calibration not</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(708.538752 800.816619)">yet performed</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_66">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="28.08" y="22.197656" transform="rotate(-0 28.08 22.197656)">Twelve forward predictions: Paper 4 Table S4</text>
+  </g>
+  <g id="text_67">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="905.887706" transform="rotate(-0 10.8 905.887706)">APGI 1.1  /  P4F3  /  Prospective prediction matrix</text>
+  </g>
+  <g id="text_68">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="940.274906" transform="rotate(-0 10.8 940.274906)">Paper 4 exposition IDs differ from Protocol Pred IDs. Pending registration and calibration are retained.</text>
+  </g>
+ </g>
+</svg>

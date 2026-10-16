@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="859.68pt" height="337.974688pt" viewBox="0 0 859.68 337.974688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 337.974688 
+L 859.68 337.974688 
+L 859.68 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 19.44 90 
+L 201.9168 90 
+L 201.9168 39.6 
+L 19.44 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="110.6784" y="67.283437" transform="rotate(-0 110.6784 67.283437)">Profile</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 201.9168 90 
+L 533.6928 90 
+L 533.6928 39.6 
+L 201.9168 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="367.8048" y="67.283437" transform="rotate(-0 367.8048 67.283437)">Proposed disturbance</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 533.6928 90 
+L 848.88 90 
+L 848.88 39.6 
+L 533.6928 39.6 
+z
+" style="fill: #0072b2; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="691.2864" y="67.283437" transform="rotate(-0 691.2864 67.283437)">Evaluation</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 19.44 153.84 
+L 201.9168 153.84 
+L 201.9168 90 
+L 19.44 90 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="30.388608" y="124.403438" transform="rotate(-0 30.388608 124.403438)">Major depression</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 201.9168 153.84 
+L 533.6928 153.84 
+L 533.6928 90 
+L 201.9168 90 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 119.364422)">L1 interoceptive precision ↓;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 129.442453)">multilevel threshold changes</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 533.6928 153.84 
+L 848.88 153.84 
+L 848.88 90 
+L 533.6928 90 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 119.364422)">Prespecified APGI profile</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 129.442453)">versus generic EEG features</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 19.44 217.68 
+L 201.9168 217.68 
+L 201.9168 153.84 
+L 19.44 153.84 
+z
+" style="fill: #f7f9fb; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="30.388608" y="188.243437" transform="rotate(-0 30.388608 188.243437)">Schizophrenia</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 201.9168 217.68 
+L 533.6928 217.68 
+L 533.6928 153.84 
+L 201.9168 153.84 
+z
+" style="fill: #f7f9fb; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 183.204422)">L2 precision genotype-dependent;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 193.282453)">cross-level coupling disruption</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 533.6928 217.68 
+L 848.88 217.68 
+L 848.88 153.84 
+L 533.6928 153.84 
+z
+" style="fill: #f7f9fb; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 183.204422)">Do not impose one universal</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 193.282453)">precision direction</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 19.44 281.52 
+L 201.9168 281.52 
+L 201.9168 217.68 
+L 19.44 217.68 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="30.388608" y="252.083438" transform="rotate(-0 30.388608 252.083438)">Disorders of consciousness</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 201.9168 281.52 
+L 533.6928 281.52 
+L 533.6928 217.68 
+L 201.9168 217.68 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 247.044422)">Clinical biomarker study;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(221.82336 257.122453)">HEP and PCI eligibility differ</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 533.6928 281.52 
+L 848.88 281.52 
+L 848.88 217.68 
+L 533.6928 217.68 
+z
+" style="fill: #edf3f7; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 247.044422)">Pred 7.G primary prognosis;</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(552.604032 257.122453)">joint biomarker estimative</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="28.08" y="22.197656" transform="rotate(-0 28.08 22.197656)">Clinical profiles require specificity controls</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="314.198906" transform="rotate(-0 10.8 314.198906)">APGI 1.1  /  P3F4  /  Specification schematic</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="325.718906" transform="rotate(-0 10.8 325.718906)">Paper 3: AUC ≥0.75, within-site label permutations, ΔAUC ≥0.05 beyond generic EEG features with BCa CI excluding zero.</text>
+  </g>
+ </g>
+</svg>

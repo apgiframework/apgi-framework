@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="790.56pt" height="415.374687pt" viewBox="0 0 790.56 415.374687" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 415.374687 
+L 790.56 415.374687 
+L 790.56 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 130.228085 306 
+L 375.028085 306 
+L 375.028085 61.2 
+L 130.228085 61.2 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 152.482631 283.745455 
+L 241.500812 283.745455 
+L 241.500812 194.727273 
+L 152.482631 194.727273 
+z
+" clip-path="url(#p49309014af)" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 152.482631 172.472727 
+L 241.500812 172.472727 
+L 241.500812 83.454545 
+L 152.482631 83.454545 
+z
+" clip-path="url(#p49309014af)" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 263.755358 283.745455 
+L 352.77354 283.745455 
+L 352.77354 194.727273 
+L 263.755358 194.727273 
+z
+" clip-path="url(#p49309014af)" style="fill: #e6f1f7; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 263.755358 172.472727 
+L 352.77354 172.472727 
+L 352.77354 83.454545 
+L 263.755358 83.454545 
+z
+" clip-path="url(#p49309014af)" style="fill: #fbece4; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m711b43390a" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m711b43390a" x="196.991721" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="196.991721" y="319.838594" transform="rotate(-0 196.991721 319.838594)">Rested</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m711b43390a" x="308.264449" y="306" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="308.264449" y="319.838594" transform="rotate(-0 308.264449 319.838594)">Depleted</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m92a97ba7cd" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m92a97ba7cd" x="130.228085" y="239.236364" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="123.228085" y="242.655661" transform="rotate(-0 123.228085 242.655661)">Neutral</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m92a97ba7cd" x="130.228085" y="127.963636" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="123.228085" y="131.382933" transform="rotate(-0 123.228085 131.382933)">High interoceptive</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 130.228085 306 
+L 130.228085 61.2 
+" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 130.228085 306 
+L 375.028085 306 
+" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(170.726878 236.396832)">d′ and P3b</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(159.15969 247.594645)">measured here</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(170.726878 125.124105)">d′ and P3b</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(159.15969 136.321918)">measured here</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(281.999605 236.396832)">d′ and P3b</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(270.432417 247.594645)">measured here</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(281.999605 125.124105)">d′ and P3b</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(270.432417 136.321918)">measured here</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="252.628085" y="55.2" transform="rotate(-0 252.628085 55.2)">Within-participant factorial contrast</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 497.673191 133.824 
+L 776.910638 133.824 
+Q 779.76 133.824 779.76 131.376 
+L 779.76 78.336 
+Q 779.76 75.888 776.910638 75.888 
+L 497.673191 75.888 
+Q 494.82383 75.888 494.82383 78.336 
+L 494.82383 131.376 
+Q 494.82383 133.824 497.673191 133.824 
+z
+" clip-path="url(#p772a5985c2)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 497.673191 199.104 
+L 776.910638 199.104 
+Q 779.76 199.104 779.76 196.656 
+L 779.76 143.616 
+Q 779.76 141.168 776.910638 141.168 
+L 497.673191 141.168 
+Q 494.82383 141.168 494.82383 143.616 
+L 494.82383 196.656 
+Q 494.82383 199.104 497.673191 199.104 
+z
+" clip-path="url(#p772a5985c2)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 497.673191 264.384 
+L 776.910638 264.384 
+Q 779.76 264.384 779.76 261.936 
+L 779.76 208.896 
+Q 779.76 206.448 776.910638 206.448 
+L 497.673191 206.448 
+Q 494.82383 206.448 494.82383 208.896 
+L 494.82383 261.936 
+Q 494.82383 264.384 497.673191 264.384 
+z
+" clip-path="url(#p772a5985c2)" style="fill: #f3f7fa; stroke: #0072b2; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="503.371915" y="93.278437" transform="rotate(-0 503.371915 93.278437)">Signed margin (Pred 4.A)</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 116.998594)">Δ = depleted − rested</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 129.128203)">Δd′extero − Δd′intero ≥ .15 × rested d′intero</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="503.371915" y="158.558437" transform="rotate(-0 503.371915 158.558437)">Neural contrast (Pred 4.B)</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 182.278594)">Selective P3b reduction ≥1.5 μV</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 194.408203)">Registered interaction evidence required</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="503.371915" y="223.838437" transform="rotate(-0 503.371915 223.838437)">Adjustment (Pred 4.C)</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 247.558594)">Trial pupil and block RMSSD are covariates</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'" transform="translate(503.371915 259.688203)">Adjustment does not establish metabolic mediation</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: start" x="36.72" y="22.197656" transform="rotate(-0 36.72 22.197656)">Protocol 4 / State × interoceptive load crossover</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="388.718906" transform="rotate(-0 10.8 388.718906)">APGI 1.1  /  PRF5  /  Prospective protocol schematic</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="403.118906" transform="rotate(-0 10.8 403.118906)">Protocol 4, specification 1.1.0. No observed outcomes. Enroll 64 / target 55 / minimum 48; two labs. Positive baseline d′ required for proportional margin.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p49309014af">
+   <rect x="130.228085" y="61.2" width="244.8" height="244.8"/>
+  </clipPath>
+  <clipPath id="p772a5985c2">
+   <rect x="494.82383" y="61.2" width="284.93617" height="244.8"/>
+  </clipPath>
+ </defs>
+</svg>

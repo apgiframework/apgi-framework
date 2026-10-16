@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="789.84pt" height="492.774688pt" viewBox="0 0 789.84 492.774688" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 492.774688 
+L 789.84 492.774688 
+L 789.84 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 26.3232 247.968 
+L 376.0704 247.968 
+Q 383.6736 247.968 383.6736 244.5984 
+L 383.6736 89.5968 
+Q 383.6736 86.2272 376.0704 86.2272 
+L 26.3232 86.2272 
+Q 18.72 86.2272 18.72 89.5968 
+L 18.72 244.5984 
+Q 18.72 247.968 26.3232 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 421.6896 247.968 
+L 771.4368 247.968 
+Q 779.04 247.968 779.04 244.5984 
+L 779.04 89.5968 
+Q 779.04 86.2272 771.4368 86.2272 
+L 421.6896 86.2272 
+Q 414.0864 86.2272 414.0864 89.5968 
+L 414.0864 244.5984 
+Q 414.0864 247.968 421.6896 247.968 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 26.3232 399.6 
+L 771.4368 399.6 
+Q 779.04 399.6 779.04 396.2304 
+L 779.04 301.8816 
+Q 779.04 298.512 771.4368 298.512 
+L 26.3232 298.512 
+Q 18.72 298.512 18.72 301.8816 
+L 18.72 396.2304 
+Q 18.72 399.6 26.3232 399.6 
+z
+" clip-path="url(#p7bf1e5ee27)" style="fill: #f7f9fb; stroke: #ccd5dd; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 18.72 86.2272 
+L 383.6736 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 414.0864 86.2272 
+L 779.04 86.2272 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #d55e00; stroke-width: 3"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 18.72 298.512 
+L 779.04 298.512 
+" clip-path="url(#p7bf1e5ee27)" style="fill: none; stroke: #0072b2; stroke-width: 3"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="107.304037" transform="rotate(-0 33.9264 107.304037)">Fast: ACC → locus coeruleus</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(33.9264 138.390281)">Level-3 cortical signal → brainstem relay</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(33.9264 153.215359)">Phasic NE modulates Level-1 threshold</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(33.9264 168.040438)">Tonic NE can alter Level-0 gain</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(33.9264 182.865516)">LC is a relay, not a hierarchical stratum</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d55e00" x="429.2928" y="107.304037" transform="rotate(-0 429.2928 107.304037)">Slow: PVN → HPA axis</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(429.2928 138.390281)">CRH → ACTH → cortisol</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(429.2928 153.215359)">Rapid membrane-MR facilitation</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(429.2928 168.040438)">Sustained GR suppression</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(429.2928 182.865516)">Neuroendocrine priors modulate cortex</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #0072b2" x="33.9264" y="319.588838" transform="rotate(-0 33.9264 319.588838)">Coupling notation</text>
+   </g>
+   <g id="text_6">
+    <!-- $\alpha_{31}=\kappa_{12}\kappa_{23}$     $\alpha_{41}=\kappa_{12}\kappa_{23}\kappa_{34}$ -->
+    <g transform="translate(33.9264 351.434925)">
+     <text>
+      <tspan x="0" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">α</tspan>
+      <tspan x="33.657422" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">κ</tspan>
+      <tspan x="51.746484" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">κ</tspan>
+      <tspan x="88.907812" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">α</tspan>
+      <tspan x="122.565234" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">κ</tspan>
+      <tspan x="140.654297" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">κ</tspan>
+      <tspan x="158.743359" y="-0.265625" style="font-style: oblique; font-size: 12px; font-family: 'DejaVu Sans'">κ</tspan>
+      <tspan x="7.910156" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">3</tspan>
+      <tspan x="13.254492" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="40.729687" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="46.074023" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="58.81875" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="64.163086" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">3</tspan>
+      <tspan x="96.817969" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">4</tspan>
+      <tspan x="102.162305" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="129.6375" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">1</tspan>
+      <tspan x="134.981836" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="147.726562" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">2</tspan>
+      <tspan x="153.070898" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">3</tspan>
+      <tspan x="165.815625" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">3</tspan>
+      <tspan x="171.159961" y="1.703125" style="font-size: 8.4px; font-family: 'DejaVu Sans'">4</tspan>
+      <tspan x="21.264844" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'">=</tspan>
+      <tspan x="69.835547" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="73.65" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="77.464453" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="81.278906" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="85.093359" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'"> </tspan>
+      <tspan x="110.172656" y="-0.265625" style="font-size: 12px; font-family: 'DejaVu Sans'">=</tspan>
+     </text>
+    </g>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'" transform="translate(33.9264 367.607738)">Multi-step influences are compositions, not independent free parameters.</text>
+   </g>
+  </g>
+  <g id="text_7">
+   <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #20262e" x="26.64" y="22.9575" transform="rotate(-0 26.64 22.9575)">Fast and slow neuromodulatory influences</text>
+  </g>
+  <g id="text_8">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="463.238906" transform="rotate(-0 10.8 463.238906)">APGI 1.1  /  P3F3  /  Proposed mechanism</text>
+  </g>
+  <g id="text_9">
+   <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #59636f" x="10.8" y="480.518906" transform="rotate(-0 10.8 480.518906)">Paper 3 §3 / Fig 3. Subscripted coupling κ differs from the ATP/bit bridge κ.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7bf1e5ee27">
+   <rect x="18.72" y="62.64" width="760.32" height="336.96"/>
+  </clipPath>
+ </defs>
+</svg>

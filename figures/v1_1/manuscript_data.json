@@ -1,0 +1,198 @@
+{
+  "Paper1": {
+    "captions": [
+      "Figure 1. APGI architecture: a five-stage pipeline in which modality-specific prediction errors are precision-weighted, somatic-marker–amplified, accumulated as Sₜ, and broadcast through frontoparietal–thalamic workspace neurons once Sₜ exceeds the dynamic threshold θₜ.",
+      "Figure 2. Proposed somatic-marker disinhibition circuit (hypothesis): vmPFC retrieval of M(c,a) drives VIP⁺ interneurons that inhibit SST⁺ Martinotti cells, releasing the L2/3 pyramidal dendritic compartment and elevating effective interoceptive precision Πⁱ_eff at ignition.",
+      "Figure 3. The thermodynamic bridge and the κ parameter. Schematic tracing ATP per spike through spikes per ignition event to ~2.4 × 10¹⁸ ATP ≈ 0.12 J per event (§4.6, Appendix E). The bridge parameter κ converts ignition-event information into energy and is uncalibrated: sensitivity calculations span ~3 × 10³ to ~10⁹ ATP/bit across bit-count conventions, and no value is adopted. The erasure ratio R_L refers the whole-event energy to the Landauer floor for the ~13–27 bits discarded at accumulator reset (~10¹⁸). A per-bit unit cost and a whole-event ratio are not interconvertible; the figure keeps them apart.",
+      "Figure 4. Onset ignition timeline, mapping each processing phase to its neural substrate, APGI variable, and EEG/MEG marker, from early error generation through threshold crossing to global broadcast. Table S3 extends this mapping with the corresponding pharmacological probes. Phase boundaries are hypotheses, not settled values.",
+      "Figure 5. Epistemic tier architecture and falsification mapping. A matrix mapping the three epistemic tiers (Tier 1 Thermodynamic, Tier 2 Information-Theoretic, Tier 3 Computational) to their empirical protocols (Protocols 1–4), primary neural/behavioral measures, and specific falsification thresholds, illustrating the tier-annotated vulnerability of APGI and the bridge principles connecting the tiers."
+    ]
+  },
+  "Paper2": {
+    "captions": [
+      "Figure 1. The four biological constraints map one-to-one onto APGI’s four computational requirements. (A) Each constraint (left) — C1 high-dimensional transient dynamics, C2 fading memory (~200–500 ms), C3 nonlinear separability and C4 sparse event-driven activity — is realized through the cortical LSM/LNN substrate (center) as one computational requirement (right): exteroceptive/interoceptive prediction-error separation (εᵉ, εⁱ), the accumulation window (τ_S ≈ 200–500 ms), the ignition-probability sigmoid and the metabolic/allostatic threshold. (B) Constraint-satisfaction audit, adjudicated analytically: an architecture satisfies a constraint if the property follows from its defining equations without additional machinery (criteria: §2.5). The attractor network fails C2, the Transformer C2 and C4, and the feedforward network C1 and C2.",
+      "Figure 2. Cortical-circuit implementation of precision (Π) and the somatic-marker pathway. (A) Laminar column: interoceptive input to L1 apical dendrites (red); ACh/M1 modulation of L2/3 PV⁺ interneurons (green); vmPFC→VIP⁺ projections (purple); exteroceptive thalamic drive to L4 (blue); NE/α2 modulation of L5 SST⁺ and pyramidal cells (orange); L6 thalamic feedback (blue, dashed). (B) The vmPFC→VIP⁺→SST⁺ disinhibition circuit. At baseline (M̂ low) SST⁺ cells inhibit L2/3 pyramidal cells; when engaged (M̂ high), vmPFC excites VIP⁺ cells, which suppress SST⁺ cells and disinhibit pyramidal firing. The circuit implements the canonical Πⁱ_eff (§3.1), with β_SM the trait-level somatic-marker coefficient. (C) L5 pyramidal neuron: top-down prediction (μ̂) reaches the apical dendrite and bottom-up evidence (x) the basal dendrite; APGI hypothesizes that an apical–basal mismatch contributes to the error signal; plateau/burst physiology does not by itself establish this error computation. Proposed implementation; causal validation requires optogenetic or chemogenetic circuit dissociation.",
+      "Figure 3. Saddle-node bifurcation and precision-dependent ignition (homogeneous-τ saddle-node normal-form reduction; schematic, approximate). (A) Normalized readout |y(t)|/θₜ against ρ_res (0.70–0.99). The stable resting branch (sub-threshold basin, blue) and the saddle branch (dashed) meet at the fold, marked at ρ_res ≈ 0.95; beyond it trajectories escape to the ignition attractor (red). Inset: saddle-node scaling with drive, |y − y_c| ∝ √(μ_c − μ). In the reduced model plotted, a second fold at ρ_on ≈ 1.02, beyond the plotted axis, bounds a bistable, hysteretic interval; hysteresis was not observed in the N = 500 reservoir simulations, which sampled ρ_res ≤ 0.99, and is a target of the N ≥ 1,000 validation. (B) Ignition probability against the signal–threshold difference in raw prediction-error units (Π ≤ Π_max = 10). Curves share a fixed intrinsic steepness γ_sig = 1/τ_σ (canonical band [2, 7.5]); their error-referred steepness γ_sig·Π increases with precision, and every curve crosses 0.5 at threshold. The behavioral psychometric steepness α_psy is a distinct, empirically observed quantity and is not plotted; its relation to γ_sig is derived in Appendix A.5.1.",
+      "Figure 4. Visual masking as a competition between accumulation and fading memory in the APGI-LNN reservoir (homogeneous-τ single-population reduced model; indicative values). (A) Readout S(t) for a 50 ms target (0–50 ms) followed by a 50 ms mask after ISIs of 30 ms (mask at 80 ms), ~90 ms (critical; mask at 140 ms; a ±1 ms change decides between collapse (solid) and ignition (dashed)) and 180 ms (mask at 230 ms). S(t) collapses below θₜ at the short ISI, reaches θₜ at the critical ISI and enters the ignition zone at the long ISI. (B) Critical ISI against normalized parameter value (x/x_ref). Exteroceptive target precision Π_target (Πᵉ; purple, inverse) shortens the critical ISI; the ignition threshold θₜ (green, direct) lengthens it; the spectral radius ρ_res (blue, direct; ρ_ref = 0.90) lengthens it steeply. Within the canonical range [0.7, 0.95] a higher spectral radius slows the reservoir’s response, lengthening the critical ISI and strengthening masking — the directly testable, distinguishing prediction of the LNN substrate (§4.10). Quantitative ISI values require empirical calibration (≥ 1,000 near-threshold trials per patient; Protocol 6).",
+      "Figure S1. Non-invasive stimulation and intracranial-EEG protocols for testing APGI predictions. (A) Protocol 5 — stimulation targets: right anterior insula (aINS; deep target beneath the frontal and temporal opercula, reached by tFUS/dTMS; MNI [34, 14, 0]), left dorsolateral prefrontal cortex (dlPFC; global-ignition gating, [−44, 36, 20]), bilateral posterior parietal cortex (PPC; global-ignition gating, [±28, −60, 46]) and vertex sham (active control), shown on left-lateral, axial and right-lateral glass-brain projections. Predicted dissociation: aINS stimulation selectively disrupts interoceptive precision gating — abolishing heartbeat-evoked potential (HEP)–P3b coupling and HEP–PCI coupling while sparing exteroceptive P3b amplitude — whereas dlPFC and PPC stimulation reduce global ignition probability across both streams without affecting HEP amplitude. Deeper thalamic and claustral nodes are not transcranially accessible; Protocol 5 constrains testing to cortically accessible gating nodes (§5.3). (B) Protocol 6 intracranial-EEG trial timeline for ρ̂(t) estimation: a 500 ms pre-stimulus baseline window and the pre-ignition window (TVAR/Kalman estimate of ρ̂(t), an index of proximity to the bifurcation; lag-1 autocorrelation, AC1, as a sensitivity estimate of ρ̂(t) and the primary critical-slowing statistic); near-threshold stimulus presentation (~500–560 ms); and a 250 ms response window (~560–810 ms). Supra-threshold trials (S(t) crosses θₜ) show activation spreading from the sensory entry node to prefrontal regions with high-gamma (70–150 Hz) increase; sub-threshold trials remain local, with no propagation and no high-gamma increase. ρ̂ is predicted to distinguish trials that will ignite (high ρ̂) from those that remain local (low ρ̂). Empirical validation of this prediction requires only the intracranial recordings of Protocol 6; no stimulation is applied."
+    ]
+  },
+  "Paper3": {
+    "captions": [
+      "Figure 1. The five-level hierarchical APGI architecture. Concentric rings depict nested strata from the reflexive Level 0 (L0; hatched, sub-APGI, 10–100 ms) outward through L1 (100 ms–3 s), L2 (minutes), L3 (hours–days) and L4 (months–years). Inward arrows denote top-down threshold modulation (κ_down), outward arrows bottom-up standardized-error precision modulation ψ(z); κ_up separately modulates the effective threshold after lower-level ignition. Neuromodulatory carriers: cortisol (L4→L3), phasic norepinephrine (L3→L1/L0 relay, locus coeruleus, pons), acetylcholine (L2→L1, basal forebrain) and fast norepinephrine (L1→L0, modulating L0 gain). The inset table summarizes substrate, neuromodulator and APGI parameters per level (as in Table 1).",
+      "Figure 2. Predicted composite spectrum from hierarchical timescale nesting. The spectrum is the sum of five Ornstein–Uhlenbeck spectra with equal stationary variance: the four threshold processes of Levels 1–4 and the intrinsic time constant of the sub-APGI Level-0 substrate, which contributes a pole without a threshold. Dashed colored curves are the single-level Lorentzians (τ_ℓ = 50 ms, 6.6 s, 15 min, 1.4 d, 6 mo; common ratio r ≈ 133). The thick black curve is their sum, which approximates 1/f (least-squares slope −1.00 between the outermost corners) with shoulders at the corner frequencies f_c,ℓ = 1/(2πτ_ℓ). Darker vertical lines mark the testable corners: ~3.2 Hz (L0/L1, routine EEG; the must-pass knee, §3.4) and ~0.024 Hz (L1/L2, DC-coupled recording ≥ 30 min). Lighter lines mark forward-program corners at ~1.8×10⁻⁴ Hz (L2/L3) and ~1.3×10⁻⁶ Hz (L3/L4). The shaded band is the DC-coupled acquisition window (0.005–100 Hz; §5.2). Corner positions are conditional on the five-level tiling.",
+      "Figure 3. Two neuromodulatory pathways from slow levels (L3–L4) to L1 and L0. Pathway A (fast, blue): the anterior cingulate cortex (ACC; Level-3 node) drives the locus coeruleus (LC; brainstem, pons; an L3→L1 relay, not a stratum); phasic norepinephrine lowers θ₁ and raises Level-0 gain. Pathway B (slow, red): the paraventricular nucleus (PVN; Level-3/4 node) drives the HPA axis (CRH → ACTH → cortisol); rapid membrane-mineralocorticoid-receptor action (Karst et al. 2005) facilitates L1/L0 responsiveness, whereas sustained glucocorticoid-receptor action suppresses it. Both cascades are compositions of nearest-neighbor couplings (effective influences α₃₁ and α₄₁). Projection strengths are illustrative.",
+      "Figure 4. Phenotypes as level-specific and cascading APGI dysregulation. Three conditions are shown as columns stacking Levels 1–4 (L0 for orientation only), with level descriptors as in Table 1. Red arrows indicate threshold changes (θ↑↑ large increase, θ↑ small increase, θ↓ decrease); blue arrows indicate precision changes (Π↑, Π↓). In MDD the precision change is confined to Level 1 (Πⁱ₁↓); in schizophrenia the Level-2 precision change is genotype-dependent. Gold dashed lines mark disrupted cross-level coupling parameters (κ₁₂, κ₂₃, κ₃₄ for adjacent levels; α_{i,j} only for multi-step influences). Bold outlines designate the primary dysregulated level.",
+      "Figure 5. Protocol 7 design. (A) Predicted joint distribution of PCI (PCI-eligible subsample only) and HEP amplitude for VS/UWS, MCS, emergence from the minimally conscious state (EMCS) and healthy controls; ellipses show mean ± 1 SD. The dashed line marks an illustrative decision boundary for the exploratory MCS-versus-VS/UWS classifier (target AUC ≥ 0.80; §5.1). (B) Patients receive HEP, PCI, resting-state fMRI and CRS-R at baseline and CRS-R (plus GOS-E at 6 months) at 3 and 6 months; controls are assessed at baseline only. (i) electroencephalography with heartbeat-evoked potentials (EEG/HEP), (ii) TMS-EEG with Perturbational Complexity Index calculation (TMS-EEG/PCI; PCI-eligible subsample, expected N ≈ 50), and (iii) CRS-R. The proposed primary hypothesis (Pred 7.G) tests whether baseline HEP predicts 3-month CRS-R outcome; the joint HEP + PCI model is estimative.",
+      "Figure 6. Predicted (not observed) developmental trajectory of α_DFA of the near-threshold detection series, with inflections (dots, dashed lines) at ~7 (Level 2), ~13 (Level 3) and ~25 years (Level 4). The solid curve begins at age 4, when detection tasks become feasible; the dashed 0–4-year segment, including the ~2-year Level-1 inflection, is a forward target. Step heights are illustrative; the falsifiable content is the order L2 → L3 → L4. The quantity plotted is not the EEG aperiodic exponent β_spec, which flattens with age over the same range (Schaworonkow and Voytek 2021; Cellier et al. 2021; Hill et al. 2022)."
+    ]
+  },
+  "Paper4": {
+    "captions": [
+      "Figure 1. The three epistemic tiers, the bridges between them and the Tier 3→Tier 1 double-bridge chain. (A) The tiers, their currencies and their evidentiary standards; BOLD is an order-of-magnitude proxy only. (B) The specified downward bridges — Tier 3→Tier 2 (approximate inference, unvalidated in vivo) and Tier 2→Tier 1 (κ, uncalibrated) — with upward bridges deliberately unspecified. Ignition-event information (the κ denominator) and bits erased at reset (the Landauer denominator, N_erase ≈ 13–27 bits for full reset or ≈ 1.0–3.3 bits for the canonical partial reset) are distinct; the Landauer floor is a consistency check, not a bridge. (C) The Tier 3→Tier 1 double-bridge chain — (0) Tier 3 precision-weighted prediction error via the Tier 3→Tier 2 bridge, (1) bits per ignition event (a Tier 2 count not yet measured), (2) × κ (ATP per bit, uncalibrated) × energy per ATP, (3) comparison with the ~0.1 J model estimate of event energy — which is composite and currently unvalidated; the Landauer floor enters only as a separate erasure-consistency check.",
+      "Figure 2. Comparative audit of four consciousness frameworks. (A) Grouped bars show 0–2 scores (0 = absent, 1 = partial, 2 = full) for Global Neuronal Workspace Theory (GNWT, light blue), Integrated Information Theory 3.0 (IIT 3.0, orange), Predictive Processing/Free Energy Principle (PP/FEP, grey), and APGI (purple diagonal hatch, self-audit) across seven rubric criteria: C1 Tier Transparency, C2 Bridge Principles, C3 Quantitative Benchmarks, C4 Falsification Conditions, C5 Alternative Comparison, C6 Evolutionary Plausibility, and C7 Causal Roadmap (§6.6). Dashed horizontal line marks the canonical 55/100 threshold (1.1 on the 0–2 scale); the coarse seven-criterion rule is ≥ 8/14 (≥ 7/12 when a criterion is N/A) (§5.3). Vertical bars on APGI’s C3 and C4 bars indicate the tier-resolved range (Tier 1 to Tier 3), not confidence intervals. IIT’s C6 is not applicable and is excluded from its aggregate. All scores are single-author coarse-triage values (Table 8; §6.1). (B) Each framework’s Primary Falsification Gap (§6.2–§6.4, §7.1): GNWT (Tier 3 — no rule fixing which signals reach the ignition threshold), IIT 3.0 (Tier 2 — Φ uncomputable at biological scale), PP/FEP (Tier 3 — no conscious-access gating criterion), APGI (Tier 1 — metabolic cost of ignition unmeasured; κ uncalibrated). The tier designation indicates where each framework’s evidential gap primarily resides, guiding future empirical priorities.",
+      "Figure 3. APGI’s twelve falsifiable predictions, organised by epistemic tier: Tier 3 (computational; P1–P4; green), Tier 2 (information-theoretic; P5–P8; yellow) and Tier 1 (thermodynamic; P9–P12; red). For each prediction the figure gives the measurement protocol, the target effect size, the falsification criterion, the feasibility horizon in years and the current validation status, all as registered in Table S4. Where a null result was previously treated as falsifying, the criterion is an equivalence test (TOST, α = 0.05) against a stated smallest effect of interest. Eight predictions derive from the canonical relation Sₜ = Πᵉ·|zᵉ|_ex + Πⁱ_eff·|zⁱ|_ex > θₜ; P6, P7, P10 and P12 derive from its bridge and efficiency commitments (§7.3). Falsification templates are given in §7.4. Abbreviations: Sₜ, accumulated precision-weighted surprise; θₜ, dynamic ignition threshold; Πᵉ/Πⁱ_eff, exteroceptive and effective interoceptive precision; d′, sensitivity index; AUC, area under the ROC curve; LOPO-CV, leave-one-participant-out cross-validation; MI, mutual information; TE, transfer entropy; HEP, heartbeat-evoked potential; RSVP, rapid serial visual presentation; ³¹P-MRS, phosphorus magnetic resonance spectroscopy; TOST, two one-sided tests."
+    ],
+    "predictions": [
+      {
+        "id": "Prediction 1",
+        "tier": "3",
+        "prediction": "Nicotinic agonist lowers effective threshold",
+        "falsification": "Equivalence test (TOST) bounds threshold shift within d = ±0.2",
+        "protocol": "Within-subject crossover: nicotinic agonist vs placebo; near-threshold detection + EEG P3b",
+        "target": "Threshold shift d ≥ 0.4; P3b onset ~20–30 ms earlier",
+        "horizon": "Near-term (1–2 yr)",
+        "status": "Indirect support from nicotinic-attention literature; untested in ignition paradigm"
+      },
+      {
+        "id": "Prediction 2",
+        "tier": "3",
+        "prediction": "Near-threshold bistability with critical slowing",
+        "falsification": "Continuous graded relationship",
+        "protocol": "Near-threshold psychophysics with hysteresis + RT-variance; dynamical-systems fit",
+        "target": "Critical-slowing signature; ΔAIC > 10 (bistable vs graded)",
+        "horizon": "Near-term (1–2 yr)",
+        "status": "Partial (bistable-perception literature); slowing not tested for ignition"
+      },
+      {
+        "id": "Prediction 3",
+        "tier": "3",
+        "prediction": "200–300 ms frontoparietal TMS abolishes report, spares priming",
+        "falsification": "Both disrupted equally, or access persists",
+        "protocol": "Chronometric TMS to frontoparietal cortex at 200–300 ms; masked priming + report",
+        "target": "Report-accuracy drop d ≥ 0.5 with priming intact",
+        "horizon": "Near-term (2–3 yr)",
+        "status": "Partial (TMS-masking literature); specific window untested"
+      },
+      {
+        "id": "Prediction 4",
+        "tier": "3",
+        "prediction": "Ignition margin Sₜ − θ_eff,ₜ predicts access at d′ ≥ 0.5",
+        "falsification": "d′ < 0.5 under the §7.4 design, or a stimulus-intensity-only model matches within Δd′ 0.05",
+        "protocol": "Single-trial EEG/iEEG model fit, LOPO-CV (§7.4: N ≥ 100 participants × ≥ 200 trials)",
+        "target": "d′ ≥ 0.5; AUC ≥ 0.70; partial R² ≥ 0.05 (Πᵉ, Πⁱ_eff each)",
+        "horizon": "Near-term (1–2 yr)",
+        "status": "Specified; simulation-based parameter recovery only (Pesochin, 2026a); prospective test pending"
+      },
+      {
+        "id": "Prediction 5",
+        "tier": "2",
+        "prediction": "Attentional cueing raises stimulus–response MI I(S; R) by ≥ 0.3 bits (S = cue-congruent target identity; R = report; Δ, H(S), baseline I(S; R) and the bias-corrected estimator to be fixed before registration), with Δ < H(S) − baseline I(S; R)",
+        "falsification": "Equivalence test bounds ΔMI within ±0.25 bits",
+        "protocol": "Cued vs uncued task; mutual-information / transfer-entropy estimation from MEG",
+        "target": "ΔI(S; R) ≥ 0.3 bits, with 0.25 < Δ < H(S) − baseline I(S; R)",
+        "horizon": "Mid (2–3 yr)",
+        "status": "Untested; consistent with attention-gain literature"
+      },
+      {
+        "id": "Prediction 6",
+        "tier": "2",
+        "prediction": "Conscious bandwidth asymptotes within 10–40 bits/s",
+        "falsification": "Modality-invariant asymptote outside 10–100 bits/s, or modality variation exceeding the 10–40 bits/s range",
+        "protocol": "Cross-modal information-throughput (RSVP / psychophysics)",
+        "target": "Asymptote within 10–40 bits/s, modality-invariant",
+        "horizon": "Mid (2–4 yr)",
+        "status": "Partial (classical bandwidth estimates); not tested as ignition asymptote"
+      },
+      {
+        "id": "Prediction 7",
+        "tier": "2",
+        "prediction": "θₜ approximates Neyman–Pearson optimum",
+        "falsification": "Deviation > 2 SD",
+        "protocol": "Signal-detection with varied priors/payoffs; empirical vs optimal criterion",
+        "target": "Deviation ≤ 2 SD from optimum",
+        "horizon": "Mid (2–3 yr)",
+        "status": "Untested"
+      },
+      {
+        "id": "Prediction 8",
+        "tier": "2",
+        "prediction": "Interoceptive TE to report ≥ 0.05 bits/trial, exteroceptive TE partialed",
+        "falsification": "90% CI of surrogate-corrected TE_intero wholly below 0.01 bits/trial (equivalence test; §7.4)",
+        "protocol": "Heartbeat-evoked + exteroceptive dual task; transfer-entropy estimation",
+        "target": "TE_intero ≥ 0.05 bits/trial (partial); TE_intero > TE_extero exploratory",
+        "horizon": "Mid (3–4 yr)",
+        "status": "Untested; motivated by interoception literature"
+      },
+      {
+        "id": "Prediction 9",
+        "tier": "1",
+        "prediction": "Ignition trials cost more frontoparietal energy",
+        "falsification": "Equivalence test bounds differential within ±2% after controls",
+        "protocol": "³¹P-MRS at 7 T, ignition-sorted blocks vs matched non-ignition blocks (BOLD for localisation only)",
+        "target": "≥ 5% ³¹P-MRS metabolic difference; d ≥ 0.4, N ≥ 52 within-subject. BOLD contrast used for region selection only",
+        "horizon": "Long (5–10 yr)",
+        "status": "Unmeasured — primary Tier 1 gap"
+      },
+      {
+        "id": "Prediction 10",
+        "tier": "1",
+        "prediction": "Threshold-gated more energy-efficient than continuous",
+        "falsification": "Continuous matches or beats it",
+        "protocol": "Computational model + metabolic estimate; architecture comparison",
+        "target": "Energy saving exceeding the between-architecture variance of the matched-budget comparison in §7.5.2; no point target is registered",
+        "horizon": "Mid–long (3–5 yr)",
+        "status": "Not modeled; design specified (§7.5.2)"
+      },
+      {
+        "id": "Prediction 11",
+        "tier": "1",
+        "prediction": "Metabolic depletion elevates θₜ",
+        "falsification": "Equivalence test bounds shift within d = ±0.2, or threshold lowered",
+        "protocol": "Glucose/fatigue manipulation; threshold measurement",
+        "target": "Threshold elevation d ≥ 0.4",
+        "horizon": "Mid (3–5 yr)",
+        "status": "Untested; indirect support from vigilance/fatigue work"
+      },
+      {
+        "id": "Prediction 12",
+        "tier": "1",
+        "prediction": "A matched event-energy/event-information experiment yields an empirical κ estimate under the registered calibration convention",
+        "falsification": "Replicated calibrated κ estimates in ≥ 2 independent datasets/paradigms have preregistered uncertainty intervals wholly outside [10, 10⁴] ATP/bit",
+        "protocol": "Event-energy measurement (³¹P-MRS at 7 T of ignition-sorted blocks in humans, or two-photon mitochondrial imaging at ≤ 300 ms in animal preparations) plus an event-information estimator matched in event definition, anatomical scope and temporal window",
+        "target": "κ estimable with uncertainty; [10, 10³] consistent, (10³, 10⁴] requires explanation",
+        "horizon": "Long (5–10 yr)",
+        "status": "Unmeasured; prerequisite calibration not yet performed"
+      }
+    ],
+    "audit_scores": {
+      "GNWT": [
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "IIT 3.0": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        null,
+        1
+      ],
+      "PP/FEP": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "APGI self-audit": [
+        2,
+        1,
+        1.3333333333333333,
+        1.3333333333333333,
+        1,
+        1,
+        2
+      ]
+    },
+    "audit_scores_source": "Paper4.docx Table 8: C3/C4 APGI composites are means of tier scores 2,1,1; null denotes N/A, not zero."
+  }
+}
