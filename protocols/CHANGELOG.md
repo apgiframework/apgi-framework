@@ -48,7 +48,7 @@ Open source/lock requirements:
 
 ## Protocol 2
 
-Seven architectures; independent CP-3a calibration; scaled identifiability diagnostics; deterministic 1000-seed-per-condition sweep; human BIC separated from simulation; new exploratory 2.F/2.G.
+Seven architectures; independent CP-3a calibration; scaled identifiability diagnostics; deterministic 1,000-seed-per-condition sweep; human BIC separated from simulation; new exploratory 2.F/2.G.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -160,7 +160,7 @@ All eight protocol instances pass the supplied Draft 2020-12 schema with format 
 
 ## 2026-10-22 validation and repository integration audit
 
-The supplied 1.1.0 package passed its original schema and manifest checks. All four cited source-document hashes matched the local FINAL documents, and all eight historical input hashes matched the repository's pre-migration files. These are provenance checks, not scientific validation. The original supplied package was backed up separately before this audit; the files in this release have now been updated in place.
+The supplied 1.1.0 package passed its original schema and manifest checks. All four cited source-document hashes matched the documents at audit time, and all eight historical input hashes matched the repository's pre-migration files. These are provenance checks, not scientific validation. The original supplied package was backed up separately before this audit; the files in this release have now been updated in place.
 
 Corrections made against the local specifications:
 
@@ -179,4 +179,4 @@ Schema and tooling corrections:
 - Add optional local source-hash verification and explicit metadata regeneration. The generated report replaces the ambiguous historical `source_unchanged` flags; it states which checks are reproducible and which scientific/source-lock issues remain unresolved.
 - Update repository CI, protocol documentation and mutation regression tests for release 1.1.0. The Python library retains its independent package version.
 
-The previously listed scientific lock requirements remain open. In particular, this audit does not select new statistical hypotheses, supply unverified power simulations, resolve conflicting source thresholds, verify OSF filing, or authorize study activation.
+The previously listed scientific lock requirements remain open. In particular, this audit does not select new statistical hypotheses, supply unverified power simulations, resolve conflicting source thresholds, or authorize study activation.

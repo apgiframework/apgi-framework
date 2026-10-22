@@ -91,7 +91,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   reported a false mismatch for that one dataset.
 - `src/apgi/datasets.py` — `make_sample_session()` and `make_sample_doc_groups()` inline toy
   datasets; no Zenodo download required; exposed as `apgi.datasets` in `__all__`.
-- `data/DATA_DICTIONARY.md` — full variable codebook for all six `.npz` archives (shape,
+- `DATA_DICTIONARY.md` — full variable codebook for all six `.npz` archives (shape,
   dtype, units, equation symbol); includes R/MATLAB/Julia loading examples.
 - CSV summaries alongside every `.npz` — six `.csv` files emitted by `data/generate_seeds.py`
   for R/MATLAB/Julia readers who cannot load `.npz` natively.

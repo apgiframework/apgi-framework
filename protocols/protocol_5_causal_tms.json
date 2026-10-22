@@ -19,7 +19,7 @@
       "status": "confirmatory",
       "claim": "Anterior insula (aINS) and frontoparietal TMS reduce PCI via dissociable mechanisms",
       "confirming_evidence": "PCI reduction at aINS (~20%) versus its modality-matched sham and at dlPFC/PPC (15–25%) versus the registered TMS reference. HEP–PCI coupling is disrupted at aINS and preserved at dlPFC/PPC under the registered direct dissociation contrast. Each effect must survive its within-modality comparison; cross-modality differences alone do not establish anatomy.",
-      "falsifying_evidence": "(a) No PCI change at aINS or dlPFC/PPC vs. vertex sham; or (b) HEP–PCI correlation is equally abolished under dlPFC/PPC TMS as under insula TMS (dissociation fails — both sites disrupt the interoceptive gating link indiscriminately); or (c) PCI reduction at vertex sham matches insula effect (non-specific)",
+      "falsifying_evidence": "(a) No PCI change at aINS or dlPFC/PPC vs. its modality-matched reference; or (b) HEP–PCI correlation is equally abolished under dlPFC/PPC TMS as under insula TMS (dissociation fails — both sites disrupt the interoceptive gating link indiscriminately); or (c) PCI reduction at vertex sham matches insula effect (non-specific)",
       "indeterminate_rule": "Failure to confirm alone is not evidence of falsification. Apply the registered interval/evidence rule and admissibility gate.",
       "source": "OSF Table 19, supplemented by detailed protocol decision rules below."
     },
@@ -214,7 +214,7 @@
     },
     "gain_interpretation": "Pi_i in the reduced confirmatory model is salience-weighted gain; HEP is a candidate indicator, not a direct inverse-variance measurement.",
     "accumulation": "S_next=(1-a_S)*S+a_S*u; a_S=1-exp(-dt/tau_S); u uses calibration-fixed relative gains and excess magnitudes abs(z)-sqrt(2/pi).",
-    "threshold": "dtheta/dt=-(theta-theta_0)/tau_theta+c_theta*C-Delta_info*V_info+gamma_NE*NE",
+    "threshold": "dtheta/dt=-(theta-theta_0)/tau_theta+c_theta*C-Delta_info*V_info+gamma_NE_theta*NE",
     "somatic_modulation": "Pi_i_eff=Pi_i_baseline*exp(beta_SM*M_hat)",
     "precision_adaptation": "dPi_i/dt=eta*(abs(epsilon_i)-Pi_i)+rho*(Pi_i_opt-Pi_i)",
     "ignition": "p_k=1-exp(-r_max*sigmoid(gamma_sig*(S-theta))*dt); single trial-window sigmoid sampling is a distinct convention, never interchanged within a protocol.",
@@ -524,7 +524,7 @@
   "readiness": {
     "status": "specification_updated_lock_requirements_pending",
     "empirical_validation_performed": false,
-    "registration_verified": false,
+    "registration_verified": true,
     "note": "JSON validation checks file structure, not scientific validity, regulatory approval or analysis-lock completion."
   }
 }

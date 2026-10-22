@@ -45,10 +45,10 @@ The APGI framework implements the core equations from the APGI paper series:
 | Sₜ | leaky integral of Πᵉ_rel·\|zᵉ\|_ex + Πⁱ_rel,eff·\|zⁱ\|_ex | Accumulated precision-weighted excess surprise |
 | θₜ | dθₜ/dt = −(θₜ − θ₀)/τ_θ + c_θ·Cₜ − Δ_info·V_info,t + γ_NE^θ·NE(t) | Allostatically regulated ignition threshold |
 
-**Paper 1** — core APGI equations; EEG interoceptive gating, insular causal neuromodulation (tFUS/dTMS), active inference simulations, DoC biomarkers, fMRI anticipation, and iEEG ignition-dynamics protocols
-**Paper 2** — Liquid Neural Network extension (`apgi.extensions.liquid_network`)
-**Paper 3** — Five-level hierarchical architecture (`apgi.extensions.hierarchical`)
-**Paper 4** — Three-tier epistemic architecture (no code; scoring tables in the release)
+- **Paper 1** — core APGI equations; EEG interoceptive gating, insular causal neuromodulation (tFUS/dTMS), active inference simulations, DoC biomarkers, fMRI anticipation, and iEEG ignition-dynamics protocols
+- **Paper 2** — Liquid Neural Network extension (`apgi.extensions.liquid_network`)
+- **Paper 3** — Five-level hierarchical architecture (`apgi.extensions.hierarchical`)
+- **Paper 4** — Three-tier epistemic architecture (no code; scoring tables in the release)
 
 ## Repository structure
 
@@ -76,7 +76,7 @@ apgi-framework/
 ├── data/                  # local data cache + seed datasets
 │   ├── seeds/             # .npz + .csv + .h5 (sim3) seed files (generated, not committed)
 │   │   └── seed_manifest.json  # tracked v1.1.0 release record of the seed files
-│   ├── generate_seeds.py  # deterministic seed generator (MASTER_SEED = 2025)
+│   ├── generate_seeds.py  # deterministic seed generator (fixed MASTER_SEED)
 │   └── checksums.sha256
 ├── DATA_DICTIONARY.md     # full variable codebook for all seed datasets
 └── POWER_ANALYSIS.md      # sample-size and power justifications
@@ -110,9 +110,11 @@ pip install -e ".[lnn]"
 import apgi
 
 # Core equations — available directly from the package
-pi_i_eff = apgi.compute_pi_i_eff(pi_i=1.0, C_metabolic=50.0, kappa=100.0)
+pi_i_eff = apgi.compute_pi_i_eff(pi_i_baseline=1.0, beta_sm=0.6, M_hat=0.5)
 S_t      = apgi.compute_S_t(pi_e=1.2, z_e=0.8, pi_i_eff=pi_i_eff, z_i=0.5)
-theta_t  = apgi.compute_theta_t(C_metabolic=1.0, V_information=0.5, alpha=0.3, beta=0.7)
+theta_t  = apgi.theta_equilibrium(C=1.0, I_val=0.5)          # θ* where dθ/dt = 0
+theta_1  = apgi.step_theta(theta_t, C_t=1.0, I_t=0.5)        # one Euler step of Eq. 3
+
 print(f"Sₜ={S_t:.4f}  θₜ={theta_t:.4f}  ignition={apgi.ignition_criterion(S_t, theta_t)}")
 ```
 
@@ -125,7 +127,7 @@ import apgi
 # Built-in sample data — no Zenodo download required
 session = apgi.datasets.make_sample_session(n_trials=200, seed=0)
 
-integ = APGICoreIntegration(alpha=0.3, beta=0.7, gamma=0.9)
+integ = APGICoreIntegration(beta_sm=0.6, theta_0=0.60, lambda_theta=0.30, kappa_meta=0.20, delta_info=0.15, gamma_sig=5.0)
 integ.run_sequence(**{k: session[k] for k in
     ("pi_e", "z_e", "pi_i", "z_i", "C_metabolic", "V_information")})
 print(f"Ignition rate: {integ.ignition_rate():.3f}")
@@ -162,7 +164,7 @@ jupyter lab notebooks/
 
 ## Reproducing figures
 
-The **APGI 1.1 figure review series** is in [`figures/v1_1/`](figures/v1_1/README.md), with a [side-by-side comparison](figures/v1_1/index.html), revised captions, provenance and a complete mapping of all 31 legacy figures. Generate its 32 PNG/PDF/SVG sets with:
+The **APGI 1.1 figure review series** is in [`figures/v1_1/`](figures/v1_1/README.md), with a [side-by-side comparison](figures/v1_1/index.html), revised captions, provenance and a complete mapping of all 31 legacy figures plus one new composite. Generate its 32 PNG/PDF/SVG sets with:
 
 ```bash
 python3 figures/v1_1/generate.py
@@ -198,7 +200,7 @@ five-level hierarchy, protocol validation, and the seed-manifest release record.
 
 ## Data
 
-The nine synthetic seed datasets (`sim0`–`sim8`) are not yet deposited on Zenodo; the v1.1 record + ([10.5281/zenodo.23551315](https://doi.org/10.5281/zenodo.23551315)) holds the manuscripts, protocols and companion documents.
+The nine synthetic seed datasets (`sim0`–`sim8`) are not yet deposited on Zenodo; the v1.1 record ([10.5281/zenodo.23551315](https://doi.org/10.5281/zenodo.23551315)) holds the manuscripts, protocols and companion documents.
 Regenerate them locally and check them against the release checksums:
 
 ```bash
@@ -261,12 +263,11 @@ An external release folder can be supplied as the first argument. Add `--source-
 ```bibtex
 @software{apgi_framework_2026,
   author  = {Pesochin, Dimitry},
-  title   = {APGI Framework},
+  title   = {Allostatic Precision-Gated Ignition (APGI): Simulation and Analysis Codebase},
   year    = {2026},
   version = {1.1.0},
-  doi     = {10.5281/zenodo.21632263},
   url     = {https://github.com/apgiframework/apgi-framework},
-  note    = {ORCID: 0009-0005-0328-2896. Pre-registrations: https://osf.io/t5hcq}
+  note    = {ORCID: 0009-0005-0328-2896. Preregistration: https://doi.org/10.17605/OSF.IO/YK29G}
 }
 ```
 

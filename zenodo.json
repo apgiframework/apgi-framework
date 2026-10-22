@@ -77,5 +77,5 @@
     }
 ],
 
-  "notes": "To reproduce all figures from locally regenerated seeds: bash reproduce_all.sh --local. To regenerate seed datasets: python data/generate_seeds.py (MASTER_SEED=<value set in data/generate_seeds.py>; python data/generate_seeds.py --verify checks them against data/checksums.sha256). Individual figure-generation scripts (figures/v1_0/protocols/pK_*.py and figures/v1_1/generate.py) each use their own fixed, documented seed and do not share MASTER_SEED."
+  "notes": "To reproduce all figures from locally regenerated seeds: bash reproduce_all.sh --local. To regenerate seed datasets: python data/generate_seeds.py (the master seed is fixed in data/generate_seeds.py; python data/generate_seeds.py --verify checks them against data/checksums.sha256). Individual figure-generation scripts (figures/v1_0/protocols/pK_*.py and figures/v1_1/generate.py) each use their own fixed, documented seed and do not share MASTER_SEED."
 }

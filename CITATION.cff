@@ -7,12 +7,13 @@ date-released: "2026-10-22"
 license: MIT
 repository-code: "https://github.com/apgiframework/apgi-framework"
 url: "https://osf.io/t5hcq"
-type: doi / value: "10.5281/zenodo.23551315" / description: "Zenodo archive of the APGI manuscripts, protocols and companion documents (v1.1)"
-
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21632264"
     description: "Zenodo archive of the APGI manuscripts and protocol battery (v1.0)"
+  - type: doi    
+    value: "10.5281/zenodo.23551315"    
+    description: "Zenodo archive of the APGI manuscripts, protocols and companion documents (v1.1)"
   - type: url
     value: "https://osf.io/t5hcq"
     description: "OSF project — pre-registered protocols for the APGI paper series"
