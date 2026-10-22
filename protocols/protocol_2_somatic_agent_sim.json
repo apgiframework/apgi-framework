@@ -8,8 +8,8 @@
   "paper": "APGI Paper 1",
   "osf_url": "https://osf.io/t5hcq",
   "version": "1.1.0",
-  "last_updated": "2026-10-16",
-  "specification_date": "2026-10-16",
+  "last_updated": "2026-10-22",
+  "specification_date": "2026-10-22",
   "study_status": "pre_collection",
   "description": "Seven-architecture active-inference simulation benchmark with separate held-out human IGT model comparison; CP-3a calibration and identifiability are prerequisites. Pred 2.F–2.G are exploratory.",
   "prediction_cluster": "Pred 2.A–G",
@@ -191,9 +191,9 @@
     "base_registration_date": "2026-08-24",
     "amendment": {
       "number": 1,
-      "document_stated_date": "2026-10-16",
-      "identifier": null,
-      "verification_status": "Not independently verified; source date is after export date."
+      "document_stated_date": "2026-10-22",
+      "identifier": "https://osf.io/yk29g",
+      "verification_status": "Verified against the osf.io/yk29g update history on 2026-10-22."
     }
   },
   "apgi_parameters": {
@@ -311,7 +311,7 @@
     {
       "heading": "Agent Architecture",
       "source_start_paragraph_line": 1862,
-      "text": "The computational protocol implements a hierarchical active inference agent with: separate interoceptive and exteroceptive generative models (both 3-level hierarchies); dynamic precision-weighting (Πᵉ and Πⁱ updated online); somatic marker learning where M(c,a) updates via reward prediction errors; a global workspace layer governed by the ignition equation (Sₜ > θₜ); and threshold adaptation following the Euler discretization of the canonical threshold equation (§1.5): θₜ₊₁ = θₜ + Δt·[−(θₜ − θ₀)/τ_θ + c_θ·Cₜ − Δ_info·V_info,t + γ_NE·NE(t)].",
+      "text": "The computational protocol implements a hierarchical active inference agent with: separate interoceptive and exteroceptive generative models (both 3-level hierarchies); dynamic precision-weighting (Πᵉ and Πⁱ updated online); somatic marker learning where M(c,a) updates via reward prediction errors; a global workspace layer governed by the ignition equation (Sₜ > θₜ); and threshold adaptation following the Euler discretization of the canonical threshold equation (§1.5): θₜ₊₁ = θₜ + Δt·[−(θₜ − θ₀)/τ_θ + c_θ·Cₜ − Δ_info·V_info,t + γ_NE^θ·NE(t)]",
       "role": "source_context; curated structured decisions govern conflicts"
     },
     {

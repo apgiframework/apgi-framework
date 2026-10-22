@@ -3,8 +3,7 @@
 **Allostatic Precision-Gated Ignition** — a computational framework for consciousness research.
 
 [![CI](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml/badge.svg)](https://github.com/apgiframework/apgi-framework/actions/workflows/test.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632264.svg)](https://doi.org/10.5281/zenodo.21632264)
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21632263.svg)](https://doi.org/10.5281/zenodo.21632263)
 [![OSF](https://img.shields.io/badge/OSF-t5hcq-1284c5.svg)](https://osf.io/t5hcq)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--0328--2896-a6ce39.svg)](https://orcid.org/0009-0005-0328-2896)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/apgiframework/apgi-framework/HEAD?labpath=notebooks%2Fquick_start.ipynb)
@@ -12,27 +11,28 @@
 
 ## Manuscript
 
-> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Allostatic Precision-Gated Ignition: A Computational Framework for Consciousness. *Manuscript under review.*  
-> Preprint: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
+> **Pesochin, D.** ([0009-0005-0328-2896](https://orcid.org/0009-0005-0328-2896)) **(2026).** Thresholds Make Consciousness Selective: Allostatic Precision-Gated Ignition via Predictive Processing and Interoceptive Integration. *Manuscript submitted for publication.*  
 
 This repository is the companion code release for the paper series above.
 Figure scripts are in `figures/` (current 1.1 series in `figures/v1_1/`, frozen 1.0 figures in `figures/v1_0/`) and `scripts/`.
-Version 1.1 protocol specifications are in `protocols/`. The OSF project is [osf.io/t5hcq](https://osf.io/t5hcq); the stated 2026-10-16 amendment has not been independently verified.
+Version 1.1 protocol specifications are in `protocols/`. The OSF project is [osf.io/t5hcq](https://osf.io/t5hcq); the registration is [osf.io/yk29g](https://osf.io/yk29g) (base registration August 24, 2026; Amendment 1, October 22, 2026).
 
 ### Project links
 
 | Resource | Location |
 | :--- | :--- |
 | Code repository | <https://github.com/apgiframework/apgi-framework> |
-| Zenodo archive (manuscripts + protocol battery, v1.0) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
+| Zenodo archive, release v1.0 (manuscripts + protocol battery) | [10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264) |
 | OSF project (pre-registrations) | <https://osf.io/t5hcq> |
 | Author ORCID | <https://orcid.org/0009-0005-0328-2896> |
 | OSF Registry DOI | [10.17605/OSF.IO/YK29G](https://doi.org/10.17605/OSF.IO/YK29G) |
+| Zenodo archive, release v1.1 (manuscripts, protocols, companion documents) | [10.5281/zenodo.23551315](https://doi.org/10.5281/zenodo.23551315) |
+| Zenodo archive, all versions | [10.5281/zenodo.21632263](https://doi.org/10.5281/zenodo.21632263) |
 
-To reproduce all figures from archived data in one command:
+To reproduce all figures from locally regenerated seed data in one command:
 
 ```bash
-bash reproduce_all.sh
+bash reproduce_all.sh --local
 ```
 
 ## Overview
@@ -41,13 +41,14 @@ The APGI framework implements the core equations from the APGI paper series:
 
 | Symbol | Formula | Meaning |
 | :--- | :--- | :--- |
-| Πⁱ_eff | Πⁱ · exp(−C/κ) | Metabolically gated inhibitory precision |
-| Sₜ | Πᵉ·\|zᵉ\| + Πⁱ_eff·\|zⁱ\| | Global integration signal |
-| θₜ | α·C + β·V | Adaptive ignition threshold |
+| Πⁱ_eff | clamp[g_NE·Πⁱ_baseline·exp(β_SM·M̂(c,a)), Π_min, Π_max] | Effective interoceptive precision (somatic-marker gain) |
+| Sₜ | leaky integral of Πᵉ_rel·\|zᵉ\|_ex + Πⁱ_rel,eff·\|zⁱ\|_ex | Accumulated precision-weighted excess surprise |
+| θₜ | dθₜ/dt = −(θₜ − θ₀)/τ_θ + c_θ·Cₜ − Δ_info·V_info,t + γ_NE^θ·NE(t) | Allostatically regulated ignition threshold |
 
-**Paper 1** — core APGI equations; EEG interoceptive gating, TMS-insular gating, active inference simulations, DoC biomarkers, fMRI anticipation, and iEEG ignition-dynamics protocols  
-**Paper 2** — Liquid Neural Network extension (`apgi.extensions.liquid_network`)  
+**Paper 1** — core APGI equations; EEG interoceptive gating, insular causal neuromodulation (tFUS/dTMS), active inference simulations, DoC biomarkers, fMRI anticipation, and iEEG ignition-dynamics protocols
+**Paper 2** — Liquid Neural Network extension (`apgi.extensions.liquid_network`)
 **Paper 3** — Five-level hierarchical architecture (`apgi.extensions.hierarchical`)
+**Paper 4** — Three-tier epistemic architecture (no code; scoring tables in the release)
 
 ## Repository structure
 
@@ -145,12 +146,12 @@ FALSIFIED or INDETERMINATE (failing to confirm is not falsification). All data a
 
 | Notebook | Content |
 | :--- | :--- |
-| `quick_start.ipynb` | Core equations, v1.1 parameter registry check, `APGICoreIntegration`, signal normalisation |
+| `quick_start.ipynb` | Core equations, v1.1 parameter registry check, `APGICoreIntegration`, signal normalization |
 | `protocol0_hep_proxy_validation.ipynb` | Protocol 0 — HEP proxy validation and downstream proxy gate (Pred 0.A–0.C) |
 | `protocol1_cardiac_eeg.ipynb` | Protocol 1 — Cardiac-EEG: attention × cardiac phase, IA moderation, Weibull steepness (Pred 1.A–1.F) |
-| `protocol2_somatic_agent_sim.ipynb` | Protocol 2 — Somatic-AgentSim: seven IGT architectures under the volatility schedule (Pred 2.A–2.E) |
+| `protocol2_somatic_agent_sim.ipynb` | Protocol 2 — Somatic-AgentSim: seven IGT architectures under the volatility schedule (Pred 2.A–2.G) |
 | `protocol3_anticipation_fmri.ipynb` | Protocol 3 — Anticipation-fMRI: vmPFC→aINS vs vmPFC→pIC dissociation (Pred 3.A–3.D) |
-| `protocol4_metabolic_crossover.ipynb` | Protocol 4 — Metabolic-state crossover: four sessions, signed 15 % d′ margin (Pred 4.A–4.C) |
+| `protocol4_metabolic_crossover.ipynb` | Protocol 4 — Metabolic-state crossover: four sessions, signed 15% d′ margin (Pred 4.A–4.C) |
 | `protocol5_insula_tms.ipynb` | Protocol 5 — Causal neuromodulation: aINS tFUS/dTMS vs matched sham, ROPE equivalence (Pred 5.A–5.E) |
 | `protocol6_ignition_ieeg.ipynb` | Protocol 6 — Ignition-iEEG: fixed-contrast bimodality, dwell, AC1 estimator check (Pred 6.A–6.E) |
 | `protocol7_doc_biomarker.ipynb` | Protocol 7 — DoC biomarkers: primary Pred 7.G HEP→CRS-R LRT, joint HEP+PCI (Pred 7.A–7.G) |
@@ -192,13 +193,12 @@ pytest tests/ -v
 ```
 
 The full suite (379 tests, 99% line coverage of `src/apgi`, `scripts/` and `figures/`) covers core
-equations, normaliser, integration, clinical interpreter, parameter recovery, LNN, bifurcation analysis,
+equations, normalizer, integration, clinical interpreter, parameter recovery, LNN, bifurcation analysis,
 five-level hierarchy, protocol validation, and the seed-manifest release record.
 
 ## Data
 
-The nine synthetic seed datasets (`sim0`–`sim8`) are not yet deposited on Zenodo; the v1.0 record
-([10.5281/zenodo.21632264](https://doi.org/10.5281/zenodo.21632264)) holds the manuscripts and protocol battery.
+The nine synthetic seed datasets (`sim0`–`sim8`) are not yet deposited on Zenodo; the v1.1 record + ([10.5281/zenodo.23551315](https://doi.org/10.5281/zenodo.23551315)) holds the manuscripts, protocols and companion documents.
 Regenerate them locally and check them against the release checksums:
 
 ```bash
@@ -222,7 +222,7 @@ The LNN trajectory dataset (`sim3_liquid_network`) is also written as
 MNE-Python, NWB tools, MATLAB (`h5read`), and Julia (`HDF5.jl`):
 
 ```matlab
-states = h5read('sim3_liquid_network.h5', '/data/states');  % (20, 500, 100)
+states = h5read('sim3_liquid_network.h5', '/data/states');  % (100, 500, 20) — MATLAB and Julia reverse HDF5 dimension order relative to h5py
 ```
 
 ```julia
@@ -264,7 +264,7 @@ An external release folder can be supplied as the first argument. Add `--source-
   title   = {APGI Framework},
   year    = {2026},
   version = {1.1.0},
-  doi     = {10.5281/zenodo.21632264},
+  doi     = {10.5281/zenodo.21632263},
   url     = {https://github.com/apgiframework/apgi-framework},
   note    = {ORCID: 0009-0005-0328-2896. Pre-registrations: https://osf.io/t5hcq}
 }
@@ -272,4 +272,4 @@ An external release folder can be supplied as the first argument. Add `--source-
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Code: MIT — see [LICENSE](LICENSE). Manuscripts, protocols and data: CC BY 4.0.

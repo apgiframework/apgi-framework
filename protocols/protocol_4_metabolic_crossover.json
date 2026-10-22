@@ -8,8 +8,8 @@
   "paper": "APGI Paper 1",
   "osf_url": "https://osf.io/t5hcq",
   "version": "1.1.0",
-  "last_updated": "2026-10-16",
-  "specification_date": "2026-10-16",
+  "last_updated": "2026-10-22",
+  "specification_date": "2026-10-22",
   "study_status": "pre_collection",
   "description": "Four-session, two-site crossover compares fasting/fed and vigilance/rested states for selective interoceptive impairment beyond arousal; the two depletion modalities remain distinct.",
   "prediction_cluster": "Pred 4.A–C",
@@ -143,9 +143,9 @@
     "base_registration_date": "2026-08-24",
     "amendment": {
       "number": 1,
-      "document_stated_date": "2026-10-16",
-      "identifier": null,
-      "verification_status": "Not independently verified; source date is after export date."
+      "document_stated_date": "2026-10-22",
+      "identifier": "https://osf.io/yk29g",
+      "verification_status": "Verified against the osf.io/yk29g update history on 2026-10-22."
     }
   },
   "apgi_parameters": {

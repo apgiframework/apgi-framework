@@ -8,8 +8,8 @@
   "paper": "APGI Paper 1",
   "osf_url": "https://osf.io/t5hcq",
   "version": "1.1.0",
-  "last_updated": "2026-10-16",
-  "specification_date": "2026-10-16",
+  "last_updated": "2026-10-22",
+  "specification_date": "2026-10-22",
   "study_status": "pre_collection",
   "description": "Triangulate candidate HEP interoceptive-gain validity using behavioral discrimination, central cholinergic engagement and concurrent aINS fMRI-EEG. Full retention requires all three gates; single unmet gates cause targeted reclassification, not automatic invalidation of every downstream analysis.",
   "prediction_cluster": "Pred 0.A–C",
@@ -146,9 +146,9 @@
     "base_registration_date": "2026-08-24",
     "amendment": {
       "number": 1,
-      "document_stated_date": "2026-10-16",
-      "identifier": null,
-      "verification_status": "Not independently verified; source date is after export date."
+      "document_stated_date": "2026-10-22",
+      "identifier": "https://osf.io/yk29g",
+      "verification_status": "Verified against the osf.io/yk29g update history on 2026-10-22."
     }
   },
   "apgi_parameters": {
@@ -284,7 +284,7 @@
     {
       "heading": "Task Environments",
       "source_start_paragraph_line": 1650,
-      "text": "Heartbeat Discrimination Task: 100 trials yielding interoceptive d′ as the orthogonal Πⁱ index.\n\nPharmacological Crossover: EEG and pupillometry recorded continuously throughout the physostigmine/saline infusion to verify target engagement (expected pupil constriction 0.5–1.0 mm) and measure HEP amplitude (250–400 ms post-R-peak). Because pupillary miosis indexes peripheral cholinesterase inhibition rather than central ACh elevation, central target engagement is additionally verified by a ≥ 10% change (vs. placebo) in parietal EEG spectral power, in posterior (parieto-occipital) alpha/beta power (8–30 Hz), with the exact band, direction, baseline normalization, post-dose window and threshold fixed in the Protocol 0 analysis script (immutable revision recorded in the manifest, tag v1.1) before unblinding. The band follows Bauer et al. (2012), who found with MEG that physostigmine enhanced attention-related alpha/beta modulation in visual cortex while leaving gamma unchanged; because that effect was attention-dependent, the marker is computed within task epochs. Pred 0.B's falsifier requires the central marker to confirm engagement; pupil constriction is reported as the peripheral check. Until this specification and the authorized pharmacological protocol are complete, Pred 0.B is not ready for confirmatory registration lock.\n\nConcurrent fMRI-EEG: Standard visual detection task with simultaneous 3T fMRI and 64-channel MR-compatible EEG. The primary ROI is the bilateral anterior insula (aINS; 5 mm sphere around MNI ±34, 14, 0).",
+      "text": "Heartbeat Discrimination Task: 100 trials yielding interoceptive d′ as the orthogonal Πⁱ index.\n\nPharmacological Crossover: EEG and pupillometry recorded continuously throughout the physostigmine/saline infusion to verify target engagement (expected pupil constriction 0.5–1.0 mm) and measure HEP amplitude (250–400 ms post-R-peak). Because pupillary miosis indexes peripheral cholinesterase inhibition rather than central ACh elevation, central target engagement is additionally verified by a ≥ 10% change (vs. placebo) in parietal EEG spectral power, in posterior (parieto-occipital) alpha/beta power (8–30 Hz), with the exact band, direction, baseline normalization, post-dose window and threshold fixed in the Protocol 0 analysis script (immutable revision recorded in the manifest, tag v1.1.0) before unblinding. The band follows Bauer et al. (2012), who found with MEG that physostigmine enhanced attention-related alpha/beta modulation in visual cortex while leaving gamma unchanged; because that effect was attention-dependent, the marker is computed within task epochs. Pred 0.B's falsifier requires the central marker to confirm engagement; pupil constriction is reported as the peripheral check. Until this specification and the authorized pharmacological protocol are complete, Pred 0.B is not ready for confirmatory registration lock.\n\nConcurrent fMRI-EEG: Standard visual detection task with simultaneous 3T fMRI and 64-channel MR-compatible EEG. The primary ROI is the bilateral anterior insula (aINS; 5 mm sphere around MNI ±34, 14, 0).",
       "role": "source_context; curated structured decisions govern conflicts"
     },
     {

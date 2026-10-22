@@ -98,7 +98,7 @@ def test_kappa_calibration(schema_validator, status, value, valid):
     "field,value",
     [
         ("enrollment_authorized", True),
-        ("approval_date", "2026-10-16"),
+        ("approval_date", "2026-10-22"),
         ("protocol_number", "GRANTED-123"),
     ],
 )
@@ -373,7 +373,7 @@ def test_manifest_errors_invalid_file_entry(tmp_path):
     """Test manifest_errors with non-dict file entry."""
     validation_json = {
         "release": validator.RELEASE,
-        "date": "2026-10-16",
+        "date": "2026-10-22",
         "schema": "JSON Schema Draft 2020-12",
         "files": [],
         "total_protocols": 0,
@@ -384,7 +384,7 @@ def test_manifest_errors_invalid_file_entry(tmp_path):
     (tmp_path / "VALIDATION.json").write_text(json.dumps(validation_json), encoding="utf-8")
     manifest = {
         "release": validator.RELEASE,
-        "prepared": "2026-10-16",
+        "prepared": "2026-10-22",
         "files": ["not_a_dict"]
     }
     (tmp_path / "MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
@@ -396,7 +396,7 @@ def test_manifest_errors_duplicate_entry(tmp_path):
     """Test manifest_errors with duplicate file paths."""
     validation_json = {
         "release": validator.RELEASE,
-        "date": "2026-10-16",
+        "date": "2026-10-22",
         "schema": "JSON Schema Draft 2020-12",
         "files": [],
         "total_protocols": 0,
@@ -407,7 +407,7 @@ def test_manifest_errors_duplicate_entry(tmp_path):
     (tmp_path / "VALIDATION.json").write_text(json.dumps(validation_json), encoding="utf-8")
     manifest = {
         "release": validator.RELEASE,
-        "prepared": "2026-10-16",
+        "prepared": "2026-10-22",
         "files": [
             {"path": "file.json", "sha256": "abc123"},
             {"path": "file.json", "sha256": "abc123"},
@@ -422,7 +422,7 @@ def test_manifest_errors_missing_validation_json(tmp_path):
     """Test manifest_errors when VALIDATION.json is missing."""
     manifest_data = {
         "release": validator.RELEASE,
-        "prepared": "2026-10-16",
+        "prepared": "2026-10-22",
         "files": []
     }
     (tmp_path / "MANIFEST.json").write_text(json.dumps(manifest_data), encoding="utf-8")

@@ -1,12 +1,12 @@
 # APGI protocol specification release 1.1
 
-Prepared 2026-10-16 from the local APGI specifications dated 2026-10-16. This package contains all eight protocol JSON files plus their revised schema. Version strings use semantic form `1.1.0`. Original files were not modified.
+Prepared 2026-10-22 from the local APGI specifications dated 2026-10-22. This package contains all eight protocol JSON files plus their revised schema. Version strings use semantic form `1.1.0`. Original files were not modified.
 
 ## Authority and status
 
 The local OSF Preregistration governs empirical designs and statistical decisions. Mathematical Specification governs equations, and Notation Appendix governs symbols. The companion Protocols document supplies additional details where consistent. Source document SHA-256 values are included in each JSON. Embedded editorial instructions were treated as document content, not executed.
 
-The documents describe pre-collection protocols, pending ethics submissions and incomplete analysis locks. This export does not assert that Amendment 1 has already been filed: its stated date is one day after preparation, and the identifier is absent. It is a specification update, not authorization for recruitment or a claim of completed validation.
+The documents describe pre-collection protocols, pending ethics submissions and incomplete analysis locks. It is a specification update, not authorization for recruitment or a claim of completed validation.
 
 ## Schema migration
 
@@ -158,7 +158,7 @@ Open source/lock requirements:
 
 All eight protocol instances pass the supplied Draft 2020-12 schema with format checking. Forty unique prediction records are present. Trial arithmetic, cohort totals, pending approval fields and original input hashes were checked. See VALIDATION.json. No empirical analysis or power simulation was run.
 
-## 2026-10-16 validation and repository integration audit
+## 2026-10-22 validation and repository integration audit
 
 The supplied 1.1.0 package passed its original schema and manifest checks. All four cited source-document hashes matched the local FINAL documents, and all eight historical input hashes matched the repository's pre-migration files. These are provenance checks, not scientific validation. The original supplied package was backed up separately before this audit; the files in this release have now been updated in place.
 

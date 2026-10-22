@@ -8,8 +8,8 @@
   "paper": "APGI Paper 3",
   "osf_url": "https://osf.io/t5hcq",
   "version": "1.1.0",
-  "last_updated": "2026-10-16",
-  "specification_date": "2026-10-16",
+  "last_updated": "2026-10-22",
+  "specification_date": "2026-10-22",
   "study_status": "pre_collection",
   "description": "Fixed cohort of 80 patients and 30 controls. Pred 7.G is the primary confirmatory patient-only baseline-HEP prognosis test at three months. Joint baseline HEP+PCI classification is estimation-first; six-month prognosis and controlled perturbation are distinct secondary analyses.",
   "prediction_cluster": "Pred 7.A–G",
@@ -166,7 +166,7 @@
     "patient_n_target": 80,
     "pred_7g_analyzable_floor": 60,
     "floor_rule": "Below 60, apply unchanged decision rule and label underpowered; controls excluded from recovery outcomes.",
-    "sites": 30,
+    "sites": null,
     "inclusion_criteria": [
       "VS/UWS, MCS or EMCS at >=4 weeks post-injury; clinical and surrogate-consent eligibility",
       "30 healthy baseline-only controls",
@@ -258,9 +258,9 @@
     "base_registration_date": "2026-08-24",
     "amendment": {
       "number": 1,
-      "document_stated_date": "2026-10-16",
-      "identifier": null,
-      "verification_status": "Not independently verified; source date is after export date."
+      "document_stated_date": "2026-10-22",
+      "identifier": "https://osf.io/yk29g",
+      "verification_status": "Verified against the osf.io/yk29g update history on 2026-10-22."
     }
   },
   "apgi_parameters": {

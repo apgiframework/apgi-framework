@@ -1,15 +1,14 @@
 cff-version: 1.2.0
 message: >
-  If you use the APGI framework in published work, please cite both the
-  software release and the companion paper (update the paper entry once
-  the manuscript DOI is available).
+  If you use the APGI framework in published work, please cite both the software release and the companion paper (update the paper entry once the manuscript DOI is available).
 title: "Allostatic Precision-Gated Ignition (APGI): Simulation and Analysis Codebase"
 version: 1.1.0
-date-released: "2026-10-16"
+date-released: "2026-10-22"
 license: MIT
 repository-code: "https://github.com/apgiframework/apgi-framework"
 url: "https://osf.io/t5hcq"
-doi: "10.5281/zenodo.21632264"
+type: doi / value: "10.5281/zenodo.23551315" / description: "Zenodo archive of the APGI manuscripts, protocols and companion documents (v1.1)"
+
 identifiers:
   - type: doi
     value: "10.5281/zenodo.21632264"
@@ -23,6 +22,7 @@ authors:
     given-names: Dimitry
     email: dimitry@apgiframework.com
     orcid: "https://orcid.org/0009-0005-0328-2896"
+    affiliation: "Independent Researcher"
 
 keywords:
   - consciousness
@@ -31,27 +31,17 @@ keywords:
   - active inference
   - interoception
   - global workspace theory
-  - disorder of consciousness
+  - disorders of consciousness
   - liquid neural network
 
 references:
   - type: article
     title: >
-      Allostatic Precision-Gated Ignition: A Computational Framework for
-      Consciousness (Paper 1)
+      Thresholds Make Consciousness Selective: Allostatic Precision-Gated Ignition via Predictive Processing and Interoceptive Integration
     authors:
       - family-names: Pesochin
         given-names: Dimitry
     # journal: "Journal Name"        # fill in after acceptance
     # year: 2026
     # doi: "10.XXXX/XXXXXXX"        # fill in after publication
-    notes: "Manuscript in preparation / under review"
-
-  - type: software
-    title: "APGI Framework"
-    authors:
-      - family-names: Pesochin
-        given-names: Dimitry
-    version: 1.1.0
-    doi: "10.5281/zenodo.21632264"
-    url: "https://github.com/apgiframework/apgi-framework"
+    notes: "Manuscript submitted for publication"

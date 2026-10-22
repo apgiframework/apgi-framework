@@ -1,7 +1,7 @@
 {
   "release": "1.1.0",
   "protocol_specification": "1.1.0",
-  "generated": "2026-10-16",
+  "generated": "2026-10-22",
   "generator": {
     "script": "data/generate_seeds.py",
     "sha256": "e18c45e2473ce502ed96289375af8d971b5a9d1ef8aee1a79215ad3b22576de6",

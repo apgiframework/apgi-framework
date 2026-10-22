@@ -102,7 +102,7 @@ def semantic_errors(data):
     power = data["power_analysis"]
     if "n_target" in power and power["n_target"] != people["n_target"]:
         errors.append("power_analysis.n_target differs from participants.n_target")
-    if data["last_updated"] < "2026-10-16":
+    if data["last_updated"] < "2026-10-22":
         errors.append("last_updated predates the 1.1 release preparation")
     return errors
 
@@ -187,7 +187,7 @@ def validation_report(documents):
         "limitations": [
             "Structural and consistency checks are not empirical validation or power simulations.",
             "Source provenance is checked only when --source-dir is supplied; historical input hashes are retained as provenance, not revalidated by this report.",
-            "OSF filing stated as 2026-10-16 is not independently verified.",
+            "OSF filing stated as 2026-10-22 is not independently verified.",
             "Source conflicts and pending analysis locks remain listed in each protocol and CHANGELOG.md.",
         ],
     }
