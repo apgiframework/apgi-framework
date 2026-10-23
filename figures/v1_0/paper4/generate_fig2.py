@@ -82,7 +82,7 @@ COLORS = {
     "APGI": "#9e9ac8",
 }
 
-# Falsification gap tiers — (framework, tier code, tier label, gap description, colour)
+# Falsification gap tiers — (framework, tier code, tier label, gap description, color)
 FAL_GAPS = [
     ("GNWT", "3", "Computational", "Threshold mechanism\nunspecified.", "#6baed6"),
     ("IIT 3.0", "2", "Information-Theoretic", "Φ uncomputable at\nbiological scale.", "#fd8d3c"),

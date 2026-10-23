@@ -58,11 +58,11 @@ def plot(show: bool = True) -> None:
 
     # ── Level column (left) ───────────────────────────────────────────────
     LVL_X, LVL_W, LVL_H = 0.03, 0.14, 0.10
-    level_centres = {}
+    level_centers = {}
     for i, (name, color) in enumerate(zip(LEVEL_NAMES, LEVEL_COLORS)):
         y = 0.82 - i * 0.16
         _box(ax, LVL_X, y, LVL_W, LVL_H, name, color, fontsize=9)
-        level_centres[name] = (LVL_X + LVL_W / 2, y + LVL_H / 2)
+        level_centers[name] = (LVL_X + LVL_W / 2, y + LVL_H / 2)
 
     ax.text(
         LVL_X + LVL_W / 2,
@@ -130,7 +130,7 @@ def plot(show: bool = True) -> None:
     ax.text(
         0.55,
         0.90,
-        r"Pathway A — Fast NE (nearest-neighbour cascade, net L3→L1)",
+        r"Pathway A — Fast NE (nearest-neighbor cascade, net L3→L1)",
         fontsize=8.5,
         fontweight="bold",
         color=NE_COLOR,
@@ -173,7 +173,7 @@ def plot(show: bool = True) -> None:
 
     _arr(
         ax,
-        (level_centres["L3"][0] + LVL_W / 2, level_centres["L3"][1]),
+        (level_centers["L3"][0] + LVL_W / 2, level_centers["L3"][1]),
         (node_pvn[0] - 0.07, node_pvn[1] + 0.02),
         CRT_COLOR,
         label="L3/L4\ngoal state",
@@ -208,7 +208,7 @@ def plot(show: bool = True) -> None:
     ax.text(
         0.30,
         0.585,
-        r"Pathway B — Slow Cortisol (nearest-neighbour cascade, net L4→L1)",
+        r"Pathway B — Slow Cortisol (nearest-neighbor cascade, net L4→L1)",
         fontsize=8.5,
         fontweight="bold",
         color=CRT_COLOR,

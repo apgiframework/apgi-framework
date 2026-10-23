@@ -4,7 +4,7 @@ precision (Πⁱ).
 
 Per OUP-Protocols.txt Figure 1 caption:
   (A) HEP amplitude (250-400 ms post-R) correlates with an orthogonal
-      behavioural interoceptive-precision index (heartbeat-discrimination
+      behavioral interoceptive-precision index (heartbeat-discrimination
       d'); the proxy is retained only if r >= 0.35 (Pred 0.A).
   (B) Physostigmine (cholinergic probe) raises HEP amplitude by >= 15%
       relative to placebo in a double-blind crossover (Pred 0.B).
@@ -84,7 +84,7 @@ def plot(data: dict, show: bool = True) -> None:
     ax.legend(fontsize=7, loc="lower right")
 
     # ---- Panel B: physostigmine vs placebo HEP effect (Pred 0.B, >=15%) ----
-    # Paired slope-style bars: bars show group means, thin grey lines + dots
+    # Paired slope-style bars: bars show group means, thin gray lines + dots
     # show each participant's within-subject placebo -> physostigmine pair.
     ax = axes[1]
     placebo = data["hep_placebo"]

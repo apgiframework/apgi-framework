@@ -5,7 +5,7 @@ def build():
  fig=plt.figure(figsize=(12,6));left=fig.add_axes([.02,.12,.47,.76]);right=fig.add_axes([.53,.17,.45,.68])
  fig.suptitle('Nested functional levels; distinct operational and spectral timescales',x=.03,ha='left',fontsize=15,weight='bold')
  left.set(xlim=(-5.5,5.5),ylim=(-5.5,5.5),aspect='equal');left.axis('off')
- cols=[OI['grey'],OI['blue'],OI['green'],OI['purple'],OI['verm']]
+ cols=[OI['gray'],OI['blue'],OI['green'],OI['purple'],OI['verm']]
  for i in range(4,-1,-1):left.add_patch(Circle((0,0),i+1,fc=['#F4F4F4','#E6F1F7','#E5F4EE','#F5EAF1','#FBECE4'][i],ec=cols[i],lw=1.2,hatch='////' if i==0 else None))
  labels=['L0\nReflexive\nsub-APGI','L1 · Perceptual','L2 · Task','L3 · Narrative','L4 · Identity']
  left.text(0,0,labels[0],ha='center',va='center',fontsize=9)
@@ -33,6 +33,6 @@ def build():
   arr(ax,(38,y+9),(62,y+9),OI['blue'])
  ax.text(50,102,'Biological constraint  →  APGI requirement',ha='center',fontsize=11,weight='bold')
  names=['LSM/LNN','Attractor','Transformer','Feedforward'];counts=[4,3,2,2]
- axs[1].barh(names[::-1],counts[::-1],color=[OI['grey']]*3+[OI['blue']]);axs[1].set(xlim=(0,4.5),xticks=range(5),xlabel='Constraints satisfied (analytical audit)',title='Properties of defining equations')
+ axs[1].barh(names[::-1],counts[::-1],color=[OI['gray']]*3+[OI['blue']]);axs[1].set(xlim=(0,4.5),xticks=range(5),xlabel='Constraints satisfied (analytical audit)',title='Properties of defining equations')
  for i,(n,txt) in enumerate(zip(counts[::-1],['Fails C1 / C2','Fails C2 / C4','Fails C2','All four'])):axs[1].text(.1,i,txt,va='center',color='white',fontsize=9)
  save(fig,'P2F1','Analytical architecture comparison','Paper 2 §2.5 / Fig 1. Scores describe defining properties without additional machinery; not experimental benchmark results.')

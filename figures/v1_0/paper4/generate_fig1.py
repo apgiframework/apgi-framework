@@ -101,11 +101,11 @@ TIERS = [
 BRIDGES = [
     {
         # Spec §3.2.2 / Table 1: the T3->T2 bridge is the "Approximate-Inference
-        # Bridge" (variational F minimisation -> MI maximisation). Kappa (the
+        # Bridge" (variational F minimization -> MI maximization). Kappa (the
         # ATP/bit metabolic-cost parameter) is EXCLUSIVELY a Tier2->Tier1
         # quantity (Glossary: "kappa is a Tier 2-> Tier 1 quantity") and must
         # not appear on this bridge's label.
-        "label": "T3→T2: Approximate-Inference Bridge\nvariational F minimisation → MI maximisation\nStatus: derived in ML, unconverged in vivo",
+        "label": "T3→T2: Approximate-Inference Bridge\nvariational F minimization → MI maximization\nStatus: derived in ML, unconverged in vivo",
         "y_from": 0.72,
         "y_to": 0.52,
         "valid": True,
@@ -339,7 +339,7 @@ def plot(show: bool = True) -> None:
                 arrowprops=dict(arrowstyle="->", color="#555555", lw=1.2),
             )
 
-    # ── Compact shared legend (arrow meaning + tier/comparison colour key) ──
+    # ── Compact shared legend (arrow meaning + tier/comparison color key) ──
     legend_handles = [
         mpatches.FancyArrow(
             0, 0, 0, -1, width=0.001, color="#333333", label="Downward bridge (specified)"

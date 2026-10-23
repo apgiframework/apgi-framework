@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "2b8093a301e0b03a105fbb0d1d575353cc62ab00a4cf346643094430dc925c5d"
+      "sha256": "299eb579c4f1f18db4727f0afe5b6eef4daf1ce60af736fcf2ec9cccdac652bd"
     },
     {
       "path": "VALIDATION.json",
@@ -32,7 +32,7 @@
     },
     {
       "path": "protocol_5_causal_tms.json",
-      "sha256": "15f765b121ceb0220edf7169bb81d74933c5ba805cd7c9a00b413578150855b4"
+      "sha256": "006604991b52aba564a08b3fd2df5680f1801a49dfcea31120020059e72ce626"
     },
     {
       "path": "protocol_6_ignition_ieeg.json",
@@ -40,7 +40,7 @@
     },
     {
       "path": "protocol_7_doc_biomarker.json",
-      "sha256": "9b6a73cf8b66292822bed47c07fc2494381d01a983d3e0a464f85a39a5c6399a"
+      "sha256": "cbd7911c330cf41dd7bd7ceb1609556f43795d700ad7665cf381d3bed306b779"
     },
     {
       "path": "schemas/protocol.schema.json",

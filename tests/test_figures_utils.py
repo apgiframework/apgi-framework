@@ -32,7 +32,7 @@ class TestPalette:
     def test_values_are_hex_strings(self):
         for key, val in fig_utils.PALETTE.items():
             assert isinstance(val, str), f"{key} is not a string"
-            assert val.startswith("#"), f"{key} value '{val}' is not a hex colour"
+            assert val.startswith("#"), f"{key} value '{val}' is not a hex color"
 
     def test_constants_defined(self):
         assert fig_utils.FULL_WIDTH > 0

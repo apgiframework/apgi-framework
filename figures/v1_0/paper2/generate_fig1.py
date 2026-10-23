@@ -1,6 +1,6 @@
 """Paper 2 — Figure 1: Four Biological Constraints × Four APGI Computational Requirements.
 
-Four-quadrant schematic with one-to-one mapping, LSM substrate at centre,
+Four-quadrant schematic with one-to-one mapping, LSM substrate at center,
 and comparison panel showing alternative architectures as partial satisfiers.
 
 Run:
@@ -93,7 +93,7 @@ def plot(show: bool = True) -> None:
         color="#333333",
     )
 
-    # LSM centre label
+    # LSM center label
     ax_main.text(
         0.49,
         0.50,
@@ -223,7 +223,7 @@ def plot(show: bool = True) -> None:
             fontweight="bold",
             color="#2166ac" if v == 4 else "#555555",
         )
-        # Identify the specific failed constraint(s), coloured to match the
+        # Identify the specific failed constraint(s), colored to match the
         # quadrant numbering so the failure pattern (not just the count) is read.
         if fails:
             ax_comp.text(
@@ -265,11 +265,11 @@ def plot(show: bool = True) -> None:
     ax_comp.spines["top"].set_visible(False)
     ax_comp.spines["right"].set_visible(False)
 
-    # Disambiguation: constraint colours are not epistemic-tier colours.
+    # Disambiguation: constraint colors are not epistemic-tier colors.
     ax_comp.text(
         0.0,
         -0.16,
-        "Constraint colours C1–C4 denote biological constraints, not epistemic tiers.",
+        "Constraint colors C1–C4 denote biological constraints, not epistemic tiers.",
         transform=ax_comp.transAxes,
         fontsize=6.3,
         color="#777777",

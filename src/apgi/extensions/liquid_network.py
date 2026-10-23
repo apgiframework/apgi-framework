@@ -32,17 +32,17 @@ class LiquidNeuralNetwork:
         neurons). Typical physiological range: 5–50 ms. When a precision
         value Π(t) is passed to :meth:`step`, the *effective* time constant
         used for that step is τ_eff(t) = τ_baseline / Π(t) (Paper 2 §4);
-        otherwise τ_baseline is used directly (original behaviour).
+        otherwise τ_baseline is used directly (original behavior).
     spectral_radius : float
         Target spectral radius ρ_res for the recurrent weight matrix.
         Canonical range [0.7, 0.95] (Paper 2 §4); ρ_res ≈ 0.90 is used as
         the default, matching the paper's reference implementation.
-        Values < 1.0 yield stable dynamics; values near 1.0 maximise
+        Values < 1.0 yield stable dynamics; values near 1.0 maximize
         memory capacity (edge-of-chaos regime), with a saddle-node
         bifurcation into sustained ignition predicted near ρ_res ≈ 0.95
         (Paper 2 §5.1, Fig. 3).
     seed : int
-        RNG seed for reproducible weight initialisation.
+        RNG seed for reproducible weight initialization.
 
     Examples
     --------
@@ -126,7 +126,7 @@ class LiquidNeuralNetwork:
             pi_t: Optional precision Π(t) (Paper 2 §4). When given, the
                 effective time constant for this step is
                 τ_eff(t) = τ_baseline / Π(t); when None, τ_baseline is used
-                directly (original behaviour, Π(t) ≡ 1).
+                directly (original behavior, Π(t) ≡ 1).
 
         Returns:
             Readout y of shape (n_outputs,).

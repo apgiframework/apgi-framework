@@ -56,19 +56,19 @@ class APGICoreIntegration:
     theta_0 : float
         Homeostatic threshold baseline θ₀.
     lambda_theta : float
-        Mean-reversion rate λθ.
+        Mean-reversion rate λ_θ.
     kappa_meta : float
         Metabolic cost coefficient κ_meta.
     delta_info : float
         Information value coefficient Δ_info.
     eta_NE : float
-        Noradrenaline modulation coefficient η_NE.
+        Norepinephrine modulation coefficient η_NE.
     gamma_sig : float
         Sigmoid steepness γ_sig.
     tau_S : float
         Surprise accumulation timescale τ_S (trial steps).
     theta_init : float or None
-        Initial threshold.  If None, initialised at equilibrium.
+        Initial threshold.  If None, initialized at equilibrium.
     """
 
     def __init__(
@@ -127,7 +127,7 @@ class APGICoreIntegration:
             C_t: Metabolic cost at this trial.
             I_t: Information value at this trial.
             M_hat: Per-trial somatic marker (overrides session default if given).
-            NE_t: Noradrenaline drive.
+            NE_t: Norepinephrine drive.
             rng: RNG for stochastic ignition; None → deterministic (P≥0.5).
 
         Returns:

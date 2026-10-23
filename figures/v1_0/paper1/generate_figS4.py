@@ -98,7 +98,7 @@ def plot(show: bool = True) -> None:
 
     def _text_color(fill: str) -> str:
         """Black text on light fills, white on dark — keeps every label
-        (notably the light-grey ITI segment) legible at print resolution."""
+        (notably the light-gray ITI segment) legible at print resolution."""
         r, g, b = mcolors.to_rgb(fill)
         luminance = 0.299 * r + 0.587 * g + 0.114 * b
         return "black" if luminance > 0.6 else "white"

@@ -1,13 +1,13 @@
 """Paper 1 — Figure 5: Epistemic Tier Architecture and Falsification Mapping.
 
 A three-row stacked matrix mapping the three epistemic tiers to their
-empirical protocols, primary neural/behavioural measures, and specific
+empirical protocols, primary neural/behavioral measures, and specific
 falsification thresholds, stacked Tier 3 (top) -> Tier 1 (bottom) to match
 Paper 4 Fig 1's tier ordering:
     Tier 3 Computational        -> Protocols 2 & 3 -> model-fit falsifiers
     Tier 2 Information-Theoretic -> Protocol 1      -> mutual-information falsifiers
     Tier 1 Thermodynamic        -> Protocol 4      -> calorimetric falsifiers
-Vertical downward arrows between tiers are labelled "bridge principles".
+Vertical downward arrows between tiers are labeled "bridge principles".
 
 This figure was missing from the repository (Paper 1 has fig1-4 + figS1/S2
 implemented, but no fig5), even though APGI-Figures.pdf specifies it
@@ -32,8 +32,8 @@ from figures.common.utils import save_figure
 
 OUTPUT_DIR = pathlib.Path(__file__).parent / "output"
 
-# Tier colours match figures/v1_0/paper4/generate_fig1.py's tier palette exactly,
-# so the two figures' tier-colour coding never drifts apart.
+# Tier colors match figures/v1_0/paper4/generate_fig1.py's tier palette exactly,
+# so the two figures' tier-color coding never drifts apart.
 TIER_ROWS = [
     {
         "tier": "Tier 3",
@@ -61,7 +61,7 @@ TIER_ROWS = [
     },
 ]
 
-COLS = ["Epistemic Tier", "Empirical Protocol(s)", "Primary Neural/\nBehavioural Measure", "Specific Falsification\nThreshold"]
+COLS = ["Epistemic Tier", "Empirical Protocol(s)", "Primary Neural/\nBehavioral Measure", "Specific Falsification\nThreshold"]
 COL_X = [0.02, 0.24, 0.50, 0.76]
 COL_W = [0.20, 0.24, 0.24, 0.22]
 
@@ -130,7 +130,7 @@ def plot(show: bool = True) -> None:
             )
 
     # Legend: only glyphs that actually appear in the diagram body (tier
-    # colour swatches + a single "Measure" entry) -- no "?" placeholder icon
+    # color swatches + a single "Measure" entry) -- no "?" placeholder icon
     # and no duplicated "Measure" swatches (CRITICAL correction).
     legend_handles = [
         mpatches.Patch(facecolor=row["color"], edgecolor=row["color"], label=f"{row['tier']} ({row['name']})")
