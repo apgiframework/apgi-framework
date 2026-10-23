@@ -112,7 +112,7 @@ def draw_brain_panel(ax):
         ax.add_patch(marker)
         is_vertex = short.startswith("Vertex")
         # Vertex sham now sits above the brain outline (see repositioning
-        # note above): label centerd above the marker with a white
+        # note above): label centered above the marker with a white
         # background box, rather than to the right at marker height, so it
         # stays legible against whatever is behind it and doesn't collide
         # with the frontal-lobe box.

@@ -14,7 +14,7 @@ NE for interoceptive).
     Eq.     apply_neuromodulatory_gain   Π_e^eff = g_ACh·Π_e ; Π_i^eff = g_NE·Π_i
 
 The two-step mean/variance update is mandatory (Math Spec §1): updating
-variance from the raw signal instead of the mean-centerd residual yields
+variance from the raw signal instead of the mean-centered residual yields
 E[ε²] rather than E[(ε-μ)²], which only coincide for a zero-mean predictor.
 """
 
@@ -46,7 +46,7 @@ def update_running_variance(
     mu_t: float,
     alpha_ema: float = ALPHA_EMA_DEFAULT,
 ) -> float:
-    """Step 2 — EMA update of the running variance σ²(t+1), mean-centerd.
+    """Step 2 — EMA update of the running variance σ²(t+1), mean-centered.
 
     σ²(t+1) = (1 - α_EMA)·σ²(t) + α_EMA·(ε(t) - μ(t))²
 

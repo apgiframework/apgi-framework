@@ -207,7 +207,7 @@ def plot(show: bool = True) -> None:
     #
     # Per the Fig. 3 spec/prompt: the y-axis MUST be a literal 0-1
     # "Ignition probability" scale -- never labeled/scaled in units of
-    # gamma_sig or alpha_psy. Curves are parameterised by precision Π(t)
+    # gamma_sig or alpha_psy. Curves are parameterized by precision Π(t)
     # (illustrative; §4.4 -- precision sharpens the approach to ignition),
     # ranging from a shallow, graded curve at low Π(t) to a near-discrete
     # all-or-none transition at high Π(t). The empirically observable
@@ -251,7 +251,7 @@ def plot(show: bool = True) -> None:
     ax2.set_ylabel("Ignition probability (0–1)", fontsize=10)
     ax2.set_title(
         "Ignition-probability sigmoid family\n"
-        r"(parameterised by precision $\Pi(t)$, illustrative)",
+        r"(parameterized by precision $\Pi(t)$, illustrative)",
         fontsize=10,
         fontweight="bold",
     )
@@ -273,7 +273,7 @@ def plot(show: bool = True) -> None:
         "realistic validation (N ≥ 1,000 units) pending. Panel B: "
         "γ_sig (model-internal steepness, = 1/τ_σ, canonical range [2, 7.5]) "
         "and α_psy (behavioral psychometric steepness, predicted ≥ 10) are "
-        "related but NOT interchangeable (§4.2); curves are parameterised "
+        "related but NOT interchangeable (§4.2); curves are parameterized "
         "by precision Π(t), illustrative pre-data predictions."
     )
     # Wrap the note: as a single unbroken line it forces bbox_inches="tight"

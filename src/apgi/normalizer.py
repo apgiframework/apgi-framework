@@ -11,7 +11,7 @@ class APGINormalizer:
 
     Supports z-score and min-max normalization.  Parameters are estimated
     from a calibration set and then applied to new observations, making
-    the normaliser safe to fit once and reuse across recording sessions.
+    the normalizer safe to fit once and reuse across recording sessions.
 
     Parameters
     ----------
