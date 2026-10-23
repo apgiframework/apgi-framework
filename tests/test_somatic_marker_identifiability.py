@@ -156,7 +156,7 @@ class TestGenerateSession2:
 
 
 # ===========================================================================
-# Likelihood functions  (minimisation convention → returns –LL)
+# Likelihood functions  (minimization convention → returns –LL)
 # ===========================================================================
 
 

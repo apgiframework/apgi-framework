@@ -55,7 +55,7 @@ def generate_synthetic_data(
 ) -> dict:
     """Generate synthetic trial data from the APGI generative model.
 
-    Fixed parameters (not recovered): λθ, κ_meta, Δ_info.
+    Fixed parameters (not recovered): λ_θ, κ_meta, Δ_info.
     Free parameters (to recover): θ₀, τ_S, Πⁱ_baseline, β_SM, γ_sig.
 
     Returns:

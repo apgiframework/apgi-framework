@@ -23,10 +23,10 @@ from figures.common.utils import save_figure
 OUTPUT_DIR = pathlib.Path(__file__).parent / "output"
 
 # Connection-type palette chosen to NOT collide with the series-wide
-# Tier 1/2/3 colour convention (blue/red/green). These encode connection
+# Tier 1/2/3 color convention (blue/red/green). These encode connection
 # type, not epistemic tier (see disambiguation note on the main panel).
 _EX = "#000000"  # excitatory  — black
-_IN = "#888888"  # inhibitory  — grey
+_IN = "#888888"  # inhibitory  — gray
 _DIS = "#daa520"  # disinhibition — gold
 
 

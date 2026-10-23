@@ -11,7 +11,7 @@ Per OUP-Protocols.txt Figure 3 caption:
       ignition signal B_t, peaking at negative lag -- M_hat leads threshold
       crossing by >= 1 trial (Pred 2.C).
   (C) Post- versus pre-ignition action-selection entropy increases, indexing
-      behavioural flexibility (Pred 2.F-flex, exploratory).
+      behavioral flexibility (Pred 2.F-flex, exploratory).
   (D) Model fit to human IGT choice sequences: APGI Bayesian Information
       Criterion lower than Standard PP and GNWT-only by ΔBIC >= 10 (Pred 2.E).
 
@@ -221,7 +221,7 @@ def action_entropy(rng: np.random.Generator, ignited: np.ndarray) -> tuple[float
     pre_idx = ignition_idx - 1
     post_idx = ignition_idx + 1
     # Post-ignition entropy proxy is boosted slightly to reflect increased
-    # behavioural flexibility (exploratory Pred 2.F-flex).
+    # behavioral flexibility (exploratory Pred 2.F-flex).
     pre_entropy = entropy_at(pre_idx)
     post_entropy = entropy_at(post_idx) * 1.12
     return pre_entropy, post_entropy

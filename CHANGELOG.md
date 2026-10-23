@@ -116,7 +116,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `apgi-fetch --verify` usage.
 - `reproduce_all.sh` — runs `apgi-fetch --verify` after Zenodo download; mentions
   `environment.lock.yml`.
-- `CHANGELOG.md` — removed duplicate `[0.1.0]` section.
+- `CHANGELOG.md` — removed a duplicated early-release section.
 - `data/generate_seeds.py` — canonical synthetic seed generator for all six `.npz` datasets
   (sim1–sim6). Derives every sub-RNG from `MASTER_SEED = 2025`; self-describing metadata
   is stored inside each archive. Outputs SHA-256 digests for Zenodo deposition.

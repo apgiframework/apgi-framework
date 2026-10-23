@@ -1,4 +1,4 @@
-"""APGI — Adaptive Predictive Global Integration framework."""
+"""APGI — Allostatic Precision-Gated Ignition framework."""
 
 from importlib.metadata import PackageNotFoundError, version
 
@@ -45,7 +45,7 @@ __all__ = [
     # session integration
     "APGICoreIntegration",
     "TrialRecord",
-    # normalisation
+    # normalization
     "APGINormalizer",
     # clinical interpretation
     "ConsciousnessLevel",

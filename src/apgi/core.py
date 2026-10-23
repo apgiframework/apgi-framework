@@ -4,11 +4,11 @@ All implementations follow the paper exactly:
 
     Eq. 1   compute_S_t          Sₜ = Πᵉ·|zᵉ| + Πⁱ_eff·|zⁱ|
     Eq. 2   ignition_probability  P(ign) = σ(γ_sig·(Sₜ − θₜ))
-    Eq. 3   step_theta           dθ/dt = −λθ(θ−θ₀) + κ_meta·C − Δ_info·I + η_NE·NE(t)
+    Eq. 3   step_theta           dθ/dt = −λ_θ(θ−θ₀) + κ_meta·C − Δ_info·I + η_NE·NE(t)
     §4.2    compute_pi_i_eff     Πⁱ_eff = Πⁱ_baseline · exp(β_SM · M̂(c,a))
     App A.1 accumulate_S_t       Sₜ = (1−λ_S)·S_{t−1} + λ_S·S_input,  λ_S = 1−exp(−dt/τ_S)
 
-Default parameter values are drawn from the physiologically-constrained
+Default parameter values are drawn from the physiologically constrained
 ranges in Table 12 / Table 3, calibrated so that median simulated S_t sits
 near the ignition boundary (P ≈ 0.50) for near-threshold tasks.
 """
@@ -21,7 +21,7 @@ import numpy as np
 # Publication-calibrated simulation defaults (Table 12 / Table 3)
 # ---------------------------------------------------------------------------
 THETA_0_DEFAULT: float = 0.60  # θ₀  ∈ [0.25, 0.85]
-LAMBDA_THETA_DEFAULT: float = 0.30  # λθ  ∈ [0.1, 0.5]  s⁻¹
+LAMBDA_THETA_DEFAULT: float = 0.30  # λ_θ  ∈ [0.1, 0.5]  s⁻¹
 KAPPA_META_DEFAULT: float = 0.20  # κ_meta ∈ [0.001, 0.5]
 DELTA_INFO_DEFAULT: float = 0.15  # Δ_info ∈ [0, 1]
 ETA_NE_DEFAULT: float = 0.10  # η_NE ∈ [0.01, 0.5]
@@ -219,19 +219,19 @@ def step_theta(
 ) -> float:
     """One Euler step of the allostatic threshold ODE, plus refractory reset.
 
-    dθ/dt = −λθ(θ − θ₀) + κ_meta · C − Δ_info · I + η_NE · NE(t)
+    dθ/dt = −λ_θ(θ − θ₀) + κ_meta · C − Δ_info · I + η_NE · NE(t)
     θₜ₊₁ ← θₜ₊₁ + δ_reset · B(t)
 
     Paper §4.1.3, Eq. 3, Table 2.  The δ_reset term implements Math Spec
     §"Post-Ignition Reset and Refractory Period" / Step 11: a one-time
-    threshold increment applied exactly when ignition fires, modelling the
-    ~500ms attentional-blink refractory window.
+    threshold increment applied exactly when ignition fires, modeling the
+    ~500 ms attentional-blink refractory window.
 
-    * Mean-reversion `−λθ(θ−θ₀)` pulls θ toward its homeostatic baseline θ₀.
+    * Mean-reversion `−λ_θ(θ−θ₀)` pulls θ toward its homeostatic baseline θ₀.
     * Metabolic cost term `+κ_meta·C` raises the threshold after costly ignitions.
     * Information value term `−Δ_info·I` *lowers* the threshold for high-value
       stimuli (negative sign, Table 2).
-    * Noradrenaline term `+η_NE·NE(t)` allows phasic LC-NE events to sharpen
+    * Norepinephrine term `+η_NE·NE(t)` allows phasic LC-NE events to sharpen
       the threshold transiently (Table 4 neuromodulator mappings). This is
       Paper 1's additive proxy for η_θ·[C(t)−V(t)]; see
       :func:`apply_ne_threshold_gain` for the canonical multiplicative
@@ -243,13 +243,13 @@ def step_theta(
         theta_t: Current threshold θₜ.
         C_t: Metabolic cost signal at time t (≥ 0).
         I_t: Information value signal at time t (≥ 0).
-        NE_t: Noradrenaline drive NE(t) (default 0).
+        NE_t: Norepinephrine drive NE(t) (default 0).
         fired: Whether ignition fired (B(t)) at this timestep.
         theta_0: Homeostatic baseline θ₀.
-        lambda_theta: Mean-reversion rate λθ.
+        lambda_theta: Mean-reversion rate λ_θ.
         kappa_meta: Metabolic cost coefficient κ_meta.
         delta_info: Information value coefficient Δ_info.
-        eta_NE: Noradrenaline modulation coefficient η_NE.
+        eta_NE: Norepinephrine modulation coefficient η_NE.
         delta_reset: Post-ignition threshold increment δ_reset (≥ 0).
         dt: Integration step size (trial steps; default 1).
 
@@ -349,19 +349,19 @@ def theta_equilibrium(
 ) -> float:
     """Steady-state threshold where dθ/dt = 0.
 
-    θ* = θ₀ + (κ_meta · C − Δ_info · I + η_NE · NE) / λθ
+    θ* = θ₀ + (κ_meta · C − Δ_info · I + η_NE · NE) / λ_θ
 
-    Useful for initialising θₜ before a simulation sequence.
+    Useful for initializing θₜ before a simulation sequence.
 
     Args:
         C: Metabolic cost signal.
         I_val: Information value signal.
-        NE: Noradrenaline drive (default 0).
+        NE: Norepinephrine drive (default 0).
         theta_0: Homeostatic baseline θ₀.
-        lambda_theta: Mean-reversion rate λθ.
+        lambda_theta: Mean-reversion rate λ_θ.
         kappa_meta: Metabolic cost coefficient κ_meta.
         delta_info: Information value coefficient Δ_info.
-        eta_NE: Noradrenaline modulation coefficient η_NE.
+        eta_NE: Norepinephrine modulation coefficient η_NE.
 
     Returns:
         Equilibrium threshold θ*.

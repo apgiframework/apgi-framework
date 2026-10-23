@@ -31,7 +31,7 @@ class ClinicalReport:
 
 
 class EnhancedClinicalInterpreter:
-    """Interprets APGI outputs in clinical and anaesthesia-monitoring contexts.
+    """Interprets APGI outputs in clinical and anesthesia-monitoring contexts.
 
     The interpreter accepts windowed arrays of Sₜ, θₜ, and C_metabolic,
     computes a composite ignition index (Sₜ / θₜ), and maps it onto a

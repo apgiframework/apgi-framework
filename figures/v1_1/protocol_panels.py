@@ -49,7 +49,7 @@ def build(protocols):
  contrasts=protocols[1]['blocks']['contrast_multipliers_c50']
  bx.scatter(contrasts,[0]*6,s=90,color=OI['blue']);bx.set(xlim=(.4,1.6),ylim=(-.6,.6),yticks=[],xlabel='Fixed contrast / c50',title='Six contrast levels; 480 main trials/session');bx.spines['left'].set_visible(False)
  c=np.linspace(0,1.8,400)
- for k,col in [(3,OI['grey']),(5,OI['orange']),(10,OI['blue']),(15,OI['green'])]:cx.plot(c,.05+.93*(1-np.exp(-np.log(2)*c**k)),color=col,label=f'k={k}')
+ for k,col in [(3,OI['gray']),(5,OI['orange']),(10,OI['blue']),(15,OI['green'])]:cx.plot(c,.05+.93*(1-np.exp(-np.log(2)*c**k)),color=col,label=f'k={k}')
  cx.set(xlabel='Linear contrast / illustrative c50',ylabel='Detection probability',title='Weibull shape k ≡ αpsy, not γsig');cx.legend(ncol=2,fontsize=8,frameon=False)
  finish(fig,'PRF2',1,'Curves illustrate shape only; Pred 1.E also requires interval and comparator evidence. QUEST count unresolved.')
  # Same artwork for the corresponding legacy supplemental mapping.
@@ -65,11 +65,11 @@ def build(protocols):
  finish(fig,'PRF3',2,'Exploratory 2.F / 2.G carry no independent empirical confirmation.')
 
  fig,axs=plt.subplots(2,1,figsize=(12,5.5),gridspec_kw={'height_ratios':[1,1.2]});title(fig,'Protocol 3 / Anticipation separated from outcome')
- timeline(axs[0],[(0,4,'Choice\n4 s',OI['blue']),(4,3,'Foreperiod\n0 or 2–4 s',OI['orange']),(7,2,'Outcome\n2 s',OI['verm']),(9,8,'ITI\n6–10 s',OI['grey'])]);axs[0].set_xlim(0,17)
+ timeline(axs[0],[(0,4,'Choice\n4 s',OI['blue']),(4,3,'Foreperiod\n0 or 2–4 s',OI['orange']),(7,2,'Outcome\n2 s',OI['verm']),(9,8,'ITI\n6–10 s',OI['gray'])]);axs[0].set_xlim(0,17)
  axs[1].set(xlim=(0,100),ylim=(0,100));axs[1].axis('off')
- for x,txt,col in [(5,'vmPFC\nexpected value',OI['blue']),(43,'aINS\nprecision gain',OI['verm']),(78,'pIC\nsensory control',OI['grey'])]:
+ for x,txt,col in [(5,'vmPFC\nexpected value',OI['blue']),(43,'aINS\nprecision gain',OI['verm']),(78,'pIC\nsensory control',OI['gray'])]:
   box(axs[1],x,40,20,45,fc='white',ec=col,r=2);axs[1].text(x+10,62,txt,ha='center',va='center',color=col,fontsize=11)
- arr(axs[1],(25,65),(43,65),OI['verm']);arr(axs[1],(25,42),(78,42),OI['grey'],ls='--')
+ arr(axs[1],(25,65),(43,65),OI['verm']);arr(axs[1],(25,42),(78,42),OI['gray'],ls='--')
  axs[1].text(50,10,'Pred 3.B: anticipation-versus-outcome pathway dissociation\nN=40 enrolled / 36 analyzable · 2 runs ×100 trials · value/contrast controls',ha='center',fontsize=10)
  finish(fig,'PRF4',3,'Timeline illustrates a 3 s foreperiod and 8 s ITI; post-shock ITI ≥8 s.')
  for ext in ['png','pdf','svg']:shutil.copyfile(OUT/f'PRF4.{ext}',OUT/f'P1S4.{ext}')
@@ -96,7 +96,7 @@ def build(protocols):
 
  fig,axs=plt.subplots(1,2,figsize=(12,5));title(fig,'Protocol 6 / Fixed contrasts and a validation-gated analysis')
  grid=protocols[6]['blocks']['absolute_michelson_contrasts'];counts=[150,75,75,75,75,150]
- axs[0].bar(np.arange(6),counts,color=[OI['grey']]+[OI['blue']]*4+[OI['green']]);axs[0].set_xticks(range(6),[str(x) for x in grid])
+ axs[0].bar(np.arange(6),counts,color=[OI['gray']]+[OI['blue']]*4+[OI['green']]);axs[0].set_xticks(range(6),[str(x) for x in grid])
  axs[0].set(xlabel='Absolute Michelson contrast',ylabel='Planned trials',ylim=(0,180),title='600 trials across eight blocks')
  for i,n in enumerate(counts):axs[0].text(i,n+3,str(n),ha='center',fontsize=10)
  flow(axs[1],[('Fixed-contrast mixture test','6.A: dip + mixture evidence, not pooled contrasts\n6.B: direct regional comparison + control model'),('AC1 validation hold','6.C deferred pending estimator recovery/power\nFive samples per 50 ms window at 100 Hz'),('Coverage-specific timescales','6.E: ≥3 dissociable scales + surrogate controls\naINS subset; independent replication needed')])

@@ -434,7 +434,7 @@ def test_source_errors_sha256_mismatch(tmp_path):
     """Test source_errors with SHA256 mismatch."""
     source_file = tmp_path / "source.txt"
     source_file.write_text("content", encoding="utf-8")
-    
+
     documents = {
         "protocol.json": {
             "provenance": {

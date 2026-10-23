@@ -4,9 +4,9 @@ Prepared 2026-10-22 from the local APGI specifications dated 2026-10-22. This pa
 
 ## Authority and status
 
-The local OSF Preregistration governs empirical designs and statistical decisions. Mathematical Specification governs equations, and Notation Appendix governs symbols. The companion Protocols document supplies additional details where consistent. Source document SHA-256 values are included in each JSON. Embedded editorial instructions were treated as document content, not executed.
+The local OSF Preregistration governs empirical designs and statistical decisions. The Mathematical Specification governs equations, and the Notation Appendix governs symbols. The companion Protocols document supplies additional details where consistent. Source document SHA-256 values are included in each JSON. Instructions embedded in source documents were treated as content, not executed.
 
-The documents describe pre-collection protocols, pending ethics submissions and incomplete analysis locks. It is a specification update, not authorization for recruitment or a claim of completed validation.
+The documents describe pre-collection protocols, pending ethics submissions and incomplete analysis locks. This release is a specification update, not authorization for recruitment or a claim of completed validation.
 
 ## Schema migration
 
@@ -16,7 +16,7 @@ This is a data-contract migration: consumers that require numeric n_minimum, non
 
 ## Protocol 0
 
-Replaced heartbeat counting with discrimination; independent replication criteria and central EEG engagement; updated anatomical equivalence bounds to +/-sqrt(0.02); targeted proxy-reclassification tree and 2-of-3 custody.
+Replaced heartbeat counting with discrimination; independent replication criteria and central EEG engagement; updated anatomical equivalence bounds to ±√0.02; targeted proxy-reclassification tree and 2-of-3 custody.
 
 Input version: `1.0.0`; requested specification version: `1.1.0`.
 
@@ -32,7 +32,7 @@ Open source/lock requirements:
 
 ## Protocol 1
 
-Updated personalized cardiac windows; N62 enrollment/N59 power target/N48 conditional floor; six-level 480-trial sessions; continuous IA; separate Pred 1.D coupling, 1.E Weibull decision and 1.F trait effect.
+Updated personalized cardiac windows; N = 62 enrollment/N = 59 power target/N = 48 conditional floor; six-level 480-trial sessions; continuous IA; separate Pred 1.D coupling, 1.E Weibull decision and 1.F trait effect.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -62,7 +62,7 @@ Open source/lock requirements:
 
 ## Protocol 3
 
-N40/N36; 200 trials with value/contrast and foreperiod controls; updated ROIs, fMRI pipeline and parameter-identifiability gate; exploratory timing and trait claims separated.
+N = 40/36; 200 trials with value/contrast and foreperiod controls; updated ROIs, fMRI pipeline and parameter-identifiability gate; exploratory timing and trait claims separated.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -76,7 +76,7 @@ Open source/lock requirements:
 
 ## Protocol 4
 
-N64/N55/N48 across two labs; four sessions and three-level contrast grid; signed 15% d-prime contrast and probit GLMM; arousal adjustment is not metabolic mediation; timescale claims deferred/exploratory.
+N = 64/55/48 across two labs; four sessions and three-level contrast grid; signed 15% d′ contrast and probit GLMM; arousal adjustment is not metabolic mediation; timescale claims deferred/exploratory.
 
 Input version: `1.0.0`; requested specification version: `1.1.0`.
 
@@ -90,7 +90,7 @@ Open source/lock requirements:
 
 ## Protocol 5
 
-Right-aINS tFUS/dTMS hierarchy; modality-matched sham and engagement gates; separate resting PCI probes; updated contrast family; 95% HDI ROPE equivalence; Tier3 separate and exploratory.
+Right-aINS tFUS/dTMS hierarchy; modality-matched sham and engagement gates; separate resting PCI probes; updated contrast family; 95% HDI ROPE equivalence; Tier 3 separate and exploratory.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -106,7 +106,7 @@ Open source/lock requirements:
 
 ## Protocol 6
 
-N20/N12 CE design; 600-trial absolute contrast grid per OSF; distinct LFP/microwire/aINS subsets; fixed-contrast mixture tests; AC1 validation hold; surrogate-controlled >=3-timescale recovery.
+N = 20/12 CE (Confirmatory-Exploratory) design; 600-trial absolute contrast grid per OSF; distinct LFP/microwire/aINS subsets; fixed-contrast mixture tests; AC1 validation hold; surrogate-controlled >=3-timescale recovery.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -116,13 +116,13 @@ Open source/lock requirements:
 
 - Absolute contrast grid in OSF conflicts with threshold-relative companion grid; OSF grid governs.
 
-- CE upgrade requires prospective amendment and independent replication in >=12 additional patients.
+- CE upgrade requires prospective amendment and independent replication in ≥ 12 additional patients.
 
 - Final site-specific eligibility, approvals, roles, observation model and executable analysis manifest must be prospectively locked; source specification is not a completed operational study authorization.
 
 ## Protocol 7
 
-Pred 7.G primary at alpha0.048, N80 patients; 300 clean heartbeats and absolute Cz HEP; 7.A estimation-first with four-group AND patient-only McFadden deltaR2; carrier-matched perturbation control; 7.E/7.F exploratory; corrected CRS-R/GOS-E and missingness rules.
+Pred 7.G primary at α = 0.048, N = 80 patients; 300 clean heartbeats and absolute Cz HEP; 7.A estimation-first with four-group AND patient-only McFadden ΔR²; carrier-matched perturbation control; 7.E/7.F exploratory; corrected CRS-R/GOS-E and missingness rules.
 
 Input version: `2.0.0`; requested specification version: `1.1.0`.
 
@@ -142,7 +142,7 @@ Open source/lock requirements:
 
 ## Cross-source resolutions
 
-- Pred 0.C uses OSF +/-sqrt(0.02), not the companion +/-0.10 shorthand.
+- Pred 0.C uses OSF ±√0.02, not the companion ±0.10 shorthand.
 
 - Protocol 6 uses the OSF absolute Michelson grid, not the companion c50-relative grid.
 
@@ -165,8 +165,8 @@ The supplied 1.1.0 package passed its original schema and manifest checks. All f
 Corrections made against the local specifications:
 
 - Protocol 1: set the unresolved main-session QUEST top-up count to null, preserving the source alternatives 30 and 50. Mark usable-trial minima explicitly as proposals pending prospective lock. This does not resolve the conflicting source schedule.
-- Protocol 2.C: restore the missing Kendall tau >0.3 criterion, the +/-5-trial correlation window, median within-seed tau and seed-level bootstrap interval (OSF Table 6 and detailed Protocol 2.C). Ignition events are not independent replicates.
-- Protocol 4.A: align the summary with the signed >=15% proportional margin, BF10 and effect-size requirements; preserve the separate secondary rule for nonpositive baseline d-prime (OSF detailed Protocol 4.A).
+- Protocol 2.C: restore the missing Kendall tau >0.3 criterion, the ±5-trial correlation window, median within-seed tau and seed-level bootstrap interval (OSF Table 6 and detailed Protocol 2.C). Ignition events are not independent replicates.
+- Protocol 4.A: align the summary with the signed ≥ 15% proportional margin, BF10 and effect-size requirements; preserve the separate secondary rule for nonpositive baseline d′ (OSF detailed Protocol 4.A).
 - Protocol 5.A: replace the universal vertex-sham summary with the binding modality-matched comparisons. Flag 5.C/5.D as conditional on the unresolved IA-moderation multiplicity lock.
 - Protocol 6.B: replace nonsignificant occipital dip shorthand with positive model evidence and a direct regional contrast (OSF detailed Protocol 6.B).
 - All eight protocols: make the precedence of prediction-specific interval/evidence rules explicit. Nonsignificance and point estimates alone cannot establish equivalence or falsification; no unregistered interval bounds or Bayesian hypotheses have been invented. Source excerpts remain historical context.

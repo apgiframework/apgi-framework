@@ -173,7 +173,7 @@ def plot(show: bool = True) -> None:
     # Note: this panel's "spectral radius" quantity is named ρ_crit
     # throughout Fig. 4 (per its own abbreviation key / source-data box:
     # "ρ_crit, critical spectral radius (control parameter near
-    # saddle-node), normalised by ρ_ref"), distinct from Fig. 3's ρ_res
+    # saddle-node), normalized by ρ_ref"), distinct from Fig. 3's ρ_res
     # (the swept reservoir spectral-radius value whose bifurcation-point
     # estimate is ρ_res_crit ≈ 0.95). Labels below use ρ_crit to match this
     # figure's own spec.
@@ -214,10 +214,10 @@ def plot(show: bool = True) -> None:
     ax2.annotate(r"↑$\rho_{\mathrm{crit}}$" + "\n(much longer ISI)", xy=(1.5, crit_ISI_rho[-1]),
                  xytext=(1.58, crit_ISI_rho[-1] - 28), fontsize=7.2, color="#4dac26")
 
-    ax2.set_xlabel("Normalised parameter value", fontsize=10)
+    ax2.set_xlabel("Normalized parameter value", fontsize=10)
     ax2.set_ylabel("Critical ISI (ms, indicative)", fontsize=10)
     ax2.set_title(
-        "Critical ISI vs. normalised parameter value\n"
+        "Critical ISI vs. normalized parameter value\n"
         "(distinguishing prediction: masking ∝ ρ_crit)",
         fontsize=10,
         fontweight="bold",

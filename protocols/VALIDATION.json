@@ -67,6 +67,7 @@
   "limitations": [
     "Structural and consistency checks are not empirical validation or power simulations.",
     "Source provenance is checked only when --source-dir is supplied; historical input hashes are retained as provenance, not revalidated by this report.",
+    "OSF filing stated as 2026-10-22 is not independently verified.",
     "Source conflicts and pending analysis locks remain listed in each protocol and CHANGELOG.md."
   ]
 }

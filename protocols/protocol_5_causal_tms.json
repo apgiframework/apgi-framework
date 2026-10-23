@@ -297,7 +297,7 @@
     {
       "heading": "Sample size rationale",
       "source_start_paragraph_line": 2143,
-      "text": "TMS-EEG studies targeting PCI change of ~20% (Pred 5.B) require approximately n = 24–30 within-subject participants for 80% power at α = 0.05 (based on Casali et al., 2013, reporting PCI SDs of ~0.15 per condition). A paired-samples test at d = 0.5, α = 0.05 (two-tailed), power = 0.90 requires n = 44 analyzable participants. We therefore enrol n = 52 to retain n = 44 after anticipated ~15% dropout (n = 36 analyzable is the minimum, delivering ≈ 0.83 power).",
+      "text": "TMS-EEG studies targeting PCI change of ~20% (Pred 5.B) require approximately n = 24–30 within-subject participants for 80% power at α = 0.05 (based on Casali et al., 2013, reporting PCI SDs of ~0.15 per condition). A paired-samples test at d = 0.5, α = 0.05 (two-tailed), power = 0.90 requires n = 44 analyzable participants. We therefore enroll n = 52 to retain n = 44 after anticipated ~15% dropout (n = 36 analyzable is the minimum, delivering ≈ 0.83 power).",
       "role": "source_context; curated structured decisions govern conflicts"
     },
     {

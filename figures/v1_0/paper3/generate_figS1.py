@@ -25,7 +25,7 @@ OUTPUT_DIR = pathlib.Path(__file__).parent / "output"
 
 RNG = np.random.default_rng(99)
 
-# Group PCI/HEP(uV) targets and APGI semantic-palette colours per the
+# Group PCI/HEP(uV) targets and APGI semantic-palette colors per the
 # Protocol 7 figure spec's CRITICAL correction: PCI must stay within 0-0.8
 # (never extend to/beyond 1.0) and HEP must be realistic microvolts (not a
 # sub-1 normalized scale). Values match the calibrated sim5_doc_biomarker

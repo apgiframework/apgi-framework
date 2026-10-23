@@ -10,7 +10,7 @@ Per OUP-Protocols.txt Figure 5 caption:
       disproportionate suppression of interoceptive targets (Pred 4.B).
   (C) The interaction survives covariation for trial-level pupil diameter
       and RMSSD, dissociating metabolic allostatic triage (elevated
-      theta_t) from generalised LC-NE arousal/fatigue (Pred 4.C).
+      theta_t) from generalized LC-NE arousal/fatigue (Pred 4.C).
 
 No prior generate_figureN.py script implemented Protocol 4 -- this is a new
 figure written to close that gap, using the archived seed dataset
