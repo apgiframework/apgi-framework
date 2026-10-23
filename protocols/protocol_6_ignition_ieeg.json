@@ -423,20 +423,20 @@
   "provenance": {
     "source_files": [
       {
-        "file": "OSF-Preregistration.docx",
-        "sha256": "ec17e6fcbe4a61d278baba42984734255e1b7b53607b30450b7d6e2334d26cd9"
+        "file": "APGI-OSF-Preregistration.docx",
+        "sha256": "05dd7a511e06663a3757827cc253bd53f7850a9f373667856928047d7d85bbf1"
       },
       {
-        "file": "Protocols.docx",
-        "sha256": "09a9d6c6d3827b4f8e320898f9cf0ba5fee0f85ae4198d783a5811cf9f6ff6d4"
+        "file": "APGI-Protocols.docx",
+        "sha256": "e5862882811c34b5111cbd3079d8e918563ceec12fa03c42702ff81ed3d7120c"
       },
       {
-        "file": "Mathematical-Specification.docx",
-        "sha256": "6de4017113b2653c0d0b73ae22775f2cd32f3e8ca5c14d3d64da4130ea32f2fa"
+        "file": "APGI-Mathematical-Specifications.docx",
+        "sha256": "bffe89ff88fc85b790b7286cf5c372a1674e897c8e5b88046549c900452c9083"
       },
       {
-        "file": "Notation-Appendix.docx",
-        "sha256": "37f74a40313fb76210d43238429eb371d606996f0b758212b21db1f837ad4a82"
+        "file": "APGI-Notation-Appendix.docx",
+        "sha256": "43fd6274cc6cf5ead578251dafb31c9d31c020774a80581a9283d27cb3f48ad6"
       }
     ],
     "input_file": "protocol_6_ignition_ieeg.json",

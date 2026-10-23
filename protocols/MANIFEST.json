@@ -4,43 +4,43 @@
   "files": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "2cb778bcf32ab1f473d651ec374ef43da083983f33db05c3ac9351137e05a303"
+      "sha256": "2b8093a301e0b03a105fbb0d1d575353cc62ab00a4cf346643094430dc925c5d"
     },
     {
       "path": "VALIDATION.json",
-      "sha256": "67c832ff0019f4e7c2fa0f9039eb8084eb23164f2adf999b1d0adcd895d05677"
+      "sha256": "c97cf74f1cf2f980c155f85dc3d6bed6d991c54da82d91006ae15cd46869721c"
     },
     {
       "path": "protocol_0_hep_proxy_validation.json",
-      "sha256": "a878f92d3958d63fc3c6ce5269f9a1f068a04d49749b7bf2e17b782ed39efb81"
+      "sha256": "b471f95a2ff406a9a7f1229098752564dc433571a387310e206cf6c29b9c5b52"
     },
     {
       "path": "protocol_1_cardiac_eeg.json",
-      "sha256": "aacbfd439a0aaac6d9b91c51c5adbe92e720602c37adf09ab1de87ca2e65f8ea"
+      "sha256": "2d6a990cf4d0763994a53ec64688a30d9d1c84744fe25e6b108bf54a65512394"
     },
     {
       "path": "protocol_2_somatic_agent_sim.json",
-      "sha256": "818925ec2dfb2456b1fdf40041892309b2b697312f2d4acb5589e4deb0e664c3"
+      "sha256": "9782a42416f8928970562cda3ec6d34a8d8a656a5af42cf1c0347daa03d1fe0b"
     },
     {
       "path": "protocol_3_anticipation_fmri.json",
-      "sha256": "a83f13d55fb8160da22e0479ca4be734f09a5b08103de13db332402d49f7fac5"
+      "sha256": "1400c99bafbc14bb5faa85047a6318dd948f4c51a41e6204e527988aa2526b0e"
     },
     {
       "path": "protocol_4_metabolic_crossover.json",
-      "sha256": "4c3598a7186817e85f48b82becc3b2953bd860af8758d5dd8b0836231fdc9c37"
+      "sha256": "86551607302385c09e92d3dbeac379eed06dde67407e68a0f79de4cf8dc56996"
     },
     {
       "path": "protocol_5_causal_tms.json",
-      "sha256": "84e51f711a2dcd17887a506d936bd8fc6272351c462de2e8ab9be166d73a038e"
+      "sha256": "15f765b121ceb0220edf7169bb81d74933c5ba805cd7c9a00b413578150855b4"
     },
     {
       "path": "protocol_6_ignition_ieeg.json",
-      "sha256": "696044f7019e6c11de4435751deb46a73f7243affea317ebd080985b395ce3c8"
+      "sha256": "1546d9b1b41dff997d981319fc307c2956ef8a66531acef6ba4870581d1271de"
     },
     {
       "path": "protocol_7_doc_biomarker.json",
-      "sha256": "d546c02c6ce68c6051859b44cdbc46c0b0393d8a9b5be4de3886a501e23a8274"
+      "sha256": "9b6a73cf8b66292822bed47c07fc2494381d01a983d3e0a464f85a39a5c6399a"
     },
     {
       "path": "schemas/protocol.schema.json",
