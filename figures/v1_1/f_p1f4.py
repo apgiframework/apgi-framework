@@ -2,7 +2,7 @@ from style import *
 
 fig = plt.figure(figsize=(7.2, 3.3))
 ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(-3, 46); ax.axis('off')
-phases = [  # (t0, t1, title, colour)
+phases = [  # (t0, t1, title, color)
     (0, 50, 'Phase 1\nError generation', OI['orange']),
     (50, 120, 'Phase 2\nPrecision weighting', OI['verm']),
     (120, 250, 'Phase 3\nAccumulation', OI['blue']),
@@ -24,7 +24,7 @@ rows = [
         'Precision\n' + r'$\Pi^{e}$, $\Pi^{i}_{eff}$' + '\n(gain control)',
         'Accumulated surprise\n' + r'$S_t$' + ' (rises over time)',
         'Ignition if\n' + r'$S_t>\theta_t$',
-        'Ignition state\n' + r'$B_t=1$' + '\n(workspace stabilisation)']),
+        'Ignition state\n' + r'$B_t=1$' + '\n(workspace stabilization)']),
     ('EEG/MEG\nmarker', [
         'C1/P1 and early\ngamma ~50–100 ms',
         'Pre-stimulus alpha\npower (attentional gain)',

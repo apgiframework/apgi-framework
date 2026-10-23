@@ -163,7 +163,7 @@ def plot(show: bool = True) -> None:
     ax6.spines["top"].set_visible(False)
     ax6.spines["right"].set_visible(False)
 
-    # Combined bottom legend: identity line + one swatch per parameter colour
+    # Combined bottom legend: identity line + one swatch per parameter color
     # actually used in the scatter panels (no unlabeled/duplicate swatches).
     handles = [
         plt.Line2D([], [], ls="--", color="black", lw=1.2, label="Identity line (y = x)")

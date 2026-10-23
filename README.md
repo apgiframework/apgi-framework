@@ -185,7 +185,7 @@ python figures/v1_0/protocols/p7_doc_biomarker.py        # Figure 8 — Protocol
 ```
 
 Scripts are named by protocol (`pK_…`); their outputs keep the published numbering, Figure N ↔ Protocol (N−1),
-matching the captions in `OUP-Protocols.txt` / the OSF preregistration, and land in `figures/v1_0/output/figureN.{pdf,png}`.
+matching the captions in the OSF preregistration, and land in `figures/v1_0/output/figureN.{pdf,png}`.
 The per-paper 1.0 figures are in `figures/v1_0/paper1/`–`paper4/`. See [`figures/README.md`](figures/README.md) for the layout and the 1.0 → 1.1 mapping.
 
 ## Running tests

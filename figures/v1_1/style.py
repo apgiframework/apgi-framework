@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'output'
 OI = dict(black='#20262E', orange='#E69F00', sky='#56B4E9', green='#009E73', yellow='#F0E442',
-          blue='#0072B2', verm='#D55E00', purple='#CC79A7', grey='#7F7F7F')
+          blue='#0072B2', verm='#D55E00', purple='#CC79A7', gray='#7F7F7F')
 TIER = {3: OI['blue'], 2: OI['green'], 1: OI['verm']}
 TIER_LIGHT = {3: '#E6F1F7', 2: '#E5F4EE', 1: '#FBECE4'}
 INK = '#20262E'

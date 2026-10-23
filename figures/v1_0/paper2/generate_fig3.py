@@ -44,7 +44,7 @@ OUTPUT_DIR = pathlib.Path(__file__).parent / "output"
 #     statistic across the whole sweep so that only rho_res varies.
 #   - pi_t (precision) is coupled to rho_res as
 #         pi_t = 1 + 4 * max(0, rho_res - 0.85) ** 1.2
-#     rather than held at a fixed value. This is a modelling choice, not a
+#     rather than held at a fixed value. This is a modeling choice, not a
 #     free parameter tuned for aesthetics alone: Paper 2 §4.4 states that
 #     precision and near-critical reservoir dynamics interact (ACh/NE gain
 #     rises as prediction-error accumulation approaches threshold), and it
@@ -206,7 +206,7 @@ def plot(show: bool = True) -> None:
     # ── Panel B: Ignition-probability sigmoid family (precision Π(t) sweep) ─
     #
     # Per the Fig. 3 spec/prompt: the y-axis MUST be a literal 0-1
-    # "Ignition probability" scale -- never labelled/scaled in units of
+    # "Ignition probability" scale -- never labeled/scaled in units of
     # gamma_sig or alpha_psy. Curves are parameterised by precision Π(t)
     # (illustrative; §4.4 -- precision sharpens the approach to ignition),
     # ranging from a shallow, graded curve at low Π(t) to a near-discrete
@@ -247,7 +247,7 @@ def plot(show: bool = True) -> None:
     )
 
     ax2.axvline(theta_val, lw=1.2, ls="--", color="#555555", alpha=0.7)
-    ax2.set_xlabel(r"Normalised drive / effective input $S_t/\theta_t$", fontsize=10)
+    ax2.set_xlabel(r"Normalized drive / effective input $S_t/\theta_t$", fontsize=10)
     ax2.set_ylabel("Ignition probability (0–1)", fontsize=10)
     ax2.set_title(
         "Ignition-probability sigmoid family\n"
@@ -272,7 +272,7 @@ def plot(show: bool = True) -> None:
         f"(ρ_S = {RHO_S}). Proof-of-concept scale only; biologically "
         "realistic validation (N ≥ 1,000 units) pending. Panel B: "
         "γ_sig (model-internal steepness, = 1/τ_σ, canonical range [2, 7.5]) "
-        "and α_psy (behavioural psychometric steepness, predicted ≥ 10) are "
+        "and α_psy (behavioral psychometric steepness, predicted ≥ 10) are "
         "related but NOT interchangeable (§4.2); curves are parameterised "
         "by precision Π(t), illustrative pre-data predictions."
     )

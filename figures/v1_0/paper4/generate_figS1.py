@@ -43,7 +43,7 @@ TIER_EDGE = {"T3": "#28a745", "T2": "#856404", "T1": "#721c24"}
 # "Theoretically specified" or "Pending" -- no "Confirmed", "Partial", or
 # "Speculative" anywhere. Those three legacy labels are removed entirely
 # (previously present here as dead/misleading legend entries that never
-# actually appeared in the table, which was itself a labelling-accuracy bug).
+# actually appeared in the table, which was itself a labeling-accuracy bug).
 STATUS_COLORS = {
     "Theoretically specified": "#28a745",
     "Pending": "#856404",

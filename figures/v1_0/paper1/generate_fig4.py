@@ -101,7 +101,7 @@ def plot(show: bool = True) -> None:
             ph["t_end"] - ph["t_start"],
             CHEVRON_H,
             # pad is in *data units* here — a large value balloons the box far
-            # beyond the intended chevron band and bleeds colour down over the
+            # beyond the intended chevron band and bleeds color down over the
             # annotation rows below. Keep it small so each chevron stays a clean
             # top-row block and the annotation rows render on white background.
             boxstyle="round,pad=0.02",
@@ -196,7 +196,7 @@ def plot(show: bool = True) -> None:
         color="#333333",
     )
 
-    # ── Legend: exactly one swatch per distinct colour actually used, each
+    # ── Legend: exactly one swatch per distinct color actually used, each
     # with an explicit text label (no duplicate/unlabeled swatches). ────────
     for ph in PHASES:
         ax.plot([], [], color=ph["color"], lw=8, label=ph["name"].replace("\n", " "))
@@ -206,7 +206,7 @@ def plot(show: bool = True) -> None:
         ncol=5,
         fontsize=6.8,
         frameon=False,
-        title="Phase (colour key)",
+        title="Phase (color key)",
         title_fontsize=7.5,
     )
 

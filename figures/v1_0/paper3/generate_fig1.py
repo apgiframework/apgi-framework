@@ -99,7 +99,7 @@ def plot(show: bool = True) -> None:
         is_l0 = "sub-APGI" in lv["name"]
         if is_l0:
             # L0 sub-APGI status made visually unambiguous: distinct white +
-            # hatched fill and a dashed grey border (not a tiny dark dot).
+            # hatched fill and a dashed gray border (not a tiny dark dot).
             circ = mpatches.Circle(
                 (cx, cy),
                 lv["r"],
@@ -280,7 +280,7 @@ def plot(show: bool = True) -> None:
     colors_rows = [
         ["#fde0d9" if "sub" not in lv["name"] else "#f0f0f0"] * 5 for lv in LEVELS
     ]
-    # Override with level-specific colour
+    # Override with level-specific color
     for i, lv in enumerate(LEVELS):
         for j in range(5):
             colors_rows[i][j] = lv["color"] + "55"  # add transparency via hex

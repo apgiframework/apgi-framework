@@ -1,4 +1,4 @@
-"""APGINormalizer — signal normalisation for cross-session and cross-participant comparisons."""
+"""APGINormalizer — signal normalization for cross-session and cross-participant comparisons."""
 
 from __future__ import annotations
 
@@ -7,16 +7,16 @@ from numpy.typing import NDArray
 
 
 class APGINormalizer:
-    """Normalise APGI signals (Sₜ, θₜ) to a common scale.
+    """Normalize APGI signals (Sₜ, θₜ) to a common scale.
 
-    Supports z-score and min-max normalisation.  Parameters are estimated
+    Supports z-score and min-max normalization.  Parameters are estimated
     from a calibration set and then applied to new observations, making
     the normaliser safe to fit once and reuse across recording sessions.
 
     Parameters
     ----------
     method : {"zscore", "minmax"}
-        Normalisation strategy.
+        Normalization strategy.
     epsilon : float
         Small constant added to the denominator to avoid division by zero.
     """
@@ -34,7 +34,7 @@ class APGINormalizer:
     # ------------------------------------------------------------------
 
     def fit(self, signals: NDArray) -> "APGINormalizer":
-        """Estimate normalisation parameters from a calibration array.
+        """Estimate normalization parameters from a calibration array.
 
         Args:
             signals: 1-D array of raw signal values (e.g. a session of Sₜ).
@@ -63,24 +63,24 @@ class APGINormalizer:
     # ------------------------------------------------------------------
 
     def transform(self, signals: NDArray) -> NDArray:
-        """Apply fitted normalisation to new signals.
+        """Apply fitted normalization to new signals.
 
         Args:
             signals: Array of raw signal values (any shape).
 
         Returns:
-            Normalised array of the same shape.
+            Normalized array of the same shape.
         """
         if self._loc is None or self._scale is None:
             raise RuntimeError("Call fit() before transform()")
         arr = np.asarray(signals, dtype=float)
         return (arr - self._loc) / (self._scale + self.epsilon)
 
-    def inverse_transform(self, normalised: NDArray) -> NDArray:
-        """Reverse the normalisation to recover original-scale values."""
+    def inverse_transform(self, normalized: NDArray) -> NDArray:
+        """Reverse the normalization to recover original-scale values."""
         if self._loc is None or self._scale is None:
             raise RuntimeError("Call fit() before inverse_transform()")
-        arr = np.asarray(normalised, dtype=float)
+        arr = np.asarray(normalized, dtype=float)
         return arr * (self._scale + self.epsilon) + self._loc
 
     # ------------------------------------------------------------------

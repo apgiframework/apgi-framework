@@ -19,7 +19,7 @@ unconverged/untraced per the paper's own text (§3.2.2-3.2.3) and have no
 closed-form calculation to encode; the twenty-standard supplementary
 rubric (Table S1) is a superset of the seven-criterion instrument and is
 not separately implemented here. The Φ-boundary (phenomenal claims) is
-explicitly out of scope by design (§3.1) and is not modelled.
+explicitly out of scope by design (§3.1) and is not modeled.
 """
 
 from __future__ import annotations

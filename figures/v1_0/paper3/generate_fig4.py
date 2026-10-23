@@ -51,7 +51,7 @@ DISORDERS = [
             {"theta": +1, "pi": -1, "primary": False},  # L1: propagated Pi blunting
             {"theta": 0, "pi": 0, "primary": False},
         ],
-        "cascade_from": 1,  # L3 → L1 via nearest-neighbour kappa cascade
+        "cascade_from": 1,  # L3 → L1 via nearest-neighbor kappa cascade
         "cascade_to": 3,
         "caption": "Primary: L3/L4 (HPA θ↑)\n→ κ cascade propagation raises θ\n"
         "and blunts Π at L1–L2",
@@ -108,7 +108,7 @@ def _draw_compact_stack(
     show_names=True,
 ):
     """Draw a miniature five-level stack; returns per-level (cx, cy, y)."""
-    centres = []
+    centers = []
     for i, (lv_name, base_color, lv_spec) in enumerate(
         zip(LEVEL_NAMES, LEVEL_BASE_COLORS, levels)
     ):
@@ -160,8 +160,8 @@ def _draw_compact_stack(
                 color="#2166ac",
                 fontweight="bold",
             )
-        centres.append((box_x + box_w / 2, y + box_h / 2, y))
-    return centres
+        centers.append((box_x + box_w / 2, y + box_h / 2, y))
+    return centers
 
 
 def draw_doc_dual(ax, disorder):

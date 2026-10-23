@@ -147,7 +147,7 @@ class HierarchicalLevel:
             theta_next: Current threshold θ_{k+1} of the level above.
             theta_star_next: Set-point θ_{k+1}* of the level above.
             S_k: This level's ignition/integration signal driving adaptation.
-            NE_k: Phasic noradrenaline drive at this level.
+            NE_k: Phasic norepinephrine drive at this level.
             dt: Integration step size.
 
         Returns:
@@ -168,7 +168,7 @@ class APGIHierarchy:
 
     Instantiates levels 1–5 with progressively fewer units (coarser
     representations) and higher precision weights, reflecting the
-    empirical organisation of cortical hierarchy.
+    empirical organization of cortical hierarchy.
 
     Parameters
     ----------
@@ -277,7 +277,7 @@ class APGIHierarchy:
             sensory_input: Array of shape (n_sensory,). Values outside
                 [−3, 3] will propagate but may saturate tanh activations.
             C_metabolic: Current metabolic cost signal (≥ 0).
-            NE: Phasic noradrenaline drive shared across levels.
+            NE: Phasic norepinephrine drive shared across levels.
             dt: Integration step size for the threshold update.
 
         Returns:

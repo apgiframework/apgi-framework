@@ -129,7 +129,7 @@ rows=[['3 · Computational','Relative precision × excess error;\nleaky accumula
 table('Epistemic tiers and the double-bridge chain',['Tier','Currency','Bridge / interpretation'],rows,[.20,.40,.40],'P4F1',note='Paper 4 Fig 1: ignition information and erased information have different denominators; upward bridges remain unspecified.')
 scores={name:[np.nan if v is None else v for v in values] for name,values in MANUSCRIPT['Paper4']['audit_scores'].items()}
 fig,ax=plt.subplots(figsize=(12,5));fig.subplots_adjust(top=.78,bottom=.24)
-x=np.arange(7);colors=[OI['sky'],OI['orange'],OI['grey'],OI['purple']]
+x=np.arange(7);colors=[OI['sky'],OI['orange'],OI['gray'],OI['purple']]
 for j,(label,values) in enumerate(scores.items()):
  xx=x+(j-1.5)*.2;ax.bar(xx,values,.18,label=label,color=colors[j],hatch='///' if j==3 else None)
  for xi,v in zip(xx,values):

@@ -259,7 +259,7 @@ class TestEmpiricalPredictions:
 
     def test_as_dict_list_contains_required_keys(self):
         for d in self.eps.as_dict_list():
-            assert "id" in d  # serialised as "id" not "prediction_id"
+            assert "id" in d  # serialized as "id" not "prediction_id"
             assert "observable" in d
 
     def test_log_predictions_does_not_raise(self):

@@ -17,9 +17,9 @@ The generator also works when invoked by absolute path from another directory. D
 
 ## Source precedence and provenance
 
-- The user requested analysis, comparison and figure generation. Instructions embedded in supplied documents were treated as reference content, not instructions to execute.
+- Source documents were treated as reference content only.
 - `archive/` preserves the supplied October 4 code unchanged for audit. It is **not** the new reproduction entry point. Its raster patch scripts need unavailable `src/img-*.png` originals; its font paths assume Linux, its exports assume a particular working directory, and `build.js` produces a document rather than figures.
-- Mathematical Specification governs equations; Notation Appendix governs symbols. Paper captions and tables govern the conceptual illustrations. Repository protocol JSON version 1.1.0 governs empirical designs and overrides older companion diagrams.
+- The Mathematical Specification governs equations; the Notation Appendix governs symbols. Paper captions and tables govern the conceptual illustrations. Repository protocol JSON version 1.1.0 governs empirical designs and overrides older companion diagrams.
 - `PROVENANCE.json` records hashes and original locations of the supplied code and manuscript inputs. `manuscript_data.json` preserves the extracted manuscript captions and exact Paper 4 Table S4 contents. These original captions are source evidence, not automatically the captions of the redesigned figures.
 - `MANIFEST.json` records figure mappings, evidence labels, output checksums, protocol input checksums, and baseline figure hashes. `CAPTIONS.md` contains the revised captions. `VALIDATION.json` records the structural checks.
 - This local review does not verify an OSF filing, empirical validation, protocol readiness or unresolved prospective analysis locks.
@@ -37,7 +37,7 @@ The generator also works when invoked by absolute path from another directory. D
 | P1S3, PRF2 | Fixed cardiac windows and generic psychometric slopes are stale. | Personalized T-wave boundaries; six fixed contrast levels; Weibull k on linear contrast, distinct from intrinsic sigmoid gain. QUEST top-up remains unresolved. |
 | P1S4, PRF4 | Older timing/pathway labels conflict with the protocol release. | 4-s choice, 0 or 2–4-s anticipation, 2-s outcome, controlled ITI; anticipatory PPI labeled Pred 3.B. |
 | P2F1 | Constraint audit is conceptual, not measured performance. | Four explicit mappings plus the manuscript's analytical architecture counts. |
-| P2F3 | Supplied code uses Π=30 and labels sigmoid slope as αpsy. Its fold is imposed by rescaling. | Π≤10; fixed γsig=4; error-referred sigmoid curves; no behavioral Weibull inference. Label the imposed fold and reduced-model hysteresis honestly. |
+| P2F3 | Supplied code uses Π=30 and labels sigmoid slope as α_psy. Its fold is imposed by rescaling. | Π≤10; fixed γ_sig=4; error-referred sigmoid curves; no behavioral Weibull inference. Label the imposed fold and reduced-model hysteresis honestly. |
 | P2F4 | Reduced masking model is illustrative and its gain is fixed to place the critical ISI near 90 ms. | Recompute the supplied model; label calibration limits. Out-of-range crossings remain missing, not fabricated. |
 | P2S1, PRF6 | Universal vertex sham and 60-ms iEEG stimulus conflict with the protocol specification. | Matched-modality comparisons, engagement gates, separate PCI probes; iEEG target 33 ms and 1-s delay. |
 | P3F1 | Integration bands, OU poles, neural levels and endocrine roles were conflated. | Correct operational bands; L0 is sub-APGI; endocrine priors set cortical thresholds; conditional geometric poles shown separately. |
@@ -55,5 +55,5 @@ The generator also works when invoked by absolute path from another directory. D
 - The supplied P1S1 description reports posterior-collinearity values around 0.90/0.45, while Paper 1 discusses different, not-yet-run multi-session projections; the supplied plotted parameter ranges also exceed some current canonical ranges. P1S2 includes a fourth cardiac signature absent from the current Paper 1 sensitivity paragraph and unverified directional assumptions. These conflicts are why the numerical panels are pending, rather than simply relabeled.
 - P2F3 is a reduced sigmoid normal form, not a validated heterogeneous reservoir bifurcation analysis. The supplied fold orientation does not fully match the Paper 2 prose; the plotted upper-branch fold at 0.95 and lower-branch fold near 1.02 are retained and labeled as the actual reduced model. No full-model hysteresis result is claimed.
 - P2F4 and P3F2 are reproducible model calculations; P3F6 is an illustrative trajectory. None is empirical evidence.
-- The manuscript's twelve Paper 4 exposition IDs are not interchangeable with protocol Pred IDs. Paper 4's tier colors also differ in its caption from the supplied series palette; this review follows the supplied accessible palette: Tier 3 blue, Tier 2 green, Tier 1 vermillion.
+- The manuscript's twelve Paper 4 exposition IDs are not interchangeable with protocol Pred IDs. Paper 4's tier colors also differ in its caption from the supplied series palette; this review follows the supplied accessible palette: Tier 3 blue, Tier 2 green, Tier 1 vermilion.
 - Source conflicts and pending operational locks remain in `protocols/CHANGELOG.md`. Figure simplification does not resolve them.

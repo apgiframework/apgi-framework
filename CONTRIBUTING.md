@@ -40,8 +40,8 @@ pytest tests/ -k core         # run only core-equation tests
 pytest --nbval-lax notebooks/quick_start.ipynb   # validate a notebook
 ```
 
-All 213 tests must pass before a pull request is merged. Coverage must remain
-at 100% for modules under `src/apgi/`.
+All 379 tests must pass before a pull request is merged. Coverage is reported
+for `src/apgi/`, `scripts/` and `figures/`; do not let it drop.
 
 ## Regenerating seed data
 

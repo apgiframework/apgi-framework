@@ -13,7 +13,7 @@ Run once before Zenodo deposition:
 All seeds use a fixed global RNG hierarchy so every dataset is bit-for-bit
 reproducible from this script alone.  No empirical data are required.
 
-Dataset catalogue (approximate sizes after npz compression)
+Dataset catalog (approximate sizes after npz compression)
 -----------------------------------------------------------
 sim0_hep_proxy.npz                  ~0.1 MB
     HEP amplitude, heartbeat discrimination d-prime, physostigmine effect, and
@@ -764,14 +764,14 @@ def _gen_sim6_bifurcation(seed: int) -> pathlib.Path:
 
     CSD model
     ---------
-    The APGI saddle-node bifurcation is modelled via the ignition ratio
+    The APGI saddle-node bifurcation is modeled via the ignition ratio
     r_t = S_t / theta_t. Near the bifurcation point r_t -> 1, perturbations
     decay more slowly — the hallmark of critical slowing-down (Scheffer 2009;
     Dakos et al. 2012; Meisel et al. 2015).
 
     r_t is simulated directly as an AR(1) process in each window, with the
     AR coefficient (effective eigenvalue) increasing from baseline to pre-ignition.
-    This is the theoretically correct representation: in the linear neighbourhood
+    This is the theoretically correct representation: in the linear neighborhood
     of a saddle-node bifurcation, the slow variable follows dx = -epsilon*x*dt + dW
     where epsilon -> 0 as the bifurcation is approached, giving an AR(1) coefficient
     rho = exp(-epsilon*dt) -> 1 (Kuehn 2011).
@@ -785,7 +785,7 @@ def _gen_sim6_bifurcation(seed: int) -> pathlib.Path:
       * AC1(r_pre) > AC1(r_baseline) in >= 20/25 subjects    [slowing grows]
 
     The eigenvalue at each window equals the AR(1) coefficient: this is exact
-    for a linear saddle-node neighbourhood, not an approximation.
+    for a linear saddle-node neighborhood, not an approximation.
     """
     rng = np.random.default_rng(seed)
 
@@ -854,7 +854,7 @@ def _gen_sim6_bifurcation(seed: int) -> pathlib.Path:
         sd_pre  = float(np.std(r_pre))
         csd_ratio[i] = sd_pre / max(sd_base, 1e-8)
 
-        # Eigenvalue = AR(1) coefficient (exact for linear saddle-node neighbourhood)
+        # Eigenvalue = AR(1) coefficient (exact for linear saddle-node neighborhood)
         eigenvalue_real_max_baseline[i] = rho_base
         eigenvalue_real_max_pre[i]      = rho_pre
 
@@ -1618,12 +1618,12 @@ def _verify(paths: list[pathlib.Path]) -> bool:
 RELEASE = "1.1.0"
 MANIFEST_FILE = SEED_DIR / "seed_manifest.json"
 
-# Static catalogue: which protocol each dataset illustrates, who reads it, and
+# Static catalog: which protocol each dataset illustrates, who reads it, and
 # how its simulated design compares with the protocol v1.1.0 participants
 # block. Seed datasets are illustrative simulations, not preregistered
 # cohorts; a "differs" entry means figures drawn from that dataset show the
 # v1.0 simulated design and must not be read as v1.1 power or decision data.
-CATALOGUE: dict[str, dict] = {
+CATALOG: dict[str, dict] = {
     "sim0_hep_proxy": {
         "registry_ep": "EP-0",
         "protocol": "protocols/protocol_0_hep_proxy_validation.json",
@@ -1785,7 +1785,7 @@ def _write_manifest(master_seed: int) -> pathlib.Path:
                 "sha256": _sha256(csv_path),
                 "bytes": csv_path.stat().st_size,
             }
-        entry.update(CATALOGUE[stem])
+        entry.update(CATALOG[stem])
         entry["content"] = _content_fingerprint(npz)
         datasets.append(entry)
 

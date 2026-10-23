@@ -50,11 +50,11 @@ Proposed cortical implementation of precision gain. The vmPFC–VIP⁺–SST⁺ 
 
 ## P2F3
 
-Reduced sigmoid fixed-point model and precision-dependent ignition. The first plotted fold is set to 0.95 by coordinate rescaling; the second lies near 1.02. Curves on the right hold intrinsic γsig=4 and vary Π within its canonical ceiling of 10; their error-referred slopes are not behavioral Weibull αpsy. The reduced-model hysteresis is not a full-reservoir validation result.
+Reduced sigmoid fixed-point model and precision-dependent ignition. The first plotted fold is set to 0.95 by coordinate rescaling; the second lies near 1.02. Curves on the right hold intrinsic γ_sig = 4 and vary Π within its canonical ceiling of 10; their error-referred slopes are not behavioral Weibull α_psy. The reduced-model hysteresis is not a full-reservoir validation result.
 
 ## P2F4
 
-Masking trajectories and parameter sensitivity recomputed from the supplied homogeneous reduced model. The fixed reference gain places the critical ISI near 89.75 ms; increasing target precision shortens it, whereas threshold and spectral-radius changes can lengthen it. No crossing within the search range remains missing. Quantitative ISIs require empirical calibration.
+Masking trajectories and parameter sensitivity recomputed from the supplied homogeneous reduced model. The fixed reference gain places the critical ISI near 89.75 ms; increasing target precision shortens it, whereas threshold and spectral-radius changes can lengthen it. Where no crossing occurs within the search range, the value is left missing. Quantitative ISIs require empirical calibration.
 
 ## P2S1
 
@@ -70,7 +70,7 @@ Analytical spectrum from five equal-stationary-variance OU components with τ₀
 
 ## P3F3
 
-Proposed fast ACC–LC and slow PVN–HPA influences on lower-level processing. LC is a relay rather than a hierarchical stratum; rapid membrane-MR and sustained GR effects are distinguished. Effective α31 and α41 influences are products of nearest-neighbor κ couplings and are unrelated to the ATP/bit κ bridge.
+Proposed fast ACC–LC and slow PVN–HPA influences on lower-level processing. LC is a relay rather than a hierarchical stratum; rapid membrane-MR and sustained GR effects are distinguished. Effective α₃₁ and α₄₁ influences are products of nearest-neighbor κ couplings and are unrelated to the ATP/bit κ bridge.
 
 ## P3F4
 
@@ -90,7 +90,7 @@ Three epistemic currencies and the downward double-bridge chain. A computational
 
 ## P4F2
 
-Current Paper 4 Table 8 coarse audit scores. APGI C3 and C4 are means of tier scores 2,1,1 and their bars mark the tier range, not a confidence interval. IIT C6 is not applicable and is excluded from its denominator. Aggregate scores and the canonical 55/100 reference are displayed, but foundational gates also govern the author’s rubric. All scores are single-author provisional judgments, not independently validated rankings.
+Current Paper 4 Table 8 coarse audit scores. APGI C3 and C4 are means of tier scores 2, 1, 1 and their bars mark the tier range, not a confidence interval. IIT C6 is not applicable and is excluded from its denominator. Aggregate scores and the canonical 55/100 reference are displayed, but foundational gates also govern the author’s rubric. All scores are single-author provisional judgments, not independently validated rankings.
 
 ## P4F3
 
@@ -118,7 +118,7 @@ Protocol 4 within-participant state-by-load comparison. Cells identify planned m
 
 ## PRF6
 
-Protocol 5 target-specific interventions and HEP equivalence criterion. Modality-matched references and independent engagement gates govern aINS inference; resting PCI probes are separate from task trials. Pred 5.E requires the entire 95% HDI inside d=[−0.15,+0.15] and BF01≥6; no posterior is fabricated.
+Protocol 5 target-specific interventions and HEP equivalence criterion. Modality-matched references and independent engagement gates govern aINS inference; resting PCI probes are separate from task trials. Pred 5.E requires the entire 95% HDI inside d ∈ [−0.15, +0.15] and BF₀₁ ≥ 6; no posterior is fabricated.
 
 ## PRF7
 

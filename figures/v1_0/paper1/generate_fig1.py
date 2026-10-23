@@ -1,7 +1,7 @@
 """Paper 1 — Figure 1: APGI Architecture and Five-Stage Processing Pipeline.
 
 Five sequential processing stages with neural substrates, formal variables,
-and sigmoid ignition inset panel. Arrow colour encodes epistemic tier.
+and sigmoid ignition inset panel. Arrow color encodes epistemic tier.
 
 Run:
     python figures/v1_0/paper1/generate_fig1.py
@@ -134,14 +134,14 @@ def draw_pipeline(ax: plt.Axes) -> None:
             style="italic",
         )
 
-        # Arrow to next stage. Colour encodes the tier transition: the first
-        # half carries the source-stage tier colour, the second half the
-        # destination-stage tier colour, so tier-boundary crossings are visible.
+        # Arrow to next stage. Color encodes the tier transition: the first
+        # half carries the source-stage tier color, the second half the
+        # destination-stage tier color, so tier-boundary crossings are visible.
         if i < n - 1:
             next_x = gap + (i + 1) * (box_w + gap)
             src_color = TIER_COLORS[stage["tier"]]
             dst_color = TIER_COLORS[STAGES[i + 1]["tier"]]
-            # Stage 4→5 transition: thicker arrow labelled with the sigmoid function
+            # Stage 4→5 transition: thicker arrow labeled with the sigmoid function
             is_ignition_transition = i == 3
             lw = 3.0 if is_ignition_transition else 2.0
             arrow_y = y + box_h / 2
