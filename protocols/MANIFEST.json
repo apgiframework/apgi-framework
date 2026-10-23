@@ -12,35 +12,35 @@
     },
     {
       "path": "protocol_0_hep_proxy_validation.json",
-      "sha256": "d20e60c93948d9cb403196e4b7f4f4e17d404113f6724f08b262e4d0884a09d3"
+      "sha256": "b471f95a2ff406a9a7f1229098752564dc433571a387310e206cf6c29b9c5b52"
     },
     {
       "path": "protocol_1_cardiac_eeg.json",
-      "sha256": "7e7ac0cc9d5ef921181f60e115c5306333cc05e842be7b24fbea8c578e57fbb0"
+      "sha256": "2d6a990cf4d0763994a53ec64688a30d9d1c84744fe25e6b108bf54a65512394"
     },
     {
       "path": "protocol_2_somatic_agent_sim.json",
-      "sha256": "aa8c72c4a9da4a590cfce7fed97fd72dd81df18b70e6ac70d17dccc8815ce493"
+      "sha256": "9782a42416f8928970562cda3ec6d34a8d8a656a5af42cf1c0347daa03d1fe0b"
     },
     {
       "path": "protocol_3_anticipation_fmri.json",
-      "sha256": "314f1e2e34eb7b373430441ba5b124fd280033f52f46a74c274d2a370cb87877"
+      "sha256": "1400c99bafbc14bb5faa85047a6318dd948f4c51a41e6204e527988aa2526b0e"
     },
     {
       "path": "protocol_4_metabolic_crossover.json",
-      "sha256": "e413f0799dd7ba739c5ca7e2c798ca21610296a7e9543e64a2f933b5a726ee97"
+      "sha256": "86551607302385c09e92d3dbeac379eed06dde67407e68a0f79de4cf8dc56996"
     },
     {
       "path": "protocol_5_causal_tms.json",
-      "sha256": "15519e7bdd3be440f571fdd63eb4e06fcba1bace72b5b87497d486f4bb121119"
+      "sha256": "006604991b52aba564a08b3fd2df5680f1801a49dfcea31120020059e72ce626"
     },
     {
       "path": "protocol_6_ignition_ieeg.json",
-      "sha256": "b367322e2c67b106070279bde8b2cdafc5095a01a5bb94ec1e4f9c7ec62444c3"
+      "sha256": "1546d9b1b41dff997d981319fc307c2956ef8a66531acef6ba4870581d1271de"
     },
     {
       "path": "protocol_7_doc_biomarker.json",
-      "sha256": "8a59fe0987dfbc07cc5288394431026e9d0f8d8f15ecbd3e0fc4021c309a49ee"
+      "sha256": "cbd7911c330cf41dd7bd7ceb1609556f43795d700ad7665cf381d3bed306b779"
     },
     {
       "path": "schemas/protocol.schema.json",

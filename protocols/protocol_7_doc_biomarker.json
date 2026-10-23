@@ -411,7 +411,7 @@
     {
       "heading": "Metric of record",
       "source_start_paragraph_line": 2369,
-      "text": "Pred 7.A's metric of record (estimation-first; the Protocol 7 primary confirmatory test is Pred 7.G) is the joint-model ΔR² over the best univariate model, reported with a bias-corrected accelerated bootstrap 95% CI (10,000 resamples); confirmation at ΔR² ≥ 0.05 with the CI lower bound above 0 in both the four-group and the patient-only analyses. The joint C-index and its 95% CI are reported alongside as the secondary quantity and are never the confirmatory criterion. \n\nPred 7.G’s single primary confirmatory quantity is the likelihood-ratio test for baseline HEP in the patient-only model CRS-R_3mo ~ HEP + age + etiology + (1 ∣ site), fitted by maximum likelihood (not REML). HEP amplitude is the absolute value of the mean voltage 250–400 ms after the R-peak at Cz, relative to the −200 to −50 ms pre-R-peak baseline, so that “higher” means a larger deflection regardless of polarity. Confirmation also requires the HEP coefficient to be positive. Its effect size is ΔR², the change in marginal R² (Nakagawa and Schielzeth, 2013), reported with percentile bootstrap 90% and 95% CIs (2,000 patient-level resamples stratified by site; with ≥ 10 sites, whole sites are resampled instead). The number of recruiting sites is 30. With fewer than five sites, site enters as a fixed effect rather than a random intercept, and the likelihood-ratio test compares the corresponding fixed-effect models. BF₀₁ is computed for the HEP coefficient under a Cauchy(0, 0.707) prior on the standardized slope. CRS-R_3mo is a bounded 0–23 score with expected floor effects in VS/UWS. Residual diagnostics follow §4.3.2(e). If they fail, the prespecified fallback is a cumulative-link (ordinal logistic) mixed model with the same predictors, tested by likelihood ratio, fixed before unblinding.",
+      "text": "Pred 7.A's metric of record (estimation-first; the Protocol 7 primary confirmatory test is Pred 7.G) is the joint-model ΔR² over the best univariate model, reported with a bias-corrected accelerated bootstrap 95% CI (10,000 resamples); confirmation at ΔR² ≥ 0.05 with the CI lower bound above 0 in both the four-group and the patient-only analyses. The joint C-index and its 95% CI are reported alongside as the secondary quantity and are never the confirmatory criterion. \n\nPred 7.G’s single primary confirmatory quantity is the likelihood-ratio test for baseline HEP in the patient-only model CRS-R_3mo ~ HEP + age + etiology + (1 ∣ site), fitted by maximum likelihood (not REML). HEP amplitude is the absolute value of the mean voltage 250–400 ms after the R-peak at Cz, relative to the −200 to −50 ms pre-R-peak baseline, so that “higher” means a larger deflection regardless of polarity. Confirmation also requires the HEP coefficient to be positive. Its effect size is ΔR², the change in marginal R² (Nakagawa and Schielzeth, 2013), reported with percentile bootstrap 90% and 95% CIs (2,000 patient-level resamples stratified by site; with ≥ 10 sites, whole sites are resampled instead). The number of recruiting sites is fixed at registration of Protocol 7. With fewer than five sites, site enters as a fixed effect rather than a random intercept, and the likelihood-ratio test compares the corresponding fixed-effect models. BF₀₁ is computed for the HEP coefficient under a Cauchy(0, 0.707) prior on the standardized slope. CRS-R_3mo is a bounded 0–23 score with expected floor effects in VS/UWS. Residual diagnostics follow §4.3.2(e). If they fail, the prespecified fallback is a cumulative-link (ordinal logistic) mixed model with the same predictors, tested by likelihood ratio, fixed before unblinding.",
       "role": "source_context; curated structured decisions govern conflicts"
     },
     {
@@ -484,20 +484,20 @@
   "provenance": {
     "source_files": [
       {
-        "file": "OSF-Preregistration.docx",
-        "sha256": "ec17e6fcbe4a61d278baba42984734255e1b7b53607b30450b7d6e2334d26cd9"
+        "file": "APGI-OSF-Preregistration.docx",
+        "sha256": "05dd7a511e06663a3757827cc253bd53f7850a9f373667856928047d7d85bbf1"
       },
       {
-        "file": "Protocols.docx",
-        "sha256": "09a9d6c6d3827b4f8e320898f9cf0ba5fee0f85ae4198d783a5811cf9f6ff6d4"
+        "file": "APGI-Protocols.docx",
+        "sha256": "e5862882811c34b5111cbd3079d8e918563ceec12fa03c42702ff81ed3d7120c"
       },
       {
-        "file": "Mathematical-Specification.docx",
-        "sha256": "6de4017113b2653c0d0b73ae22775f2cd32f3e8ca5c14d3d64da4130ea32f2fa"
+        "file": "APGI-Mathematical-Specifications.docx",
+        "sha256": "bffe89ff88fc85b790b7286cf5c372a1674e897c8e5b88046549c900452c9083"
       },
       {
-        "file": "Notation-Appendix.docx",
-        "sha256": "37f74a40313fb76210d43238429eb371d606996f0b758212b21db1f837ad4a82"
+        "file": "APGI-Notation-Appendix.docx",
+        "sha256": "43fd6274cc6cf5ead578251dafb31c9d31c020774a80581a9283d27cb3f48ad6"
       }
     ],
     "input_file": "protocol_7_doc_biomarker.json",
