@@ -73,7 +73,7 @@ jobs:
   # Create a GitHub Release with the built artifacts attached
   # -----------------------------------------------------------------------
   github-release:
-    needs: build
+    needs: [build, publish-pypi]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -90,10 +90,15 @@ jobs:
         id: tag
         run: echo "TAG=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
 
+      - name: Extract release notes
+        run: |
+            TAG="${GITHUB_REF#refs/tags/}"
+            awk -v v="${TAG#v}" '$0 ~ "^## \\[" v "\\]"{f=1;next} /^## \[/{if(f)exit} f' CHANGELOG.md > RELEASE_NOTES.md
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tag.outputs.TAG }}
           name: "APGI ${{ steps.tag.outputs.TAG }}"
-          body_path: CHANGELOG.md
+          body_path: RELEASE_NOTES.md
           files: dist/*

@@ -68,6 +68,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   *Allostatic Precision-Gated Ignition*. `zenodo.json` now describes the generator for all nine seed datasets (sim0–sim8; not yet deposited), and `CITATION.cff` lists the v1.1 and v1.0 document records as identifiers.
 - `README.md` — fixes the "Precission" typo; the Data section now explains local seed regeneration and
   the manifest, since the seed files are not yet on Zenodo; BibTeX gains `version = {1.1.0}`.
+- `zenodo.json` renamed to `.zenodo.json`, the filename Zenodo's GitHub integration reads; `release.yml` creates the GitHub Release only after the PyPI upload succeeds and posts only the tagged version's notes; protocol provenance refreshed to the October 22, 2026 source documents.
 
 ---
 
@@ -153,7 +154,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - `tests/test_normalizer.py` — full coverage of `APGINormalizer`.
 - `tests/test_integration.py` — `APGICoreIntegration` tests including somatic modulation validation.
 - `data/checksums.sha256` — integrity manifest for Zenodo downloads.
-- `.github/workflows/release.yml` — automated PyPI and Zenodo publish on version tags.
+- `.github/workflows/release.yml` — automated PyPI publish and GitHub Release on version tags; publishing the release triggers Zenodo’s GitHub integration, which archives the source.
 - `CHANGELOG.md` — this file.
 - Initial release: core APGI equations (`compute_S_t`, `compute_theta_t`, `compute_pi_i_eff`, `ignition_criterion`, `run_trial`, `update_theta`).
 - `LiquidNeuralNetwork` continuous-time reservoir (Paper 2).
