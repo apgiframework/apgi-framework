@@ -121,3 +121,31 @@ def test_sample_dataset_provenance():
     assert set(np.unique(data["group_labels"])) == {"VS_UWS", "MCS", "Controls"}
     with pytest.raises(KeyError):
         datasets.dataset_provenance("nope", data)
+
+
+@pytest.mark.parametrize("pid,pred,alpha,field", [
+    ("APGI-P02", "Pred 2.A", 0.01, "permutation_alpha"),
+    ("APGI-P02", "Pred 2.E", 0.01, "cross_validation_alpha"),
+    ("APGI-P06", "Pred 6.A", 0.05, "dip_alpha"),
+    ("APGI-P00", "Pred 0.A", 0.01, "alpha_two_tailed"),
+])
+def test_prediction_specific_alpha_fields_are_registered(pid, pred, alpha, field):
+    proto = load_protocol(pid, ROOT / "protocols")
+    assert not [d for d in check_analysis(proto, {"prediction_id": pred, "alpha": alpha}).deviations
+                if d.field.startswith("alpha")]
+    named = check_analysis(proto, {"prediction_id": pred, "alpha": alpha, "alpha_field": field})
+    assert not [d for d in named.deviations if d.field.startswith("alpha")]
+    wrong = check_analysis(proto, {"prediction_id": pred, "alpha": 0.2})
+    assert "alpha" in [d.field for d in wrong.deviations]
+    bad_field = check_analysis(proto, {"prediction_id": pred, "alpha": alpha, "alpha_field": "nope"})
+    assert "alpha_field" in [d.field for d in bad_field.deviations]
+
+
+def test_label_output_never_upgrades_an_exploratory_result():
+    check = check_analysis(PROTO, REGISTERED_PLAN)
+    assert check.confirmatory_eligible
+    out = label_output({"estimate": 0.1, "analysis_label": "exploratory"}, check, LOCK)
+    assert out["analysis_label"] == "exploratory"
+    assert out["registration"]["confirmatory_eligible"] is False
+    assert out["registration"]["prior_analysis_label"] == "exploratory"
+    assert label_output({"estimate": 0.1}, check, LOCK)["analysis_label"] == "confirmatory"

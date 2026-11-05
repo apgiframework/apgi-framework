@@ -27,3 +27,15 @@ def test_integration_propagates_invalid_input():
 def test_nan_never_becomes_a_probability():
     with pytest.raises(ValueError):
         core.ignition_probability(np.nan, 0.5)
+
+
+@pytest.mark.parametrize("bad", [{"NE_t": float("nan")}, {"C_t": float("inf")}, {"I_t": float("nan")}])
+def test_rejected_trial_leaves_session_state_unchanged(bad):
+    """PRO-002: an input rejected late in the trial must not leave a partial record."""
+    integ = APGICoreIntegration(theta_init=0.6)
+    integ.step(1.0, 1.0, 1.0, 1.0, 1.0, 0.5)
+    snapshot = (len(integ._records), integ._S_acc, integ._theta)
+    kwargs = {"C_t": 1.0, "I_t": 0.5, "NE_t": 0.0, **bad}
+    with pytest.raises(ValueError):
+        integ.step(1.0, 1.0, 1.0, 1.0, **kwargs)
+    assert (len(integ._records), integ._S_acc, integ._theta) == snapshot

@@ -56,19 +56,34 @@ class RegistrationCheck:
         return "confirmatory" if self.confirmatory_eligible else "exploratory"
 
 
-def _registered_alpha(protocol: Mapping[str, Any], prediction: Mapping[str, Any]) -> float | None:
+def _registered_alphas(protocol: Mapping[str, Any], prediction: Mapping[str, Any]) -> dict[str, float]:
+    """Every registered alpha for *prediction*, keyed by its registered field name.
+
+    Predictions register test-specific levels (``alpha``, ``alpha_two_tailed``,
+    ``permutation_alpha``, ``dip_alpha`` …) in ``confirming_thresholds``; the
+    protocol-level ``power_analysis.alpha`` applies only when a prediction
+    registers none.
+    """
     thresholds = prediction.get("confirming_thresholds") or {}
-    if isinstance(thresholds, Mapping) and "alpha" in thresholds:
-        return float(thresholds["alpha"])
-    power = protocol.get("power_analysis") or {}
-    alpha = power.get("alpha") if isinstance(power, Mapping) else None
-    return float(alpha) if alpha is not None else None
+    found: dict[str, float] = {}
+    if isinstance(thresholds, Mapping):
+        for key, value in thresholds.items():
+            if "alpha" in key and isinstance(value, (int, float)) and not isinstance(value, bool):
+                found[key] = float(value)
+    if not found:
+        power = protocol.get("power_analysis") or {}
+        alpha = power.get("alpha") if isinstance(power, Mapping) else None
+        if alpha is not None:
+            found["power_analysis.alpha"] = float(alpha)
+    return found
 
 
 def check_analysis(protocol: Mapping[str, Any], plan: Mapping[str, Any]) -> RegistrationCheck:
     """Compare an analysis *plan* with a registered *protocol* definition.
 
-    Recognised plan keys: ``prediction_id`` (required), ``alpha``, ``n``,
+    Recognised plan keys: ``prediction_id`` (required), ``alpha`` (with
+    optional ``alpha_field`` naming the registered threshold, e.g.
+    ``"permutation_alpha"``), ``n``,
     ``model_variant``, ``steps`` (list of mappings with ``name``,
     ``registered`` and optional ``source``), ``parameters`` (mapping of
     parameter overrides; any override is a deviation).
@@ -81,9 +96,17 @@ def check_analysis(protocol: Mapping[str, Any], plan: Mapping[str, Any]) -> Regi
         deviations.append(Deviation("prediction_id", None, pred_id, "prediction is not registered"))
         return RegistrationCheck(pid, str(pred_id), None, None, tuple(deviations))
 
-    alpha = _registered_alpha(protocol, prediction)
-    if "alpha" in plan and (alpha is None or not math.isclose(float(plan["alpha"]), alpha, rel_tol=0, abs_tol=1e-12)):
-        deviations.append(Deviation("alpha", alpha, plan["alpha"], "alpha differs from registration"))
+    alphas = _registered_alphas(protocol, prediction)
+    if "alpha" in plan:
+        wanted = plan.get("alpha_field")
+        candidates = {wanted: alphas[wanted]} if wanted in alphas else alphas
+        if wanted is not None and wanted not in alphas:
+            deviations.append(Deviation("alpha_field", sorted(alphas), wanted,
+                                        "alpha field is not registered for this prediction"))
+        elif not any(math.isclose(float(plan["alpha"]), a, rel_tol=0, abs_tol=1e-12)
+                     for a in candidates.values()):
+            deviations.append(Deviation("alpha", alphas or None, plan["alpha"],
+                                        "alpha differs from registration"))
     floor = (protocol.get("participants") or {}).get("n_minimum")
     if "n" in plan and floor is not None and int(plan["n"]) < int(floor):
         deviations.append(Deviation("n", floor, plan["n"], "sample size below registered minimum"))
@@ -116,14 +139,20 @@ def label_output(result: Mapping[str, Any], check: RegistrationCheck,
     while the check says otherwise is downgraded, never upgraded.
     """
     labelled = dict(result)
-    labelled["analysis_label"] = check.analysis_label
+    prior = result.get("analysis_label")
+    # A result already exploratory for another reason (dataset, model variant,
+    # provenance) stays exploratory; this check can only downgrade.
+    upstream_exploratory = prior is not None and prior != "confirmatory"
+    eligible = check.confirmatory_eligible and not upstream_exploratory
+    labelled["analysis_label"] = "confirmatory" if eligible else "exploratory"
     labelled["registration"] = {
         "protocol_id": check.protocol_id,
         "prediction_id": check.prediction_id,
         "registered_status": check.registered_status,
         "rule_sha256": check.rule_sha256,
         "protocol_manifest_sha256": (lock or {}).get("manifest_sha256"),
-        "confirmatory_eligible": check.confirmatory_eligible,
+        "confirmatory_eligible": eligible,
+        "prior_analysis_label": prior,
         "deviations": [asdict(d) for d in check.deviations],
     }
     return labelled
