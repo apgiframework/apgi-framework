@@ -1,0 +1,9 @@
+# Controlled source register (APGI-VAL-SPEC-1.2 §3). "pending" blocks certification.
+sources:
+  - {family: "Protocol bundle (protocol_0..7)", version: "1.1.0", digest: "protocols/MANIFEST.json (lock manifest)", status: "pending — v1.2 equivalence unconfirmed (AUD-SPEC-CONFIRM-02)"}
+  - {family: "Protocol lock", version: "SHA-256 manifest", digest: "manifest_sha256 recorded in generated registries", status: "pending — OpenTimestamps proof absent (DEV-0002)"}
+  - {family: "OSF Preregistration", version: "https://osf.io/yk29g (amendment 1, 2026-10-22)", digest: "APGI-OSF-Preregistration.docx sha256 05dd7a51…bbf1 (per protocol provenance)", status: "pending — DOI 10.17605/OSF.IO/YK29G [CONFIRM] (AUD-SPEC-CONFIRM-03)"}
+  - {family: "Mathematical and Notation Specification", version: "v1.1", digest: "APGI-Mathematical-Specifications.docx sha256 bffe89ff…9083; APGI-Notation-Appendix.docx sha256 43fd6274…d6", status: "pending — source documents not in repository (AUD-SPEC-CONFIRM-04)"}
+  - {family: "Papers 1–4", version: "pending", digest: "pending", status: "pending (AUD-SPEC-CONFIRM-05)"}
+  - {family: "apgi-framework", version: "this repository", digest: "release manifest per release", status: "pending certification"}
+  - {family: "Release Manual / concept DOI", version: "10.5281/zenodo.21632263 vs 21632264", digest: "pending", status: "pending (AUD-SPEC-CONFIRM-06)"}

@@ -1,0 +1,23 @@
+# Canonical five-level temporal hierarchy (APGI-VAL-SPEC-1.2 SCI-003; Paper 3).
+# Implemented by apgi.hierarchy_levels (classify_timescale, LEVELS).
+# Boundary convention (DRAFT, pending scientific-authority confirmation,
+# DEV-0003): every level is a closed interval [lower, upper]. Ranges overlap
+# in the source (L1 ends at 3 s, L2 starts at 60 s: a gap; L0/L1 meet at
+# 100 ms). A value in a gap is reported as "unassigned"; a value on a shared
+# boundary (100 ms) returns both levels and is never silently coerced.
+version: 0.1.0
+status: draft_unapproved
+source: "APGI-VAL-SPEC-1.2 §4.2 SCI-003; Paper 3 canonical hierarchy (revision pending, AUD-SPEC-CONFIRM-05)"
+units: seconds
+levels:
+  - {id: L0, label: "L0", lower_s: 0.010, upper_s: 0.100, description: "10–100 ms"}
+  - {id: L1, label: "L1", lower_s: 0.100, upper_s: 3.0, description: "100 ms–3 s"}
+  - {id: L2, label: "L2", lower_s: 60.0, upper_s: 1800.0, description: "1–30 min"}
+  - {id: L3, label: "L3", lower_s: 3600.0, upper_s: 864000.0, description: "hours–days (1 h – 10 d, upper bound pending confirmation)"}
+  - {id: L4, label: "L4", lower_s: 2592000.0, upper_s: 315576000.0, description: "months–years (30 d – 10 y, bounds pending confirmation)"}
+legacy_mappings:
+  - code: apgi.extensions.hierarchical.APGIHierarchy
+    levels: ["Level 1 Sensory encoding", "Level 2 Local integration", "Level 3 Regional coordination", "Level 4 Global workspace", "Level 5 Metacognitive monitoring"]
+    timescale_unit: trial_step
+    canonical_mapping: none
+    status: "Alternative (exploratory) model MV-HIERARCHICAL-EXT-1. Its levels are a processing hierarchy in trial steps, not the canonical L0–L4 timescale hierarchy; it must not be labelled L0–L4."

@@ -28,6 +28,10 @@ class ClinicalReport:
     mean_S_t: float
     mean_theta_t: float
     somatic_load: float  # mean C_metabolic
+    # SCI-007: every clinical label is a speculative claim (CLM-0009); the
+    # cut points are illustrative and uncalibrated against clinical data.
+    epistemic_status: str = "speculative"
+    claim_id: str = "CLM-0009"
 
 
 class EnhancedClinicalInterpreter:
@@ -35,8 +39,11 @@ class EnhancedClinicalInterpreter:
 
     The interpreter accepts windowed arrays of Sₜ, θₜ, and C_metabolic,
     computes a composite ignition index (Sₜ / θₜ), and maps it onto a
-    four-level consciousness scale calibrated against the literature
-    (Northoff & Huang 2017; Mashour et al. 2020).
+    four-level ordinal scale. The scale is motivated by the literature
+    (Northoff & Huang 2017; Mashour et al. 2020) but its cut points have
+    NOT been calibrated against clinical data: every report is labelled
+    ``epistemic_status="speculative"`` (claim CLM-0009) and must not be used
+    for diagnosis.
 
     Parameters
     ----------
@@ -45,7 +52,8 @@ class EnhancedClinicalInterpreter:
     thresholds : dict or None
         Custom ignition-index thresholds for level boundaries.
         Keys: "minimally_conscious", "conscious", "hyper_alert".
-        Defaults to empirically motivated values.
+        Defaults to illustrative, uncalibrated values (registry
+        PAR-CLINICAL-THRESHOLDS, provenance "assumed").
     """
 
     _DEFAULT_THRESHOLDS: dict[str, float] = {

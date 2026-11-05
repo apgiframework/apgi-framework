@@ -1,0 +1,13 @@
+variant_id: MV-PROTOCOL-REDUCED-1
+model_version: 1.1.0
+status: registered_in_protocols_not_implemented
+code: null
+source: "protocols/protocol_*.json apgi_parameters (accumulation, threshold, precision_adaptation)"
+formulation: continuous_reduced_form
+differences_from_MV-CORE-DISCRETE-1:
+  - "Accumulation input u uses calibration-fixed relative gains and excess magnitudes |z| − sqrt(2/π), not Π·|z| (EQ-1)."
+  - "Threshold relaxation is −(θ−θ_0)/τ_θ with τ_θ in seconds (10–30 s), not −λ_θ(θ−θ_0) per trial step."
+  - "Metabolic and NE terms use c_θ and γ_NE,θ, not κ_meta and η_NE."
+  - "Precision adaptation dΠ_i/dt = η(|ε_i| − Π_i) + ρ(...) is part of the reduced model; apgi.core treats Π as an input."
+  - "θ_0 prior Normal(0.35, 0.2); apgi.core default 0.60 (post-hoc calibrated for simulation)."
+consequence: "Outputs of apgi.core are not confirmatory evidence for protocol predictions that use this formulation. Using apgi.core in a protocol analysis is a deviation (REP-004) and must be labelled exploratory."

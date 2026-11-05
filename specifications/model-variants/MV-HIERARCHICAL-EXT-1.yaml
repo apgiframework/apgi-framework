@@ -1,0 +1,11 @@
+variant_id: MV-HIERARCHICAL-EXT-1
+model_version: 0.1.0
+status: exploratory
+code: apgi.extensions.hierarchical
+source: "Paper 3 §2.2, §3.4"
+formulation: discrete_update (deterministic coupled-ODE skeleton)
+differences_from_MV-CORE-DISCRETE-1:
+  - "Five processing levels (sensory → metacognitive) with per-level θ_k dynamics and cross-level coupling κ_{k,k+1}."
+  - "Timescales in trial steps; not mapped to the canonical L0–L4 timescale hierarchy (SCI-003, DEV-0003)."
+  - "No somatic modulation at hierarchy levels (β_SM = 0, M̂ = 0)."
+  - "The OU/1-f stochastic threshold process of Paper 3 §6.4 is not implemented."

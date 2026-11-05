@@ -5,6 +5,9 @@ on:
     branches: ["main", "dev", "claude/**"]
   pull_request:
     branches: ["main"]
+  # Reused verbatim by release.yml so a tag can only publish after the same
+  # complete validation (AUD-CI-01).
+  workflow_call:
 
 jobs:
   test:
@@ -34,6 +37,44 @@ jobs:
       - name: Run test suite
         run: pytest tests/ -v --tb=short
 
+      # ── Scientific gates (XC-CI-01.1–01.4); each is a required check ──────
+      - name: "Gate: protocol lock (REP-001)"
+        run: python -c "from apgi.protocols import load_protocols; load_protocols(); print('protocol lock verified')"
+
+      - name: "Gate: equation fixtures (XC-CI-01.1)"
+        run: |
+          python -I fixtures/generate_fixtures.py --check
+          pytest tests/test_fixtures.py -q --no-cov
+
+      - name: "Gate: specification checksums (XC-CI-01.2)"
+        run: |
+          python scripts/build_specifications.py --check
+          python scripts/build_spec_bundle.py --check
+
+      - name: "Gate: gate-table schema (XC-CI-01.4)"
+        run: pytest tests/test_validation_tooling.py -q --no-cov -k "gate_table"
+
+      - name: "Gate: notation and terminology scans (SCI-004, SCI-006)"
+        run: |
+          python scripts/scan_notation.py --report evidence-ci/notation-scan.json
+          python scripts/scan_terminology.py --report evidence-ci/terminology-scan.json
+
+      - name: "Gate: independent power reproduction (REP-003)"
+        run: python scripts/verify_power.py --report evidence-ci/power-comparison.json
+
+      - name: "Gate: reproducibility record (XC-CI-01.3, REP-002)"
+        run: python scripts/record_environment.py --out evidence-ci/env-linux-py${{ matrix.python-version }}.json
+
+      - name: Release manifest validates (S1-FWK-10)
+        run: python scripts/build_release_manifest.py --out evidence-ci/release-manifest.json
+
+      - name: Upload validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-evidence-py${{ matrix.python-version }}
+          path: evidence-ci/
+
       # Before the smoke tests: validate.py checks the committed v1.0 baseline
       # PNGs, which the legacy scripts below overwrite.
       - name: Validate v1.1 figure series
@@ -61,3 +102,31 @@ jobs:
             notebooks/protocol6_ignition_ieeg.ipynb \
             notebooks/protocol7_doc_biomarker.ipynb \
             --tb=short -q
+
+  # REP-002: same-seed repeat runs and fixture parity on the second declared
+  # platform (macOS ARM64). Linux x86-64 runs in the job above.
+  reproducibility-macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package and dev dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Fixture parity on macOS ARM64
+        run: pytest tests/test_fixtures.py tests/test_core_equations.py -q --no-cov
+
+      - name: Environment and repeat-run record
+        run: python scripts/record_environment.py --out evidence-ci/env-macos-arm64.json
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-evidence-macos-arm64
+          path: evidence-ci/

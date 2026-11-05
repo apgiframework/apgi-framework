@@ -1,0 +1,25 @@
+variant_id: MV-CORE-DISCRETE-1
+model_version: 1.0.0
+status: registered_draft
+approval: pending (scientific authority — AUD-GOV-01)
+code: apgi.core
+formulation: discrete_update
+equations: [EQ-1, EQ-2, EQ-2D, EQ-3, EQ-4, EQ-5, EQ-6, EQ-7, EQ-8]
+integration_method: forward_euler
+step_size: {default: 1.0, unit: trial_step, note: "Physical duration of one step is declared by the caller; TAU_S_DEFAULT=5 assumes ~60 ms/step."}
+update_order:
+  - "1  Π_i^eff = clip(Π_i^baseline·exp(β_SM·M̂))  (EQ-4)"
+  - "2  S_input (EQ-1)"
+  - "3  S_t = leaky accumulation of S_input (EQ-5)"
+  - "4  P(ign) (EQ-2); B(t) sampled with rng, or P>=0.5 deterministically (see boundary)"
+  - "5  θ_{t+1} = Euler step of EQ-3 plus δ_reset·B(t) on the same step"
+  - "6  S ← ρ_retain·S if B(t) (EQ-6)"
+refractory_reset: {threshold: "θ += δ_reset at the step where B(t)=1", signal: "S ← ρ_retain·S after the decision"}
+ne_path: {additive: "η_NE·NE(t) inside EQ-3 (Paper 1 reduced form)", multiplicative: "EQ-7, optional, sub-dominance γ_NE·g_NE ≤ 0.5"}
+boundary:
+  ignition_criterion_deterministic: "P >= 0.5, i.e. fires when S_t == θ_t"
+  ignition_decision_strict: "S_t > θ_t (APGI-SCI-001 draft)"
+  disposition: "DEV-0001 open; no silent change to published behaviour"
+theta_definition: "θ_t is a dynamically regulated allostatic state (STA-THETA-T), distinct from its baseline θ_0 (PAR-THETA-0) and from any psychophysical threshold (e.g. Weibull α_psy, OBS-P01-06)."
+parameters: [PAR-THETA-0, PAR-LAMBDA-THETA, PAR-KAPPA-META, PAR-DELTA-INFO, PAR-ETA-NE, PAR-GAMMA-SIG, PAR-TAU-S, PAR-BETA-SM, PAR-DELTA-RESET, PAR-RHO-RETAIN, PAR-GAMMA-NE]
+fixtures: [fixtures/core-equations.json, fixtures/threshold-dynamics.json, fixtures/ignition-boundary.json, fixtures/golden-vectors.json]

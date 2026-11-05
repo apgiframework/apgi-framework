@@ -6,9 +6,9 @@
 # a non-zero status if anything fails.
 #
 # Usage:
-#   bash reproduce_all.sh              # use Zenodo data (default)
-#   bash reproduce_all.sh --local      # use locally generated seeds
-#   bash reproduce_all.sh --generate   # regenerate seeds then figures
+#   bash reproduce_all.sh              # regenerate seeds, verify checksums, then figures (default)
+#   bash reproduce_all.sh --local      # use already-generated local seeds (verified)
+#   bash reproduce_all.sh --zenodo     # download a deposited copy (only once deposited)
 #
 # Requirements: apgi installed in the active Python environment.
 #   pip install -e ".[dev]"
@@ -20,9 +20,12 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-MODE="zenodo"
+# Default is "generate": the nine seed datasets are not deposited on Zenodo
+# (data/seeds/seed_manifest.json deposit.status = not_deposited), so they are
+# regenerated locally and checked against data/checksums.sha256.
+MODE="generate"
 if [[ "${1:-}" == "--local" ]];    then MODE="local";    fi
-if [[ "${1:-}" == "--generate" ]]; then MODE="generate"; fi
+if [[ "${1:-}" == "--zenodo" ]];   then MODE="zenodo";   fi
 
 echo "=== APGI reproducibility pipeline (mode: $MODE) ==="
 echo "    $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
@@ -56,11 +59,14 @@ case "$MODE" in
       echo "Run 'python3 data/generate_seeds.py' first, or use --generate." >&2
       exit 1
     fi
-    echo "  All seed files present."
+    echo "  All seed files present; verifying checksums…"
+    python3 data/generate_seeds.py --verify
     ;;
   generate)
     echo "Regenerating seed datasets…"
     python3 data/generate_seeds.py
+    echo "Verifying regenerated seeds against data/checksums.sha256…"
+    python3 data/generate_seeds.py --verify
     DATA_DIR="data/seeds"
     ;;
 esac
@@ -80,23 +86,17 @@ pytest tests/ -q --tb=short
 # Step 3 — Protocol validation
 # ------------------------------------------------------------------
 echo ""
-echo "--- Step 3: protocol JSON schema validation ---"
-python3 - <<'PYEOF'
-import json, jsonschema, pathlib, sys
-schema = json.load(open("protocols/schemas/protocol.schema.json"))
-failed = []
-for f in sorted(pathlib.Path("protocols").glob("*.json")):
-    try:
-        jsonschema.validate(json.load(open(f)), schema)
-        print(f"  OK  {f.name}")
-    except jsonschema.ValidationError as e:
-        print(f"  FAIL {f.name}: {e.message}")
-        failed.append(f.name)
-if failed:
-    print(f"\nSchema validation failed for: {failed}", file=sys.stderr)
-    sys.exit(1)
-print("All protocols valid.")
-PYEOF
+echo "--- Step 3: protocol lock, schema and specification bundle ---"
+# Release-aware validator: verifies every file against protocols/MANIFEST.json
+# and validates only protocol instances against the protocol schema
+# (MANIFEST.json / VALIDATION.json are release metadata, not protocols).
+python3 scripts/validate_protocols.py
+# Lock-enforcing loader (refuses altered definitions; REP-001).
+python3 -c "from apgi.protocols import load_protocols; load_protocols(); print('  protocol lock verified')"
+# Specification bundle checksums, generated registries and fixtures (S1-FWK-04).
+python3 scripts/build_spec_bundle.py --verify
+python3 scripts/build_specifications.py --check
+python3 -I fixtures/generate_fixtures.py --check
 
 # ------------------------------------------------------------------
 # Step 4 — Figures

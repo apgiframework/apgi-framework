@@ -1,0 +1,40 @@
+{
+  "task": "AUD-EXEC-01",
+  "config": {
+    "n_simulations": 30,
+    "n_trials_per_sim": 300,
+    "seed": 2024
+  },
+  "targets_strictly_greater_than": {
+    "r_theta_0": 0.7,
+    "r_tau_S": 0.65,
+    "r_pi_i": 0.6,
+    "r_beta_sm": 0.4,
+    "r_gamma_sig": 0.4
+  },
+  "measured": {
+    "r_theta_0": 0.8613070294623999,
+    "r_tau_S": 0.8807682002163149,
+    "r_pi_i": 0.6000388382338919,
+    "r_beta_sm": 0.45238571633604097,
+    "r_gamma_sig": 0.9167091473564245
+  },
+  "passed": {
+    "r_theta_0": true,
+    "r_tau_S": true,
+    "r_pi_i": true,
+    "r_beta_sm": true,
+    "r_gamma_sig": true
+  },
+  "all_passed": true,
+  "started_utc": "2026-11-05T18:43:26+00:00",
+  "finished_utc": "2026-11-05T18:47:38+00:00",
+  "source_commit": "059450163c2bec8410a55d8c36bbe0e5eebd6b06",
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "platform": "Linux-6.18.44-fc-v236-x86_64-with-glibc2.39"
+  },
+  "note": "Targets are test thresholds, not approved acceptance criteria."
+}

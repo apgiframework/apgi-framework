@@ -10,27 +10,18 @@ permissions:
   id-token: write
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install package and dev dependencies
-        run: pip install -e ".[dev]"
-
-      - name: Run test suite
-        run: pytest tests/ -v --tb=short
+  # Full validation — the same workflow (tests, protocol lock, fixtures,
+  # specification checksums, gate table, scans, power reproduction, notebooks,
+  # macOS reproducibility) that guards main. Nothing is built or published
+  # unless every job passes (AUD-CI-01, REL-001).
+  validate:
+    uses: ./.github/workflows/test.yml
 
   # -----------------------------------------------------------------------
   # Build a source distribution and wheel
   # -----------------------------------------------------------------------
   build:
-    needs: test
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -46,15 +37,30 @@ jobs:
       - name: Build sdist and wheel
         run: python -m build
 
+      - name: Release manifest with artifact digests (IMP-001, S1-FWK-10)
+        run: |
+          pip install -e .
+          pip install pyyaml
+          python scripts/build_release_manifest.py --dist dist --out release-manifest.json
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist/
 
+      - name: Upload release manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-manifest
+          path: release-manifest.json
+
   # -----------------------------------------------------------------------
   # Publish to PyPI via trusted publishing (OIDC — no API token needed)
   # -----------------------------------------------------------------------
+  # The "pypi" environment must be configured with required reviewers (release
+  # authority) in repository settings; that approval is the REL-001 promotion
+  # record. Certification precedes any archival deposit (REL-005).
   publish-pypi:
     needs: build
     runs-on: ubuntu-latest
@@ -101,4 +107,5 @@ jobs:
           tag_name: ${{ steps.tag.outputs.TAG }}
           name: "APGI ${{ steps.tag.outputs.TAG }}"
           body_path: RELEASE_NOTES.md
-          files: dist/*
+          files: |
+            dist/*

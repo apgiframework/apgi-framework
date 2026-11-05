@@ -1,0 +1,11 @@
+{
+ "generator_version": "1.0.0",
+ "files": {
+  "core-equations.json": "455df0625ec91a5dc0edae9de4cc35fe7b24ae20dde3683e514395ad8cc9e4de",
+  "golden-vectors.json": "499ebc9341b3eb56dde39af9146dbfaf1b8b49e1674f293aa47ecc759e043061",
+  "ignition-boundary.json": "25c1b4d76464a470d482b127d34b139ba750c5ea54d6bbb7d0a1a8be40bf8f9e",
+  "invalid-configurations.json": "57ea84b6693be45363460c0a840a24c015a8e1f049d5b03dea62036e5588fa26",
+  "noise-draws.json": "b4cda91b763ea0f408ce2d30141af1271355b64b1e00fc467c663204e9be7e18",
+  "threshold-dynamics.json": "97aa1d0d1a2f6194bcddc9a67e1ee250d41b396740065e6858d018f77ec5cd9e"
+ }
+}

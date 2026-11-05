@@ -1,0 +1,94 @@
+# Framework-level claims (hand-maintained authority data; SCI-007).
+# Prediction-level claims are generated from the protocol definitions into
+# claim-register.yaml. Statuses are the maintainer's draft classification and
+# await scientific-authority approval (AUD-GOV-01). Tier vocabulary per
+# APGI-VAL-SPEC-1.2 §3: thermodynamic | information_theoretic | computational.
+claims:
+  - id: CLM-0001
+    statement: "Conscious access (ignition) occurs when precision-weighted surprise S_t exceeds a dynamically regulated threshold θ_t."
+    source: "Paper 1 §4.1 (Eq. 1–2)"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "central hypothesis; tested by Protocols 0–7, no empirical result yet"
+    protocol_id: [APGI-P01, APGI-P06]
+    code: [apgi.core.compute_S_t, apgi.core.ignition_probability]
+  - id: CLM-0002
+    statement: "θ_t is allostatically regulated: it relaxes toward θ_0 and is raised by metabolic cost, lowered by information value and modulated by NE."
+    source: "Paper 1 §4.1.3 (Eq. 3)"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "model assumption; Protocol 4 tests the metabolic term"
+    protocol_id: [APGI-P04]
+    code: [apgi.core.step_theta]
+  - id: CLM-0003
+    statement: "Somatic markers modulate effective interoceptive precision multiplicatively (Π_i^eff = Π_i·exp(β_SM·M̂))."
+    source: "Paper 1 §4.2"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "model assumption; Protocols 2, 3 and 5 test consequences"
+    protocol_id: [APGI-P02, APGI-P03, APGI-P05]
+    code: [apgi.core.compute_pi_i_eff]
+  - id: CLM-0004
+    statement: "Precision is the clamped inverse of an EMA running variance and prediction errors are z-scored against the pre-update mean."
+    source: "Math Spec §1–2"
+    epistemic_tier: computational
+    status: derived
+    status_basis: "definitional; follows from the stated estimator"
+    protocol_id: []
+    code: [apgi.precision]
+  - id: CLM-0005
+    statement: "Ignition is followed by a refractory threshold increment δ_reset and partial retention ρ_retain of S."
+    source: "Math Spec §Post-Ignition Reset and Refractory Period"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "model assumption; Protocol 6 (inter-ignition intervals) is the closest test"
+    protocol_id: [APGI-P06]
+    code: [apgi.core.step_theta, apgi.core.post_ignition_reset]
+  - id: CLM-0006
+    statement: "APGI processing spans a five-level temporal hierarchy L0 10–100 ms, L1 100 ms–3 s, L2 1–30 min, L3 hours–days, L4 months–years."
+    source: "Paper 3; APGI-VAL-SPEC-1.2 SCI-003"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "theoretical organisation; not tested by a registered protocol"
+    protocol_id: []
+    code: [apgi.hierarchy_levels]
+  - id: CLM-0007
+    statement: "Erasing one bit at temperature T costs at least k_B·T·ln 2 (Landauer bound)."
+    source: "Paper 4 §3.2.1; Landauer (1961)"
+    epistemic_tier: thermodynamic
+    status: established
+    status_basis: "established physics; cited, not tested here"
+    protocol_id: []
+    code: [apgi.extensions.epistemic.landauer_minimum_energy]
+  - id: CLM-0008
+    statement: "A per-bit metabolic conversion cost κ (ATP/bit) bridges information processing to energy expenditure."
+    source: "Paper 4 §3.2.1"
+    epistemic_tier: thermodynamic
+    status: speculative
+    status_basis: "κ is uncalibrated (PAR-KAPPA); a passing computational gate is never thermodynamic evidence (S1-REG-05)"
+    protocol_id: []
+    code: [apgi.extensions.epistemic.KAPPA_STATUS]
+  - id: CLM-0009
+    statement: "The ratio of mean S_t to mean θ_t over a window orders consciousness levels (unresponsive < minimally conscious < conscious < hyper-alert)."
+    source: "src/apgi/clinical.py; motivated by Northoff & Huang (2017), Mashour et al. (2020)"
+    epistemic_tier: computational
+    status: speculative
+    status_basis: "cut points uncalibrated against clinical data; not for diagnosis"
+    protocol_id: [APGI-P07]
+    code: [apgi.clinical.EnhancedClinicalInterpreter]
+  - id: CLM-0010
+    statement: "A seven-criterion rubric with a foundational gate evaluates theories of consciousness."
+    source: "Paper 4 §5, Table 4"
+    epistemic_tier: information_theoretic
+    status: speculative
+    status_basis: "proposed evaluation instrument; no validation study in this repository"
+    protocol_id: []
+    code: [apgi.extensions.epistemic.evaluate_theory]
+  - id: CLM-0011
+    statement: "Package default parameters place median simulated S_t near the ignition boundary (P ≈ 0.5) for near-threshold tasks."
+    source: "src/apgi/core.py module docstring; Paper 1 Table 12"
+    epistemic_tier: computational
+    status: calibrated
+    status_basis: "post-hoc simulation calibration (PAR-THETA-0)"
+    protocol_id: []
+    code: [apgi.core]

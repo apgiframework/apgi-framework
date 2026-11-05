@@ -63,9 +63,16 @@ apgi-framework/
 │   └── extensions/        # optional
 │       ├── liquid_network.py
 │       └── hierarchical.py
-├── protocols/             # pre-registered experimental protocols
+├── protocols/             # pre-registered experimental protocols (SHA-256 lock: MANIFEST.json)
 │   ├── schemas/           # JSON Schema validation
 │   └── *.json
+├── specifications/        # registries, model variants, notation, claims, profile, governance
+├── fixtures/              # independent golden fixtures (decimal reference) + generator
+├── traceability/          # prediction ↔ equation ↔ code ↔ protocol ↔ evidence
+├── gates/                 # gate table + generated exposable-field allow-list
+├── releases/              # release-manifest schema, compatibility matrix
+├── bundle/SHA256SUMS      # checksums of the specification bundle
+├── docs/validation/       # APGI-VAL-SPEC-1.2 plan, release procedure, change records, task status
 ├── tests/                 # pytest suite
 ├── notebooks/             # worked examples
 ├── figures/               # see figures/README.md
@@ -128,8 +135,8 @@ import apgi
 session = apgi.datasets.make_sample_session(n_trials=200, seed=0)
 
 integ = APGICoreIntegration(beta_sm=0.6, theta_0=0.60, lambda_theta=0.30, kappa_meta=0.20, delta_info=0.15, gamma_sig=5.0)
-integ.run_sequence(**{k: session[k] for k in
-    ("pi_e", "z_e", "pi_i", "z_i", "C_metabolic", "V_information")})
+integ.run_sequence(session["pi_e"], session["z_e"], session["pi_i"], session["z_i"],
+                   C_t=session["C_metabolic"], I_t=session["V_information"])
 print(f"Ignition rate: {integ.ignition_rate():.3f}")
 ```
 
@@ -257,6 +264,28 @@ python3 -m pytest tests/test_validate_protocols.py
 ```
 
 An external release folder can be supplied as the first argument. Add `--source-dir /path/to/FINAL` to verify the source-document hashes. After intentional edits, `--refresh-metadata` regenerates `VALIDATION.json` and `MANIFEST.json` only after the protocol checks pass. Normal validation never rewrites files.
+
+## Validation (APGI-VAL-SPEC-1.2)
+
+This repository is component **A03** (scientific definitions and fixtures) of the APGI
+validation specification. Its status is **not certified**: no governance role has been
+appointed, and the fixtures and registries are provisional drafts awaiting scientific approval.
+Open defects and deviations are listed in
+[`specifications/governance/deviations.yaml`](specifications/governance/deviations.yaml).
+
+```python
+from apgi.protocols import load_protocols      # refuses altered definitions (REP-001)
+from apgi.spec_bundle import verify_bundle     # consumers verify checksums before use
+protocols = load_protocols()
+verify_bundle()
+```
+
+```bash
+make validate-all   # every gate CI runs
+make specs          # regenerate fixtures, registries, traceability and bundle checksums
+```
+
+See [`docs/validation/README.md`](docs/validation/README.md) for the full map.
 
 ## Citation
 

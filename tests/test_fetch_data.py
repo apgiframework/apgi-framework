@@ -9,13 +9,33 @@ import pytest
 
 from apgi.scripts import fetch_data
 
+CONTENT_SHA = hashlib.sha256(b"content").hexdigest()
+
+
+@pytest.fixture(autouse=True)
+def deposited():
+    """Exercise the download machinery as it behaves once a deposit exists."""
+    with patch("apgi.scripts.fetch_data.DEPOSIT_STATUS", "deposited"):
+        yield
+
+
+def test_download_refused_while_not_deposited(capsys):
+    """AUD-DATA-01: no download is attempted from a record that lacks the files."""
+    with patch("apgi.scripts.fetch_data.DEPOSIT_STATUS", "not_deposited"):
+        with patch("urllib.request.urlretrieve") as mock_urlretrieve:
+            with pytest.raises(SystemExit) as excinfo:
+                fetch_data._download("sim0_hep_proxy")
+            assert excinfo.value.code == 2
+            mock_urlretrieve.assert_not_called()
+    assert "generate_seeds.py" in capsys.readouterr().err
+
 
 @pytest.fixture
 def mock_datasets():
     test_datasets = {
         "sim_placeholder": (
             "sim_placeholder.npz",
-            "PLACEHOLDER_SHA256",
+            CONTENT_SHA,
             "Placeholder test",
             "~0 MB",
         ),
@@ -45,7 +65,8 @@ def temp_data_dir(tmp_path):
 def test_verify_sha256(tmp_path):
     f_placeholder = tmp_path / "placeholder.npz"
     f_placeholder.write_bytes(b"some content")
-    assert fetch_data._verify_sha256(f_placeholder, "PLACEHOLDER_SHA256") is True
+    # A placeholder digest never verifies (DAT-004: no unverified bytes).
+    assert fetch_data._verify_sha256(f_placeholder, "PLACEHOLDER_SHA256") is False
 
     f_sha_ok = tmp_path / "sha_ok.npz"
     f_sha_ok.write_bytes(b"hello")
@@ -56,7 +77,7 @@ def test_verify_sha256(tmp_path):
 
 def test_download_already_exists_and_valid(mock_datasets, temp_data_dir):
     dest = temp_data_dir / "sim_placeholder.npz"
-    dest.write_bytes(b"existing content")
+    dest.write_bytes(b"content")
 
     with patch("urllib.request.urlretrieve") as mock_urlretrieve:
         res = fetch_data._download("sim_placeholder")
@@ -145,8 +166,11 @@ def test_main_list(mock_datasets, capsys):
 
 
 def test_main_dataset_valid(mock_datasets, temp_data_dir):
+    def write_content(url, filename):
+        pathlib.Path(filename).write_bytes(b"content")
+
     with patch("sys.argv", ["fetch_data.py", "--dataset", "sim_placeholder"]):
-        with patch("urllib.request.urlretrieve") as mock_urlretrieve:
+        with patch("urllib.request.urlretrieve", side_effect=write_content) as mock_urlretrieve:
             fetch_data.main()
             mock_urlretrieve.assert_called_once()
 
@@ -167,13 +191,13 @@ def test_main_all_datasets(mock_datasets, temp_data_dir):
         if "sim_sha_ok" in name:
             pathlib.Path(filename).write_bytes(b"")
         else:
-            pathlib.Path(filename).write_bytes(b"placeholder content")
+            pathlib.Path(filename).write_bytes(b"content")
 
     with patch("sys.argv", ["fetch_data.py"]):
         filtered_datasets = {
             "sim_placeholder": (
                 "sim_placeholder.npz",
-                "PLACEHOLDER_SHA256",
+                CONTENT_SHA,
                 "Placeholder test",
                 "~0 MB",
             ),
@@ -193,7 +217,11 @@ def test_main_all_datasets(mock_datasets, temp_data_dir):
 
 
 def test_download_unsafe_url_scheme(mock_datasets, temp_data_dir, capsys):
-    with patch("apgi.scripts.fetch_data.ZENODO_BASE", "file:///unsafe/path"):
+    def write_content(url, filename):
+        pathlib.Path(filename).write_bytes(b"content")
+
+    with patch("apgi.scripts.fetch_data.ZENODO_BASE", "file:///unsafe/path"), \
+            patch("urllib.request.urlretrieve", side_effect=write_content):
         with patch("sys.exit") as mock_exit:
             fetch_data._download("sim_placeholder")
             assert mock_exit.call_count >= 1
@@ -207,7 +235,7 @@ def test_verify_cached_all_ok(mock_datasets, temp_data_dir, capsys):
     for name in ["sim_placeholder", "sim_sha_ok"]:
         filename, sha256, _, _ = mock_datasets[name]
         dest = temp_data_dir / filename
-        if sha256 == "PLACEHOLDER_SHA256":
+        if name == "sim_placeholder":
             dest.write_bytes(b"content")
         else:
             dest.write_bytes(b"")
@@ -259,7 +287,7 @@ def test_main_verify_flag_all_ok(mock_datasets, temp_data_dir, capsys):
     for name in ["sim_placeholder", "sim_sha_ok"]:
         filename, sha256, _, _ = mock_datasets[name]
         dest = temp_data_dir / filename
-        if sha256 == "PLACEHOLDER_SHA256":
+        if name == "sim_placeholder":
             dest.write_bytes(b"content")
         else:
             dest.write_bytes(b"")

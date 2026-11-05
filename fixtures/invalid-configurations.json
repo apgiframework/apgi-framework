@@ -1,0 +1,356 @@
+{
+ "schema": "fixtures/fixture.schema.json",
+ "generator": "fixtures/generate_fixtures.py",
+ "generator_version": "1.0.0",
+ "model_variant": "MV-CORE-DISCRETE-1",
+ "model_version": "1.0.0",
+ "reference_arithmetic": "decimal, 60 significant digits",
+ "tolerance": {
+  "default": {
+   "abs": 1e-09,
+   "rel": 1e-07,
+   "rule": "|a-e| <= abs + rel*|e|  (§6.1)"
+  },
+  "S_t": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "theta": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "classification": "exact outside the boundary band",
+  "boundary_band_ulp": 4
+ },
+ "approval": {
+  "status": "provisional_unapproved",
+  "approver": "Not appointed",
+  "blocking_items": [
+   "AUD-REG-04",
+   "AUD-FIX-1000",
+   "AUD-SPEC-CONFIRM-13"
+  ]
+ },
+ "fixture": "invalid-configurations",
+ "policy": "Invalid configurations raise ValueError; valid clamping never raises; no silent clipping of invalid domains.",
+ "must_raise": [
+  {
+   "id": "INV-S-NEG-PI-E",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": -0.1,
+    "z_e": 1.0,
+    "pi_i_eff": 1.0,
+    "z_i": 1.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-S-NEG-PI-I",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.0,
+    "z_e": 1.0,
+    "pi_i_eff": -1.0,
+    "z_i": 1.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-S-NAN-Z",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.0,
+    "z_e": "NaN",
+    "pi_i_eff": 1.0,
+    "z_i": 1.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-S-INF-Z",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.0,
+    "z_e": 1.0,
+    "pi_i_eff": 1.0,
+    "z_i": "Infinity"
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-PIEFF-NEG",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": -1.0,
+    "beta_sm": 0.6,
+    "M_hat": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-PIEFF-NAN",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 1.0,
+    "beta_sm": "NaN",
+    "M_hat": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-ACC-TAU-ZERO",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.0,
+    "S_input": 1.0,
+    "tau_S": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-ACC-TAU-NEG",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.0,
+    "S_input": 1.0,
+    "tau_S": -5.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-ACC-DT-ZERO",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.0,
+    "S_input": 1.0,
+    "tau_S": 5.0,
+    "dt": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-ACC-NAN",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": "NaN",
+    "S_input": 1.0,
+    "tau_S": 5.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-P-GAMMA-ZERO",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 1.0,
+    "theta_t": 0.5,
+    "gamma_sig": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-P-GAMMA-NEG",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 1.0,
+    "theta_t": 0.5,
+    "gamma_sig": -5.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-P-NAN-S",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": "NaN",
+    "theta_t": 0.5
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-P-INF-THETA",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 1.0,
+    "theta_t": "-Infinity"
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-THETA-NEG-LAMBDA",
+   "function": "step_theta",
+   "inputs": {
+    "theta_t": 0.6,
+    "C_t": 0.0,
+    "I_t": 0.0,
+    "lambda_theta": -0.1
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-THETA-NEG-RESET",
+   "function": "step_theta",
+   "inputs": {
+    "theta_t": 0.6,
+    "C_t": 0.0,
+    "I_t": 0.0,
+    "delta_reset": -0.2
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-THETA-DT-ZERO",
+   "function": "step_theta",
+   "inputs": {
+    "theta_t": 0.6,
+    "C_t": 0.0,
+    "I_t": 0.0,
+    "dt": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-THETA-NAN-C",
+   "function": "step_theta",
+   "inputs": {
+    "theta_t": 0.6,
+    "C_t": "NaN",
+    "I_t": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-RESET-RHO-HIGH",
+   "function": "post_ignition_reset",
+   "inputs": {
+    "S_t": 1.0,
+    "fired": true,
+    "rho_retain": 1.5
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-RESET-RHO-NEG",
+   "function": "post_ignition_reset",
+   "inputs": {
+    "S_t": 1.0,
+    "fired": true,
+    "rho_retain": -0.1
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-NE-NEG-GAIN",
+   "function": "apply_ne_threshold_gain",
+   "inputs": {
+    "theta_t": 0.6,
+    "g_NE": -1.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-NE-SUBDOMINANCE",
+   "function": "apply_ne_threshold_gain",
+   "inputs": {
+    "theta_t": 0.6,
+    "g_NE": 2.0,
+    "gamma_NE": 0.3
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-EQ-LAMBDA-ZERO",
+   "function": "theta_equilibrium",
+   "inputs": {
+    "C": 1.0,
+    "I_val": 0.5,
+    "lambda_theta": 0.0
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  },
+  {
+   "id": "INV-STRICT-NAN",
+   "function": "ignition_decision_strict",
+   "inputs": {
+    "S_t": "NaN",
+    "theta_t": 0.5
+   },
+   "expected": {
+    "raises": "ValueError"
+   }
+  }
+ ],
+ "valid_clamping": [
+  {
+   "id": "CLAMP-PIEFF-HIGH",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 5.0,
+    "beta_sm": 1.2,
+    "M_hat": 2.0
+   },
+   "expected": 10.0,
+   "note": "Valid clamping (Math Spec §4.2): does not raise."
+  },
+  {
+   "id": "CLAMP-PIEFF-LOW",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 0.001,
+    "beta_sm": 0.1,
+    "M_hat": -2.0
+   },
+   "expected": 0.01,
+   "note": "Valid clamping: does not raise."
+  }
+ ]
+}

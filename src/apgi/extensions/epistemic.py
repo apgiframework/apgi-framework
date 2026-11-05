@@ -29,9 +29,15 @@ import math
 BOLTZMANN_CONSTANT: float = 1.380649e-23  # J/K
 BODY_TEMPERATURE_K: float = 310.0  # K, canonical APGI reference temperature
 
-# §3.2.1 — per-bit metabolic conversion cost (unit cost, not the event-level
-# inefficiency ratio); status: unmeasured per the paper's own text.
-KAPPA_ATP_PER_BIT_DEFAULT: float = 100.0
+# §3.2.1 — per-bit metabolic conversion cost κ (unit cost, not the event-level
+# inefficiency ratio). Registry PAR-KAPPA: scope_layer=thermodynamic,
+# status=uncalibrated, must_not_alias=[gamma_sig, kappa_meta]. There is NO
+# default κ: no function in this package falls back to a κ value. The figure
+# value below is an order-of-magnitude illustration used only to annotate the
+# frozen v1.0 Paper 1/Paper 4 figures; it is not a calibrated parameter and
+# must never be used as a model input or presented as evidence.
+KAPPA_ATP_PER_BIT_ILLUSTRATIVE: float = 100.0
+KAPPA_STATUS: str = "uncalibrated"
 
 CRITERIA: tuple[str, ...] = (
     "tier_transparency",  # C1

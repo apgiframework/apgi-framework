@@ -14,9 +14,19 @@ import pathlib
 import sys
 import urllib.request
 
-# Zenodo archive for the APGI seed datasets (concept DOI resolves to the latest version).
+# Zenodo record cited for the APGI manuscripts and protocol battery. Per
+# data/seeds/seed_manifest.json (deposit.status = "not_deposited") this record
+# does NOT hold the nine seed datasets, so downloads are disabled until a
+# certified deposit exists (REL-005, AUD-DATA-01). Regenerate locally instead:
+#     python data/generate_seeds.py && python data/generate_seeds.py --verify
 ZENODO_DOI = "10.5281/zenodo.21632264"
 ZENODO_BASE = "https://zenodo.org/records/21632264/files"
+DEPOSIT_STATUS = "not_deposited"
+REGENERATE_HINT = (
+    "The APGI seed datasets are not deposited on Zenodo yet. Regenerate them locally with\n"
+    "    python data/generate_seeds.py && python data/generate_seeds.py --verify\n"
+    "or run `bash reproduce_all.sh` (default mode regenerates and verifies)."
+)
 
 DATA_DIR = pathlib.Path(__file__).parent / "cache"
 
@@ -80,8 +90,8 @@ DATASETS: dict[str, tuple[str, str, str, str]] = {
 
 
 def _verify_sha256(path: pathlib.Path, expected: str) -> bool:
-    if expected == "PLACEHOLDER_SHA256":
-        return True  # skip verification until real DOI is set
+    if len(expected) != 64:
+        return False  # never treat a placeholder digest as verified (DAT-004)
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     return digest == expected
 
@@ -107,6 +117,9 @@ def _verify_cached(names: list[str] | None = None) -> bool:
 
 def _download(name: str) -> pathlib.Path:
     filename, sha256, _, size_hint = DATASETS[name]
+    if DEPOSIT_STATUS != "deposited":
+        print(f"[error] {name}: {REGENERATE_HINT}", file=sys.stderr)
+        sys.exit(2)
     url = f"{ZENODO_BASE}/{filename}"
     dest = DATA_DIR / filename
 

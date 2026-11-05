@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3]))
 from apgi.extensions.epistemic import (
     BODY_TEMPERATURE_K,
-    KAPPA_ATP_PER_BIT_DEFAULT,
+    KAPPA_ATP_PER_BIT_ILLUSTRATIVE,
     inefficiency_ratio,
     landauer_minimum_energy,
 )
@@ -51,18 +51,18 @@ LANDAUER_J_PER_BIT = landauer_minimum_energy(1.0, BODY_TEMPERATURE_K)
 LANDAUER_ATP_PER_BIT = LANDAUER_J_PER_BIT / ATP_HYDROLYSIS_ENERGY_J
 
 # Network-state bit-count convention (§4.6): ~2e16 bits -> kappa ~ 1.2e2 ATP/bit
-NETWORK_STATE_BITS = TOTAL_ATP_PER_IGNITION / KAPPA_ATP_PER_BIT_DEFAULT
+NETWORK_STATE_BITS = TOTAL_ATP_PER_IGNITION / KAPPA_ATP_PER_BIT_ILLUSTRATIVE
 
 # kappa expressed in energy units (per-bit unit-conversion cost, microscopic
 # bridge): ~100 ATP/bit * 5.07e-20 J/ATP =~ 5.07e-18 J/bit.
-KAPPA_J_PER_BIT = KAPPA_ATP_PER_BIT_DEFAULT * ATP_HYDROLYSIS_ENERGY_J
+KAPPA_J_PER_BIT = KAPPA_ATP_PER_BIT_ILLUSTRATIVE * ATP_HYDROLYSIS_ENERGY_J
 
 # (i) Per-bit unit-conversion cost vs the Landauer floor: kappa (in ATP/bit)
 # relative to the Landauer minimum expressed in ATP/bit -> ~1.7e3x. This is
 # the "biological overhead" of the bridge parameter itself, NOT the
 # whole-event inefficiency below -- keeping the two numerically distinct is
 # the whole point of this figure (§4.6 caption; CRITICAL correction).
-KAPPA_VS_LANDAUER_RATIO = KAPPA_ATP_PER_BIT_DEFAULT / LANDAUER_ATP_PER_BIT
+KAPPA_VS_LANDAUER_RATIO = KAPPA_ATP_PER_BIT_ILLUSTRATIVE / LANDAUER_ATP_PER_BIT
 
 # (ii) Whole-event thermodynamic inefficiency (macroscopic): the ratio of the
 # TOTAL biological energy actually spent on one ignition event to the
@@ -167,7 +167,7 @@ def draw_bridge(ax) -> None:
         box_w,
         box_h,
         r"APGI bridge $\kappa$"
-        f"\n$\\approx {KAPPA_ATP_PER_BIT_DEFAULT:.0f}$ ATP/bit $\\approx {KAPPA_J_PER_BIT:.1e}$ J/bit\n"
+        f"\n$\\approx {KAPPA_ATP_PER_BIT_ILLUSTRATIVE:.0f}$ ATP/bit $\\approx {KAPPA_J_PER_BIT:.1e}$ J/bit\n"
         "(network-state\nbit-count convention)",
         "#fff3cd",
         fontsize=7,
@@ -209,7 +209,7 @@ def draw_bridge(ax) -> None:
         left_w,
         callout_h,
         r"Per-bit unit-conversion cost $\kappa$ (microscopic)"
-        f"\n$\\kappa \\approx {KAPPA_ATP_PER_BIT_DEFAULT:.0f}$ ATP/bit $\\approx {KAPPA_J_PER_BIT:.1e}$ J/bit"
+        f"\n$\\kappa \\approx {KAPPA_ATP_PER_BIT_ILLUSTRATIVE:.0f}$ ATP/bit $\\approx {KAPPA_J_PER_BIT:.1e}$ J/bit"
         f"\n$\\approx {KAPPA_VS_LANDAUER_RATIO:,.0f}\\times$ the per-bit Landauer floor"
         "\n(converts bits erased -> ATP; NOT the whole-event inefficiency)",
         "#ffffff",

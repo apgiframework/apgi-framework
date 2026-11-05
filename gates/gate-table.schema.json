@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/apgiframework/apgi-framework/gates/gate-table.schema.json",
+  "title": "APGI gate table",
+  "type": "object",
+  "required": ["gate_table_version", "model_variant", "model_version", "status", "gates"],
+  "additionalProperties": false,
+  "properties": {
+    "gate_table_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "model_variant": {"type": "string", "pattern": "^MV-[A-Z0-9-]+$"},
+    "model_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+    "status": {"enum": ["draft_unapproved", "approved"]},
+    "gates": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["field", "registry_id", "symbol", "status", "exposure_class", "rationale"],
+        "additionalProperties": false,
+        "properties": {
+          "field": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"},
+          "registry_id": {"type": "string", "pattern": "^(PAR|STA|SIG|CON|OBS)-[A-Z0-9-]+$"},
+          "symbol": {"type": "string", "minLength": 1},
+          "status": {"enum": ["cleared", "pending_K7", "not_testable_v0_1"]},
+          "exposure_class": {"enum": ["model_free_index", "identified_composite", "cleared_parameter", "model_parameter"]},
+          "rationale": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

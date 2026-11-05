@@ -15,7 +15,55 @@ near the ignition boundary (P ≈ 0.50) for near-threshold tasks.
 
 from __future__ import annotations
 
+import math
+
 import numpy as np
+
+# ---------------------------------------------------------------------------
+# Formulation declaration (APGI-VAL-SPEC-1.2 SCI-002)
+# ---------------------------------------------------------------------------
+# Machine-readable copy: specifications/model-variants/core-discrete-v1.yaml.
+# Equation IDs are draft (EQ-*) pending scientific-authority confirmation.
+MODEL_FORMULATION: dict = {
+    "variant_id": "MV-CORE-DISCRETE-1",
+    "formulation": "discrete_update",
+    "equations": ["EQ-1", "EQ-2", "EQ-3", "EQ-4", "EQ-5", "EQ-6", "EQ-7"],
+    "integration_method": "forward_euler",
+    "step_size": {"default": 1.0, "unit": "trial_step"},
+    "threshold": "dynamically regulated allostatic threshold theta_t (Eq. 3); "
+    "never a fixed psychophysical threshold",
+    "refractory_reset": "theta += delta_reset on ignition (same step); "
+    "S <- rho_retain * S after the decision",
+    "ne_path": "additive eta_NE*NE(t) inside Eq. 3; multiplicative gamma_NE*g_NE "
+    "available via apply_ne_threshold_gain (sub-dominance <= 0.5)",
+    "ignition_boundary": {
+        "ignition_criterion": "P >= 0.5 when rng is None (fires at S_t == theta_t)",
+        "ignition_decision_strict": "S_t > theta_t (draft APGI-SCI-001 rule)",
+        "status": "conflict tracked as DEV-0001; not silently changed",
+    },
+}
+
+
+def _finite(name: str, value: float) -> float:
+    """Return *value* as float, rejecting NaN/±inf (no silent propagation)."""
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError(f"{name} must be finite, got {value!r}")
+    return number
+
+
+def _non_negative(name: str, value: float) -> float:
+    number = _finite(name, value)
+    if number < 0:
+        raise ValueError(f"{name} must be non-negative, got {value!r}")
+    return number
+
+
+def _positive(name: str, value: float) -> float:
+    number = _finite(name, value)
+    if number <= 0:
+        raise ValueError(f"{name} must be positive, got {value!r}")
+    return number
 
 # ---------------------------------------------------------------------------
 # Publication-calibrated simulation defaults (Table 12 / Table 3)
@@ -73,8 +121,10 @@ def compute_pi_i_eff(
     Returns:
         Effective interoceptive precision Πⁱ_eff, clamped to [Π_min, Π_max].
     """
-    if pi_i_baseline < 0:
+    if _finite("pi_i_baseline", pi_i_baseline) < 0:
         raise ValueError("pi_i_baseline must be non-negative")
+    _finite("beta_sm", beta_sm)
+    _finite("M_hat", M_hat)
     pi_i_eff = pi_i_baseline * np.exp(beta_sm * M_hat)
     return float(np.clip(pi_i_eff, PI_MIN, PI_MAX))
 
@@ -106,6 +156,10 @@ def compute_S_t(
     Returns:
         Instantaneous integrated salience signal Sₜ.
     """
+    pi_e = _non_negative("pi_e", pi_e)
+    pi_i_eff = _non_negative("pi_i_eff", pi_i_eff)
+    z_e = _finite("z_e", z_e)
+    z_i = _finite("z_i", z_i)
     return float(pi_e * abs(z_e) + pi_i_eff * abs(z_i))
 
 
@@ -137,6 +191,10 @@ def accumulate_S_t(
     Returns:
         Updated accumulated signal Sₜ.
     """
+    _finite("S_prev", S_prev)
+    _finite("S_input", S_input)
+    _positive("tau_S", tau_S)
+    _positive("dt", dt)
     lambda_s = 1.0 - np.exp(-dt / tau_S)
     return float((1.0 - lambda_s) * S_prev + lambda_s * S_input)
 
@@ -167,6 +225,9 @@ def ignition_probability(
     Returns:
         Ignition probability in (0, 1).
     """
+    _finite("S_t", S_t)
+    _finite("theta_t", theta_t)
+    _positive("gamma_sig", gamma_sig)
     return float(1.0 / (1.0 + np.exp(-gamma_sig * (S_t - theta_t))))
 
 
@@ -196,6 +257,19 @@ def ignition_criterion(
     if rng is None:
         return p >= 0.5
     return bool(rng.random() < p)
+
+
+def ignition_decision_strict(S_t: float, theta_t: float) -> bool:
+    """Deterministic ignition decision under the draft APGI-SCI-001 rule.
+
+    Ignition occurs only when Sₜ is *strictly* greater than θₜ; exact
+    equality never ignites. This differs from :func:`ignition_criterion`
+    with ``rng=None`` (P ≥ 0.5, which fires at equality). The conflict is
+    tracked as DEV-0001 in ``specifications/governance/deviations.yaml``;
+    the existing function is left unchanged until the scientific authority
+    confirms the governing rule, so no published result is silently altered.
+    """
+    return _finite("S_t", S_t) > _finite("theta_t", theta_t)
 
 
 # ---------------------------------------------------------------------------
@@ -256,6 +330,14 @@ def step_theta(
     Returns:
         Updated threshold θₜ₊₁.
     """
+    for name, value in (("theta_t", theta_t), ("C_t", C_t), ("I_t", I_t),
+                        ("NE_t", NE_t), ("theta_0", theta_0)):
+        _finite(name, value)
+    for name, value in (("lambda_theta", lambda_theta), ("kappa_meta", kappa_meta),
+                        ("delta_info", delta_info), ("eta_NE", eta_NE),
+                        ("delta_reset", delta_reset)):
+        _non_negative(name, value)
+    _positive("dt", dt)
     dtheta = (
         -lambda_theta * (theta_t - theta_0)
         + kappa_meta * C_t
@@ -296,9 +378,10 @@ def apply_ne_threshold_gain(
     Returns:
         Rescaled threshold θ·(1 + γ_NE·g_NE).
     """
-    if g_NE < 0:
+    _finite("theta_t", theta_t)
+    if _finite("g_NE", g_NE) < 0:
         raise ValueError("g_NE must be non-negative")
-    if gamma_NE < 0:
+    if _finite("gamma_NE", gamma_NE) < 0:
         raise ValueError("gamma_NE must be non-negative")
     if gamma_NE * g_NE > NE_SUBDOMINANCE_LIMIT:
         raise ValueError(
@@ -332,6 +415,10 @@ def post_ignition_reset(
     Returns:
         S(t) unchanged if no ignition, else ρ_retain · S(t).
     """
+    _finite("S_t", S_t)
+    rho_retain = _finite("rho_retain", rho_retain)
+    if not 0.0 <= rho_retain <= 1.0:
+        raise ValueError(f"rho_retain must lie in [0, 1], got {rho_retain!r}")
     if not fired:
         return float(S_t)
     return float(rho_retain * S_t)
@@ -366,6 +453,7 @@ def theta_equilibrium(
     Returns:
         Equilibrium threshold θ*.
     """
+    _positive("lambda_theta", lambda_theta)
     return float(
         theta_0 + (kappa_meta * C - delta_info * I_val + eta_NE * NE) / lambda_theta
     )

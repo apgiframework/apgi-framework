@@ -1,0 +1,614 @@
+# APGI parameter, state and signal registry — apgi-framework (A03)
+#
+# Authority data (hand-maintained). Every default value that appears in
+# src/apgi/ is registered here with a stable ID, kind, unit, provenance
+# category and scope layer (APGI-VAL-SPEC-1.2 SCI-004, SCI-005; tasks
+# S1-FWK-03, S1-REG-01.8, S1-REG-02, S1-REG-03, S1-REG-05).
+#
+# Status: DRAFT — not approved. Provenance categories below are the
+# repository maintainer's classification of the source comments; they have
+# not been confirmed by the scientific authority (AUD-GOV-01, AUD-REG-01).
+#
+# Field conventions
+#   id               stable, never reused. Prefix PAR- (parameter), STA- (state
+#                    variable), SIG- (input signal), CON- (constant/bound).
+#   kind             precision | prediction_error | threshold | salience |
+#                    gain | rate | timescale | coefficient | probability |
+#                    bound | energy_cost | physical_constant | count
+#   provenance       analytically_derived | post_hoc_calibrated | assumed
+#                    (SCI-005: a post-hoc calibrated value is never labelled
+#                    analytically derived).
+#   scope_layer      computational | information_theoretic | thermodynamic
+#                    (S1-REG-05: layers are reported separately; a passing
+#                    computational gate is never thermodynamic evidence).
+#   must_not_alias   registry IDs this quantity must never be substituted for.
+#   code             fully-qualified identifiers that carry this quantity.
+registry_version: 0.1.0
+status: draft_unapproved
+notation_source: "APGI-Notation-Appendix.docx (sha256 43fd6274cc6cf5ead578251dafb31c9d31c020774a80581a9283d27cb3f48ad6, per protocols/*.json provenance) — revision pending (AUD-SPEC-CONFIRM-04)"
+entries:
+  # ── Core equation quantities (Eq. 1–2) ────────────────────────────────
+  - id: PAR-PI-E
+    name: exteroceptive precision
+    symbol: "Π_e"
+    kind: precision
+    role: input
+    unit: dimensionless (inverse-variance gain)
+    domain: "[0, inf)"
+    default: null
+    provenance: {category: assumed, source: "Math Spec §1-2", note: "Supplied per trial; no package default."}
+    scope_layer: computational
+    must_not_alias: [SIG-Z-E, SIG-EPS-E]
+    code: [apgi.core.compute_S_t.pi_e, apgi.core.run_trial.pi_e]
+  - id: PAR-PI-I-BASELINE
+    name: baseline interoceptive precision
+    symbol: "Π_i^baseline"
+    kind: precision
+    role: input
+    unit: dimensionless (inverse-variance gain)
+    domain: "[0, inf)"
+    default: null
+    provenance: {category: assumed, source: "Paper 1 §4.2", note: "Supplied per trial."}
+    scope_layer: computational
+    must_not_alias: [PAR-PI-I-EFF, SIG-Z-I]
+    code: [apgi.core.compute_pi_i_eff.pi_i_baseline, apgi.core.run_trial.pi_i_baseline]
+  - id: PAR-PI-I-EFF
+    name: effective interoceptive precision
+    symbol: "Π_i^eff"
+    kind: precision
+    role: derived
+    unit: dimensionless (inverse-variance gain)
+    domain: "[PI_MIN, PI_MAX] after mandatory clamp"
+    default: null
+    provenance: {category: analytically_derived, source: "Paper 1 §4.2: Π_i^eff = Π_i^baseline·exp(β_SM·M̂)", note: "Derived quantity; clamp bounds CON-PI-MIN/CON-PI-MAX."}
+    scope_layer: computational
+    must_not_alias: [PAR-PI-I-BASELINE, SIG-Z-I]
+    code: [apgi.core.compute_pi_i_eff, apgi.core.compute_S_t.pi_i_eff]
+  - id: SIG-Z-E
+    name: exteroceptive standardized prediction error
+    symbol: "z_e"
+    kind: prediction_error
+    role: input
+    unit: dimensionless (z-score)
+    domain: "finite real; Eq. 1 uses |z_e|"
+    default: null
+    provenance: {category: assumed, source: "Math Spec §1", note: "Supplied per trial."}
+    scope_layer: computational
+    must_not_alias: [PAR-PI-E]
+    code: [apgi.core.compute_S_t.z_e, apgi.precision.z_score]
+  - id: SIG-Z-I
+    name: interoceptive standardized prediction error
+    symbol: "z_i"
+    kind: prediction_error
+    role: input
+    unit: dimensionless (z-score)
+    domain: "finite real; Eq. 1 uses |z_i|"
+    default: null
+    provenance: {category: assumed, source: "Math Spec §1", note: "Supplied per trial."}
+    scope_layer: computational
+    must_not_alias: [PAR-PI-I-EFF, PAR-PI-I-BASELINE]
+    code: [apgi.core.compute_S_t.z_i]
+  - id: SIG-EPS-E
+    name: raw prediction error (any channel)
+    symbol: "ε(t)"
+    kind: prediction_error
+    role: input
+    unit: channel-specific raw units
+    domain: finite real
+    default: null
+    provenance: {category: assumed, source: "Math Spec §1"}
+    scope_layer: computational
+    must_not_alias: [PAR-PI-E]
+    code: [apgi.precision.OnlinePrecisionChannel.update.eps_t]
+  - id: STA-S-T
+    name: accumulated precision-weighted surprise
+    symbol: "S_t"
+    kind: salience
+    role: state
+    unit: dimensionless (same scale as θ_t)
+    domain: "[0, inf)"
+    default: 0.0
+    provenance: {category: assumed, source: "Paper 1 App. A.1", note: "Initial value S_0 = 0."}
+    scope_layer: computational
+    must_not_alias: [STA-THETA-T]
+    code: [apgi.core.accumulate_S_t, apgi.core.run_trial.S_prev, apgi.integration.APGICoreIntegration._S_acc]
+  - id: STA-THETA-T
+    name: dynamic allostatic ignition threshold
+    symbol: "θ_t"
+    kind: threshold
+    role: state
+    unit: dimensionless (same scale as S_t)
+    domain: finite real
+    default: null
+    provenance: {category: analytically_derived, source: "Paper 1 Eq. 3", note: "Dynamically regulated state; never a fixed or generic psychophysical threshold (SCI-002). Distinct from PAR-THETA-0 (S1-REG-03)."}
+    scope_layer: computational
+    must_not_alias: [PAR-THETA-0, OBS-P01-06]
+    code: [apgi.core.step_theta.theta_t, apgi.core.ignition_probability.theta_t, apgi.core.ignition_decision_strict]
+  - id: PAR-THETA-0
+    name: homeostatic threshold baseline
+    symbol: "θ_0"
+    kind: threshold
+    role: parameter
+    unit: dimensionless (same scale as S_t)
+    domain: "[0.25, 0.85] registered band"
+    default: 0.60
+    provenance: {category: post_hoc_calibrated, source: "src/apgi/core.py THETA_0_DEFAULT; Paper 1 Table 12/Table 3", note: "Chosen within the registered band so median simulated S_t sits near the ignition boundary; protocols register prior Normal(0.35, 0.2)."}
+    scope_layer: computational
+    must_not_alias: [STA-THETA-T]
+    code: [apgi.core.THETA_0_DEFAULT]
+  - id: PAR-GAMMA-SIG
+    name: sigmoid steepness of the ignition criterion
+    symbol: "γ_sig"
+    kind: gain
+    role: parameter
+    unit: "AU^-1"
+    domain: "[2, 7.5]"
+    default: 5.0
+    provenance: {category: assumed, source: "Paper 1 Table 12 (recommended population default)", note: "Population-fixed; distinct from Weibull shape α_psy."}
+    scope_layer: computational
+    must_not_alias: [PAR-KAPPA, OBS-P01-06]
+    code: [apgi.core.GAMMA_SIG_DEFAULT]
+  - id: PAR-TAU-S
+    name: surprise accumulation timescale
+    symbol: "τ_S"
+    kind: timescale
+    role: parameter
+    unit: trial_step (code); seconds in protocols (0.2–0.5 s)
+    domain: "(0, inf)"
+    default: 5.0
+    provenance: {category: assumed, source: "src/apgi/core.py TAU_S_DEFAULT (≈300 ms at ~60 ms/step)", note: "Unit conversion to seconds depends on the declared step duration; see MV-CORE-DISCRETE-1."}
+    scope_layer: computational
+    must_not_alias: [PAR-LAMBDA-THETA]
+    code: [apgi.core.TAU_S_DEFAULT]
+  - id: PAR-BETA-SM
+    name: somatic-marker gain
+    symbol: "β_SM"
+    kind: gain
+    role: parameter
+    unit: dimensionless
+    domain: "[0.1, 1.2]"
+    default: 0.60
+    provenance: {category: assumed, source: "Paper 1 Table 12", note: "Not independently identifiable from Π_i using behaviour alone (protocols)."}
+    scope_layer: computational
+    must_not_alias: [PAR-BETA-K]
+    code: [apgi.core.BETA_SM_DEFAULT]
+  - id: SIG-M-HAT
+    name: somatic marker estimate
+    symbol: "M̂(c,a)"
+    kind: coefficient
+    role: input
+    unit: dimensionless
+    domain: "[-2, 2]"
+    default: 0.0
+    provenance: {category: assumed, source: "Paper 1 §4.2", note: "APGICoreIntegration session default 0.0."}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.compute_pi_i_eff.M_hat, apgi.integration.APGICoreIntegration.M_hat]
+  # ── Threshold dynamics (Eq. 3) ─────────────────────────────────────────
+  - id: PAR-LAMBDA-THETA
+    name: threshold mean-reversion rate
+    symbol: "λ_θ"
+    kind: rate
+    role: parameter
+    unit: "trial_step^-1 (code); protocols register τ_θ = 1/λ_θ in seconds (10–30 s)"
+    domain: "[0.1, 0.5]"
+    default: 0.30
+    provenance: {category: assumed, source: "Paper 1 Table 12", note: "Protocol reduced specification uses -(θ-θ_0)/τ_θ; numerically equivalent only if λ_θ = dt/τ_θ in matching units (MV-PROTOCOL-REDUCED-1)."}
+    scope_layer: computational
+    must_not_alias: [PAR-TAU-S]
+    code: [apgi.core.LAMBDA_THETA_DEFAULT]
+  - id: PAR-KAPPA-META
+    name: metabolic-cost coefficient of threshold dynamics
+    symbol: "κ_meta"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0.001, 0.5]"
+    default: 0.20
+    provenance: {category: assumed, source: "Paper 1 Table 12"}
+    scope_layer: computational
+    must_not_alias: [PAR-KAPPA, PAR-KAPPA-COUPLING]
+    code: [apgi.core.KAPPA_META_DEFAULT]
+  - id: PAR-DELTA-INFO
+    name: information-value coefficient
+    symbol: "Δ_info"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0, 1]"
+    default: 0.15
+    provenance: {category: assumed, source: "Paper 1 Table 12"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.DELTA_INFO_DEFAULT]
+  - id: PAR-ETA-NE
+    name: additive norepinephrine threshold coefficient
+    symbol: "η_NE"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0.01, 0.5]"
+    default: 0.10
+    provenance: {category: assumed, source: "Paper 1 Table 4/12 (additive reduced-form NE proxy)"}
+    scope_layer: computational
+    must_not_alias: [PAR-GAMMA-NE]
+    code: [apgi.core.ETA_NE_DEFAULT]
+  - id: PAR-GAMMA-NE
+    name: multiplicative NE threshold gain
+    symbol: "γ_NE"
+    kind: gain
+    role: parameter
+    unit: dimensionless
+    domain: "[0, inf); γ_NE·g_NE ≤ 0.5"
+    default: 0.30
+    provenance: {category: assumed, source: "Math Spec §Norepinephrine Modulation of Threshold"}
+    scope_layer: computational
+    must_not_alias: [PAR-ETA-NE, PAR-GAMMA-SIG]
+    code: [apgi.core.GAMMA_NE_DEFAULT]
+  - id: CON-NE-SUBDOMINANCE
+    name: NE sub-dominance limit
+    symbol: "max(γ_NE·g_NE)"
+    kind: bound
+    role: constraint
+    unit: dimensionless
+    domain: "0.5"
+    default: 0.50
+    provenance: {category: assumed, source: "Math Spec / Notation Appendix constraint (stipulated)"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.NE_SUBDOMINANCE_LIMIT]
+  - id: PAR-DELTA-RESET
+    name: post-ignition threshold increment
+    symbol: "δ_reset"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless (θ scale)
+    domain: "[0, inf)"
+    default: 0.20
+    provenance: {category: assumed, source: "Math Spec §Post-Ignition Reset and Refractory Period"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.DELTA_RESET_DEFAULT]
+  - id: PAR-RHO-RETAIN
+    name: post-ignition signal retention fraction
+    symbol: "ρ_retain"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0.1, 0.5] registered; [0, 1] accepted by code"
+    default: 0.30
+    provenance: {category: assumed, source: "Math Spec §Post-Ignition Reset and Refractory Period"}
+    scope_layer: computational
+    must_not_alias: [PAR-RHO-PRECISION]
+    code: [apgi.core.RHO_RETAIN_DEFAULT]
+  - id: SIG-C
+    name: metabolic cost signal
+    symbol: "C(t)"
+    kind: coefficient
+    role: input
+    unit: dimensionless (normalized cost)
+    domain: "[0, inf)"
+    default: null
+    provenance: {category: assumed, source: "Paper 1 Eq. 3"}
+    scope_layer: computational
+    must_not_alias: [PAR-KAPPA]
+    code: [apgi.core.step_theta.C_t]
+  - id: SIG-I
+    name: information value signal
+    symbol: "I(t) / V_info"
+    kind: coefficient
+    role: input
+    unit: dimensionless
+    domain: "[0, inf)"
+    default: null
+    provenance: {category: assumed, source: "Paper 1 Eq. 3"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.step_theta.I_t]
+  - id: SIG-NE
+    name: norepinephrine drive
+    symbol: "NE(t)"
+    kind: coefficient
+    role: input
+    unit: dimensionless
+    domain: finite real
+    default: 0.0
+    provenance: {category: assumed, source: "Paper 1 Eq. 3"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.step_theta.NE_t]
+  # ── Precision clamp and online estimator ──────────────────────────────
+  - id: CON-PI-MIN
+    name: precision lower clamp
+    symbol: "Π_min"
+    kind: bound
+    role: constraint
+    unit: dimensionless
+    domain: "0.01"
+    default: 0.01
+    provenance: {category: assumed, source: "Math Spec §4.2 / Notation Appendix (numerical stability)"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.PI_MIN]
+  - id: CON-PI-MAX
+    name: precision upper clamp
+    symbol: "Π_max"
+    kind: bound
+    role: constraint
+    unit: dimensionless
+    domain: "10.0"
+    default: 10.0
+    provenance: {category: assumed, source: "Math Spec §4.2 / Notation Appendix (numerical stability)"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.core.PI_MAX]
+  - id: PAR-ALPHA-EMA
+    name: EMA learning rate for running mean/variance
+    symbol: "α_EMA"
+    kind: rate
+    role: parameter
+    unit: dimensionless
+    domain: "(0, 1)"
+    default: 0.1
+    provenance: {category: assumed, source: "Math Spec §1"}
+    scope_layer: computational
+    must_not_alias: [OBS-P01-06]
+    code: [apgi.precision.ALPHA_EMA_DEFAULT]
+  - id: CON-EPS-STAB
+    name: stability constant
+    symbol: "ε_stab"
+    kind: bound
+    role: constraint
+    unit: dimensionless
+    domain: "1e-6"
+    default: 1.0e-6
+    provenance: {category: assumed, source: "Math Spec §1 (denominators only)"}
+    scope_layer: computational
+    must_not_alias: [SIG-EPS-E]
+    code: [apgi.precision.EPS_STAB_DEFAULT]
+  - id: PAR-RHO-PRECISION
+    name: precision-adaptation coupling (protocol reduced specification)
+    symbol: "ρ"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: registered per protocol
+    default: null
+    provenance: {category: assumed, source: "protocols/*.json apgi_parameters.precision_adaptation"}
+    scope_layer: computational
+    must_not_alias: [PAR-RHO-RETAIN]
+    code: []
+  - id: PAR-NORMALIZER-EPSILON
+    name: normalizer numerical floor
+    symbol: "ε_norm"
+    kind: bound
+    role: constraint
+    unit: dimensionless
+    domain: "(0, inf)"
+    default: 1.0e-8
+    provenance: {category: assumed, source: "src/apgi/normalizer.py (numerical stability)"}
+    scope_layer: computational
+    must_not_alias: [CON-EPS-STAB]
+    code: [apgi.normalizer.APGINormalizer.epsilon]
+  - id: PAR-CLINICAL-WINDOW
+    name: clinical interpreter rolling window
+    symbol: "W"
+    kind: count
+    role: parameter
+    unit: trials
+    domain: "positive integer"
+    default: 20
+    provenance: {category: assumed, source: "src/apgi/clinical.py (implementation choice)"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.clinical.EnhancedClinicalInterpreter.window_size]
+  # ── Thermodynamic layer (out of computational scope) ──────────────────
+  - id: PAR-KAPPA
+    name: per-bit metabolic conversion cost (energy–information bridge)
+    symbol: "κ"
+    kind: energy_cost
+    role: parameter
+    unit: ATP/bit
+    domain: "unmeasured"
+    default: null
+    control: uncalibrated
+    provenance: {category: assumed, source: "Paper 4 §3.2.1; protocols/protocol_0..7 apgi_parameters.kappa (value null, status uncalibrated)", note: "No default. apgi.extensions.epistemic.KAPPA_ATP_PER_BIT_ILLUSTRATIVE (100) annotates frozen v1.0 figures only and is not a parameter value."}
+    scope_layer: thermodynamic
+    must_not_alias: [PAR-GAMMA-SIG, PAR-KAPPA-META, PAR-KAPPA-COUPLING]
+    code: [apgi.extensions.epistemic.KAPPA_STATUS]
+  - id: CON-K-BOLTZMANN
+    name: Boltzmann constant
+    symbol: "k_B"
+    kind: physical_constant
+    role: constant
+    unit: J/K
+    domain: "1.380649e-23 (exact, 2019 SI)"
+    default: 1.380649e-23
+    provenance: {category: analytically_derived, source: "SI defining constant (exact by definition)"}
+    scope_layer: thermodynamic
+    must_not_alias: []
+    code: [apgi.extensions.epistemic.BOLTZMANN_CONSTANT]
+  - id: CON-T-BODY
+    name: reference body temperature
+    symbol: "T"
+    kind: physical_constant
+    role: constant
+    unit: K
+    domain: "310"
+    default: 310.0
+    provenance: {category: assumed, source: "Paper 4 §3.2.1 canonical reference temperature"}
+    scope_layer: thermodynamic
+    must_not_alias: []
+    code: [apgi.extensions.epistemic.BODY_TEMPERATURE_K]
+  - id: CON-EPISTEMIC-ACCEPT
+    name: theory-evaluation acceptance threshold
+    symbol: "—"
+    kind: bound
+    role: constraint
+    unit: score (0–100)
+    domain: "55"
+    default: 55.0
+    provenance: {category: assumed, source: "Paper 4 §5 Table 4"}
+    scope_layer: information_theoretic
+    must_not_alias: []
+    code: [apgi.extensions.epistemic.ACCEPTANCE_THRESHOLD]
+  # ── Hierarchical extension (Paper 3; exploratory variant) ─────────────
+  - id: PAR-KAPPA-COUPLING
+    name: cross-level threshold coupling
+    symbol: "κ_{k,k+1}"
+    kind: coefficient
+    role: parameter
+    unit: "trial_step^-1"
+    domain: "not yet experimentally constrained (Paper 3)"
+    default: 0.3
+    provenance: {category: assumed, source: "src/apgi/extensions/hierarchical.py LEVEL_CONFIGS"}
+    scope_layer: computational
+    must_not_alias: [PAR-KAPPA, PAR-KAPPA-META]
+    code: [apgi.extensions.hierarchical.HierarchicalLevel.kappa_coupling]
+  - id: PAR-BETA-K
+    name: per-level salience-to-threshold coupling
+    symbol: "β_k"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0, inf)"
+    default: 0.1
+    provenance: {category: assumed, source: "src/apgi/extensions/hierarchical.py"}
+    scope_layer: computational
+    must_not_alias: [PAR-BETA-SM]
+    code: [apgi.extensions.hierarchical.HierarchicalLevel.beta_k]
+  - id: PAR-ETA-K
+    name: per-level NE coupling
+    symbol: "η_k"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0, inf)"
+    default: 0.05
+    provenance: {category: assumed, source: "src/apgi/extensions/hierarchical.py"}
+    scope_layer: computational
+    must_not_alias: [PAR-ETA-NE]
+    code: [apgi.extensions.hierarchical.HierarchicalLevel.eta_k]
+  - id: PAR-HIER-TIMESCALES
+    name: per-level τ_int, τ_θ, τ_ign and θ_k* table
+    symbol: "τ_int,ℓ; τ_θ,ℓ; τ_ign,ℓ; θ_k*"
+    kind: timescale
+    role: parameter
+    unit: trial_step (not seconds)
+    domain: "see LEVEL_CONFIGS"
+    default: "LEVEL_CONFIGS (5 levels)"
+    provenance: {category: assumed, source: "src/apgi/extensions/hierarchical.py LEVEL_CONFIGS (geometric spacing, Paper 3 §2.2)", note: "Not mapped to the canonical L0–L4 hierarchy (SCI-003); see MV-HIERARCHICAL-EXT-1 and DEV-0003."}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.extensions.hierarchical.APGIHierarchy.LEVEL_CONFIGS]
+  - id: PAR-LNN-SPECTRAL-RADIUS
+    name: reservoir spectral radius
+    symbol: "ρ_W"
+    kind: gain
+    role: parameter
+    unit: dimensionless
+    domain: "(0, 1) for echo-state property"
+    default: 0.9
+    provenance: {category: assumed, source: "src/apgi/extensions/liquid_network.py"}
+    scope_layer: computational
+    must_not_alias: [PAR-RHO-RETAIN]
+    code: [apgi.extensions.liquid_network.LiquidNeuralNetwork.spectral_radius]
+  - id: PAR-LNN-RHO-S
+    name: LNN surprise retention
+    symbol: "ρ_S"
+    kind: coefficient
+    role: parameter
+    unit: dimensionless
+    domain: "[0, 1]"
+    default: 0.5
+    provenance: {category: assumed, source: "src/apgi/extensions/liquid_network.py"}
+    scope_layer: computational
+    must_not_alias: [PAR-RHO-RETAIN]
+    code: [apgi.extensions.liquid_network]
+  # ── Simulation / recovery generator settings ───────────────────────────
+  - id: PAR-RECOVERY-NOISE-SD
+    name: synthetic observation noise SD (parameter recovery)
+    symbol: "σ_obs"
+    kind: coefficient
+    role: generator_setting
+    unit: dimensionless
+    domain: "[0, inf)"
+    default: 0.05
+    provenance: {category: assumed, source: "src/apgi/parameter_recovery.py"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.parameter_recovery.generate_synthetic_data.noise_sd]
+  - id: PAR-SEED-MASTER
+    name: archived seed-dataset master seed
+    symbol: "—"
+    kind: count
+    role: generator_setting
+    unit: integer seed
+    domain: "[0, 2^31)"
+    default: 2025
+    provenance: {category: assumed, source: "data/seeds/seed_manifest.json"}
+    scope_layer: computational
+    must_not_alias: []
+    code: [data/generate_seeds.py MASTER_SEED]
+  - id: PAR-CLINICAL-THRESHOLDS
+    name: clinical-interpretation ignition-rate cut points
+    symbol: "—"
+    kind: bound
+    role: parameter
+    unit: dimensionless (ratio of mean S_t to θ_t)
+    domain: "minimally_conscious 0.4; conscious 0.75; hyper_alert 1.3"
+    default: {minimally_conscious: 0.4, conscious: 0.75, hyper_alert: 1.3}
+    provenance: {category: assumed, source: "src/apgi/clinical.py _DEFAULT_THRESHOLDS", note: "Illustrative cut points; not calibrated against clinical data. Any clinical label is speculative (CLM-0009)."}
+    scope_layer: computational
+    must_not_alias: []
+    code: [apgi.clinical.EnhancedClinicalInterpreter._DEFAULT_THRESHOLDS]
+  - id: PAR-ETA-PRECISION
+    name: precision-adaptation learning rate (protocol reduced specification)
+    symbol: "η"
+    kind: rate
+    role: parameter
+    unit: "s^-1"
+    domain: registered per protocol
+    default: null
+    provenance: {category: assumed, source: "protocols/*.json apgi_parameters.precision_adaptation"}
+    scope_layer: computational
+    must_not_alias: [PAR-ETA-NE, PAR-ETA-K]
+    code: []
+  - id: PAR-TAU-THETA
+    name: threshold recovery timescale (protocol reduced specification)
+    symbol: "τ_θ"
+    kind: timescale
+    role: parameter
+    unit: s
+    domain: "[10, 30] s"
+    default: null
+    provenance: {category: assumed, source: "protocols/*.json apgi_parameters.tau_theta"}
+    scope_layer: computational
+    must_not_alias: [PAR-TAU-S, PAR-LAMBDA-THETA]
+    code: []
+    variant_mapping: "MV-CORE-DISCRETE-1 λ_θ = step_seconds / τ_θ (apgi.model_variants.map_parameters)"
+  - id: PAR-LNN-TAU
+    name: reservoir neuron time constant
+    symbol: "τ_res"
+    kind: timescale
+    role: parameter
+    unit: trial_step
+    domain: "(0, inf)"
+    default: 10.0
+    provenance: {category: assumed, source: "src/apgi/extensions/liquid_network.py"}
+    scope_layer: computational
+    must_not_alias: [PAR-TAU-S, PAR-TAU-THETA]
+    code: [apgi.extensions.liquid_network.LiquidNeuralNetwork.tau]
+    note: "Public argument is the bare identifier `tau` (legacy API); the symbol map disambiguates it as τ_res (DEV-0006)."
+  - id: CON-HIERARCHY-L0-L4
+    name: canonical five-level temporal hierarchy bounds
+    symbol: "L0–L4"
+    kind: bound
+    role: constraint
+    unit: s
+    domain: "L0 0.01–0.1; L1 0.1–3; L2 60–1800; L3 3600–864000 (draft); L4 2592000–315576000 (draft)"
+    default: "specifications/model/temporal-hierarchy.yaml"
+    provenance: {category: assumed, source: "APGI-VAL-SPEC-1.2 SCI-003; Paper 3", note: "L3/L4 numeric bounds are a draft operationalisation (DEV-0003)."}
+    scope_layer: computational
+    must_not_alias: [PAR-HIER-TIMESCALES]
+    code: [apgi.hierarchy_levels.LEVELS]

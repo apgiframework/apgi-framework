@@ -1,0 +1,12 @@
+# Risk assessment for A03 (APGI-VAL-SPEC-1.2 §9 Planning; AUD-GOV-04).
+register_version: 0.1.0
+status: draft_unapproved
+risks:
+  - {id: RISK-01, requirement: [SCI-001, SCI-002], hazard: "Implementation drifts from the governing equations", likelihood: medium, impact: critical, controls: ["independent decimal golden fixtures (TC-SCI-01/02)", "fixture drift check in CI"], residual: medium, open_items: [DEV-0001, AUD-REG-04]}
+  - {id: RISK-02, requirement: [REP-001, PRO-001], hazard: "Analyses run on altered protocol definitions", likelihood: low, impact: critical, controls: ["apgi.protocols.verify_lock before any parse", "tamper tests TC-REP-01"], residual: low, open_items: [DEV-0002]}
+  - {id: RISK-03, requirement: [PRO-001, REP-004], hazard: "Core-model output presented as confirmatory evidence for protocol predictions", likelihood: medium, impact: high, controls: ["model-variant labels", "apgi.registration exploratory labelling"], residual: medium, open_items: [DEV-0008]}
+  - {id: RISK-04, requirement: [REP-003], hazard: "Registered sample sizes or powers are arithmetically wrong", likelihood: low, impact: high, controls: ["scripts/verify_power.py"], residual: low, open_items: [DEV-0004, DEV-0005, DEV-0007]}
+  - {id: RISK-05, requirement: [SCI-005, SCI-007], hazard: "Calibrated or speculative content presented as established", likelihood: medium, impact: high, controls: ["parameter provenance labels", "claim register", "clinical reports labelled speculative"], residual: medium, open_items: [AUD-GOV-01]}
+  - {id: RISK-06, requirement: [DAT-004, IMP-001], hazard: "Datasets or release artifacts cannot be traced to source bytes", likelihood: medium, impact: high, controls: ["seed manifest checksums", "spec bundle SHA256SUMS", "release manifest"], residual: medium, open_items: [AUD-DATA-01, REL-001]}
+  - {id: RISK-07, requirement: [REP-002], hazard: "Results differ across platforms", likelihood: medium, impact: medium, controls: ["stored noise draws", "Linux + macOS CI matrix", "environment record"], residual: medium, open_items: [APGI-REP-002]}
+  - {id: RISK-08, requirement: [REL-001, REL-005], hazard: "A tag publishes to PyPI/Zenodo before validation and approval", likelihood: medium, impact: high, controls: ["release workflow runs the full validation job and requires the protected 'pypi' environment"], residual: medium, open_items: [AUD-CI-01, AUD-GOV-07]}

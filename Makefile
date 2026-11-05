@@ -15,6 +15,8 @@
 #   make analysis         — run bifurcation + somatic-marker analysis scripts
 #   make seeds            — regenerate seed datasets from scratch
 #   make validate         — validate all protocol JSON files against schema
+#   make specs            — regenerate fixtures, registries, traceability, bundle
+#   make validate-all     — every APGI-VAL-SPEC-1.2 gate that CI runs
 #   make notebooks        — execute and validate all Jupyter notebooks (nbval)
 #   make test             — run full pytest suite with coverage
 #   make test-fast        — run tests without coverage (faster)
@@ -39,7 +41,7 @@ SCRIPT_OUT    = $(SCRIPTS_DIR)/output
         figures \
         figure-1 figure-2 figure-3 figure-4 \
         figure-5 figure-6 figure-7 figure-8 \
-        analysis seeds validate notebooks \
+        analysis seeds validate notebooks specs validate-all \
         test test-fast lint typecheck \
         clean clean-outputs clean-all \
         help
@@ -176,3 +178,20 @@ clean-outputs:
 	rm -f $(SCRIPT_OUT)/*.pdf $(SCRIPT_OUT)/*.png
 
 clean-all: clean clean-outputs
+
+# ─── APGI-VAL-SPEC-1.2 specification bundle and gates ───────────────────────
+specs:
+	$(PYTHON) -I fixtures/generate_fixtures.py
+	$(PYTHON) scripts/build_specifications.py
+	$(PYTHON) scripts/build_spec_bundle.py
+
+validate-all:
+	$(PYTHON) -c "from apgi.protocols import load_protocols; load_protocols(); print('protocol lock verified')"
+	$(PYTHON) -I fixtures/generate_fixtures.py --check
+	$(PYTHON) scripts/build_specifications.py --check
+	$(PYTHON) scripts/build_spec_bundle.py --check
+	$(PYTHON) scripts/scan_notation.py
+	$(PYTHON) scripts/scan_terminology.py
+	$(PYTHON) scripts/verify_power.py
+	$(PYTHON) scripts/build_release_manifest.py --out /tmp/apgi-release-manifest.json
+	$(PYTHON) -m pytest tests/ -q --no-cov

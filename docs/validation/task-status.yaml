@@ -1,0 +1,985 @@
+# Status of every open task after CR-0001. Self-attested.
+source: framework-still-open-items.csv (158 rows) supplied 2026-11-05
+status_vocabulary:
+  implemented: repository work done and evidenced by tests in this repository
+  implemented_pending_approval: artifact done; scientific/governance approval outstanding
+  partial: some acceptance evidence produced; remainder listed
+  blocked_external: needs other repositories, external records or an owner scientific decision
+  governance_decision_required: needs an appointed authority to approve a proposed decision
+counts:
+  implemented_pending_approval: 23
+  implemented: 23
+  partial: 35
+  blocked_external: 63
+  governance_decision_required: 14
+tasks:
+- task_id: S1-FWK-03
+  name: Assign stable IDs to parameters, observables, predictions, decision rules
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/model/parameter-registry.yaml
+  - specifications/model/observable-registry.yaml
+  - specifications/model/decision-rule-registry.yaml
+  - specifications/model/equations.yaml
+  remaining: Downstream consumption by other repositories not demonstrable here.
+- task_id: S1-FWK-04
+  name: Publish checksum-verified specification bundles
+  status: implemented_pending_approval
+  artifacts:
+  - bundle/SHA256SUMS
+  - src/apgi/spec_bundle.py
+  - scripts/build_spec_bundle.py
+  - tests/test_validation_tooling.py
+  remaining: Consumers in other repositories must call verify_bundle; publication of the bundle as a release asset
+    happens at the next tag.
+- task_id: S1-FWK-06
+  name: Build manuscript-equation ↔ code ↔ experiment ↔ outcome crosswalk
+  status: implemented_pending_approval
+  artifacts:
+  - traceability/crosswalk.yaml
+  - traceability/predictions.yaml
+  - traceability/evidence-map.yaml
+  remaining: Equation↔protocol mapping is a maintainer draft; owner confirmation pending.
+- task_id: S1-FWK-06.1
+  name: Create traceability/predictions.yaml
+  status: implemented_pending_approval
+  artifacts:
+  - traceability/predictions.yaml
+  remaining: Owner review.
+- task_id: S1-FWK-06.2
+  name: Create traceability/evidence-map.yaml
+  status: implemented_pending_approval
+  artifacts:
+  - traceability/evidence-map.yaml
+  remaining: No empirical evidence exists yet; map records simulation-only evidence.
+- task_id: S1-FWK-07
+  name: Create specifications/model/observable-registry.yaml
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/model/observable-registry.yaml
+  remaining: Units marked provisional need owner confirmation.
+- task_id: S1-FWK-08
+  name: Create specifications/contracts/compatibility-policy.yaml
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/contracts/compatibility-policy.yaml
+  remaining: apgi-api contract ranges pending (AUD-SPEC-CONFIRM-08).
+- task_id: S1-FWK-09
+  name: Create specifications/model-variants/
+  status: implemented
+  artifacts:
+  - specifications/model-variants/
+  - src/apgi/model_variants.py
+  remaining: ''
+- task_id: S1-FWK-10
+  name: Create releases/release-manifest.schema.json
+  status: implemented
+  artifacts:
+  - releases/release-manifest.schema.json
+  - scripts/build_release_manifest.py
+  - .github/workflows/release.yml
+  remaining: First release validated against the schema happens at the next tag.
+- task_id: S1-FWK-11
+  name: Protocol version lock
+  status: partial
+  artifacts:
+  - src/apgi/protocols.py
+  - tests/test_protocol_lock.py
+  - notebooks/*.ipynb (verify_lock)
+  remaining: OpenTimestamps anchoring (DEV-0002) and verification against the registered source documents (not in
+    repository).
+- task_id: S1-FWK-11.1
+  name: Confirm P00–P07 numbering against registered files before freezing hashes
+  status: blocked_external
+  artifacts:
+  - protocols/MANIFEST.json
+  remaining: Registered source files were not supplied; numbering cannot be confirmed against them.
+- task_id: S1-REG-01.8
+  name: Register kappa as uncalibrated thermodynamic bridge (must_not_alias gamma_sig)
+  status: implemented
+  artifacts:
+  - specifications/model/parameter-registry.yaml#PAR-KAPPA
+  - src/apgi/extensions/epistemic.py
+  remaining: κ=100 default removed; renamed KAPPA_ATP_PER_BIT_ILLUSTRATIVE (figure annotation only).
+- task_id: S1-REG-02
+  name: Enforce Π vs |ε| distinction in registry kind and NewType aliases
+  status: implemented
+  artifacts:
+  - src/apgi/quantities.py
+  - tests/test_quantities.py
+  - specifications/model/parameter-registry.yaml (kind)
+  remaining: Consumers in other repositories need their own negative checks.
+- task_id: S1-REG-03
+  name: Separate theta_0 and theta_t registry identifiers
+  status: implemented
+  artifacts:
+  - specifications/model/parameter-registry.yaml#PAR-THETA-0
+  - '#STA-THETA-T'
+  remaining: Appendix/docs outside this repository not verified.
+- task_id: S1-REG-05
+  name: Report computational and thermodynamic layers separately
+  status: partial
+  artifacts:
+  - specifications/model/parameter-registry.yaml (scope_layer)
+  - specifications/claims/claim-register.yaml (epistemic_tier)
+  remaining: Enforcing tier labels inside every generated report is not yet automated.
+- task_id: S1-FIX-01
+  name: Create fixtures/core-equations.json (golden numerical fixtures)
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/core-equations.json
+  remaining: Approval blocked on AUD-REG-04.
+- task_id: S1-FIX-02
+  name: Create fixtures/threshold-dynamics.json
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/threshold-dynamics.json
+  remaining: Approval blocked on AUD-REG-04.
+- task_id: S1-FIX-03
+  name: Create fixtures/ignition-boundary.json
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/ignition-boundary.json
+  remaining: Band width [CONFIRM]; approval blocked on AUD-REG-04.
+- task_id: S1-FIX-04
+  name: Add sign fixture (z_e = −0.8, z_i = −0.5 → 1.41) and mixed-sign case
+  status: implemented
+  artifacts:
+  - fixtures/core-equations.json#EQ1-SIGN-NEG
+  - tests/test_fixtures.py::test_sign_fixture_value
+  remaining: ''
+- task_id: S1-FIX-05
+  name: 'Add type-level test: Precision×Precision and PEM×PEM raise'
+  status: implemented
+  artifacts:
+  - tests/test_quantities.py
+  remaining: ''
+- task_id: S1-FIX-06
+  name: Cover fixture classes required before freeze
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/
+  remaining: All six classes present; approval pending.
+- task_id: S1-FIX-06.1
+  name: 'Add fixtures: subthreshold and near-threshold trajectories'
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/threshold-dynamics.json#TD-SUBTHRESHOLD-01
+  - '#TD-NEAR-THRESHOLD-01'
+  remaining: Approval.
+- task_id: S1-FIX-06.2
+  name: 'Add fixtures: ignition probabilities and reset transitions'
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/threshold-dynamics.json#TD-RESET-01
+  - fixtures/golden-vectors.json
+  remaining: Approval.
+- task_id: S1-FIX-06.3
+  name: 'Add fixtures: extreme valid inputs'
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/golden-vectors.json (edge)
+  remaining: Valid domain needs owner approval.
+- task_id: S1-FIX-06.4
+  name: 'Add fixtures: invalid configurations that must raise (no silent clipping)'
+  status: implemented
+  artifacts:
+  - fixtures/invalid-configurations.json
+  - src/apgi/core.py (domain checks)
+  remaining: ''
+- task_id: S1-FIX-06.5
+  name: 'Add fixtures: integration-step sensitivity (half step within tolerance)'
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/threshold-dynamics.json#TD-HALF-STEP-01
+  remaining: Integration convention approval.
+- task_id: S1-FIX-06.6
+  name: 'Add fixtures: deterministic trajectories driven by a supplied noise stream'
+  status: implemented
+  artifacts:
+  - fixtures/noise-draws.json
+  - fixtures/golden-vectors.json (seeded_dynamic)
+  remaining: ''
+- task_id: S1-FIX-07
+  name: Implement fixture test types across implementations
+  status: partial
+  artifacts:
+  - tests/test_fixtures.py
+  - .github/workflows/test.yml
+  remaining: Python only; other implementations not available here.
+- task_id: S1-FIX-07.1
+  name: Implement boundary-value tests
+  status: implemented_pending_approval
+  artifacts:
+  - tests/test_fixtures.py::test_strict_ignition_boundary
+  remaining: Equality expectation awaits DEV-0001 resolution.
+- task_id: S1-FIX-07.2
+  name: Implement unit-consistency tests
+  status: partial
+  artifacts:
+  - src/apgi/quantities.py
+  - scripts/scan_notation.py
+  remaining: Unit-consistency across other consumers.
+- task_id: S1-FIX-07.3
+  name: Implement deterministic simulation tests from stored noise draws
+  status: implemented
+  artifacts:
+  - tests/test_fixtures.py::test_golden_seeded_dynamic_trajectories
+  remaining: ''
+- task_id: S1-FIX-07.4
+  name: Implement cross-implementation agreement tests
+  status: blocked_external
+  artifacts: []
+  remaining: Swift/other implementations not in this repository.
+- task_id: S1-FIX-07.5
+  name: Implement sensitivity and identifiability tests
+  status: partial
+  artifacts:
+  - evidence/runs/AUD-EXEC-01-recovery.json
+  remaining: P1S1/P1S2 quantitative outputs remain pending (AUD-FIG-01).
+- task_id: S1-FIX-07.6
+  name: Implement model-version migration tests
+  status: implemented
+  artifacts:
+  - tests/test_fixtures.py::test_model_version_migration_rejected
+  - src/apgi/model_variants.py
+  remaining: ''
+- task_id: S1-FIX-08
+  name: Declare absolute and relative tolerances inside each fixture file
+  status: implemented
+  artifacts:
+  - fixtures/*.json (tolerance block)
+  remaining: Values themselves await approval.
+- task_id: S1-FIX-09
+  name: Ship cross-language noise draws as fixture data
+  status: partial
+  artifacts:
+  - fixtures/noise-draws.json
+  remaining: Python consumes the draws; Swift consumer not available here.
+- task_id: S1-FIX-10
+  name: Freeze fixtures and turn numerical parity CI green
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml (fixture gate)
+  remaining: Fixtures not frozen (approval); cross-language parity blocked.
+- task_id: S1-CMP-01
+  name: Scientific model compatibility matrix
+  status: blocked_external
+  artifacts: []
+  remaining: Requires apgi-system / apgi-research sources.
+- task_id: S1-CMP-01.1
+  name: Reconcile APGIParameters classes in apgi-system and apgi-research
+  status: blocked_external
+  artifacts: []
+  remaining: Other repositories.
+- task_id: S1-CMP-01.2
+  name: Map apgi-system/apgi_framework package model classes explicitly
+  status: blocked_external
+  artifacts: []
+  remaining: Other repositories.
+- task_id: S1-CMP-01.5
+  name: List unmapped parameters explicitly
+  status: partial
+  artifacts:
+  - 'src/apgi/model_variants.py (PROTOCOL_TO_CORE_MAPPING: eta, rho unmapped)'
+  remaining: Other repositories.
+- task_id: S1-PR2-01
+  name: Add versioned mappings from existing parameter objects to registered models
+  status: partial
+  artifacts:
+  - src/apgi/model_variants.py::map_parameters
+  remaining: Mapping of parameter objects in other repositories.
+- task_id: S1-PR2-02
+  name: Add numerical equivalence fixtures (including sign fixture)
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/
+  - fixtures/core-equations.json (sign cases)
+  remaining: Approval (AUD-REG-04).
+- task_id: S1-PR2-03
+  name: 'Acceptance: unmapped parameters raise or run as labelled alternative model'
+  status: implemented
+  artifacts:
+  - tests/test_model_variants_registration.py::test_unmapped_parameters_raise_or_run_labelled
+  remaining: ''
+- task_id: S1-PR2b-01
+  name: Create gates/gate-table.yaml (S_t, θₜ, Πₑ, Πᵢ, β)
+  status: implemented
+  artifacts:
+  - gates/gate-table.yaml
+  - gates/gate-table.schema.json
+  remaining: ''
+- task_id: S1-PR2b-02
+  name: Generate gates/exposable-fields.yaml allow-list
+  status: implemented
+  artifacts:
+  - gates/exposable-fields.yaml
+  - scripts/build_specifications.py --check
+  remaining: ''
+- task_id: S5-PUB-11
+  name: Cite concept DOI in prose and version DOI in reproducibility appendices
+  status: blocked_external
+  artifacts:
+  - CITATION.cff
+  - README.md
+  remaining: Manuscript prose/appendices are outside this repository.
+- task_id: XC-CI-01
+  name: 'CI gates: apgi-framework'
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml
+  remaining: Making the gates required checks is a repository setting (branch protection) an administrator must
+    apply.
+- task_id: XC-CI-01.1
+  name: 'CI gate (apgi-framework): equation fixtures'
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml
+  remaining: Required-check setting.
+- task_id: XC-CI-01.2
+  name: 'CI gate (apgi-framework): specification checksums'
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml
+  remaining: Required-check setting.
+- task_id: XC-CI-01.3
+  name: 'CI gate (apgi-framework): reproducibility tests'
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml (record_environment, macOS job)
+  remaining: Required-check setting; first macOS evidence on next CI run.
+- task_id: XC-CI-01.4
+  name: 'CI gate (apgi-framework): gate-table schema'
+  status: partial
+  artifacts:
+  - .github/workflows/test.yml
+  - tests/test_validation_tooling.py::test_gate_table_schema_valid
+  remaining: Required-check setting.
+- task_id: APGI-PRO-001
+  name: PRO-001 conformance
+  status: blocked_external
+  artifacts:
+  - specifications/model-variants/MV-PROTOCOL-REDUCED-1.yaml
+  - DEV-0008
+  remaining: Approved 1.1.0↔v1.2 map required.
+- task_id: APGI-PRO-002
+  name: PRO-002 conformance
+  status: implemented
+  artifacts:
+  - src/apgi/protocols.py
+  - src/apgi/core.py
+  - tests/test_protocol_lock.py
+  remaining: ''
+- task_id: APGI-PRO-003
+  name: PRO-003 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#PRO-003
+  remaining: NOT_APPLICABLE proposed; approver needed.
+- task_id: APGI-PRO-004
+  name: PRO-004 conformance
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml
+  remaining: Profile approval.
+- task_id: APGI-SCI-001
+  name: SCI-001 conformance
+  status: partial
+  artifacts:
+  - src/apgi/core.py::ignition_decision_strict
+  - fixtures/ignition-boundary.json
+  - DEV-0001
+  remaining: Governing rule confirmation.
+- task_id: APGI-SCI-002
+  name: SCI-002 conformance
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/model-variants/MV-CORE-DISCRETE-1.yaml
+  - src/apgi/core.py::MODEL_FORMULATION
+  remaining: Equation IDs [CONFIRM]; DEV-0009.
+- task_id: APGI-SCI-003
+  name: SCI-003 conformance
+  status: partial
+  artifacts:
+  - src/apgi/hierarchy_levels.py
+  - specifications/model/temporal-hierarchy.yaml
+  - DEV-0003
+  remaining: L3/L4 bounds confirmation.
+- task_id: APGI-SCI-004
+  name: SCI-004 conformance
+  status: partial
+  artifacts:
+  - specifications/notation/symbol-map.yaml
+  - scripts/scan_notation.py
+  remaining: Notation Appendix revision needed for sign-off; DEV-0006.
+- task_id: APGI-SCI-005
+  name: SCI-005 conformance
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/model/parameter-registry.yaml
+  remaining: Provenance categories need scientific approval; output label propagation partial.
+- task_id: APGI-SCI-006
+  name: SCI-006 conformance
+  status: partial
+  artifacts:
+  - scripts/scan_terminology.py
+  remaining: External archive records not inspected; reviewer sign-off.
+- task_id: APGI-SCI-007
+  name: SCI-007 conformance
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/claims/claim-register.yaml
+  - src/apgi/clinical.py
+  remaining: Notebook/figure prose not yet mapped statement-by-statement.
+- task_id: APGI-REP-001
+  name: REP-001 conformance
+  status: partial
+  artifacts:
+  - src/apgi/protocols.py
+  - DEV-0002
+  remaining: OpenTimestamps anchoring.
+- task_id: APGI-REP-002
+  name: REP-002 conformance
+  status: partial
+  artifacts:
+  - scripts/record_environment.py
+  - .github/workflows/test.yml (macos-14)
+  remaining: macOS ARM64 evidence after first CI run; pinned environments.
+- task_id: APGI-REP-003
+  name: REP-003 conformance
+  status: implemented
+  artifacts:
+  - scripts/verify_power.py
+  - evidence/power/power-comparison.json
+  - DEV-0004/0005/0007
+  remaining: Mismatches need protocol-owner disposition.
+- task_id: APGI-REP-004
+  name: REP-004 conformance
+  status: implemented
+  artifacts:
+  - src/apgi/registration.py
+  - tests/test_model_variants_registration.py
+  remaining: Notebooks do not yet call check_analysis.
+- task_id: APGI-REP-005
+  name: REP-005 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#REP-005
+  remaining: Approver.
+- task_id: APGI-IMP-001
+  name: IMP-001 conformance
+  status: partial
+  artifacts:
+  - scripts/build_release_manifest.py
+  - .github/workflows/release.yml
+  remaining: SBOM not generated; build reproducibility not demonstrated.
+- task_id: APGI-IMP-002
+  name: IMP-002 conformance
+  status: partial
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#IMP-002
+  remaining: Secret-scanning job not added.
+- task_id: APGI-IMP-003
+  name: IMP-003 conformance
+  status: partial
+  artifacts:
+  - src/apgi/protocols.py (audit events)
+  remaining: Fault-injection evidence for the CLI.
+- task_id: APGI-DAT-001
+  name: DAT-001 conformance
+  status: partial
+  artifacts:
+  - fixtures/
+  - src/apgi/datasets.py
+  remaining: Golden dataset through seed generation not defined.
+- task_id: APGI-DAT-002
+  name: DAT-002 conformance
+  status: partial
+  artifacts:
+  - src/apgi/protocols.py
+  - src/apgi/scripts/fetch_data.py
+  remaining: No quarantine workflow (no ingest path exists).
+- task_id: APGI-DAT-003
+  name: DAT-003 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#DAT-003
+  remaining: Lifecycle rules approval.
+- task_id: APGI-DAT-004
+  name: DAT-004 conformance
+  status: partial
+  artifacts:
+  - src/apgi/datasets.py::dataset_provenance
+  - data/seeds/seed_manifest.json
+  remaining: Seed datasets not deposited.
+- task_id: APGI-API-001
+  name: API-001 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#API-001
+  remaining: Scope approval.
+- task_id: APGI-API-002
+  name: API-002 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#API-002
+  remaining: Approver.
+- task_id: APGI-API-003
+  name: API-003 conformance
+  status: partial
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#API-003
+  remaining: Secret scan job.
+- task_id: APGI-API-004
+  name: API-004 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#API-004
+  remaining: Approver.
+- task_id: APGI-INT-001
+  name: INT-001 conformance
+  status: blocked_external
+  artifacts:
+  - specifications/contracts/compatibility-policy.yaml#CTR-APGI-API
+  remaining: apgi-api canonical schemas not available.
+- task_id: APGI-INT-002
+  name: INT-002 conformance
+  status: blocked_external
+  artifacts: []
+  remaining: Other nine components required.
+- task_id: APGI-INT-003
+  name: INT-003 conformance
+  status: implemented
+  artifacts:
+  - tests/test_int003_failure_propagation.py
+  - src/apgi/parameter_recovery.py
+  remaining: ''
+- task_id: APGI-INT-004
+  name: INT-004 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#INT-004
+  remaining: Approver.
+- task_id: APGI-REL-001
+  name: REL-001 conformance
+  status: partial
+  artifacts:
+  - .github/workflows/release.yml
+  remaining: Named approvers and protected environment configuration.
+- task_id: APGI-REL-002
+  name: REL-002 conformance
+  status: partial
+  artifacts:
+  - docs/validation/release-procedure.md
+  remaining: Rollback tabletop not run.
+- task_id: APGI-REL-003
+  name: REL-003 conformance
+  status: partial
+  artifacts:
+  - docs/validation/change-records/CR-0001.md
+  remaining: Approval authority.
+- task_id: APGI-REL-004
+  name: REL-004 conformance
+  status: partial
+  artifacts:
+  - releases/compatibility-matrix.yaml
+  remaining: v1.2 meaning unresolved; macOS evidence.
+- task_id: APGI-REL-005
+  name: REL-005 conformance
+  status: blocked_external
+  artifacts:
+  - docs/validation/release-procedure.md §5
+  remaining: Existing deposits not inspected.
+- task_id: APGI-CON-001
+  name: CON-001 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#CON-001
+  remaining: Approver.
+- task_id: APGI-CON-002
+  name: CON-002 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#CON-002
+  remaining: Approver.
+- task_id: APGI-ACQ-001
+  name: ACQ-001 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#ACQ-001
+  remaining: Approver.
+- task_id: APGI-VAL-001
+  name: VAL-001 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#VAL-001
+  - specifications/model/decision-rule-registry.yaml
+  remaining: Approver.
+- task_id: APGI-CLI-001
+  name: CLI-001 conformance
+  status: governance_decision_required
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml#CLI-001
+  remaining: Approver.
+- task_id: AUD-GOV-01
+  name: Approve and resolve the draft validation baseline
+  status: blocked_external
+  artifacts: []
+  remaining: Scientific authority approval.
+- task_id: AUD-GOV-02
+  name: Create A03 Application Validation Profile and applicability decisions
+  status: implemented_pending_approval
+  artifacts:
+  - specifications/profile/application-validation-profile.yaml
+  remaining: Approval.
+- task_id: AUD-GOV-03
+  name: Appoint accountable roles and record review independence
+  status: governance_decision_required
+  artifacts:
+  - specifications/governance/roles.yaml
+  remaining: Named appointments.
+- task_id: AUD-GOV-04
+  name: Create risk assessment, validation plan and controlled evidence index
+  status: partial
+  artifacts:
+  - specifications/governance/risk-register.yaml
+  - docs/validation/evidence-index.yaml
+  remaining: Validation plan approval; immutable evidence storage.
+- task_id: AUD-GOV-05
+  name: Maintain bidirectional claims-to-release traceability
+  status: partial
+  artifacts:
+  - traceability/
+  - specifications/claims/claim-register.yaml
+  remaining: Defect/run/artifact links in both directions not complete.
+- task_id: AUD-GOV-06
+  name: Track defects and time-bounded deviations
+  status: implemented
+  artifacts:
+  - specifications/governance/deviations.yaml
+  - tests/test_governance.py
+  remaining: Entries await an approving authority.
+- task_id: AUD-GOV-07
+  name: Issue exact-release certificate and enforce twelve certification gates
+  status: governance_decision_required
+  artifacts:
+  - docs/validation/release-procedure.md §4
+  remaining: Certificate requires appointed release authority.
+- task_id: AUD-REG-01
+  name: Obtain full upstream parameter-registry task and implementation
+  status: blocked_external
+  artifacts:
+  - specifications/model/parameter-registry.yaml
+  remaining: Upstream registry task not supplied.
+- task_id: AUD-REG-04
+  name: Resolve canonical numerical conventions before fixture freeze
+  status: blocked_external
+  artifacts:
+  - specifications/model-variants/MV-CORE-DISCRETE-1.yaml
+  remaining: Owner approval of conventions.
+- task_id: AUD-CROSS-01
+  name: Verify implementation qualification and Appendix Swift parity
+  status: blocked_external
+  artifacts: []
+  remaining: Swift Appendix not available.
+- task_id: AUD-FIG-01
+  name: Replace P1S1/P1S2 workflows with verified quantitative panels
+  status: blocked_external
+  artifacts: []
+  remaining: Requires frozen observation model and sensitivity ranges (scientific decision).
+- task_id: AUD-REPRO-01
+  name: Repair reproducibility pipeline metadata schema selection
+  status: implemented
+  artifacts:
+  - reproduce_all.sh
+  remaining: Full clean-environment run from pinned conda lock not executed here.
+- task_id: AUD-DATA-01
+  name: Make seed datasets available and align download instructions
+  status: partial
+  artifacts:
+  - src/apgi/scripts/fetch_data.py
+  - reproduce_all.sh
+  remaining: Certified dataset deposit.
+- task_id: AUD-DATA-02
+  name: Reconcile sample DoC generator with approved model/protocol
+  status: implemented
+  artifacts:
+  - src/apgi/datasets.py
+  - specifications/model-variants/MV-SAMPLE-DOC-1.yaml
+  remaining: ''
+- task_id: AUD-CI-01
+  name: Enforce complete validation during tagged releases
+  status: partial
+  artifacts:
+  - .github/workflows/release.yml
+  remaining: Approval gate is a repository environment setting.
+- task_id: AUD-FIX-1000
+  name: Approve at least 1,000 independent golden vectors per model/formulation
+  status: implemented_pending_approval
+  artifacts:
+  - fixtures/golden-vectors.json
+  remaining: Scientific approval.
+- task_id: AUD-APGI-P00-01
+  name: APGI-P00 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P00-02
+  name: APGI-P00 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P00-03
+  name: APGI-P00 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P00-04
+  name: APGI-P00 submission blocker 4
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P01-01
+  name: APGI-P01 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P01-02
+  name: APGI-P01 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P01-03
+  name: APGI-P01 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P01-04
+  name: APGI-P01 submission blocker 4
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P02-01
+  name: APGI-P02 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P02-02
+  name: APGI-P02 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P02-03
+  name: APGI-P02 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P03-01
+  name: APGI-P03 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P03-02
+  name: APGI-P03 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P03-03
+  name: APGI-P03 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P04-01
+  name: APGI-P04 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P04-02
+  name: APGI-P04 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P04-03
+  name: APGI-P04 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P05-01
+  name: APGI-P05 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P05-02
+  name: APGI-P05 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P05-03
+  name: APGI-P05 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P05-04
+  name: APGI-P05 submission blocker 4
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P06-01
+  name: APGI-P06 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P06-02
+  name: APGI-P06 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P06-03
+  name: APGI-P06 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P06-04
+  name: APGI-P06 submission blocker 4
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-01
+  name: APGI-P07 submission blocker 1
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-02
+  name: APGI-P07 submission blocker 2
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-03
+  name: APGI-P07 submission blocker 3
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-04
+  name: APGI-P07 submission blocker 4
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-05
+  name: APGI-P07 submission blocker 5
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-APGI-P07-06
+  name: APGI-P07 submission blocker 6
+  status: blocked_external
+  artifacts: []
+  remaining: Protocol-owner scientific decision; protocol files are locked and were not edited.
+- task_id: AUD-SPEC-CONFIRM-01
+  name: Resolve validation-spec confirmation 1
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-02
+  name: Resolve validation-spec confirmation 2
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-03
+  name: Resolve validation-spec confirmation 3
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-04
+  name: Resolve validation-spec confirmation 4
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-05
+  name: Resolve validation-spec confirmation 5
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-06
+  name: Resolve validation-spec confirmation 6
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-07
+  name: Resolve validation-spec confirmation 7
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-08
+  name: Resolve validation-spec confirmation 8
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-09
+  name: Resolve validation-spec confirmation 9
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-10
+  name: Resolve validation-spec confirmation 10
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-11
+  name: Resolve validation-spec confirmation 11
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-12
+  name: Resolve validation-spec confirmation 12
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-13
+  name: Resolve validation-spec confirmation 13
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-14
+  name: Resolve validation-spec confirmation 14
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-15
+  name: Resolve validation-spec confirmation 15
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-16
+  name: Resolve validation-spec confirmation 16
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-SPEC-CONFIRM-17
+  name: Resolve validation-spec confirmation 17
+  status: blocked_external
+  artifacts:
+  - specifications/governance/source-register.yaml
+  remaining: Specification-owner confirmation.
+- task_id: AUD-EXEC-01
+  name: Complete the long-running recovery-criteria verification
+  status: implemented
+  artifacts:
+  - evidence/runs/AUD-EXEC-01-recovery.json
+  - evidence/runs/AUD-EXEC-01-recovery.log
+  remaining: π_i correlation marginal (0.6000 vs > 0.60); DEV-0009.

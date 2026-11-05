@@ -1,0 +1,44 @@
+# Contract compatibility policy (task S1-FWK-08; APGI-VAL-SPEC-1.2 §11
+# "Version identifiers" and REL-004). Ranges use PEP 440 / semver syntax.
+policy_version: 0.1.0
+status: draft_unapproved
+versioning_rules:
+  MAJOR: "change to a schema field meaning, protocol-definition interpretation, equation, boundary rule or any scientific output for valid inputs"
+  MINOR: "backward-compatible addition (new registry entry, new fixture class, new optional field)"
+  PATCH: "correction without behaviour change (documentation, metadata)"
+contracts:
+  - id: CTR-PROTOCOL-SCHEMA
+    artifact: protocols/schemas/protocol.schema.json
+    current: "schema_version 1.1.0 (protocol bundle release 1.1.0)"
+    consumers_must_accept: ">=1.1.0,<2.0.0"
+    breaking_change_rule: "MAJOR bump of the protocol bundle; requires a new protocol lock and OSF amendment"
+  - id: CTR-FIXTURES
+    artifact: fixtures/fixture.schema.json
+    current: "generator_version 1.0.0; model_variant MV-CORE-DISCRETE-1 model_version 1.0.0"
+    consumers_must_accept: ">=1.0.0,<2.0.0 for the same model_variant and model_version"
+    breaking_change_rule: "any change to an expected value for an existing case id is MAJOR; consumers reject other model_versions (apgi.model_variants.require_variant)"
+  - id: CTR-PARAMETER-REGISTRY
+    artifact: specifications/model/parameter-registry.yaml
+    current: "registry_version 0.1.0 (draft)"
+    consumers_must_accept: ">=0.1.0,<0.2.0 while draft; >=1.0.0,<2.0.0 once approved"
+    breaking_change_rule: "IDs are never reused or renamed; removing an ID is MAJOR"
+  - id: CTR-GATE-TABLE
+    artifact: gates/gate-table.yaml
+    current: "gate_table_version 0.1.0"
+    consumers_must_accept: ">=0.1.0,<1.0.0"
+    breaking_change_rule: "republished with every model version; exposable-fields.yaml regenerated, never hand-edited"
+  - id: CTR-SPEC-BUNDLE
+    artifact: bundle/SHA256SUMS
+    current: "bundle_format 1"
+    consumers_must_accept: "bundle_format == 1"
+    breaking_change_rule: "consumers verify every checksum before use (apgi.spec_bundle.verify_bundle)"
+  - id: CTR-RELEASE-MANIFEST
+    artifact: releases/release-manifest.schema.json
+    current: "manifest_format 1"
+    consumers_must_accept: "manifest_format == 1"
+    breaking_change_rule: "MAJOR on any required-field change"
+  - id: CTR-APGI-API
+    artifact: "apgi-api contracts/schemas/v1 (trial-event, acquisition, model-result, validation-verdict, provenance)"
+    current: "not imported — canonical paths [CONFIRM] (AUD-SPEC-CONFIRM-08)"
+    consumers_must_accept: "pending"
+    breaking_change_rule: "pending"
