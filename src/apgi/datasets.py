@@ -7,14 +7,66 @@ Examples
 >>> import apgi
 >>> session = apgi.datasets.make_sample_session()
 >>> integ = apgi.APGICoreIntegration()
->>> integ.run_sequence(**{k: session[k] for k in
-...     ("pi_e", "z_e", "pi_i", "z_i", "C_metabolic", "V_information")})
+>>> _ = integ.run_sequence(session["pi_e"], session["z_e"], session["pi_i"],
+...     session["z_i"], C_t=session["C_metabolic"], I_t=session["V_information"])
 >>> print(f"ignition rate: {integ.ignition_rate():.3f}")
+ignition rate: 0.080
 """
 
 from __future__ import annotations
 
+import hashlib
+from importlib.metadata import PackageNotFoundError, version
+
 import numpy as np
+
+_SOURCES = {
+    "make_sample_session": {
+        "model_variant": "MV-CORE-DISCRETE-1",
+        "description": "Independent uniform draws of APGI trial inputs (no model run).",
+        "analysis_label": "exploratory",
+    },
+    "make_sample_doc_groups": {
+        "model_variant": "MV-SAMPLE-DOC-1",
+        "description": (
+            "Illustrative legacy three-group DoC generator. Not the registered "
+            "four-group Protocol 7 (APGI-P07) design; no refractory reset."
+        ),
+        "analysis_label": "exploratory",
+    },
+}
+
+
+def dataset_provenance(name: str, data: dict[str, np.ndarray], **params: object) -> dict:
+    """Return DAT-004 provenance for an in-memory sample dataset.
+
+    Records source (generator function), version (package version and model
+    variant), checksum (SHA-256 over keys, dtypes, shapes and bytes in key
+    order), licence (package licence, MIT) and processing history (the
+    parameters, including the seed, that regenerate the arrays exactly).
+
+    Raises:
+        KeyError: if *name* is not a known sample generator.
+    """
+    if name not in _SOURCES:
+        raise KeyError(f"unknown sample dataset generator {name!r}")
+    digest = hashlib.sha256()
+    for key in sorted(data):
+        array = np.ascontiguousarray(data[key])
+        digest.update(f"{key}|{array.dtype.str}|{array.shape}|".encode())
+        digest.update(array.tobytes())
+    try:
+        pkg_version = version("apgi-framework")
+    except PackageNotFoundError:  # pragma: no cover - source checkout
+        pkg_version = "0.0.0+dev"
+    return {
+        "source": f"apgi.datasets.{name}",
+        "version": pkg_version,
+        "checksum": {"algorithm": "sha256", "value": digest.hexdigest()},
+        "license": "MIT",
+        "history": [{"step": "generate", "function": f"apgi.datasets.{name}", "params": dict(params)}],
+        **_SOURCES[name],
+    }
 
 
 def make_sample_session(n_trials: int = 50, seed: int = 0) -> dict[str, np.ndarray]:
@@ -48,9 +100,16 @@ def make_sample_session(n_trials: int = 50, seed: int = 0) -> dict[str, np.ndarr
 def make_sample_doc_groups(
     n_per_group: int = 20, n_trials: int = 60, seed: int = 0
 ) -> dict[str, np.ndarray]:
-    """Return a small simulated DoC dataset (VS/UWS, MCS, Controls).
+    """Return a small illustrative DoC dataset (VS/UWS, MCS, Controls).
 
-    Precision parameters are calibrated to Protocol 6 group means.
+    Model variant MV-SAMPLE-DOC-1 (exploratory, AUD-DATA-02). This legacy
+    generator is NOT the registered Protocol 7 (APGI-P07) design: Protocol 7
+    registers four groups (VS/UWS, MCS, EMCS, healthy controls) whereas this
+    example has three; the group precision values are illustrative rather
+    than registered quantities; and the simulation uses the deterministic
+    P >= 0.5 criterion without the core refractory reset (δ_reset, ρ_retain).
+    Results carry no confirmatory weight; use :func:`dataset_provenance` to
+    attach the exploratory label and checksum.
 
     Args:
         n_per_group: Subjects per diagnostic group.

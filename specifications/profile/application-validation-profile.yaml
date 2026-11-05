@@ -1,0 +1,82 @@
+# Application Validation Profile — A03 apgi-framework
+# (APGI-VAL-SPEC-1.2 §1 and §5; tasks APGI-PRO-004, AUD-GOV-02).
+# DRAFT: applicability decisions and NOT_APPLICABLE rationales below are
+# proposals by the repository maintainer. None is approved: every approver
+# reads "Not appointed" until the release authority records a decision.
+profile_id: AVP-A03
+profile_version: 0.1.0
+status: draft_unapproved
+component: {id: A03, name: apgi-framework, repository: "github.com/apgiframework/apgi-framework",
+            responsibility: "Scientific definitions and fixtures"}
+release_owner: "Not appointed (repository maintainer acts as Solo Developer)"
+supported_versions:
+  package: "apgi-framework 1.1.x (pyproject.toml)"
+  protocol_bundle: "1.1.0 (protocols/MANIFEST.json) — equivalence to Protocol v1.2 unconfirmed (DEV-0008)"
+  model_variant: "MV-CORE-DISCRETE-1 model_version 1.0.0"
+  fixtures: "fixtures/ generator 1.0.0 (provisional)"
+declared_protocol_definitions:
+  # PRO-004: what this component claims to implement. A protocol definition
+  # is "supported" here only as lock-verified, schema-validated DATA plus
+  # registries/traceability; no protocol analysis is implemented.
+  supported_as_data: [APGI-P00, APGI-P01, APGI-P02, APGI-P03, APGI-P04, APGI-P05, APGI-P06, APGI-P07]
+  analysis_implemented: []
+  note: "Notebooks and figures under notebooks/ and figures/ are illustrative simulations on synthetic data; they are not implementations of the registered analyses and carry no confirmatory weight."
+interfaces:
+  - {name: "Python library API (apgi.*)", contract: "semantic versioning of public functions; no network API", status: supported}
+  - {name: "Specification bundle (specifications/, fixtures/, traceability/, gates/, protocols/)", contract: "bundle/SHA256SUMS + release manifest", status: supported}
+  - {name: "CLI apgi-fetch", contract: "local dataset verification", status: supported}
+  - {name: "Network API", status: none}
+data_classes:
+  - {class: protocol definitions, sensitivity: public, storage: git}
+  - {class: synthetic seed datasets, sensitivity: public, storage: "regenerated locally (data/seeds)"}
+  - {class: golden fixtures and noise draws, sensitivity: public, storage: git}
+  - {class: participant / research data, sensitivity: n/a, storage: "not collected, ingested or stored"}
+environments: ["developer workstation", "GitHub Actions CI (ubuntu-latest, macos-14)"]
+declared_platforms: ["Linux x86-64", "macOS ARM64 (CI only; certification evidence pending)"]
+applicability:
+  # A = applies, C = conditional (applies only if the function is implemented), N = NOT_APPLICABLE
+  PRO-001: {matrix: R, decision: A}
+  PRO-002: {matrix: R, decision: A}
+  PRO-003: {matrix: C, decision: N, rationale: "No interface in A03 defines correlation IDs, retries, ordering or idempotency: the library is synchronous and in-process, and the only network call (apgi-fetch) is an idempotent GET verified by SHA-256.", approver: Not appointed}
+  PRO-004: {matrix: R, decision: A}
+  SCI-001: {matrix: R, decision: A}
+  SCI-002: {matrix: R, decision: A}
+  SCI-003: {matrix: R, decision: A}
+  SCI-004: {matrix: R, decision: A}
+  SCI-005: {matrix: R, decision: A}
+  SCI-006: {matrix: R, decision: A}
+  SCI-007: {matrix: C, decision: A, rationale: "Docstrings, notebook text, figure captions and clinical labels are user-visible scientific statements."}
+  REP-001: {matrix: R, decision: A}
+  REP-002: {matrix: R, decision: A}
+  REP-003: {matrix: C, decision: A, rationale: "Protocol definitions report power and sample sizes."}
+  REP-004: {matrix: C, decision: A, rationale: "Notebooks and helpers can run protocol-related analyses; they must label deviations."}
+  REP-005: {matrix: "–", decision: N, rationale: "A03 performs no physical energy/power measurement. The Landauer helper carries explicit units (J) and is covered by deterministic fixtures EQ-10; reopen if measured quantities are added.", approver: Not appointed}
+  IMP-001: {matrix: R, decision: A}
+  IMP-002: {matrix: R, decision: A, rationale: "No production deployment or secrets in A03; applies to CI publishing credentials (PyPI trusted publishing via OIDC) and environment configuration (APGI_PROTOCOLS_DIR, APGI_DATA_DIR)."}
+  IMP-003: {matrix: R, decision: A, rationale: "Library/CLI role: structured audit events on the apgi.protocols logger and non-zero exit codes; no long-running service to monitor."}
+  DAT-001: {matrix: R, decision: A}
+  DAT-002: {matrix: R, decision: A}
+  DAT-003: {matrix: R, decision: A, rationale: "Data classes are public synthetic data and repository evidence; lifecycle = git history plus local cache deletion."}
+  DAT-004: {matrix: R, decision: A}
+  API-001: {matrix: C, decision: A, rationale: "Applies to the public Python library interface (versioned via semantic versioning and this profile); there is no network API."}
+  API-002: {matrix: "–", decision: N, rationale: "No protected operation or data object: all data are public and processing is local and single-user.", approver: Not appointed}
+  API-003: {matrix: R, decision: A, rationale: "No sensitive data; applies to secret handling in CI and logs (no secrets in repository; publishing via OIDC)."}
+  API-004: {matrix: "–", decision: N, rationale: "No API server. Library errors are typed exceptions with stable codes (ProtocolError.code); scientific success is never reported for a failed computation (INT-003).", approver: Not appointed}
+  INT-001: {matrix: R, decision: A}
+  INT-002: {matrix: R, decision: A, rationale: "A03 participates in IS-1 (protocol registration). The full IS-1–IS-7 scenario needs the other nine components and is blocked."}
+  INT-003: {matrix: R, decision: A}
+  INT-004: {matrix: "–", decision: N, rationale: "A03 is not a presentation client (Explorer, Appendix, website, quiz).", approver: Not appointed}
+  REL-001: {matrix: R, decision: A}
+  REL-002: {matrix: R, decision: A}
+  REL-003: {matrix: R, decision: A}
+  REL-004: {matrix: R, decision: A}
+  REL-005: {matrix: R, decision: A}
+  CON-001: {matrix: "–", decision: N, rationale: "A03 collects, ingests, processes and stores no participant data; all datasets are synthetic.", approver: Not appointed}
+  CON-002: {matrix: "–", decision: N, rationale: "No participant data, therefore no withdrawal lineage.", approver: Not appointed}
+  ACQ-001: {matrix: "–", decision: N, rationale: "No acquisition hardware or recording.", approver: Not appointed}
+  VAL-001: {matrix: "–", decision: N, rationale: "A03 holds registered decision rules as data (rule hashes in decision-rule-registry.yaml) but issues no verdicts; verdicts belong to A05.", approver: Not appointed}
+  CLI-001: {matrix: "–", decision: N, rationale: "No participant instruments or client content.", approver: Not appointed}
+reopen_triggers:
+  - "Any participant or research data enters the repository (CON, DAT-003, API-002/003)."
+  - "A network API or service is added (PRO-003, API-001/002/004)."
+  - "A protocol analysis is implemented (PRO-001 analysis_implemented, VAL-001)."

@@ -1,0 +1,19 @@
+# Compatibility matrix (APGI-VAL-SPEC-1.2 REL-004). Only combinations with
+# passing evidence are listed as supported; everything else is "untested".
+matrix_version: 0.1.0
+supported:
+  - apgi_framework: "1.1.x (this branch)"
+    protocol_bundle: "1.1.0"
+    protocol_manifest_sha256: "see generated registries (protocol_manifest_sha256)"
+    protocol_schema: "1.1.0"
+    fixtures: "generator 1.0.0 / MV-CORE-DISCRETE-1 1.0.0 (provisional)"
+    python: ["3.11", "3.12"]
+    platforms: ["Linux x86-64"]
+    evidence: "CI workflow 'CI' job test (tests/, fixtures, spec bundle, registries) on this commit"
+untested:
+  - {item: "Protocol v1.2", reason: "1.1.0 ↔ v1.2 equivalence unconfirmed (DEV-0008, AUD-SPEC-CONFIRM-02)"}
+  - {item: "macOS ARM64", reason: "CI job reproducibility-macos added; listed as supported only after its evidence is retained"}
+  - {item: "apgi-implementation / apgi-validation / apgi-api revisions", reason: "other components not inspected (INT-002 blocked)"}
+  - {item: "Papers 1–4 versions", reason: "version-locked revisions pending (AUD-SPEC-CONFIRM-05)"}
+archive_records:
+  - {doi: "10.5281/zenodo.21632264", content: "manuscripts and protocol battery (v1.0)", relation: "concept/version DOI to confirm (AUD-SPEC-CONFIRM-06)"}

@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3]))
 from apgi.extensions.epistemic import (
-    KAPPA_ATP_PER_BIT_DEFAULT,
+    KAPPA_ATP_PER_BIT_ILLUSTRATIVE,
     inefficiency_ratio,
     landauer_minimum_energy,
 )
@@ -51,7 +51,7 @@ _INEFFICIENCY_FACTOR = inefficiency_ratio(
 # ~50 zJ/ATP hydrolysis energy. Distinct from the whole-event inefficiency
 # factor above (different quantity: per-bit unit cost vs whole-event ratio).
 _JOULES_PER_ATP = 5e-20
-_KAPPA_J_PER_BIT = KAPPA_ATP_PER_BIT_DEFAULT * _JOULES_PER_ATP
+_KAPPA_J_PER_BIT = KAPPA_ATP_PER_BIT_ILLUSTRATIVE * _JOULES_PER_ATP
 
 
 def _format_landauer(value: float) -> str:
@@ -114,7 +114,7 @@ BRIDGES = [
     {
         "label": (
             "T2→T1: Landauer bridge\nE ≥ kT·ln2 per bit erased\n"
-            f"κ ≈ {KAPPA_ATP_PER_BIT_DEFAULT:.0f} ATP/bit {_format_sci(_KAPPA_J_PER_BIT)} J/bit\n"
+            f"κ ≈ {KAPPA_ATP_PER_BIT_ILLUSTRATIVE:.0f} ATP/bit {_format_sci(_KAPPA_J_PER_BIT)} J/bit\n"
             "Status: theoretically bounded, κ unmeasured"
         ),
         "y_from": 0.42,

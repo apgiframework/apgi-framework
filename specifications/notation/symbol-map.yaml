@@ -1,0 +1,133 @@
+# Code identifier → notation symbol map (APGI-VAL-SPEC-1.2 SCI-004).
+# scripts/scan_notation.py fails CI if a public argument or module constant
+# in the scientific modules is missing here, or if a bare Greek family name
+# (alpha, beta, gamma, eta, kappa, lambda, rho, tau, theta, pi, mu, sigma) is
+# used without an entry marked `legacy_bare: true`.
+# Notation source: APGI Notation Appendix (revision pending, AUD-SPEC-CONFIRM-04).
+version: 0.1.0
+status: draft_unapproved
+symbols:
+  # core equations
+  pi_e: {symbol: "Π_e", registry: PAR-PI-E}
+  pi_i: {symbol: "Π_i", registry: PAR-PI-I-BASELINE}
+  pi_i_baseline: {symbol: "Π_i^baseline", registry: PAR-PI-I-BASELINE}
+  pi_i_eff: {symbol: "Π_i^eff", registry: PAR-PI-I-EFF}
+  pi_i_true: {symbol: "Π_i (generating value)", registry: PAR-PI-I-BASELINE}
+  pi_t: {symbol: "Π(t)", registry: PAR-PI-E, note: "channel-generic precision driving τ_eff in the LNN"}
+  pi: {symbol: "Π (channel-generic)", registry: PAR-PI-E, note: "precision.apply_neuromodulatory_gain / OnlinePrecisionChannel output", legacy_bare: true}
+  z_e: {symbol: "z_e", registry: SIG-Z-E}
+  z_i: {symbol: "z_i", registry: SIG-Z-I}
+  eps_t: {symbol: "ε(t)", registry: SIG-EPS-E}
+  S_t: {symbol: "S_t", registry: STA-S-T}
+  S_prev: {symbol: "S_{t−1}", registry: STA-S-T}
+  S_input: {symbol: "S_input", registry: STA-S-T}
+  S_k: {symbol: "S_k", registry: STA-S-T, note: "per-level salience (hierarchical extension)"}
+  theta_t: {symbol: "θ_t", registry: STA-THETA-T}
+  theta_next: {symbol: "θ_{k+1}", registry: STA-THETA-T}
+  theta_init: {symbol: "θ_t initial", registry: STA-THETA-T}
+  theta_0: {symbol: "θ_0", registry: PAR-THETA-0}
+  theta_0_true: {symbol: "θ_0 (generating value)", registry: PAR-THETA-0}
+  theta_star: {symbol: "θ_k*", registry: PAR-HIER-TIMESCALES}
+  theta_star_next: {symbol: "θ_{k+1}*", registry: PAR-HIER-TIMESCALES}
+  gamma_sig: {symbol: "γ_sig", registry: PAR-GAMMA-SIG}
+  gamma_sig_true: {symbol: "γ_sig (generating value)", registry: PAR-GAMMA-SIG}
+  gamma_NE: {symbol: "γ_NE", registry: PAR-GAMMA-NE}
+  g_NE: {symbol: "g_NE", registry: PAR-GAMMA-NE, note: "NE gain signal multiplying γ_NE"}
+  gain: {symbol: "g_ACh | g_NE", registry: PAR-GAMMA-NE, note: "channel neuromodulatory gain"}
+  beta_sm: {symbol: "β_SM", registry: PAR-BETA-SM}
+  beta_sm_true: {symbol: "β_SM (generating value)", registry: PAR-BETA-SM}
+  beta_k: {symbol: "β_k", registry: PAR-BETA-K}
+  M_hat: {symbol: "M̂(c,a)", registry: SIG-M-HAT}
+  tau_S: {symbol: "τ_S", registry: PAR-TAU-S}
+  tau_S_true: {symbol: "τ_S (generating value)", registry: PAR-TAU-S}
+  tau_theta: {symbol: "τ_θ,ℓ", registry: PAR-HIER-TIMESCALES}
+  tau_int: {symbol: "τ_int,ℓ", registry: PAR-HIER-TIMESCALES}
+  tau_ign: {symbol: "τ_ign,ℓ", registry: PAR-HIER-TIMESCALES}
+  tau: {symbol: "τ_res", registry: PAR-LNN-TAU, legacy_bare: true}
+  lambda_theta: {symbol: "λ_θ", registry: PAR-LAMBDA-THETA}
+  kappa_meta: {symbol: "κ_meta", registry: PAR-KAPPA-META}
+  kappa_coupling: {symbol: "κ_{k,k+1}", registry: PAR-KAPPA-COUPLING}
+  delta_info: {symbol: "Δ_info", registry: PAR-DELTA-INFO}
+  delta_reset: {symbol: "δ_reset", registry: PAR-DELTA-RESET}
+  rho_retain: {symbol: "ρ_retain", registry: PAR-RHO-RETAIN}
+  rho_S: {symbol: "ρ_S", registry: PAR-LNN-RHO-S}
+  eta_NE: {symbol: "η_NE", registry: PAR-ETA-NE}
+  eta_k: {symbol: "η_k", registry: PAR-ETA-K}
+  C: {symbol: "C", registry: SIG-C}
+  C_t: {symbol: "C(t)", registry: SIG-C}
+  C_metabolic: {symbol: "C(t)", registry: SIG-C}
+  I_t: {symbol: "I(t)", registry: SIG-I}
+  I_val: {symbol: "I", registry: SIG-I}
+  NE: {symbol: "NE", registry: SIG-NE}
+  NE_t: {symbol: "NE(t)", registry: SIG-NE}
+  NE_k: {symbol: "NE_k(t)", registry: SIG-NE}
+  fired: {symbol: "B(t)", registry: STA-S-T, note: "ignition indicator"}
+  dt: {symbol: "Δt", registry: PAR-TAU-S, note: "integration step (MV-CORE-DISCRETE-1 step_size)"}
+  u: {symbol: "u(t)", registry: SIG-EPS-E, note: "input vector to the LNN reservoir"}
+  # precision estimator
+  alpha_ema: {symbol: "α_EMA", registry: PAR-ALPHA-EMA}
+  eps_stab: {symbol: "ε_stab", registry: CON-EPS-STAB}
+  epsilon: {symbol: "ε_norm", registry: PAR-NORMALIZER-EPSILON, legacy_bare: true}
+  PEM: {symbol: "|ε| / z (kind)", registry: SIG-Z-E, note: "kind alias apgi.quantities.PredictionError"}
+  LEVELS: {symbol: "L0–L4", registry: CON-HIERARCHY-L0-L4, note: "canonical timescale hierarchy table (apgi.hierarchy_levels)"}
+  mu: {symbol: "μ(t)", registry: SIG-EPS-E, note: "running mean", legacy_bare: true}
+  mu_t: {symbol: "μ(t)", registry: SIG-EPS-E}
+  sigma2: {symbol: "σ²(t)", registry: SIG-EPS-E, note: "running variance"}
+  sigma2_t: {symbol: "σ²(t)", registry: SIG-EPS-E}
+  # thermodynamic layer
+  n_bits: {symbol: "n_bits", registry: PAR-KAPPA, note: "bits erased (Landauer)"}
+  actual_energy_j: {symbol: "E_actual (J)", registry: PAR-KAPPA}
+  temperature_k: {symbol: "T", registry: CON-T-BODY}
+  synaptic_overhead_factor: {symbol: "ξ_syn", registry: PAR-KAPPA}
+  # module constants
+  THETA_0_DEFAULT: {symbol: "θ_0", registry: PAR-THETA-0}
+  LAMBDA_THETA_DEFAULT: {symbol: "λ_θ", registry: PAR-LAMBDA-THETA}
+  KAPPA_META_DEFAULT: {symbol: "κ_meta", registry: PAR-KAPPA-META}
+  DELTA_INFO_DEFAULT: {symbol: "Δ_info", registry: PAR-DELTA-INFO}
+  ETA_NE_DEFAULT: {symbol: "η_NE", registry: PAR-ETA-NE}
+  GAMMA_SIG_DEFAULT: {symbol: "γ_sig", registry: PAR-GAMMA-SIG}
+  TAU_S_DEFAULT: {symbol: "τ_S", registry: PAR-TAU-S}
+  BETA_SM_DEFAULT: {symbol: "β_SM", registry: PAR-BETA-SM}
+  DELTA_RESET_DEFAULT: {symbol: "δ_reset", registry: PAR-DELTA-RESET}
+  RHO_RETAIN_DEFAULT: {symbol: "ρ_retain", registry: PAR-RHO-RETAIN}
+  GAMMA_NE_DEFAULT: {symbol: "γ_NE", registry: PAR-GAMMA-NE}
+  NE_SUBDOMINANCE_LIMIT: {symbol: "max γ_NE·g_NE", registry: CON-NE-SUBDOMINANCE}
+  PI_MIN: {symbol: "Π_min", registry: CON-PI-MIN}
+  PI_MAX: {symbol: "Π_max", registry: CON-PI-MAX}
+  ALPHA_EMA_DEFAULT: {symbol: "α_EMA", registry: PAR-ALPHA-EMA}
+  EPS_STAB_DEFAULT: {symbol: "ε_stab", registry: CON-EPS-STAB}
+  BOLTZMANN_CONSTANT: {symbol: "k_B", registry: CON-K-BOLTZMANN}
+  BODY_TEMPERATURE_K: {symbol: "T", registry: CON-T-BODY}
+  KAPPA_ATP_PER_BIT_ILLUSTRATIVE: {symbol: "κ (illustrative only)", registry: PAR-KAPPA}
+  KAPPA_STATUS: {symbol: "κ status", registry: PAR-KAPPA}
+  ACCEPTANCE_THRESHOLD: {symbol: "—", registry: CON-EPISTEMIC-ACCEPT}
+  spectral_radius: {symbol: "ρ_W", registry: PAR-LNN-SPECTRAL-RADIUS}
+  noise_sd: {symbol: "σ_obs", registry: PAR-RECOVERY-NOISE-SD}
+non_symbols:
+  # implementation arguments that carry no scientific symbol
+  - CRITERIA
+  - FOUNDATIONAL_CRITERIA
+  - MODEL_FORMULATION
+  - bottom_up
+  - top_down
+  - data
+  - inputs
+  - level_id
+  - method
+  - n_hidden
+  - n_inputs
+  - n_outputs
+  - n_restarts
+  - n_sensory
+  - n_simulations
+  - n_trials
+  - n_trials_per_sim
+  - n_units
+  - normalized
+  - raw_scores
+  - rng
+  - seed
+  - sensory_input
+  - signals
+  - thresholds
+  - window_size

@@ -6,6 +6,8 @@ from style import *
 import json, runpy, textwrap, hashlib, html
 
 REPO=ROOT.parents[1]
+from apgi.protocols import verify_lock  # noqa: E402  REP-001
+verify_lock(REPO/'protocols')
 PROTOCOLS={n:json.loads(next((REPO/'protocols').glob(f'protocol_{n}_*.json')).read_text()) for n in range(8)}
 MANUSCRIPT=json.loads((ROOT/'manuscript_data.json').read_text())
 CAPTIONS=json.loads((ROOT/'captions.json').read_text())

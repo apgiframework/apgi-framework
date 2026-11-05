@@ -1,0 +1,13 @@
+# Accountable roles (APGI-VAL-SPEC-1.2 §2; AUD-GOV-03).
+# An unfilled independent role reads "Not appointed" and never appears as an
+# approval. CI is not an independent reviewer.
+roles:
+  scientific_authority: Not appointed
+  specification_owner: Not appointed
+  release_authority: Not appointed
+  reference_implementation_maintainer: Not appointed
+  automated_verification_executor: "GitHub Actions CI (automated; not a reviewer)"
+  independent_scientific_reviewer: Not appointed
+  independent_security_reviewer: Not appointed
+independence_level: Self-attested
+note: "The repository maintainer has made every change in this register; no decision here is independently reviewed."

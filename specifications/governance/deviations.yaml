@@ -1,0 +1,147 @@
+# Defects and time-bounded deviations (APGI-VAL-SPEC-1.2 §10; AUD-GOV-06).
+# A deviation is accepted only when it states requirement, impact,
+# compensating controls, owner, expiry, remediation and approving authority.
+# No entry below is approved: approver reads "Not appointed" and every entry
+# remains OPEN. Non-waivable requirements (§10) cannot be closed by deviation.
+# CI (tests/test_governance.py) rejects entries that are expired or missing
+# mandatory fields.
+register_version: 0.1.0
+entries:
+  - id: DEV-0001
+    type: defect
+    requirement: SCI-001
+    non_waivable: true
+    severity: critical
+    title: "Deterministic ignition fires at S_t == θ_t (P >= 0.5); draft spec requires strict S_t > θ_t"
+    impact: "Equality-boundary classification differs from APGI-VAL-SPEC-1.2 §6.1 for apgi.core.ignition_criterion(rng=None) and every caller that uses it (integration, datasets)."
+    compensating_controls: "apgi.core.ignition_decision_strict implements the strict rule; fixtures/ignition-boundary.json tests it; test_bit_identical_boundary_conflict_is_tracked pins the legacy behaviour so it cannot change silently."
+    remediation: "Scientific authority confirms the governing rule (AUD-SPEC-CONFIRM-13); then switch the deterministic path or label it an incompatible formulation; bump model MAJOR version."
+    owner: Scientific authority
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    linked_tasks: [APGI-SCI-001, AUD-SPEC-CONFIRM-13]
+  - id: DEV-0002
+    type: deviation
+    requirement: REP-001
+    non_waivable: true
+    severity: high
+    title: "Protocol lock manifest is SHA-256 verified but not anchored by OpenTimestamps"
+    impact: "Lock integrity relies on the repository history; no independent timestamp proof."
+    compensating_controls: "apgi.protocols.verify_lock refuses any mismatch; manifest hash recorded in every generated registry and release manifest; git history."
+    remediation: "Owner stamps protocols/MANIFEST.json with OpenTimestamps and commits the .ots proof (scripts/anchor_protocol_lock.sh)."
+    owner: Specification owner
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    linked_tasks: [APGI-REP-001, S1-FWK-11, AUD-SPEC-CONFIRM-01]
+  - id: DEV-0003
+    type: defect
+    requirement: SCI-003
+    non_waivable: false
+    severity: high
+    title: "Hierarchical extension levels are not the canonical L0–L4 timescale hierarchy; L3/L4 numeric bounds are draft"
+    impact: "apgi.extensions.hierarchical uses five processing levels in trial steps. The canonical hierarchy is implemented separately (apgi.hierarchy_levels) with draft L3/L4 bounds."
+    compensating_controls: "Extension registered as exploratory variant MV-HIERARCHICAL-EXT-1 and documented as not L0–L4; boundary tests on apgi.hierarchy_levels."
+    remediation: "Owner confirms L3/L4 numeric bounds and boundary closure convention; decide whether to re-parameterise the extension onto L0–L4."
+    owner: Scientific authority
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    linked_tasks: [APGI-SCI-003, AUD-SPEC-CONFIRM-05]
+  - id: DEV-0004
+    type: defect
+    requirement: REP-003
+    non_waivable: false
+    severity: high
+    title: "Protocol 3 registers n_required = 36; independent reference gives 34"
+    impact: "For d = 0.5, alpha = 0.05, power = 0.80 (paired two-tailed t) scipy noncentral-t gives n = 34. The registered 36 may encode an unstated adjustment; the protocol file is locked and is not edited here."
+    compensating_controls: "n_target = 40 exceeds both values, so the registered enrolment is not underpowered under this design."
+    remediation: "Protocol owner documents the derivation of 36 or amends the registration."
+    owner: Protocol owner (APGI-P03)
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    power_cases: [PWR-P03-N]
+    linked_tasks: [APGI-REP-003]
+  - id: DEV-0005
+    type: deviation
+    requirement: REP-003
+    non_waivable: false
+    severity: medium
+    title: "Registered powers are stated to two decimals; §6.1 requires 1e-6 relative agreement"
+    impact: "Power values agree with the scipy reference at the registered precision but cannot meet 1e-6 relative because the registration rounds them."
+    compensating_controls: "evidence/power/power-comparison.json records the unrounded reference and agreement at the registered precision."
+    remediation: "Protocol owner records unrounded powers in the next amendment."
+    owner: Protocol owner
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    power_cases: [PWR-P01-PMIN, PWR-P05-PMIN, PWR-P03-SECONDARY-R]
+    linked_tasks: [APGI-REP-003]
+  - id: DEV-0006
+    type: deviation
+    requirement: SCI-004
+    non_waivable: false
+    severity: low
+    title: "Legacy bare Greek-family identifiers in public APIs (tau, pi, mu, epsilon)"
+    impact: "Public argument names lack disambiguating subscripts; renaming would break callers."
+    compensating_controls: "specifications/notation/symbol-map.yaml maps each to a disambiguated symbol; scripts/scan_notation.py fails on any new bare identifier."
+    remediation: "Add subscripted aliases and deprecate the bare names in the next MINOR release."
+    owner: Solo Developer
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-05-05
+    linked_tasks: [APGI-SCI-004]
+  - id: DEV-0007
+    type: deviation
+    requirement: REP-003
+    non_waivable: false
+    severity: medium
+    title: "Protocol 7 regression power cannot be independently recomputed"
+    impact: "The noncentral-F calculation needs the numerator df and covariate count, which are not registered; the protocol itself labels the power an approximation."
+    compensating_controls: "Reported as not_reproducible; no reference value invented."
+    remediation: "Protocol owner registers the model degrees of freedom or an archived power simulation (AUD-APGI-P07-01)."
+    owner: Protocol owner (APGI-P07)
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    power_cases: [PWR-P07-F]
+    linked_tasks: [APGI-REP-003, AUD-APGI-P07-01]
+  - id: DEV-0008
+    type: defect
+    requirement: PRO-001
+    non_waivable: true
+    severity: critical
+    title: "Registered reduced specification (MV-PROTOCOL-REDUCED-1) is not implemented; protocol bundle 1.1.0 not reconciled to Protocol v1.2"
+    impact: "apgi.core implements a different formulation; it cannot produce confirmatory protocol results. Version equivalence 1.1.0 ↔ v1.2 is unconfirmed (AUD-SPEC-CONFIRM-02)."
+    compensating_controls: "apgi.model_variants.map_parameters and apgi.registration label any protocol analysis through the core model exploratory."
+    remediation: "Approve the protocol-to-implementation map; implement or formally exclude the reduced specification in the A03 profile."
+    owner: Scientific authority
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    linked_tasks: [APGI-PRO-001, AUD-SPEC-CONFIRM-02]
+  - id: DEV-0009
+    type: defect
+    requirement: SCI-002
+    non_waivable: true
+    severity: high
+    title: "Parameter-recovery generator and likelihood omit the refractory reset of MV-CORE-DISCRETE-1"
+    impact: "apgi.parameter_recovery simulates and fits a no-reset formulation (no δ_reset, no ρ_retain; likelihood also omits the Π clamp). Recovery results (AUD-EXEC-01) therefore validate that reduced formulation, not the declared core variant."
+    compensating_controls: "Documented here and in the AUD-EXEC-01 evidence; recovery output is not cited as evidence for reset parameters."
+    remediation: "Declare the recovery formulation as its own variant or add the reset to generator and likelihood, then re-run AUD-EXEC-01."
+    owner: Scientific authority
+    approver: Not appointed
+    status: open
+    opened: 2026-11-05
+    expiry: 2027-02-05
+    linked_tasks: [APGI-SCI-002, AUD-EXEC-01, AUD-FIG-01]

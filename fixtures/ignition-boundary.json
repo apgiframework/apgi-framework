@@ -1,0 +1,474 @@
+{
+ "schema": "fixtures/fixture.schema.json",
+ "generator": "fixtures/generate_fixtures.py",
+ "generator_version": "1.0.0",
+ "model_variant": "MV-CORE-DISCRETE-1",
+ "model_version": "1.0.0",
+ "reference_arithmetic": "decimal, 60 significant digits",
+ "tolerance": {
+  "default": {
+   "abs": 1e-09,
+   "rel": 1e-07,
+   "rule": "|a-e| <= abs + rel*|e|  (§6.1)"
+  },
+  "S_t": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "theta": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "classification": "exact outside the boundary band",
+  "boundary_band_ulp": 4
+ },
+ "approval": {
+  "status": "provisional_unapproved",
+  "approver": "Not appointed",
+  "blocking_items": [
+   "AUD-REG-04",
+   "AUD-FIX-1000",
+   "AUD-SPEC-CONFIRM-13"
+  ]
+ },
+ "fixture": "ignition-boundary",
+ "rule": "B = 1 iff S_t > theta_t (EQ-2D, APGI-SCI-001 draft)",
+ "band_policy": "Outside the 4-ulp band the strict classification must match exactly; inside it the result is recorded and either classification passes (§6.1). Bit-identical S_t == theta_t never ignites under the strict rule.",
+ "known_conflict": "apgi.core.ignition_criterion(rng=None) uses P >= 0.5 and ignites at equality — tracked as DEV-0001.",
+ "cases": [
+  {
+   "id": "IB-0.6-+0ulp",
+   "S_t": 0.6,
+   "theta_t": 0.6,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.6-+1ulp",
+   "S_t": 0.6000000000000001,
+   "theta_t": 0.6,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.6--1ulp",
+   "S_t": 0.5999999999999999,
+   "theta_t": 0.6,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.6-+2ulp",
+   "S_t": 0.6000000000000002,
+   "theta_t": 0.6,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.6--2ulp",
+   "S_t": 0.5999999999999998,
+   "theta_t": 0.6,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.6-+4ulp",
+   "S_t": 0.6000000000000004,
+   "theta_t": 0.6,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.6--4ulp",
+   "S_t": 0.5999999999999995,
+   "theta_t": 0.6,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.6-+5ulp",
+   "S_t": 0.6000000000000005,
+   "theta_t": 0.6,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.6--5ulp",
+   "S_t": 0.5999999999999994,
+   "theta_t": 0.6,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.25-+0ulp",
+   "S_t": 0.25,
+   "theta_t": 0.25,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.25-+1ulp",
+   "S_t": 0.25000000000000006,
+   "theta_t": 0.25,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.25--1ulp",
+   "S_t": 0.24999999999999997,
+   "theta_t": 0.25,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.25-+2ulp",
+   "S_t": 0.2500000000000001,
+   "theta_t": 0.25,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.25--2ulp",
+   "S_t": 0.24999999999999994,
+   "theta_t": 0.25,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.25-+4ulp",
+   "S_t": 0.2500000000000002,
+   "theta_t": 0.25,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.25--4ulp",
+   "S_t": 0.2499999999999999,
+   "theta_t": 0.25,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.25-+5ulp",
+   "S_t": 0.2500000000000003,
+   "theta_t": 0.25,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.25--5ulp",
+   "S_t": 0.24999999999999986,
+   "theta_t": 0.25,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.85-+0ulp",
+   "S_t": 0.85,
+   "theta_t": 0.85,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.85-+1ulp",
+   "S_t": 0.8500000000000001,
+   "theta_t": 0.85,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.85--1ulp",
+   "S_t": 0.8499999999999999,
+   "theta_t": 0.85,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.85-+2ulp",
+   "S_t": 0.8500000000000002,
+   "theta_t": 0.85,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.85--2ulp",
+   "S_t": 0.8499999999999998,
+   "theta_t": 0.85,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.85-+4ulp",
+   "S_t": 0.8500000000000004,
+   "theta_t": 0.85,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.85--4ulp",
+   "S_t": 0.8499999999999995,
+   "theta_t": 0.85,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.85-+5ulp",
+   "S_t": 0.8500000000000005,
+   "theta_t": 0.85,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.85--5ulp",
+   "S_t": 0.8499999999999994,
+   "theta_t": 0.85,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-1.0-+0ulp",
+   "S_t": 1.0,
+   "theta_t": 1.0,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-1.0-+1ulp",
+   "S_t": 1.0000000000000002,
+   "theta_t": 1.0,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-1.0--1ulp",
+   "S_t": 0.9999999999999999,
+   "theta_t": 1.0,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-1.0-+2ulp",
+   "S_t": 1.0000000000000004,
+   "theta_t": 1.0,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-1.0--2ulp",
+   "S_t": 0.9999999999999998,
+   "theta_t": 1.0,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-1.0-+4ulp",
+   "S_t": 1.0000000000000009,
+   "theta_t": 1.0,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-1.0--4ulp",
+   "S_t": 0.9999999999999996,
+   "theta_t": 1.0,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-1.0-+5ulp",
+   "S_t": 1.000000000000001,
+   "theta_t": 1.0,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-1.0--5ulp",
+   "S_t": 0.9999999999999994,
+   "theta_t": 1.0,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.001-+0ulp",
+   "S_t": 0.001,
+   "theta_t": 0.001,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.001-+1ulp",
+   "S_t": 0.0010000000000000002,
+   "theta_t": 0.001,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.001--1ulp",
+   "S_t": 0.0009999999999999998,
+   "theta_t": 0.001,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.001-+2ulp",
+   "S_t": 0.0010000000000000005,
+   "theta_t": 0.001,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.001--2ulp",
+   "S_t": 0.0009999999999999996,
+   "theta_t": 0.001,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.001-+4ulp",
+   "S_t": 0.0010000000000000009,
+   "theta_t": 0.001,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.001--4ulp",
+   "S_t": 0.0009999999999999992,
+   "theta_t": 0.001,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-0.001-+5ulp",
+   "S_t": 0.001000000000000001,
+   "theta_t": 0.001,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-0.001--5ulp",
+   "S_t": 0.000999999999999999,
+   "theta_t": 0.001,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-123.456-+0ulp",
+   "S_t": 123.456,
+   "theta_t": 123.456,
+   "ulp_offset": 0,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-123.456-+1ulp",
+   "S_t": 123.45600000000002,
+   "theta_t": 123.456,
+   "ulp_offset": 1,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-123.456--1ulp",
+   "S_t": 123.45599999999999,
+   "theta_t": 123.456,
+   "ulp_offset": -1,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-123.456-+2ulp",
+   "S_t": 123.45600000000003,
+   "theta_t": 123.456,
+   "ulp_offset": 2,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-123.456--2ulp",
+   "S_t": 123.45599999999997,
+   "theta_t": 123.456,
+   "ulp_offset": -2,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-123.456-+4ulp",
+   "S_t": 123.45600000000006,
+   "theta_t": 123.456,
+   "ulp_offset": 4,
+   "in_band": true,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-123.456--4ulp",
+   "S_t": 123.45599999999995,
+   "theta_t": 123.456,
+   "ulp_offset": -4,
+   "in_band": true,
+   "expected_strict": false
+  },
+  {
+   "id": "IB-123.456-+5ulp",
+   "S_t": 123.45600000000007,
+   "theta_t": 123.456,
+   "ulp_offset": 5,
+   "in_band": false,
+   "expected_strict": true
+  },
+  {
+   "id": "IB-123.456--5ulp",
+   "S_t": 123.45599999999993,
+   "theta_t": 123.456,
+   "ulp_offset": -5,
+   "in_band": false,
+   "expected_strict": false
+  }
+ ]
+}

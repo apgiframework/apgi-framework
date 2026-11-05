@@ -107,8 +107,8 @@ class HierarchicalLevel:
         """Update level state and return prediction error and Sₜ contribution.
 
         Args:
-            bottom_up: Signal from the level below (or sensory input at L1).
-            top_down: Prediction from the level above (zeros at L5).
+            bottom_up: Signal from the level below (or sensory input at level 1).
+            top_down: Prediction from the level above (zeros at level 5).
             C_metabolic: Current metabolic cost.
 
         Returns:
@@ -202,30 +202,30 @@ class APGIHierarchy:
     """
 
     # Timescales follow Paper 3 §2.2's geometric spacing across levels; at
-    # L1 the three timescales collapse toward the same order of magnitude
-    # (spec), while at L2+ they separate with tau_int > tau_theta > tau_ign.
+    # level 1 the three timescales collapse toward the same order of magnitude
+    # (spec), while at levels 2+ they separate with tau_int > tau_theta > tau_ign.
     LEVEL_CONFIGS: list[dict] = [
-        {  # L1 — Sensory encoding
+        {  # Level 1 — Sensory encoding
             "pi_e": 0.5, "pi_i": 0.8,
             "tau_int": 5.0, "tau_theta": 5.0, "tau_ign": 5.0,
             "theta_star": 0.5, "kappa_coupling": 0.3,
         },
-        {  # L2 — Local integration
+        {  # Level 2 — Local integration
             "pi_e": 0.8, "pi_i": 0.9,
             "tau_int": 22.0, "tau_theta": 15.0, "tau_ign": 8.0,
             "theta_star": 0.55, "kappa_coupling": 0.3,
         },
-        {  # L3 — Regional coordination
+        {  # Level 3 — Regional coordination
             "pi_e": 1.0, "pi_i": 1.0,
             "tau_int": 75.0, "tau_theta": 50.0, "tau_ign": 25.0,
             "theta_star": 0.6, "kappa_coupling": 0.3,
         },
-        {  # L4 — Global workspace
+        {  # Level 4 — Global workspace
             "pi_e": 1.2, "pi_i": 1.1,
             "tau_int": 225.0, "tau_theta": 150.0, "tau_ign": 75.0,
             "theta_star": 0.65, "kappa_coupling": 0.3,
         },
-        {  # L5 — Metacognitive monitoring (top level: no level above to couple to)
+        {  # Level 5 — Metacognitive monitoring (top level: no level above to couple to)
             "pi_e": 1.5, "pi_i": 1.2,
             "tau_int": 675.0, "tau_theta": 450.0, "tau_ign": 225.0,
             "theta_star": 0.7, "kappa_coupling": 0.0,
@@ -284,7 +284,7 @@ class APGIHierarchy:
             dict with keys:
 
             - ``S_t_total`` (float): Sum of Sₜ contributions across all levels.
-            - ``level_S_t`` (list[float]): Per-level Sₜ contributions (L1–L5).
+            - ``level_S_t`` (list[float]): Per-level Sₜ contributions (levels 1–5).
             - ``level_errors`` (list[NDArray]): Per-level prediction errors.
             - ``predictions`` (list[NDArray]): Per-level top-down predictions.
             - ``level_theta`` (list[float]): Per-level threshold θ_ℓ after
@@ -306,7 +306,7 @@ class APGIHierarchy:
         bottom_up_signals: list[NDArray] = [None] * n  # type: ignore[list-item]
         top_down_signals: list[NDArray] = [None] * n  # type: ignore[list-item]
 
-        # Resize sensory input to L1 width via averaging if needed
+        # Resize sensory input to level-1 width via averaging if needed
         l1_width = self.levels[0].n_units
         if len(sensory_input) != l1_width:
             sensory_input = np.interp(

@@ -1,0 +1,177 @@
+{
+  "reference_library": "scipy 1.18.1",
+  "tolerance": {
+    "n": "ceil equality",
+    "power_relative": 1e-06
+  },
+  "cases": [
+    {
+      "case": "PWR-P00-N",
+      "protocol_id": "APGI-P00",
+      "design": "two-tailed Pearson correlation (Fisher z)",
+      "inputs": {
+        "r": 0.35,
+        "alpha": 0.01,
+        "power": 0.9
+      },
+      "n_registered": 115,
+      "n_reference": 115,
+      "n_match": true,
+      "status": "match"
+    },
+    {
+      "case": "PWR-P01-N",
+      "protocol_id": "APGI-P01",
+      "design": "paired / one-sample t, two-tailed (fixed-n reference)",
+      "inputs": {
+        "d": 0.45,
+        "alpha": 0.0125,
+        "power": 0.8
+      },
+      "n_registered": 59,
+      "n_reference": 59,
+      "power_at_reference_n": 0.8065702397831682,
+      "note": "Registered design is sequential; the fixed-n reference checks only the nominal n_required.",
+      "n_match": true,
+      "status": "match"
+    },
+    {
+      "case": "PWR-P01-PMIN",
+      "protocol_id": "APGI-P01",
+      "design": "power at registered minimum n (paired t, two-tailed)",
+      "inputs": {
+        "d": 0.45,
+        "alpha": 0.0125,
+        "n": 48
+      },
+      "power": {
+        "registered": 0.7,
+        "reference": 0.6971131946803879,
+        "match_1e-6_relative": false,
+        "match_at_registered_precision": true
+      },
+      "status": "mismatch"
+    },
+    {
+      "case": "PWR-P03-N",
+      "protocol_id": "APGI-P03",
+      "design": "paired / one-sample t, two-tailed (fixed-n reference)",
+      "inputs": {
+        "d": 0.5,
+        "alpha": 0.05,
+        "power": 0.8
+      },
+      "n_registered": 36,
+      "n_reference": 34,
+      "power_at_reference_n": 0.8077775012792738,
+      "n_match": false,
+      "status": "mismatch"
+    },
+    {
+      "case": "PWR-P04-N",
+      "protocol_id": "APGI-P04",
+      "design": "paired / one-sample t, two-tailed (fixed-n reference)",
+      "inputs": {
+        "d": 0.45,
+        "alpha": 0.0167,
+        "power": 0.8
+      },
+      "n_registered": 55,
+      "n_reference": 55,
+      "power_at_reference_n": 0.8037226375099904,
+      "n_match": true,
+      "status": "match"
+    },
+    {
+      "case": "PWR-P05-N",
+      "protocol_id": "APGI-P05",
+      "design": "paired / one-sample t, two-tailed (fixed-n reference)",
+      "inputs": {
+        "d": 0.5,
+        "alpha": 0.05,
+        "power": 0.9
+      },
+      "n_registered": 44,
+      "n_reference": 44,
+      "power_at_reference_n": 0.9000305933314601,
+      "n_match": true,
+      "status": "match"
+    },
+    {
+      "case": "PWR-P05-PMIN",
+      "protocol_id": "APGI-P05",
+      "design": "power at registered minimum n (paired t, two-tailed)",
+      "inputs": {
+        "d": 0.5,
+        "alpha": 0.05,
+        "n": 36
+      },
+      "power": {
+        "registered": 0.83,
+        "reference": 0.8306656074128482,
+        "match_1e-6_relative": false,
+        "match_at_registered_precision": true
+      },
+      "status": "mismatch"
+    },
+    {
+      "case": "PWR-P03-SECONDARY-R",
+      "protocol_id": "APGI-P03",
+      "design": "two-tailed Pearson correlation (Fisher z), alpha 0.05 assumed",
+      "inputs": {
+        "r": 0.4,
+        "n": 36,
+        "alpha": 0.05
+      },
+      "power": {
+        "registered": 0.68,
+        "reference": 0.6821535803081111,
+        "match_1e-6_relative": false,
+        "match_at_registered_precision": true
+      },
+      "status": "mismatch"
+    },
+    {
+      "case": "PWR-P01-1F",
+      "protocol_id": "APGI-P01",
+      "design": "standardized slope treated as correlation (Fisher z)",
+      "inputs": {
+        "r": 0.36,
+        "alpha": 0.05,
+        "power": 0.8
+      },
+      "n_registered_available": 62,
+      "n_reference": 59,
+      "comparison": "registered n is the available sample; check n_reference <= n_registered_available",
+      "n_match": true,
+      "status": "match"
+    },
+    {
+      "case": "PWR-P07-F",
+      "protocol_id": "APGI-P07",
+      "design": "regression F test (f\u00b2)",
+      "inputs": {
+        "f2": 0.07692307692307693,
+        "alpha": 0.048,
+        "n": 110
+      },
+      "status": "not_reproducible",
+      "reason": "numerator df and covariate count are not registered; the noncentral-F power cannot be recomputed without them (registered power_status: approximation)."
+    },
+    {
+      "case": "PWR-P02",
+      "protocol_id": "APGI-P02",
+      "design": "simulation",
+      "status": "not_applicable",
+      "reason": "no classical power calculation registered (simulation/Bayesian design)"
+    },
+    {
+      "case": "PWR-P06",
+      "protocol_id": "APGI-P06",
+      "design": "bayesian",
+      "status": "not_applicable",
+      "reason": "no classical power calculation registered (simulation/Bayesian design)"
+    }
+  ],
+  "unacknowledged": []
+}

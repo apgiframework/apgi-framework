@@ -1,0 +1,397 @@
+{
+ "schema": "fixtures/fixture.schema.json",
+ "generator": "fixtures/generate_fixtures.py",
+ "generator_version": "1.0.0",
+ "model_variant": "MV-CORE-DISCRETE-1",
+ "model_version": "1.0.0",
+ "reference_arithmetic": "decimal, 60 significant digits",
+ "tolerance": {
+  "default": {
+   "abs": 1e-09,
+   "rel": 1e-07,
+   "rule": "|a-e| <= abs + rel*|e|  (§6.1)"
+  },
+  "S_t": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "theta": {
+   "abs": 1e-09,
+   "rel": 0.0,
+   "rule": "|a-e| <= 1e-9 (AUD-FIX-1000)"
+  },
+  "classification": "exact outside the boundary band",
+  "boundary_band_ulp": 4
+ },
+ "approval": {
+  "status": "provisional_unapproved",
+  "approver": "Not appointed",
+  "blocking_items": [
+   "AUD-REG-04",
+   "AUD-FIX-1000",
+   "AUD-SPEC-CONFIRM-13"
+  ]
+ },
+ "fixture": "core-equations",
+ "cases": [
+  {
+   "id": "EQ1-SIGN-NEG",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.2,
+    "z_e": -0.8,
+    "pi_i_eff": 0.9,
+    "z_i": -0.5
+   },
+   "expected": 1.41
+  },
+  {
+   "id": "EQ1-SIGN-POS",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.2,
+    "z_e": 0.8,
+    "pi_i_eff": 0.9,
+    "z_i": 0.5
+   },
+   "expected": 1.41
+  },
+  {
+   "id": "EQ1-SIGN-MIXED-A",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.2,
+    "z_e": -0.8,
+    "pi_i_eff": 0.9,
+    "z_i": 0.5
+   },
+   "expected": 1.41
+  },
+  {
+   "id": "EQ1-SIGN-MIXED-B",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.2,
+    "z_e": 0.8,
+    "pi_i_eff": 0.9,
+    "z_i": -0.5
+   },
+   "expected": 1.41
+  },
+  {
+   "id": "EQ1-ZERO",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 1.2,
+    "z_e": 0.0,
+    "pi_i_eff": 0.9,
+    "z_i": 0.0
+   },
+   "expected": 0.0
+  },
+  {
+   "id": "EQ1-EXTERO-ONLY",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 2.0,
+    "z_e": 3.0,
+    "pi_i_eff": 0.0,
+    "z_i": 99.0
+   },
+   "expected": 6.0
+  },
+  {
+   "id": "EQ1-INTERO-ONLY",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 0.0,
+    "z_e": 99.0,
+    "pi_i_eff": 1.5,
+    "z_i": 4.0
+   },
+   "expected": 6.0
+  },
+  {
+   "id": "EQ1-LARGE",
+   "equation": "EQ-1",
+   "function": "compute_S_t",
+   "inputs": {
+    "pi_e": 10.0,
+    "z_e": 1000000.0,
+    "pi_i_eff": 10.0,
+    "z_i": -1000000.0
+   },
+   "expected": 20000000.0
+  },
+  {
+   "id": "EQ2-AT-THRESHOLD",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 0.6,
+    "theta_t": 0.6,
+    "gamma_sig": 5.0
+   },
+   "expected": 0.5
+  },
+  {
+   "id": "EQ2-ABOVE",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 1.0,
+    "theta_t": 0.6,
+    "gamma_sig": 5.0
+   },
+   "expected": 0.8807970779778824
+  },
+  {
+   "id": "EQ2-BELOW",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 0.2,
+    "theta_t": 0.6,
+    "gamma_sig": 5.0
+   },
+   "expected": 0.11920292202211757
+  },
+  {
+   "id": "EQ2-STEEP",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 0.61,
+    "theta_t": 0.6,
+    "gamma_sig": 7.5
+   },
+   "expected": 0.5187412158785353
+  },
+  {
+   "id": "EQ2-SATURATE-HIGH",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 50.0,
+    "theta_t": 0.6,
+    "gamma_sig": 7.5
+   },
+   "expected": 1.0
+  },
+  {
+   "id": "EQ2-SATURATE-LOW",
+   "equation": "EQ-2",
+   "function": "ignition_probability",
+   "inputs": {
+    "S_t": 0.0,
+    "theta_t": 50.0,
+    "gamma_sig": 7.5
+   },
+   "expected": 1.3790159402541388e-163
+  },
+  {
+   "id": "EQ4-NEUTRAL",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 1.0,
+    "beta_sm": 0.6,
+    "M_hat": 0.0
+   },
+   "expected": 1.0
+  },
+  {
+   "id": "EQ4-UP",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 1.0,
+    "beta_sm": 0.6,
+    "M_hat": 1.5
+   },
+   "expected": 2.4596031111569494
+  },
+  {
+   "id": "EQ4-DOWN",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 1.0,
+    "beta_sm": 0.6,
+    "M_hat": -1.5
+   },
+   "expected": 0.4065696597405991
+  },
+  {
+   "id": "EQ4-CLAMP-HIGH",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 5.0,
+    "beta_sm": 1.2,
+    "M_hat": 2.0
+   },
+   "expected": 10.0
+  },
+  {
+   "id": "EQ4-CLAMP-LOW",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 0.001,
+    "beta_sm": 0.1,
+    "M_hat": -2.0
+   },
+   "expected": 0.01
+  },
+  {
+   "id": "EQ4-ZERO-BASELINE",
+   "equation": "EQ-4",
+   "function": "compute_pi_i_eff",
+   "inputs": {
+    "pi_i_baseline": 0.0,
+    "beta_sm": 0.6,
+    "M_hat": 1.0
+   },
+   "expected": 0.01
+  },
+  {
+   "id": "EQ5-FROM-ZERO",
+   "equation": "EQ-5",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.0,
+    "S_input": 1.0,
+    "tau_S": 5.0
+   },
+   "expected": 0.18126924692201815
+  },
+  {
+   "id": "EQ5-DECAY",
+   "equation": "EQ-5",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 2.0,
+    "S_input": 0.0,
+    "tau_S": 5.0
+   },
+   "expected": 1.6374615061559636
+  },
+  {
+   "id": "EQ5-FAST",
+   "equation": "EQ-5",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.0,
+    "S_input": 1.0,
+    "tau_S": 0.01
+   },
+   "expected": 1.0
+  },
+  {
+   "id": "EQ5-SLOW",
+   "equation": "EQ-5",
+   "function": "accumulate_S_t",
+   "inputs": {
+    "S_prev": 0.5,
+    "S_input": 1.5,
+    "tau_S": 200.0
+   },
+   "expected": 0.5049875208073177
+  },
+  {
+   "id": "EQ7-NONE",
+   "equation": "EQ-7",
+   "function": "apply_ne_threshold_gain",
+   "inputs": {
+    "theta_t": 0.6,
+    "g_NE": 0.0,
+    "gamma_NE": 0.3
+   },
+   "expected": 0.6
+  },
+  {
+   "id": "EQ7-MID",
+   "equation": "EQ-7",
+   "function": "apply_ne_threshold_gain",
+   "inputs": {
+    "theta_t": 0.6,
+    "g_NE": 1.0,
+    "gamma_NE": 0.3
+   },
+   "expected": 0.7799999999999999
+  },
+  {
+   "id": "EQ7-LIMIT",
+   "equation": "EQ-7",
+   "function": "apply_ne_threshold_gain",
+   "inputs": {
+    "theta_t": 0.6,
+    "g_NE": 1.0,
+    "gamma_NE": 0.5
+   },
+   "expected": 0.8999999999999999
+  },
+  {
+   "id": "EQ8-REST",
+   "equation": "EQ-8",
+   "function": "theta_equilibrium",
+   "inputs": {
+    "C": 0.0,
+    "I_val": 0.0,
+    "NE": 0.0
+   },
+   "expected": 0.6
+  },
+  {
+   "id": "EQ8-COST",
+   "equation": "EQ-8",
+   "function": "theta_equilibrium",
+   "inputs": {
+    "C": 1.0,
+    "I_val": 0.5,
+    "NE": 0.0
+   },
+   "expected": 1.0166666666666666
+  },
+  {
+   "id": "EQ8-NE",
+   "equation": "EQ-8",
+   "function": "theta_equilibrium",
+   "inputs": {
+    "C": 1.0,
+    "I_val": 0.5,
+    "NE": 1.0
+   },
+   "expected": 1.35
+  },
+  {
+   "id": "EQ10-ONE-BIT",
+   "equation": "EQ-10",
+   "function": "landauer_minimum_energy",
+   "inputs": {
+    "n_bits": 1.0
+   },
+   "expected": 2.9666781812480147e-21,
+   "unit": "J"
+  },
+  {
+   "id": "EQ10-TWENTY-BITS",
+   "equation": "EQ-10",
+   "function": "landauer_minimum_energy",
+   "inputs": {
+    "n_bits": 20.0
+   },
+   "expected": 5.93335636249603e-20,
+   "unit": "J"
+  }
+ ]
+}

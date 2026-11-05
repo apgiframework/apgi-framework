@@ -51,6 +51,7 @@ dev = [
     "mypy>=1.10.0",
     "h5py>=3.10.0",
     "pypdf>=4.0",  # figures/v1_1/validate.py
+    "pyyaml>=6.0",  # specification registries and validation gates
 ]
 
 [tool.setuptools.packages.find]

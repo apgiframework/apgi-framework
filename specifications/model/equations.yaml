@@ -1,0 +1,85 @@
+# APGI equation registry — draft IDs (APGI-VAL-SPEC-1.2 SCI-002 "[CONFIRM IDs]").
+# IDs are stable within this repository. Mapping to Formal Mathematical
+# Specification equation numbers is pending owner confirmation
+# (AUD-SPEC-CONFIRM-07); until then each entry cites the paper/spec section.
+registry_version: 0.1.0
+status: draft_unapproved
+entries:
+  - id: EQ-1
+    name: instantaneous precision-weighted surprise
+    expression: "S_input = Π_e·|z_e| + Π_i^eff·|z_i|"
+    source: "Paper 1 §4.1.1 Eq. 1; APGI-VAL-SPEC-1.2 SCI-001"
+    symbols: [PAR-PI-E, SIG-Z-E, PAR-PI-I-EFF, SIG-Z-I]
+    code: apgi.core.compute_S_t
+    fixtures: [fixtures/core-equations.json#EQ-1]
+  - id: EQ-2
+    name: ignition probability (sigmoid criterion)
+    expression: "P(ign) = 1 / (1 + exp(-γ_sig·(S_t − θ_t)))"
+    source: "Paper 1 §4.1.2 Eq. 2"
+    symbols: [STA-S-T, STA-THETA-T, PAR-GAMMA-SIG]
+    code: apgi.core.ignition_probability
+    fixtures: [fixtures/core-equations.json#EQ-2]
+  - id: EQ-2D
+    name: deterministic ignition decision (strict boundary)
+    expression: "B(t) = 1 iff S_t > θ_t"
+    source: "APGI-VAL-SPEC-1.2 SCI-001 / §6.1 (draft); conflicts with ignition_criterion P>=0.5 (DEV-0001)"
+    symbols: [STA-S-T, STA-THETA-T]
+    code: apgi.core.ignition_decision_strict
+    fixtures: [fixtures/ignition-boundary.json]
+  - id: EQ-3
+    name: allostatic threshold dynamics (forward Euler) with refractory increment
+    expression: "θ_{t+1} = θ_t + dt·[−λ_θ(θ_t−θ_0) + κ_meta·C − Δ_info·I + η_NE·NE] + δ_reset·B(t)"
+    source: "Paper 1 §4.1.3 Eq. 3; Math Spec §Post-Ignition Reset (Step 11)"
+    symbols: [STA-THETA-T, PAR-THETA-0, PAR-LAMBDA-THETA, PAR-KAPPA-META, SIG-C, PAR-DELTA-INFO, SIG-I, PAR-ETA-NE, SIG-NE, PAR-DELTA-RESET]
+    code: apgi.core.step_theta
+    fixtures: [fixtures/threshold-dynamics.json]
+  - id: EQ-4
+    name: effective interoceptive precision (somatic modulation, clamped)
+    expression: "Π_i^eff = clip(Π_i^baseline·exp(β_SM·M̂), Π_min, Π_max)"
+    source: "Paper 1 §4.2; Math Spec §4.2"
+    symbols: [PAR-PI-I-EFF, PAR-PI-I-BASELINE, PAR-BETA-SM, SIG-M-HAT, CON-PI-MIN, CON-PI-MAX]
+    code: apgi.core.compute_pi_i_eff
+    fixtures: [fixtures/core-equations.json#EQ-4]
+  - id: EQ-5
+    name: leaky accumulation of S_t
+    expression: "S_t = (1−λ_S)·S_{t−1} + λ_S·S_input,  λ_S = 1 − exp(−dt/τ_S)"
+    source: "Paper 1 Appendix A.1"
+    symbols: [STA-S-T, PAR-TAU-S]
+    code: apgi.core.accumulate_S_t
+    fixtures: [fixtures/core-equations.json#EQ-5]
+  - id: EQ-6
+    name: post-ignition partial reset of S
+    expression: "S ← ρ_retain·S if B(t) = 1"
+    source: "Math Spec §Post-Ignition Reset (Step 14)"
+    symbols: [STA-S-T, PAR-RHO-RETAIN]
+    code: apgi.core.post_ignition_reset
+    fixtures: [fixtures/threshold-dynamics.json]
+  - id: EQ-7
+    name: multiplicative NE threshold gain
+    expression: "θ ← θ·(1 + γ_NE·g_NE), γ_NE·g_NE ≤ 0.5"
+    source: "Math Spec §Norepinephrine Modulation of Threshold"
+    symbols: [STA-THETA-T, PAR-GAMMA-NE, CON-NE-SUBDOMINANCE]
+    code: apgi.core.apply_ne_threshold_gain
+    fixtures: [fixtures/core-equations.json#EQ-7]
+  - id: EQ-8
+    name: threshold equilibrium
+    expression: "θ* = θ_0 + (κ_meta·C − Δ_info·I + η_NE·NE)/λ_θ"
+    source: "Steady state of EQ-3 without reset"
+    symbols: [PAR-THETA-0, PAR-LAMBDA-THETA, PAR-KAPPA-META, PAR-DELTA-INFO, PAR-ETA-NE]
+    code: apgi.core.theta_equilibrium
+    fixtures: [fixtures/core-equations.json#EQ-8]
+  - id: EQ-9
+    name: online precision and z-score estimation
+    expression: "μ' = (1−α)μ + αε; σ²' = (1−α)σ² + α(ε−μ)²; Π = clip(1/(σ²+ε_stab)); z = (ε−μ)/(σ+ε_stab)"
+    source: "Math Spec §1-2"
+    symbols: [PAR-ALPHA-EMA, CON-EPS-STAB, SIG-EPS-E]
+    code: apgi.precision
+    fixtures: []
+  - id: EQ-10
+    name: Landauer minimum erasure energy
+    expression: "E_min = n_bits·k_B·T·ln 2"
+    source: "Paper 4 §3.2.1"
+    symbols: [CON-K-BOLTZMANN, CON-T-BODY]
+    code: apgi.extensions.epistemic.landauer_minimum_energy
+    scope_layer: thermodynamic
+    fixtures: [fixtures/core-equations.json#EQ-10]

@@ -1,0 +1,24 @@
+# Controlled evidence index (APGI-VAL-SPEC-1.2 §9; AUD-GOV-04).
+# Repository evidence is version-controlled; CI evidence is retained as
+# workflow artifacts ("validation-evidence-*") linked to the run and commit.
+# tester: "repository maintainer (self-attested)" unless CI.
+index_version: 0.1.0
+entries:
+  - {id: EV-001, requirement: [PRO-001, PRO-004], test: TC-PRO-01, evidence: "specifications/profile/application-validation-profile.yaml; traceability/predictions.yaml", result: "partial — DEV-0008"}
+  - {id: EV-002, requirement: [PRO-002], test: TC-PRO-02, evidence: "tests/test_protocol_lock.py; fixtures/invalid-configurations.json", result: pass}
+  - {id: EV-005, requirement: [SCI-001], test: "TC-SCI-01, TC-SCI-02", evidence: "fixtures/*.json; tests/test_fixtures.py", result: "pass against provisional fixtures; DEV-0001 open"}
+  - {id: EV-006, requirement: [SCI-002], test: "TC-SCI-01, TC-SCI-04", evidence: "specifications/model-variants/MV-CORE-DISCRETE-1.yaml", result: "partial — DEV-0009"}
+  - {id: EV-007, requirement: [SCI-003], test: TC-SCI-03, evidence: "tests/test_hierarchy_levels.py", result: "pass on draft bounds — DEV-0003"}
+  - {id: EV-008, requirement: [SCI-004], test: TC-SCI-04, evidence: "scripts/scan_notation.py (CI artifact notation-scan.json)", result: "0 findings; 4 legacy identifiers under DEV-0006"}
+  - {id: EV-009, requirement: [SCI-005], test: TC-SCI-04, evidence: "specifications/model/parameter-registry.yaml; tests/test_validation_tooling.py::test_code_defaults_match_registry", result: "pass (labels unapproved)"}
+  - {id: EV-010, requirement: [SCI-006], test: TC-SCI-04, evidence: "scripts/scan_terminology.py (CI artifact terminology-scan.json)", result: "0 findings in tracked text; archives not inspected"}
+  - {id: EV-011, requirement: [SCI-007], test: TC-SCI-05, evidence: "specifications/claims/claim-register.yaml", result: partial}
+  - {id: EV-012, requirement: [REP-001], test: TC-REP-01, evidence: "tests/test_protocol_lock.py::test_single_altered_file_refuses_and_produces_no_output", result: "pass; OTS proof pending (DEV-0002)"}
+  - {id: EV-013, requirement: [REP-002], test: TC-REP-02, evidence: "scripts/record_environment.py (CI artifacts env-linux-*.json, env-macos-arm64.json)", result: "Linux bitwise repeatable; macOS pending"}
+  - {id: EV-014, requirement: [REP-003], test: TC-REP-03, evidence: "evidence/power/power-comparison.json", result: "6 match, 4 mismatch (DEV-0004, DEV-0005), 1 not reproducible (DEV-0007)"}
+  - {id: EV-015, requirement: [REP-004], test: TC-REP-04, evidence: "tests/test_model_variants_registration.py::test_injected_unregistered_step_flags_and_propagates", result: pass}
+  - {id: EV-017, requirement: [IMP-001], test: TC-IMP-01, evidence: "scripts/build_release_manifest.py; Release workflow artifact release-manifest", result: "partial — no SBOM"}
+  - {id: EV-020, requirement: [DAT-004], test: TC-DAT-04, evidence: "data/seeds/seed_manifest.json; apgi.datasets.dataset_provenance", result: partial}
+  - {id: EV-024, requirement: [INT-003], test: TC-INT-01, evidence: "tests/test_int003_failure_propagation.py", result: pass}
+  - {id: EV-030, requirement: [REL-003], test: TC-REG-01, evidence: "docs/validation/change-records/CR-0001.md", result: "recorded; approver Not appointed"}
+  - {id: EV-040, requirement: [], test: AUD-EXEC-01, evidence: "evidence/runs/AUD-EXEC-01-recovery.json; evidence/runs/AUD-EXEC-01-recovery.log", result: "all five targets met (r_pi_i 0.6000 marginal)"}

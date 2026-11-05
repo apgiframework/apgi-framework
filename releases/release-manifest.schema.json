@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/apgiframework/apgi-framework/releases/release-manifest.schema.json",
+  "title": "APGI scientific framework release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_format", "component", "version", "source_commit", "created_utc",
+               "protocol_lock", "spec_bundle", "fixtures", "schemas", "artifacts", "dependencies",
+               "model_variant", "compatibility_matrix", "certification"],
+  "properties": {
+    "manifest_format": {"const": 1},
+    "component": {"const": "apgi-framework"},
+    "version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+([.+-][0-9A-Za-z.+-]+)?$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "created_utc": {"type": "string", "format": "date-time"},
+    "protocol_lock": {
+      "type": "object", "required": ["release", "manifest_sha256", "anchor"],
+      "properties": {
+        "release": {"type": "string"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "anchor": {"type": "object"}
+      }
+    },
+    "spec_bundle": {
+      "type": "object", "required": ["sha256sums_sha256", "file_count"],
+      "properties": {"sha256sums_sha256": {"$ref": "#/$defs/sha256"}, "file_count": {"type": "integer", "minimum": 1}}
+    },
+    "fixtures": {
+      "type": "object", "required": ["generator_version", "index_sha256", "approval_status"],
+      "properties": {
+        "generator_version": {"type": "string"},
+        "index_sha256": {"$ref": "#/$defs/sha256"},
+        "approval_status": {"type": "string"}
+      }
+    },
+    "schemas": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["path", "sha256"],
+        "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}
+      }
+    },
+    "dependencies": {
+      "type": "object", "required": ["declared", "lockfile_sha256"],
+      "properties": {"declared": {"type": "array", "items": {"type": "string"}},
+                     "lockfile_sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "model_variant": {"type": "object", "required": ["id", "model_version"]},
+    "compatibility_matrix": {"type": "string"},
+    "certification": {
+      "type": "object", "required": ["status", "independence_level", "approvers"],
+      "properties": {
+        "status": {"enum": ["Not certified", "Certified", "Certified with time-bounded exceptions"]},
+        "independence_level": {"enum": ["Self-attested", "Independently reviewed"]},
+        "approvers": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

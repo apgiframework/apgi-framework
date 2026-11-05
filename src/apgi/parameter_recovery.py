@@ -231,8 +231,11 @@ def recover_parameters(
         if best is None or result.fun < best.fun:
             best = result
 
-    theta_0_hat, tau_S_hat, pi_i_hat, beta_sm_hat, gamma_sig_hat = best.x  # type: ignore[union-attr]
     nll_val = float(best.fun)  # type: ignore[union-attr]
+    if not np.isfinite(nll_val) or not np.all(np.isfinite(best.x)):  # type: ignore[union-attr]
+        # INT-003: a failed fit propagates as an error, never as plausible estimates.
+        raise RuntimeError(f"parameter recovery failed: non-finite objective ({nll_val!r})")
+    theta_0_hat, tau_S_hat, pi_i_hat, beta_sm_hat, gamma_sig_hat = best.x  # type: ignore[union-attr]
     n_trials = len(data["pi_e"])
     return {
         "theta_0_hat": float(theta_0_hat),

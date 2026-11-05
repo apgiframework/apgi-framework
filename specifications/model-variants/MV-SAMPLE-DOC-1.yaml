@@ -1,0 +1,10 @@
+variant_id: MV-SAMPLE-DOC-1
+model_version: 0.1.0
+status: exploratory_illustrative
+code: apgi.datasets.make_sample_doc_groups
+source: "Illustrative example generator (AUD-DATA-02)"
+differences_from_registered_protocol_APGI-P07:
+  - "Three groups (VS/UWS, MCS, Controls); Protocol 7 registers four groups (adds EMCS)."
+  - "Uses the deterministic P>=0.5 criterion with no refractory reset (no δ_reset, no ρ_retain), unlike MV-CORE-DISCRETE-1."
+  - "Group precision means are illustrative values, not Protocol 7 registered quantities."
+consequence: "Example output only. It carries no confirmatory weight and is labelled exploratory in its returned metadata."

@@ -1,0 +1,41 @@
+# APGI gate table (S1-PR2b-01). Republished with every model version; must
+# validate against gates/gate-table.schema.json (CI gate XC-CI-01.4).
+# status: cleared | pending_K7 | not_testable_v0_1
+# exposure_class decides whether a field may appear in gates/exposable-fields.yaml
+# (generated; only cleared model-free indices, identified composites and
+# cleared parameters are exposed).
+gate_table_version: 0.1.0
+model_variant: MV-CORE-DISCRETE-1
+model_version: 1.0.0
+status: draft_unapproved
+gates:
+  - field: S_t
+    registry_id: STA-S-T
+    symbol: "S_t"
+    status: pending_K7
+    exposure_class: identified_composite
+    rationale: "Composite of precision-weighted errors; identifiability pending K7 results."
+  - field: theta_t
+    registry_id: STA-THETA-T
+    symbol: "θ_t"
+    status: pending_K7
+    exposure_class: identified_composite
+    rationale: "Latent dynamic threshold; recovery pending K7 results."
+  - field: Pi_e
+    registry_id: PAR-PI-E
+    symbol: "Π_e"
+    status: pending_K7
+    exposure_class: cleared_parameter
+    rationale: "Pending K7 results."
+  - field: Pi_i
+    registry_id: PAR-PI-I-BASELINE
+    symbol: "Π_i"
+    status: not_testable_v0_1
+    exposure_class: model_parameter
+    rationale: "Not independently identifiable from β_SM using behaviour alone (protocol apgi_parameters.beta_SM role)."
+  - field: beta
+    registry_id: PAR-BETA-SM
+    symbol: "β_SM"
+    status: not_testable_v0_1
+    exposure_class: model_parameter
+    rationale: "Not independently identifiable from Π_i using behaviour alone."

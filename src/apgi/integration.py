@@ -133,13 +133,17 @@ class APGICoreIntegration:
         Returns:
             TrialRecord for this trial.
         """
+        # Stage the whole trial in locals and commit only after every
+        # computation succeeds, so a rejected input leaves no partial state
+        # (APGI-VAL-SPEC-1.2 PRO-002 / INT-003).
         m = M_hat if M_hat is not None else self.M_hat
         pi_i_eff = compute_pi_i_eff(pi_i_baseline, self.beta_sm, m)
         S_input = compute_S_t(pi_e, z_e, pi_i_eff, z_i)
-        self._S_acc = accumulate_S_t(self._S_acc, S_input, tau_S=self.tau_S)
+        S_acc = accumulate_S_t(self._S_acc, S_input, tau_S=self.tau_S)
 
-        if self._theta is None:
-            self._theta = theta_equilibrium(
+        theta_t = self._theta
+        if theta_t is None:
+            theta_t = theta_equilibrium(
                 C_t,
                 I_t,
                 theta_0=self.theta_0,
@@ -148,20 +152,8 @@ class APGICoreIntegration:
                 delta_info=self.delta_info,
             )
 
-        theta_t = self._theta
-        fired = ignition_criterion(self._S_acc, theta_t, self.gamma_sig, rng=rng)
-        t = len(self._records)
-        record = TrialRecord(
-            t=t,
-            pi_i_eff=pi_i_eff,
-            S_t=self._S_acc,
-            theta_t=theta_t,
-            ignition=fired,
-            C_t=C_t,
-            I_t=I_t,
-        )
-        self._records.append(record)
-        self._theta = step_theta(
+        fired = ignition_criterion(S_acc, theta_t, self.gamma_sig, rng=rng)
+        theta_next = step_theta(
             theta_t,
             C_t,
             I_t,
@@ -174,7 +166,20 @@ class APGICoreIntegration:
             eta_NE=self.eta_NE,
             delta_reset=self.delta_reset,
         )
-        self._S_acc = post_ignition_reset(self._S_acc, fired, rho_retain=self.rho_retain)
+        S_next = post_ignition_reset(S_acc, fired, rho_retain=self.rho_retain)
+        record = TrialRecord(
+            t=len(self._records),
+            pi_i_eff=pi_i_eff,
+            S_t=S_acc,
+            theta_t=theta_t,
+            ignition=fired,
+            C_t=C_t,
+            I_t=I_t,
+        )
+        # Commit.
+        self._records.append(record)
+        self._theta = theta_next
+        self._S_acc = S_next
         return record
 
     def run_sequence(

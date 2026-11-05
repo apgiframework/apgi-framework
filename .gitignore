@@ -38,3 +38,4 @@ notebooks/.ipynb_checkpoints/
 *.sublime-project
 *.sublime-workspace
 .claude/
+.coverage.*

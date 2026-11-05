@@ -6,6 +6,57 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [Unreleased]
+
+APGI-VAL-SPEC-1.2 conformance tooling for apgi-framework (A03); change record
+`docs/validation/change-records/CR-0001.md`. Nothing here is approved: every
+governance role reads "Not appointed" and the component is **not certified**.
+
+### Added
+- `specifications/`: parameter/state/signal registry with stable IDs, kinds, units, provenance
+  category and scope layer (κ registered as uncalibrated, thermodynamic, `must_not_alias` γ_sig;
+  θ₀ and θₜ separate); equation, observable and decision-rule registries (rule SHA-256);
+  model-variant declarations; canonical L0–L4 hierarchy; notation map; claim register
+  (CLM-nnnn); contract compatibility policy; draft Application Validation Profile; deviations,
+  risks, roles and source register.
+- `fixtures/`: independent 60-digit decimal golden fixtures (1,000 vectors, sign fixture 1.41,
+  strict-boundary ±ulp cases, must-raise invalid configurations, half-step study, stored noise
+  draws). Status: provisional, unapproved.
+- `traceability/`: prediction ↔ equation ↔ code ↔ protocol ↔ evidence crosswalk (40 predictions).
+- `gates/`: gate table with schema; generated exposable-field allow-list.
+- `bundle/SHA256SUMS` and `apgi.spec_bundle.verify_bundle` (consumers verify before use);
+  `releases/release-manifest.schema.json` and `scripts/build_release_manifest.py`.
+- `apgi.protocols`: lock-verified, all-or-nothing, immutable protocol loader with audit events;
+  notebooks and the v1.1 figure generator verify the lock before reading definitions.
+- `apgi.quantities` (`Precision × Precision` and `PEM × PEM` raise), `apgi.hierarchy_levels`,
+  `apgi.model_variants` (labelled variants, explicit protocol→core parameter mapping),
+  `apgi.registration` (deviation flags, exploratory labels), `apgi.core.ignition_decision_strict`
+  and `apgi.core.MODEL_FORMULATION`, `apgi.datasets.dataset_provenance`.
+- Scripts: notation and terminology scans, independent scipy power reproduction,
+  environment/repeat-run record, recovery evidence, OpenTimestamps anchoring helper.
+- CI gates: protocol lock, fixtures, specification checksums, gate-table schema, scans, power,
+  reproducibility record, release manifest, and a macOS ARM64 reproducibility job.
+
+### Changed
+- Core equations reject NaN/±inf, negative precisions or rates, non-positive timescales and
+  `rho_retain` outside [0, 1] with `ValueError`; valid clamping is unchanged and every valid input
+  gives the same value as before.
+- `KAPPA_ATP_PER_BIT_DEFAULT` → `KAPPA_ATP_PER_BIT_ILLUSTRATIVE` (κ has no default).
+- `ClinicalReport` carries `epistemic_status="speculative"` and `claim_id="CLM-0009"`; the
+  docstring no longer calls the cut points calibrated.
+- `make_sample_doc_groups` is documented as the exploratory three-group variant (not Protocol 7).
+- Hierarchical extension comments say "Level n" so they no longer collide with canonical L0–L4.
+- `recover_parameters` raises on a non-finite objective instead of returning estimates.
+- `reproduce_all.sh` uses the release-aware validator (no longer schema-checks `MANIFEST.json`),
+  defaults to regenerate-and-verify seeds, and checks the lock, bundle, registries and fixtures.
+- `apgi-fetch` refuses to download while the seed datasets are not deposited, and a placeholder
+  checksum no longer counts as verified.
+- The release workflow reuses the full CI workflow before building, and attaches a release manifest.
+
+### Known open items
+- See `specifications/governance/deviations.yaml` (DEV-0001 to DEV-0009) and
+  `docs/validation/task-status.yaml`.
+
 ## [1.1.0] - 2026-10-22
 
 - `figures/` reorganized into symmetric version folders (all moves via `git mv`, history kept):

@@ -1,0 +1,21 @@
+python 3.13.18 numpy 2.5.3 scipy 1.18.1 Linux-6.18.44-fc-v236-x86_64-with-glibc2.39
+2026-11-05T18:38:40Z
+059450163c2bec8410a55d8c36bbe0e5eebd6b06
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.2.0, pluggy-1.7.0 -- /usr/local/bin/python3
+rootdir: /home/user/apgi-framework
+configfile: pyproject.toml
+plugins: nbval-0.11.0, anyio-4.15.1, platformdirs-4.14.5, cov-7.1.0
+collecting ... collected 2 items
+
+tests/test_parameter_recovery.py::TestRunRecoverySimulation::test_output_structure PASSED [ 50%]
+tests/test_parameter_recovery.py::TestRunRecoverySimulation::test_recovery_criteria PASSED [100%]
+
+============================== slowest durations ===============================
+249.68s call     tests/test_parameter_recovery.py::TestRunRecoverySimulation::test_recovery_criteria
+9.82s call     tests/test_parameter_recovery.py::TestRunRecoverySimulation::test_output_structure
+
+(4 durations < 0.005s hidden.  Use -vv to show these durations.)
+======================== 2 passed in 259.52s (0:04:19) =========================
+exit=0
+2026-11-05T18:43:00Z

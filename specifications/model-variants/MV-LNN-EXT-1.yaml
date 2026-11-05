@@ -1,0 +1,9 @@
+variant_id: MV-LNN-EXT-1
+model_version: 0.1.0
+status: exploratory
+code: apgi.extensions.liquid_network
+source: "Paper 2"
+formulation: discrete_update (reservoir with ignition readout and refractory reset ρ_S)
+differences_from_MV-CORE-DISCRETE-1:
+  - "Ignition is read out from reservoir state rather than from EQ-1/EQ-2."
+  - "Refractory retention ρ_S (PAR-LNN-RHO-S, default 0.5) is distinct from ρ_retain."
