@@ -11,8 +11,8 @@ permissions:
 
 jobs:
   # Full validation — the same workflow (tests, protocol lock, fixtures,
-  # specification checksums, gate table, scans, power reproduction, notebooks,
-  # macOS reproducibility) that guards main. Nothing is built or published
+  # specification checksums, gate table, scans, power reproduction, notebooks)
+  # that guards main; the opt-in macOS job is skipped on tags. Nothing is built or published
   # unless every job passes (AUD-CI-01, REL-001).
   validate:
     uses: ./.github/workflows/test.yml

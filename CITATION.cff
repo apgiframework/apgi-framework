@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: >
   If you use the APGI framework in published work, please cite both the software release and the companion paper (update the paper entry once the manuscript DOI is available).
 title: "Allostatic Precision-Gated Ignition (APGI): Simulation and Analysis Codebase"
-version: 1.1.0
-date-released: "2026-10-22"
+version: 1.2.0
+date-released: "2026-11-05"
 license: MIT
 repository-code: "https://github.com/apgiframework/apgi-framework"
 url: "https://osf.io/t5hcq"

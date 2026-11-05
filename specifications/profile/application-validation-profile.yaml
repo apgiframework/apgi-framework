@@ -10,7 +10,7 @@ component: {id: A03, name: apgi-framework, repository: "github.com/apgiframework
             responsibility: "Scientific definitions and fixtures"}
 release_owner: "Not appointed (repository maintainer acts as Solo Developer)"
 supported_versions:
-  package: "apgi-framework 1.1.x (pyproject.toml)"
+  package: "apgi-framework 1.2.x (pyproject.toml)"
   protocol_bundle: "1.1.0 (protocols/MANIFEST.json) — equivalence to Protocol v1.2 unconfirmed (DEV-0008)"
   model_variant: "MV-CORE-DISCRETE-1 model_version 1.0.0"
   fixtures: "fixtures/ generator 1.0.0 (provisional)"

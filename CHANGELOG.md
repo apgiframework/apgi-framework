@@ -6,7 +6,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [Unreleased]
+## [1.2.0] - 2026-11-05
 
 APGI-VAL-SPEC-1.2 conformance tooling for apgi-framework (A03); change record
 `docs/validation/change-records/CR-0001.md`. Nothing here is approved: every
@@ -52,6 +52,7 @@ governance role reads "Not appointed" and the component is **not certified**.
 - `apgi-fetch` refuses to download while the seed datasets are not deposited, and a placeholder
   checksum no longer counts as verified.
 - The release workflow reuses the full CI workflow before building, and attaches a release manifest.
+- The macOS ARM64 reproducibility job is opt-in (`ENABLE_MACOS_CI`) and never blocks a release.
 
 ### Known open items
 - See `specifications/governance/deviations.yaml` (DEV-0001 to DEV-0009) and
